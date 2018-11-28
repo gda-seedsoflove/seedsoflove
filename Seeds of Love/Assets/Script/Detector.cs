@@ -22,6 +22,7 @@ public class Detector : MonoBehaviour {
         }
         if(time >= .5)
         {
+            time = 0;
             Destroy(thing);
             touching = false;
         }

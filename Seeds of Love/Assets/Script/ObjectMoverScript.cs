@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ObjectMoverScript : MonoBehaviour
 {
+    private readonly float speed = 6;
     public float changespeed;
 
     private bool changex = true;
@@ -27,7 +28,6 @@ public class ObjectMoverScript : MonoBehaviour
 
     public Vector2 pos; //position in terms of a grid. (0,0) is the origin coordinate
     public float rightbound;
-    private readonly float speed = 6;
     public float spread;
 
     public float upbound;
@@ -185,7 +185,7 @@ public class ObjectMoverScript : MonoBehaviour
     }
 
     /*
-     * Checks the whether or not the current position of the object + the current speed would exceed the bounds.  
+     * Checks the whether or not the current position of the object + the current speed would exceed the bounds.
      * If the future position exceeds the bounds then the object will be placed on the boundary and the speed will be set back to zero.
      */
     public Vector2 checkVelocity(float x, float y)

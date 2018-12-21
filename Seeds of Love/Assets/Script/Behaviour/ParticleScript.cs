@@ -11,7 +11,6 @@ public class ParticleScript : MonoBehaviour {
 	void Start () {
         ps = gameObject.GetComponent<ParticleSystem>();
         played = false;
-
     }
 	
 	// Update is called once per frame

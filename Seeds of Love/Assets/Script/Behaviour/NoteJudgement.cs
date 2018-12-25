@@ -1,4 +1,4 @@
-﻿using Script.Song;
+using Script.Song;
 using UnityEngine;
 
 namespace Script.Behaviour
@@ -27,7 +27,10 @@ namespace Script.Behaviour
                 && Input.GetKeyDown(HitKey)
                 && NoteManager.CurrentSongTime > Note.Time - Note.HitTimeThreshold
                 && NoteManager.CurrentSongTime < Note.Time + Note.HitTimeThreshold)
+            {
                 OnHit(gameObject);
+            }
+
         }
     }
 }

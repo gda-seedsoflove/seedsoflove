@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114349546517807652}
   - component: {fileID: 114333702757862520}
   - component: {fileID: 114263218091796868}
+  - component: {fileID: 95209065365319066}
+  - component: {fileID: 114167077145501424}
   m_Layer: 0
   m_Name: TestNote
   m_TagString: Untagged
@@ -43,6 +45,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95209065365319066
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961062488577778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b26314edd8612e40a3e133cb4af35c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114167077145501424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961062488577778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ef349662928a648b07aba0dca8c165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleEffect: {fileID: 1242121508986312, guid: ad6d0a34036d83241b7b75931f806021,
+    type: 2}
 --- !u!114 &114263218091796868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9035577c29053641a8a14dc51378849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Moving: 1
 --- !u!114 &114349546517807652
 MonoBehaviour:
   m_ObjectHideFlags: 1

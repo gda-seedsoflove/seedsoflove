@@ -24,7 +24,11 @@ public class EffectsManager : MonoBehaviour
     {
         GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
         Destroy(instance, 1f);
-        GetComponent<NoteMovement>().Moving = false;
+        if(GetComponent<NoteMovement>())
+        {
+            GetComponent<NoteMovement>().enabled = false;
+        }
+        //GetComponent<NoteMovement>().Moving = false;
         GetComponent<Animator>().Play("Note_Hit_Animation");
     }
 

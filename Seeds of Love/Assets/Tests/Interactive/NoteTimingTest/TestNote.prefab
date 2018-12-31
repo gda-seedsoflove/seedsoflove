@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ef349662928a648b07aba0dca8c165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74,
+  ParticleEffect: {fileID: 1391387618876878, guid: 36c4bf4cca1bbee419eb1ac51e221316,
     type: 2}
 --- !u!114 &114263218091796868
 MonoBehaviour:

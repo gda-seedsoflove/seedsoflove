@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114236231204697560, guid: 7f2880850e3c44348896feedcdf8797e,
         type: 2}
       propertyPath: SpawnTimeInterval
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2880850e3c44348896feedcdf8797e, type: 2}

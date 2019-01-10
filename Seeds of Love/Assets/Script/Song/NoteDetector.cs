@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class NoteDetector : MonoBehaviour
 {
+    // Basically this script is the object moverscript but just includes a lane number with it.
+
+    /*
+    * A script that moves a object around it's original position with bounds
+    * Spread - How far apart each section is from each other
+    * Changespeed - Speed in which the object swtiches from each section
+    * Just place the object into the Object slot in the editor when viewing the script
+    */
 
     public int Lane { get; set; }
     private readonly float speed = 6;
@@ -19,13 +27,6 @@ public class NoteDetector : MonoBehaviour
 
     // Distance bound of how far the Object can movefrom the starting point
     public float leftbound;
-
-    /*
-    * Object mover is a script that moves a object around it's original position with bounds
-    * Spread - How far apart each section is from each other
-    * Changespeed - Speed in which the object swtiches from each section
-    * Just place the object into the Object slot in the editor when viewing the script
-    */
 
     public GameObject Object;
     private Vector2 origin;

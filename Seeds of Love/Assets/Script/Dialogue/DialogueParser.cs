@@ -5,6 +5,7 @@ using UnityEditor;
 using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class DialogueParser : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class DialogueParser : MonoBehaviour
     //loads the file for this scene, initializes the list of lines, and loads the dialogue in
     private void Start()
     {
-        string file = "Assets/DialogueText/SampleDialogue.txt";
+        Scene thisScene = SceneManager.GetActiveScene();
+        string file = "Assets/DialogueText/" + thisScene.name + "_Dialogue.txt";
 
         lines = new List<DialogueLine>();
 

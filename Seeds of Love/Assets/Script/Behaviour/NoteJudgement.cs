@@ -23,10 +23,19 @@ namespace Script.Behaviour
 
         private void Update()
         {
+
+            int dlane = 0;
+            if (GameObject.FindGameObjectWithTag("Detector"))
+            {
+                // Looks for the Detector and checks if it has the Note detector component;
+                dlane = GameObject.FindGameObjectWithTag("Detector").GetComponent<NoteDetector>().Lane;
+            }
+
             if (OnHit != null
                 && Input.GetKeyDown(HitKey)
                 && NoteManager.CurrentSongTime > Note.Time - Note.HitTimeThreshold
-                && NoteManager.CurrentSongTime < Note.Time + Note.HitTimeThreshold)
+                && NoteManager.CurrentSongTime < Note.Time + Note.HitTimeThreshold
+                && dlane == Note.Lane)
             {
                 OnHit(gameObject);
             }

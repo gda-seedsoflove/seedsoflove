@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Script.Song
 {
+    [RequireComponent(typeof(NoteMovement))]
+    [RequireComponent(typeof(NoteJudgement))]
     public abstract class NoteManager : MonoBehaviour
     {
-        // TODO: This prefab should require the NoteMovement and NoteJudgement
-        // components, but I'm not sure how to require them
         public GameObject NotePrefab;
 
         public float StartY;

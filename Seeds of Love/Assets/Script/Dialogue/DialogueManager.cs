@@ -1,10 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
+    //object to turn text file into usable dialogue objects
     DialogueParser parser;
 
     public string dialogue, characterName;
@@ -18,14 +19,11 @@ public class DialogueManager : MonoBehaviour {
     public Text nameText;
     public Text dialogueText;
     public GameObject choiceBox;
-    //private Queue<string> sentences;
 
+    //animator needed to animate dialogue starting and finishing
     public Animator animator;
 
-	void Start () {
-        //sentences = new Queue<string>();
-	}
-	
+    //initializes variables, triggers start animation, and starts dialogue
     public void StartDialogue ()
     {
         dialogue = "";
@@ -43,6 +41,7 @@ public class DialogueManager : MonoBehaviour {
         ShowDialogue();
     }
 
+    //connected to continue button; shows current line, increments, and updates UI
     public void ShowDialogue()
     {
         if(!playerTalking)
@@ -55,6 +54,7 @@ public class DialogueManager : MonoBehaviour {
         UpdateUI();
     }
 
+    //resets images each time a new line is shown
     void ResetImages()
     {
         if (characterName != "")
@@ -65,7 +65,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-
+    //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
     {
         if(parser.GetName(lineNum) == "end")
@@ -93,6 +93,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+    //loads relevant images for current line of dialogue
     void DisplayImages()
     {
         if (characterName != "")
@@ -106,6 +107,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+    //loads image to the correct side for current line
     void SetSpritePositions(GameObject spriteObj)
     {
         if (position == "L")
@@ -119,6 +121,7 @@ public class DialogueManager : MonoBehaviour {
         spriteObj.transform.position = new Vector3(spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
     }
 
+    //creates buttons for player inputs
     void CreateButtons()
     {
         for (int i = 0; i < options.Length; i++)
@@ -136,6 +139,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+    //removes player choice buttons if player isn't talking, updates name and dialogue text
     void UpdateUI()
     {
         if(!playerTalking)
@@ -144,11 +148,11 @@ public class DialogueManager : MonoBehaviour {
         }
 
         nameText.text = characterName;
-        string sentence = dialogue;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(dialogue));
     }
 
+    //removes unneeded buttons
     void ClearButtons()
     {
         for (int i = 0; i < buttons.Count; i++)
@@ -160,7 +164,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-
+    //animates text so that it appears one letter at a time
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
@@ -171,6 +175,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+    //plays dialogue end animation
     void EndDialogue()
     {
          animator.SetBool("IsOpen", false);

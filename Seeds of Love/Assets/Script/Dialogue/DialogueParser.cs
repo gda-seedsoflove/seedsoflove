@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 public class DialogueParser : MonoBehaviour
 {
 
+    //structure to store the relevant information to each line of dialogue
     struct DialogueLine
     {
         public string name;
@@ -27,8 +28,10 @@ public class DialogueParser : MonoBehaviour
         }
     }
 
+    //list of lines that makes up the entirety of dialogue for a scene
     List<DialogueLine> lines;
 
+    //loads the file for this scene, initializes the list of lines, and loads the dialogue in
     private void Start()
     {
         string file = "Assets/DialogueText/SampleDialogue.txt";
@@ -38,6 +41,7 @@ public class DialogueParser : MonoBehaviour
         LoadDialogue(file);
     }
 
+    //parses text file for each line of dialogue, turns them into instances of DialogueLine and adds them to the list of lines
     void LoadDialogue(string filename)
     {
         string line;
@@ -78,7 +82,7 @@ public class DialogueParser : MonoBehaviour
         }
     }
 
-
+    //gets the position at the line at the int lineNumber
     public string GetPosition(int lineNumber)
     {
         if (lineNumber < lines.Count)
@@ -89,6 +93,7 @@ public class DialogueParser : MonoBehaviour
         return "";
     }
 
+    //gets the name at the line at the int lineNumber
     public string GetName(int lineNumber)
     {
         if (lineNumber < lines.Count)
@@ -99,6 +104,7 @@ public class DialogueParser : MonoBehaviour
         return "";
     }
 
+    //gets the content (sentence/s being said) at the line at the int lineNumber
     public string GetContent(int lineNumber)
     {
         if (lineNumber < lines.Count)
@@ -109,6 +115,7 @@ public class DialogueParser : MonoBehaviour
         return "";
     }
 
+    //gets the pose at the line at the int lineNumber
     public int GetPose(int lineNumber)
     {
         if (lineNumber < lines.Count)
@@ -119,6 +126,8 @@ public class DialogueParser : MonoBehaviour
         return 0;
     }
 
+    //gets the dialogue options at the line at the int lineNumber
+    //only used if player is speaking
     public string[] GetOptions(int lineNumber)
     {
         if (lineNumber < lines.Count)

@@ -1,4 +1,4 @@
-﻿using Script.Song;
+using Script.Song;
 using UnityEngine;
 
 namespace Script.Behaviour
@@ -21,6 +21,7 @@ namespace Script.Behaviour
                 new Vector2(transform.position.x, NoteManager.EndY),
                 (NoteManager.CurrentSongTime - Note.Time + NoteManager.DisplayedTimeBefore) / (NoteManager.DisplayedTimeBefore + NoteManager.DisplayedTimeAfter)
             );
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Script.Song;
+using Script.Song;
+using UnityEditor;
 using UnityEngine;
 
 namespace Tests.Interactive.NoteTimingTest
@@ -9,6 +10,9 @@ namespace Tests.Interactive.NoteTimingTest
 
         private float _nextNoteSpawnTime;
 
+        public float spacing;
+
+
         public override float CurrentSongTime
         {
             get { return Time.time; }
@@ -16,7 +20,7 @@ namespace Tests.Interactive.NoteTimingTest
 
         protected override float[] LanePositions
         {
-            get { return new[] {-6.2f, -5.4f, -4.6f, -3.8f}; }
+            get { return new[] { gameObject.transform.position.x, gameObject.transform.position.x + spacing, gameObject.transform.position.x + (2 * spacing), gameObject.transform.position.x + (3 * spacing) }; }
         }
 
         private void Start()
@@ -37,6 +41,16 @@ namespace Tests.Interactive.NoteTimingTest
 
                 _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval;
             }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Handles.color = Color.grey;
+            for (int i =0; i< LanePositions.Length; i++)
+            {
+
+            }
+            //Handles.DrawLine();
         }
     }
 }

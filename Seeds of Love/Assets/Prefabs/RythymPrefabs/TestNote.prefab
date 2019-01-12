@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitKey: 32
-  Detector: {fileID: 1955811302451266, guid: bd55961d546b9df468df01aece28a9f1, type: 2}
 --- !u!212 &212089657778371890
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -43,3 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 1613165935
+    locked: 0
+  - name: Foreground
+    uniqueID: 4033457235
+    locked: 0
+  - name: Middle
+    uniqueID: 1132953135
+    locked: 0
+  - name: Effects
+    uniqueID: 2386761141
+    locked: 0

@@ -937,7 +937,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 12
+        scalar: 20
         minScalar: 0
         maxCurve:
           serializedVersion: 2
@@ -1497,7 +1497,7 @@ ParticleSystem:
     flipV: 0
     randomRow: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 58ea6ad8cb6e74f42be22e4910509b5a, type: 3}
+    - sprite: {fileID: 21300000, guid: 867213f5cccf09b4dbb007ed026bb8a7, type: 3}
   VelocityModule:
     enabled: 1
     x:

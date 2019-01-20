@@ -9,11 +9,21 @@ public class EffectsManager : MonoBehaviour
 {
     // The Particle Prefab that will be created when the Note is hit
     public GameObject ParticleEffect;
+    public GameObject HeldEffect;
 
     private void Start()
     {
         // The OnHit event. Calls PlayEffect() when the note is Hit
         GetComponent<NoteJudgement>().OnHit += note => PlayEffect();
+    }
+
+    void Update()
+    {
+        if (GetComponent<NoteJudgement>().Note.Holding && Random.Range(0,4) == 1)
+        {
+            GameObject instance = (GameObject)Instantiate(HeldEffect, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+        }
     }
 
     /*
@@ -26,7 +36,7 @@ public class EffectsManager : MonoBehaviour
         Destroy(instance, 1f);
         if(GetComponent<NoteMovement>())
         {
-            GetComponent<NoteMovement>().enabled = false;
+            GetComponent<NoteMovement>().moving = false;
         }
         //GetComponent<NoteMovement>().Moving = false;
         GetComponent<Animator>().Play("Note_Hit_Animation");

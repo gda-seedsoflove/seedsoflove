@@ -68,7 +68,7 @@ public class DialogueParser : MonoBehaviour
                             lineEntry.options[i - 1] = lineData[i];
                         }
                     }
-                    else if (lineData[0] == "end")
+                    else if (lineData[0] == "end" || lineData[0] == "\n")
                     {
                         lineEntry = new DialogueLine("end", "", 0, "");
                     }
@@ -136,7 +136,6 @@ public class DialogueParser : MonoBehaviour
         {
             return lines[lineNumber].options;
         }
-
         return new string[0];
     }
 }

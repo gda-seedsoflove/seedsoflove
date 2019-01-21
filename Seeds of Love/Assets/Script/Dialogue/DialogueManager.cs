@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour {
     public Animator animator;
 
     //initializes variables, triggers start animation, and starts dialogue
-    public void StartDialogue ()
+    public void Start()
     {
         dialogue = "";
         characterName = "";
@@ -38,10 +38,21 @@ public class DialogueManager : MonoBehaviour {
 
         animator.SetBool("IsOpen", true);
 
+
         ShowDialogue();
     }
 
-    //connected to continue button; shows current line, increments, and updates UI
+
+    //waits for keyboard input so user can advance with click or Space
+    void Update()
+    {
+        if ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
+        {
+            ShowDialogue();
+        }
+    }
+
+    //shows current line, increments, and updates UI
     public void ShowDialogue()
     {
         if(!playerTalking)
@@ -126,7 +137,8 @@ public class DialogueManager : MonoBehaviour {
     {
         for (int i = 0; i < options.Length; i++)
         {
-            GameObject button = (GameObject)Instantiate(choiceBox);
+            Debug.Log("we are here we are here");
+            GameObject button = Instantiate(choiceBox);
             Button b = button.GetComponent<Button>();
             ChoiceButton cb = button.GetComponent<ChoiceButton>();
             cb.SetText(options[i].Split(':')[0]);

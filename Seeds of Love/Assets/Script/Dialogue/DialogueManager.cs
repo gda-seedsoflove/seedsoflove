@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour {
     string[] options;
     public bool playerTalking;
     List<Button> buttons = new List<Button>();
+    public Canvas thisCanvas;
 
     public Text nameText;
     public Text dialogueText;
@@ -70,7 +71,7 @@ public class DialogueManager : MonoBehaviour {
     {
         if (characterName != "")
         {
-            GameObject character = GameObject.Find(characterName);
+            var character = GameObject.Find(characterName);
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = null;
         }
@@ -94,6 +95,7 @@ public class DialogueManager : MonoBehaviour {
         }
         else
         {
+            Debug.Log("is called 1");
             playerTalking = true;
             characterName = "";
             dialogue = "";
@@ -109,7 +111,7 @@ public class DialogueManager : MonoBehaviour {
     {
         if (characterName != "")
         {
-            GameObject character = GameObject.Find(characterName);
+            var character = GameObject.Find(characterName);
 
             SetSpritePositions(character);
 
@@ -135,19 +137,23 @@ public class DialogueManager : MonoBehaviour {
     //creates buttons for player inputs
     void CreateButtons()
     {
+        int xPos = -150;
+        int yPos = -180;
+
         for (int i = 0; i < options.Length; i++)
         {
-            Debug.Log("we are here we are here");
             GameObject button = Instantiate(choiceBox);
             Button b = button.GetComponent<Button>();
             ChoiceButton cb = button.GetComponent<ChoiceButton>();
             cb.SetText(options[i].Split(':')[0]);
             cb.option = options[i].Split(':')[1];
             cb.box = this;
-            b.transform.SetParent(this.transform);
-            b.transform.localPosition = new Vector3(0, -25 + (i * 50));
-            b.transform.localScale = new Vector3(1, 1, 1);
+            
+            cb.transform.SetParent(thisCanvas.transform);
+            RectTransform transform = b.gameObject.GetComponent<RectTransform>();
+            transform.anchoredPosition = new Vector2(xPos + (i * 150), yPos);
             buttons.Add(b);
+            Debug.Log("Adding buttons");
         }
     }
 
@@ -167,10 +173,10 @@ public class DialogueManager : MonoBehaviour {
     //removes unneeded buttons
     void ClearButtons()
     {
-        for (int i = 0; i < buttons.Count; i++)
+        while(buttons.Count > 0)
         {
-            print("Clearing buttons");
-            Button b = buttons[i];
+            Debug.Log("is called 4, playerTalking = " + playerTalking);
+            Button b = buttons[0];
             buttons.Remove(b);
             Destroy(b.gameObject);
         }

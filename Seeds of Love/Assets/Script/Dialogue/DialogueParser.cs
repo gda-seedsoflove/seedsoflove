@@ -30,7 +30,7 @@ public class DialogueParser : MonoBehaviour
     }
 
     //list of lines that makes up the entirety of dialogue for a scene
-    List<DialogueLine> lines;
+    List<DialogueLine> lines = new List<DialogueLine>();
 
     //loads the file for this scene, initializes the list of lines, and loads the dialogue in
     private void Start()

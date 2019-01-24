@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,11 @@ public class ChoiceButton : MonoBehaviour {
     public string option;
     public DialogueManager box;
 
-	public void SetText(string newText)
+    private void Start()
+    {
+        box = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+    }
+    public void SetText(string newText)
     {
         this.GetComponentInChildren<Text>().text = newText;
     }

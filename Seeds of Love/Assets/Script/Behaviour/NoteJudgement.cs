@@ -18,6 +18,8 @@ namespace Script.Behaviour
 
         private float releasebuffertime; //Buffering the release input to avoid misregistered presses
 
+        private bool touched;       //Will automatically "Hit" the note at hit time
+
         private void Start()
         {
             // Disable this behaviour after the note is hit once. It doesn't
@@ -65,6 +67,18 @@ namespace Script.Behaviour
                 && Note.Currtime < Note.HitTimeThreshold
                 && dlane == Note.Lane)
                 {
+                    if (!Note.isTouchNote)
+                    {
+                        OnHit(gameObject);
+                    }
+                    else
+                    {
+                        touched = true;
+                    }
+                }
+
+                if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold/4)
+                {
                     OnHit(gameObject);
                 }
             }
@@ -87,6 +101,10 @@ namespace Script.Behaviour
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     OnHit(gameObject);
                 }
+                else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
+                {
+                    GetComponent<HoldNoteScript>().online = true;
+                }
 
                 if (OnHit != null && bufferedtime > 0 && Note.Holding == false
                 && Note.Currtime > -Note.HitTimeThreshold
@@ -98,7 +116,12 @@ namespace Script.Behaviour
                     Note.Holding = true;
                     if (GetComponent<HoldNoteScript>())
                     {
+                        Vector2 pos = GetComponent<HoldNoteScript>().bottom.transform.position;
+                        float topy = GetComponent<HoldNoteScript>().top.transform.position.y;
+                        //GetComponent<HoldNoteScript>().bottom.transform.position = new Vector2(pos.x, NoteManager.transform.position.y - NoteManager.EndY);
                         GetComponent<HoldNoteScript>().held = true;
+                        transform.position = new Vector2(pos.x, NoteManager.transform.position.y - NoteManager.EndY);
+                        GetComponent<HoldNoteScript>().top.transform.position = new Vector2(pos.x, topy);
                     }
                     if (GetComponent<NoteMovement>())
                     {

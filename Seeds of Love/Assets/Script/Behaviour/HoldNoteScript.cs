@@ -12,6 +12,7 @@ public class HoldNoteScript : MonoBehaviour {
 
     public float speed;
     public bool held = false;
+    public bool online;         //When to top of the hold note passes the line.
 
     public float length;
 
@@ -48,7 +49,10 @@ public class HoldNoteScript : MonoBehaviour {
 
         if (held)
         {
-            top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
+            if (online == false)
+            {
+                top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
+            }
         }
         else
         {

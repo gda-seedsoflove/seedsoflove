@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 1391387618876878, guid: 36c4bf4cca1bbee419eb1ac51e221316,
     type: 2}
+  HitEffect: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114263218091796868
 MonoBehaviour:

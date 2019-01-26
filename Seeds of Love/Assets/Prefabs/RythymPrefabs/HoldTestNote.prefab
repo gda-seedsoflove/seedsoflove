@@ -93,6 +93,7 @@ MonoBehaviour:
   bottom: {fileID: 0}
   speed: 0
   held: 0
+  online: 0
   length: 3
   lr: {fileID: 0}
 --- !u!114 &114390592664406716
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 1242121508986312, guid: ad6d0a34036d83241b7b75931f806021,
     type: 2}
+  HitEffect: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114451954375200874
 MonoBehaviour:

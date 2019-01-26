@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114236231204697560, guid: 7f2880850e3c44348896feedcdf8797e,
         type: 2}
       propertyPath: SpawnTimeInterval
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 114236231204697560, guid: 7f2880850e3c44348896feedcdf8797e,
         type: 2}

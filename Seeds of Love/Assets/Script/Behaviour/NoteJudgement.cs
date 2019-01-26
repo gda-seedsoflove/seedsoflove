@@ -77,7 +77,7 @@ namespace Script.Behaviour
                     }
                 }
 
-                if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold/4)
+                if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16)
                 {
                     OnHit(gameObject);
                 }

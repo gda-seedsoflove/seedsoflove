@@ -9,6 +9,7 @@ public class EffectsManager : MonoBehaviour
 {
     // The Particle Prefab that will be created when the Note is hit
     public GameObject ParticleEffect;
+    public GameObject HitEffect;
     public GameObject HeldEffect;
 
     private void Start()
@@ -34,7 +35,12 @@ public class EffectsManager : MonoBehaviour
     {
         GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
         Destroy(instance, 1f);
-        if(GetComponent<NoteMovement>())
+        if (HitEffect)
+        {
+            GameObject instance2 = (GameObject)Instantiate(HitEffect, transform.position, Quaternion.identity);
+            Destroy(instance2, 1f);
+        }
+        if (GetComponent<NoteMovement>())
         {
             GetComponent<NoteMovement>().moving = false;
         }

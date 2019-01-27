@@ -423,7 +423,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541830657}
-        m_MethodName: PrintDebugInfo
+        m_MethodName: LifeHackButtonCoroutine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1036,7 +1036,10 @@ MonoBehaviour:
   lane: {fileID: 1691460747}
   type: {fileID: 14734946}
   time: {fileID: 1492695085}
-  filepath: ..\..\Beatmaps\example.txt
+  spawnY: 0
+  bottomY: 0
+  speed: 0
+  filepath: Assets/Beatmaps/example.txt
 --- !u!1 &1691460745
 GameObject:
   m_ObjectHideFlags: 0

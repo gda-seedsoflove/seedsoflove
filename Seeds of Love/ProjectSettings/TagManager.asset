@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Everything Else
+    uniqueID: 2309394479
+    locked: 0
+  - name: 'Canvas #1'
+    uniqueID: 1123772187
+    locked: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -35,13 +36,12 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
 
+
         lineNum = 0;
 
         animator.SetBool("IsOpen", true);
 
-        Debug.Log("before");
         ShowDialogue();
-        Debug.Log("after");
     }
 
 
@@ -61,7 +61,6 @@ public class DialogueManager : MonoBehaviour {
         {
             ResetImages();
             ParseLine();
-            Debug.Log("Line Number: " + lineNum);
             lineNum++;
         }
         

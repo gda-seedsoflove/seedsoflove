@@ -32,19 +32,17 @@ public class DialogueParser : MonoBehaviour
     //list of lines that makes up the entirety of dialogue for a scene
     List<DialogueLine> lines = new List<DialogueLine>();
 
-    //loads the file for this scene, initializes the list of lines, and loads the dialogue in
-    private void Start()
+    //loads the file for this scene and loads the dialogue in
+    private void Awake()
     {
         Scene thisScene = SceneManager.GetActiveScene();
         string file = "Assets/DialogueText/" + thisScene.name + "_Dialogue.txt";
-
-        lines = new List<DialogueLine>();
 
         LoadDialogue(file);
     }
 
     //parses text file for each line of dialogue, turns them into instances of DialogueLine and adds them to the list of lines
-    void LoadDialogue(string filename)
+    public void LoadDialogue(string filename)
     {
         string line;
         StreamReader r = new StreamReader(filename);

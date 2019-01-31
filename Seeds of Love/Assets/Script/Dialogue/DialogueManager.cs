@@ -39,8 +39,9 @@ public class DialogueManager : MonoBehaviour {
 
         animator.SetBool("IsOpen", true);
 
-
+        Debug.Log("before");
         ShowDialogue();
+        Debug.Log("after");
     }
 
 
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour {
         {
             ResetImages();
             ParseLine();
+            Debug.Log("Line Number: " + lineNum);
             lineNum++;
         }
         
@@ -95,12 +97,11 @@ public class DialogueManager : MonoBehaviour {
         }
         else
         {
-            Debug.Log("is called 1");
             playerTalking = true;
-            characterName = "";
-            dialogue = "";
-            pose = 0;
-            position = "";
+            //characterName = "";
+            //dialogue = "";
+            //pose = 0;
+            //position = "";
             options = parser.GetOptions(lineNum);
             CreateButtons();
         }
@@ -153,7 +154,6 @@ public class DialogueManager : MonoBehaviour {
             RectTransform transform = b.gameObject.GetComponent<RectTransform>();
             transform.anchoredPosition = new Vector2(xPos + (i * 150), yPos);
             buttons.Add(b);
-            Debug.Log("Adding buttons");
         }
     }
 
@@ -163,11 +163,11 @@ public class DialogueManager : MonoBehaviour {
         if(!playerTalking)
         {
             ClearButtons();
+            nameText.text = characterName;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(dialogue));
         }
 
-        nameText.text = characterName;
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(dialogue));
     }
 
     //removes unneeded buttons
@@ -175,7 +175,6 @@ public class DialogueManager : MonoBehaviour {
     {
         while(buttons.Count > 0)
         {
-            Debug.Log("is called 4, playerTalking = " + playerTalking);
             Button b = buttons[0];
             buttons.Remove(b);
             Destroy(b.gameObject);

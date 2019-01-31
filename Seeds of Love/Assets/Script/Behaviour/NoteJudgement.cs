@@ -99,7 +99,7 @@ namespace Script.Behaviour
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
-                    OnHit(gameObject);
+                    //OnHit(gameObject);
                 }
                 else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
                 {
@@ -122,6 +122,9 @@ namespace Script.Behaviour
                         GetComponent<HoldNoteScript>().held = true;
                         transform.position = new Vector2(pos.x, NoteManager.transform.position.y - NoteManager.EndY);
                         GetComponent<HoldNoteScript>().top.transform.position = new Vector2(pos.x, topy);
+                        GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1,1,.8f);
+                        GetComponent<HoldNoteScript>().lr.SetPosition(1, GetComponent<HoldNoteScript>().top.transform.position);
+                        GetComponent<HoldNoteScript>().lr.SetColors(new Color(1f, 1f, 1f), new Color(1f, 1f, 1f));
                     }
                     if (GetComponent<NoteMovement>())
                     {

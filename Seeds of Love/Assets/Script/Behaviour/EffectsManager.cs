@@ -48,5 +48,6 @@ public class EffectsManager : MonoBehaviour
         GetComponent<Animator>().Play("Note_Hit_Animation");
     }
 
+
 }
 

@@ -15,6 +15,9 @@ namespace Tests.Interactive.NoteTimingTest
 
         private float notetime;
 
+        /// Test variables
+        private float lastlane = 0;
+        ///
 
         public override float CurrentSongTime
         {
@@ -47,7 +50,13 @@ namespace Tests.Interactive.NoteTimingTest
                 );
             */
                 int type = Random.Range(0, 3);
-                CreateNote(notetime, Random.Range(0, LanePositions.Length), -notespeed, type);
+                int lane = Random.Range(0, LanePositions.Length);
+                if (Mathf.Abs(lane - lastlane) >= 3)
+                {
+                    lane = Random.Range(1, LanePositions.Length-1);
+                }
+                lastlane = lane;
+                CreateNote(notetime, lane, -notespeed, type);
 
                 _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval;
             }

@@ -31,8 +31,8 @@ public class HoldNoteScript : MonoBehaviour {
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.SetColors(Color.white, Color.white);
-        lr.SetWidth(0.5f, 0.5f);
+        lr.SetColors(new Color(.9f,.9f,.9f), new Color(.9f, .9f, .9f));
+        lr.SetWidth(0.75f, 0.75f);
         lr.sortingLayerName = "Foreground";
         lr.SetPosition(0, bottom.transform.position);
         lr.SetPosition(1, top.transform.position);
@@ -44,7 +44,8 @@ public class HoldNoteScript : MonoBehaviour {
         if (lr)
         {
             lr.SetPosition(0, bottom.transform.position);
-            lr.SetPosition(1, top.transform.position);
+            //lr.SetPosition(1, top.transform.position);
+            lr.SetPosition(1, new Vector2(top.transform.position.x, top.transform.position.y +(.1f*speed/10)));
         }
 
         if (held)
@@ -58,7 +59,7 @@ public class HoldNoteScript : MonoBehaviour {
         {
             bottom.transform.position = gameObject.transform.position;
             pos = bottom.transform.position;
-            top.transform.position = new Vector2(pos.x, pos.y + length);
+            //top.transform.position = new Vector2(pos.x, pos.y + length);
         }
     }
 }

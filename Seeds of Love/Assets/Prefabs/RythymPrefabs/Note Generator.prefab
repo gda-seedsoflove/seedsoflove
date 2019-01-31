@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotePrefab: {fileID: 1961062488577778, guid: f284214e856e3e74e82102f79a181f49, type: 2}
-  StartY: 5
+  StartY: 0
   EndY: -5
-  DisplayedTimeBefore: 2
+  DisplayedTimeBefore: 0
   DisplayedTimeAfter: 0.5
   HitTimeThreshold: 0.2
   SpawnTimeInterval: 1

@@ -47,6 +47,7 @@ public class BeatmapReader : MonoBehaviour
     // info on the next note, read from this in other classes
     [HideInInspector]
     public NoteData nextNote;
+    public bool songEnd; // whether the song is over
     
     void Start() 
     {
@@ -60,6 +61,7 @@ public class BeatmapReader : MonoBehaviour
             // initialize char buffers
             nextByte = new char[1];
             buffer = new char[8];
+            songEnd = false;
         
             CalculateDelay();
             StartCoroutine(GetMapData());
@@ -99,9 +101,17 @@ public class BeatmapReader : MonoBehaviour
                 
                 ConvertTiming(ref nextNote);
             }
-            else Debug.Log("end of file reached");
+            else 
+            {
+                Debug.Log("end of file reached");
+                songEnd = true;
+            }
         }
-        else Debug.Log("end of file reached");
+        else 
+        {
+            Debug.Log("end of file reached");
+            songEnd = true;
+        }
     }
     
     // reads the properties of the beatmap from the beginning of the file

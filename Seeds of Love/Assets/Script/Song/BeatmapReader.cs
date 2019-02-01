@@ -13,7 +13,7 @@ public struct NoteData
     public char type;  // a = hit, b = lane, 1 = hold begin, 2 = hold end
     public int measure; // raw measure/beat timing
     public int beat;
-    public float timing; // converted timing in seconds
+    public double timing; // converted timing in seconds
 }
 
 public class BeatmapReader : MonoBehaviour 
@@ -22,12 +22,13 @@ public class BeatmapReader : MonoBehaviour
     public Text lane;
     public Text type;
     public Text time;
+    public Text time2;
     
     // for calculating delay for spawning notes
-    public float spawnY;
-    public float bottomY;
-    public float speed;
-    private float delay;
+    public double spawnY;  // y coordinate of note's spawn position
+    public double bottomY; // y coordinate of note's hit position
+    public double speed;   // note speed in [whatever units unity uses] / second
+    private double delay;  // delay between spawning and hitting the note in seconds
     
     // objects to read from the beatmap file
     public string filepath;
@@ -55,21 +56,53 @@ public class BeatmapReader : MonoBehaviour
         {
             beatmap = file.Open(FileMode.Open, FileAccess.Read);
             reader = new StreamReader(beatmap, Encoding.UTF8);
+            
+            // initialize char buffers
+            nextByte = new char[1];
+            buffer = new char[8];
+        
+            CalculateDelay();
+            StartCoroutine(GetMapData());
         }
         else Debug.Log("file does not exist");
-        
-        // initialize char buffers
-        nextByte = new char[1];
-        buffer = new char[8];
-        
-        StartCoroutine(GetMapData());
 	}
-	
-	void Update() 
-    {
-        // might not need update loop for now, maybe later to deal with timing but
-        // frames might not be accurate timing
-	}
+    
+    // reads next note from the file stream, store in nextNote struct of this class
+    public IEnumerator GetNextNote()
+    {   
+        // if not at the end of file
+        if(!reader.EndOfStream)
+        {
+            // skip until a ( is found (this is always the start of a note)
+            yield return StartCoroutine(SkipUntilChar('('));
+        
+            if(!reader.EndOfStream)
+            {
+                // next byte is the lane
+                reader.Read(nextByte, 0, 1);
+                nextNote.lane = ConvertCharBuffer(nextByte, 1);
+                reader.Read(); // skip the next comma
+            
+                // next byte is the note type
+                reader.Read(nextByte, 0, 1);
+                nextNote.type = nextByte[0];
+                reader.Read(); // skip the next comma
+            
+                // read the next 3 bytes, this is measure #
+                reader.Read(buffer, 0, 3);
+                nextNote.measure = ConvertCharBuffer(buffer, 3);
+                reader.Read(); // skip : between measure and beat
+            
+                // read the next 2 bytes, this is beat #
+                reader.Read(buffer, 0, 2);
+                nextNote.beat = ConvertCharBuffer(buffer, 2);
+                
+                ConvertTiming(ref nextNote);
+            }
+            else Debug.Log("end of file reached");
+        }
+        else Debug.Log("end of file reached");
+    }
     
     // reads the properties of the beatmap from the beginning of the file
     private IEnumerator GetMapData()
@@ -108,41 +141,6 @@ public class BeatmapReader : MonoBehaviour
         else Debug.Log("end of file reached");
     }
     
-    // reads next note from the file stream, store in nextNote struct of this class
-    public IEnumerator GetNextNote()
-    {   
-        // if not at the end of file
-        if(!reader.EndOfStream)
-        {
-            // skip until a ( is found (this is always the start of a note)
-            yield return StartCoroutine(SkipUntilChar('('));
-        
-            if(!reader.EndOfStream)
-            {
-                // next byte is the lane
-                reader.Read(nextByte, 0, 1);
-                nextNote.lane = ConvertCharBuffer(nextByte, 1);
-                reader.Read(); // skip the next comma
-            
-                // next byte is the note type
-                reader.Read(nextByte, 0, 1);
-                nextNote.type = nextByte[0];
-                reader.Read(); // skip the next comma
-            
-                // read the next 3 bytes, this is measure #
-                reader.Read(buffer, 0, 3);
-                nextNote.measure = ConvertCharBuffer(buffer, 3);
-                reader.Read(); // skip : between measure and beat
-            
-                // read the next 2 bytes, this is beat #
-                reader.Read(buffer, 0, 2);
-                nextNote.beat = ConvertCharBuffer(buffer, 2);
-            }
-            else Debug.Log("end of file reached");
-        }
-        else Debug.Log("end of file reached");
-    }
-    
     // reads bytes from the stream until a target char is found
     private IEnumerator SkipUntilChar(char target)
     {
@@ -160,12 +158,6 @@ public class BeatmapReader : MonoBehaviour
                 break;
             }
         } while(nextByte[0] != target);
-    }
-    
-    // converts a note's measure:beat timing into seconds
-    private void ConvertTiming(NoteData n)
-    {
-        // do this later
     }
     
     // convert chars in a buffer to an int value    
@@ -186,6 +178,29 @@ public class BeatmapReader : MonoBehaviour
         return result; 
     }
     
+    // calculates the delay between when the note spawns and when it should be hit
+    private void CalculateDelay()
+    {
+        // time = distance / velocity
+        delay = Math.Abs(bottomY - spawnY);
+        delay /= Math.Abs(speed);
+    }
+    
+    // converts a note's measure:beat timing into seconds
+    private void ConvertTiming(ref NoteData n)
+    {
+        int bps = bpm / 60; // convert to beats per second
+        
+        // raw beat number = (measures * beats/measure) + (beat / subdivisions)
+        // mathematically, the 1st measure should be the "0th" measure, likewise with beat
+        double totalBeat = (n.measure - 1) * timeSigTop;
+        totalBeat += ((n.beat - 1) / subdivisions);
+        
+        // timing = (raw beat num / beats/sec) - delay
+        n.timing = totalBeat / bps;
+        n.timing -= delay;
+    }
+    
     public void LifeHackButtonCoroutine()
     {
         StartCoroutine(PrintDebugInfo());
@@ -197,5 +212,6 @@ public class BeatmapReader : MonoBehaviour
         lane.text = nextNote.lane.ToString();
         type.text = nextNote.type.ToString();
         time.text = nextNote.measure.ToString() + ":" + nextNote.beat.ToString();
+        time2.text = nextNote.timing.ToString();
     }
 }

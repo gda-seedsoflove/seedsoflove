@@ -20,12 +20,21 @@ namespace Script.Behaviour
 
         private bool touched;       //Will automatically "Hit" the note at hit time
 
+        private bool holdingspace;
+
+        private int lastlane;
+
+        private int currentlane;
+
+        private float lastlanebuffer;
+
         private void Start()
         {
             // Disable this behaviour after the note is hit once. It doesn't
             // make sense to hit a note multiple times
             OnHit += _ => enabled = false;
-
+            lastlane = 0;
+            currentlane = 0;
         }
 
         private void Update()
@@ -36,8 +45,10 @@ namespace Script.Behaviour
             }
             if (Input.GetKeyUp(HitKey) && Note.Holding == true)
             {
-                releasebuffertime = .1f;
+                holdingspace = false;
+                releasebuffertime = .15f;
             }
+            
             /**
             if (OnHit != null
                 && Input.GetKeyDown(HitKey)
@@ -58,6 +69,20 @@ namespace Script.Behaviour
             {
                 // Looks for the Detector and checks if it has the Note detector component;
                 dlane = GameObject.FindGameObjectWithTag("Detector").GetComponent<NoteDetector>().Lane;
+                if (lastlanebuffer >= 0)
+                {
+                    lastlanebuffer -= Time.deltaTime;
+                    if(lastlanebuffer <= 0)
+                    {
+                        lastlane = dlane;
+                    }
+                }
+                if (dlane != currentlane)
+                {
+                    lastlane = currentlane;
+                    currentlane = dlane;
+                    lastlanebuffer = .08f;
+                }
             }
 
             if (!Note.isHoldNote)
@@ -65,7 +90,7 @@ namespace Script.Behaviour
                 if (OnHit != null && (bufferedtime > 0 || Note.isTouchNote)
                 && Note.Currtime > -Note.HitTimeThreshold
                 && Note.Currtime < Note.HitTimeThreshold
-                && dlane == Note.Lane)
+                && (dlane == Note.Lane || (Note.Lane == lastlane && lastlanebuffer > 0)))
                 {
                     if (!Note.isTouchNote)
                     {
@@ -85,16 +110,16 @@ namespace Script.Behaviour
             else
             {
                 if (OnHit != null && Note.Holding == true
-                && ((Note.Currtime > -Note.HitTimeThreshold
-                && Note.Currtime < Note.HitTimeThreshold) && releasebuffertime >0)
-                && dlane == Note.Lane)
+                && ((Note.Currtime > -Note.HitTimeThreshold*2
+                && Note.Currtime < Note.HitTimeThreshold) && releasebuffertime > 0)
+                && (dlane == Note.Lane || (Note.Lane == lastlane && lastlanebuffer > 0)))
                 {
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     OnHit(gameObject);
                 }
-                else if (OnHit != null && Note.Holding == true && (releasebuffertime > 0 || dlane != Note.Lane))
+                else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || dlane != Note.Lane) && (holdingspace == false || dlane != Note.Lane))
                 {
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
@@ -105,14 +130,17 @@ namespace Script.Behaviour
                 {
                     GetComponent<HoldNoteScript>().online = true;
                 }
+                releasebuffertime -= Time.deltaTime;
+
 
                 if (OnHit != null && bufferedtime > 0 && Note.Holding == false
                 && Note.Currtime > -Note.HitTimeThreshold
                 && Note.Currtime < Note.HitTimeThreshold
                 && dlane == Note.Lane)
                 {
-                    bufferedtime = 0;
-                    Note.Currtime = Note.Currtime + NoteManager.SpawnTimeInterval/2 * Note.Length;
+                    //bufferedtime = 0;
+                    holdingspace = true;
+                    Note.Currtime = Note.Currtime +  Note.Length/-Note.Speed;
                     Note.Holding = true;
                     if (GetComponent<HoldNoteScript>())
                     {
@@ -135,6 +163,9 @@ namespace Script.Behaviour
 
             }
             bufferedtime -= Time.deltaTime;
+
+            
+
         }
     }
 }

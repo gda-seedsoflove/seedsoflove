@@ -44,7 +44,8 @@ namespace Script.Song
             {
                 noteObject = Instantiate(HoldNotePrefab);
                 noteObject.GetComponent<HoldNoteScript>().speed = speed;
-                noteObject.GetComponent<HoldNoteScript>().length = -speed * SpawnTimeInterval / 2;
+                noteObject.GetComponent<HoldNoteScript>().length = -speed * SpawnTimeInterval;
+                note.setHoldLength(noteObject.GetComponent<HoldNoteScript>().length);
             }
             else
             {

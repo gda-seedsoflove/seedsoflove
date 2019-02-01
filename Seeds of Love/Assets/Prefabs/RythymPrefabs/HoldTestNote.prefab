@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3b4b0ed209e8b43af295c7ae55641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Top: {fileID: 1876895692458896, guid: 9dea9317de10a7f46ba8dab95ad6d458, type: 2}
-  Bottom: {fileID: 1776017508130442, guid: 49ae6f6556450db4ea5e8c4e90093bb3, type: 2}
+  Top: {fileID: 1461075538462388, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
+  Bottom: {fileID: 1461075538462388, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
   top: {fileID: 0}
   bottom: {fileID: 0}
   speed: 0

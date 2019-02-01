@@ -20,7 +20,14 @@ namespace Script.Behaviour
             // Self-destruct if the note is outside of the displayed time range
             if (Note.Currtime < -Note.HitTimeThreshold - NoteManager.DisplayedTimeAfter)
             {
-                Destroy(gameObject);
+                if (Note.isHoldNote && (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter))
+                {
+
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
             Note.Currtime = Note.Currtime -= Time.deltaTime;
             // Set the current position of the note by interpolating between
@@ -54,9 +61,11 @@ namespace Script.Behaviour
                 {
                     Handles.color = Color.blue;
                 }
-                float length = NoteManager.SpawnTimeInterval * Note.Speed * Note.Length/2;
-                Handles.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - length));
-                Handles.DrawSphere(1,new Vector2(transform.position.x, transform.position.y - length +.2f),Quaternion.identity,.6f);
+                //float length = NoteManager.SpawnTimeInterval * Note.Speed * Note.Length;
+                float length = Note.Length;
+                Handles.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + length));
+                //Handles.DrawSphere(1,new Vector2(transform.position.x, transform.position.y - length +.2f),Quaternion.identity,.6f);
+                Handles.DrawWireDisc(new Vector2(transform.position.x, transform.position.y + length), Vector3.back,.5f);
             }
         }
     }

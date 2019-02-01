@@ -33,8 +33,11 @@ public class EffectsManager : MonoBehaviour
      */
     public void PlayEffect()
     {
-        GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
-        Destroy(instance, 1f);
+        if (ParticleEffect)
+        {
+            GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+        }
         if (HitEffect)
         {
             GameObject instance2 = (GameObject)Instantiate(HitEffect, transform.position, Quaternion.identity);

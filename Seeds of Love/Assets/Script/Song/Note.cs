@@ -10,7 +10,7 @@ namespace Script.Song
         public bool isTouchNote { get; set;}
 
         public bool isHoldNote { get; set; }
-        public int Length { get; set; }
+        public float Length { get; set; }
         public bool Holding { get; set; }
 
         public void setType(int type)
@@ -29,7 +29,7 @@ namespace Script.Song
             }
         }
 
-        public void setHoldLength(int length)
+        public void setHoldLength(float length)
         {
             if (length>0 && isHoldNote)
             {

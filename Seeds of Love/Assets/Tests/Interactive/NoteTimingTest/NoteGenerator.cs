@@ -1,3 +1,4 @@
+using System.Collections;
 using Script.Song;
 using UnityEditor;
 using UnityEngine;
@@ -13,12 +14,22 @@ namespace Tests.Interactive.NoteTimingTest
 
         public float notespeed;
 
+        private BeatmapReader BMReader;
+
         private float notetime;
+
+        public float time;
+
+        public bool random;
+
+        private float delay;    //Time it takes for the note to fall down
 
         /// Test variables
         private float lastlane = 0;
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
+
+        private int count = 0;
         ///
 
         public override float CurrentSongTime
@@ -31,15 +42,77 @@ namespace Tests.Interactive.NoteTimingTest
             get { return new[] { gameObject.transform.position.x, gameObject.transform.position.x + spacing, gameObject.transform.position.x + (2 * spacing), gameObject.transform.position.x + (3 * spacing) }; }
         }
 
+        private void Awake()
+        {
+            if (GameObject.FindGameObjectWithTag("MusicPlayer"))
+            {
+                VolumeValueChange bgp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<VolumeValueChange>();
+                bgp.delay = Mathf.Abs(EndY / notespeed);
+            }
+        }
+
         private void Start()
         {
+            BMReader = GetComponent<BeatmapReader>();
+            BMReader.GetNextNote(); //Initialize first note
+
             _nextNoteSpawnTime = Time.time;
+            delay = Mathf.Abs(EndY / notespeed); // time it takes for a note to fall down.
+
+
         }
 
         private void Update()
         {
-            RandomSpawn();
-        
+            if (!random)
+            {
+                SpawnNotes();
+            }
+            else
+            {
+                RandomSpawn();
+            }
+
+        }
+
+
+        /**
+         *  Spawns Notes from the BeatMapReader assuming from the same object. 
+         */
+        public void SpawnNotes()
+        {
+            BMReader = GetComponent<BeatmapReader>();
+
+            while (BMReader.songEnd == false)
+            {
+                if (time >= BMReader.nextNote.timing)//Loops until all notes at the same time or less are spawned.
+                {
+                    //Debug.Log(BMReader.nextNote.timing);
+                    NoteData note = BMReader.nextNote;
+                    notetime = Mathf.Abs(EndY / notespeed);
+
+                    float holdtime = 0;
+                    if (note.type == '1')
+                    {
+                        double startnotetiming = note.timing;
+                        BMReader.GetNextNote();                     //If the note is the '1' or startholdnote, then it will assume the next note is the end.
+                        NoteData endnote = BMReader.nextNote;
+                        double endnotetiming = endnote.timing;  
+                        holdtime = Mathf.Abs((float)endnotetiming - (float)startnotetiming);    //Difference between the notes for hold length
+                    }
+
+                    CreateNote(notetime, note.lane - 1, -notespeed, note.type, holdtime);
+
+                    BMReader.GetNextNote();
+
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            time = time + Time.deltaTime;
         }
 
         /**
@@ -57,7 +130,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, 1);
+                CreateNote(notetime, lane, -notespeed, 'b', SpawnTimeInterval);
                 nextlane = Random.Range(0, LanePositions.Length);
 
                 touchspawning = touchspawning - 1;
@@ -75,7 +148,24 @@ namespace Tests.Interactive.NoteTimingTest
                 notetime = Mathf.Abs(EndY / notespeed);
                 HitTimeThreshold = Mathf.Abs(notetime - (EndY + hitwindow) / notespeed); // Calculates the time frame the note has to be hit
 
-                int type = Random.Range(0, 3);
+                int num = Random.Range(0, 3);
+                char type = 'a';
+                if (num == 0)
+                {
+                    type = 'a';
+                }
+                else if (num == 1)
+                {
+                    type = 'b';
+                }
+                else if (num == 2)
+                {
+                    type = '1';
+                }
+                else
+                {
+                    type = '2';
+                }
                 int lane = nextlane;
                 // Determines the next lane the note will spawn in not 3 lanes apart.
                 if (Mathf.Abs(lane - lastlane) >= 3)
@@ -84,20 +174,20 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, type);
+                CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
                 nextlane = Random.Range(0, LanePositions.Length);
 
-                if (type == 1)//touchnote
+                if (type == 'b')//touchnote
                 {
                     if (Random.Range(0, 4) == 0)
                     {
                         if (Random.Range(0, 2) == 0)
                         {
-                            touchspawning = 3;
+                            touchspawning = 2;
                         }
                         else
                         {
-                            touchspawning = 6;
+                            touchspawning = 5;
                         }
                         _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval / 3;
                     }
@@ -107,12 +197,12 @@ namespace Tests.Interactive.NoteTimingTest
                         {
                             lane = LaneNextTo(lane);
                             nextlane = lane;
-                            CreateNote(notetime, lane, -notespeed, type);
+                            CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
                         }
                         _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval;
                     }
                 }
-                else if (type == 2) // Hold note, wait for 2 spawn intervals so a note wont be spawned next to the end
+                else if (type == '1') // Hold note, wait for 2 spawn intervals so a note wont be spawned next to the end
                 {
                     _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval * 2;
                 }

@@ -23,7 +23,7 @@ namespace Script.Song
         protected abstract float[] LanePositions { get; }
 
         //Types: 0 = Normal Note (On top of and hit) 1 = Touch Note (Just on top of) 2 = Hold Note (On top of and hold)
-        protected void CreateNote(float time, int lane, float speed, int type)
+        protected Note CreateNote(float time, int lane, float speed, char type, float holdtime)
         {
             Note note = new Note
             {
@@ -44,7 +44,7 @@ namespace Script.Song
             {
                 noteObject = Instantiate(HoldNotePrefab);
                 noteObject.GetComponent<HoldNoteScript>().speed = speed;
-                noteObject.GetComponent<HoldNoteScript>().length = -speed * SpawnTimeInterval;
+                noteObject.GetComponent<HoldNoteScript>().length = -speed * holdtime;
                 note.setHoldLength(noteObject.GetComponent<HoldNoteScript>().length);
             }
             else
@@ -61,6 +61,8 @@ namespace Script.Song
             NoteJudgement noteJudgement = noteObject.GetComponent<NoteJudgement>();
             noteJudgement.NoteManager = this;
             noteJudgement.Note = note;
+
+            return note;
         }
     }
 }

@@ -31,8 +31,10 @@ public class HoldNoteScript : MonoBehaviour {
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.SetColors(new Color(.95f,.95f,.95f), new Color(.95f, .95f, .95f));
-        lr.SetWidth(0.75f, 0.75f);
+        lr.startColor = new Color(.95f, .95f, .95f);
+        //lr.SetColors(new Color(.95f,.95f,.95f), new Color(.95f, .95f, .95f));
+        lr.startWidth = .75f;
+        //lr.SetWidth(0.75f, 0.75f);
         lr.sortingLayerName = "Foreground";
         lr.SetPosition(0, bottom.transform.position);
         lr.SetPosition(1, top.transform.position);

@@ -16,20 +16,31 @@ namespace Script.Behaviour
         }
 
         private void Update()
-        {         
+        {
             // Self-destruct if the note is outside of the displayed time range
-            if (Note.Currtime < -Note.HitTimeThreshold - NoteManager.DisplayedTimeAfter)
+            if (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)
             {
-                if (Note.isHoldNote && (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter))
-                {
-
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
+            else if (Note.Currtime <= 0 && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))
+            {
+                GetComponent<Animator>().Play("Fade_Out_Animation");
+            }
+            else if (Note.isHoldNote && Note.Currtime < -Note.HitTimeThreshold && Note.Holding == false)
+            {
+                try
+                {
+                    Color c = GetComponent<HoldNoteScript>().lr.startColor;
+                    //Debug.Log(1 - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().lr.startColor = new Color(c.r, c.g, c.b, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().lr.endColor = new Color(c.r, c.g, c.b, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                }
+                catch { }
+            }
+
             Note.Currtime = Note.Currtime -= Time.deltaTime;
+
             // Set the current position of the note by interpolating between
             // the start and end positions
             /**

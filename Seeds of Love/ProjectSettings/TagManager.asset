@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DialogueManager
   - Detector
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX

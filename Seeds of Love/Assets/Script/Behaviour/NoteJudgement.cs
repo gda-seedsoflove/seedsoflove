@@ -152,7 +152,8 @@ namespace Script.Behaviour
                         GetComponent<HoldNoteScript>().top.transform.position = new Vector2(pos.x, topy);
                         GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1,1,.8f);
                         GetComponent<HoldNoteScript>().lr.SetPosition(1, GetComponent<HoldNoteScript>().top.transform.position);
-                        GetComponent<HoldNoteScript>().lr.SetColors(new Color(1f, 1f, 1f), new Color(1f, 1f, 1f));
+                        GetComponent<HoldNoteScript>().lr.startColor = new Color(1f, 1f, 1f, 1);
+                        GetComponent<HoldNoteScript>().lr.endColor = new Color(1f, 1f, 1f, 1);
                     }
                     if (GetComponent<NoteMovement>())
                     {

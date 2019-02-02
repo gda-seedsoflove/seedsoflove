@@ -13,16 +13,36 @@ namespace Script.Song
         public float Length { get; set; }
         public bool Holding { get; set; }
 
-        public void setType(int type)
+        public char convertType(int type)
         {
-            if (type == 0) {
+            if (type == 0)
+            {
+                return 'a';
+            }
+            else if (type == 1)
+            {
+                return 'b';
+            }
+            else if (type == 2)
+            {
+                return '1';
+            }
+            else
+            {
+                return '2';
+            }
+        }
+
+        public void setType(char type)
+        {
+            if (type == 'a') {
                 //Do nothing, its a normal not
             }
-            else if(type == 1)
+            else if(type == 'b')
             {
                 isTouchNote = true;
             }
-            else if (type == 2)
+            else if (type == '1')
             {
                 Length = 1;
                 isHoldNote = true;

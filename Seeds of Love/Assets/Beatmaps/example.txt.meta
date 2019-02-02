@@ -1,7 +1,12 @@
-fileFormatVersion: 2
-guid: de97620051fcd924590123a61af19d93
-TextScriptImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+BPM: 88
+Time Signature: 4/4
+Subdivisions: 1
+
+(1,a,001:01)
+(1,a,001:02)
+(1,a,001:03)
+(1,a,001:04)
+(1,b,004:01)(2,b,004:01)
+                        (3,1,005:01)
+                        (3,2,005:03)
+                                    (4,a,006:01)

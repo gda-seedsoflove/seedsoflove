@@ -1,0 +1,10 @@
+Big;I'm here and I'm ready to party;0;R
+Gollum;This is a farm tho;0;L
+Big;This is a what;0;R
+Gollum;A farm.;1;L
+Big;Oh...shit;1;R
+Gollum;If there were two guys on the moon and one of them killed the other with a rock would that be fucked up or what?;1;L
+Player;Reset:line,0;Continue:line,7
+Big;Huh;2;R
+Gollum;Yeah;2;L
+end;

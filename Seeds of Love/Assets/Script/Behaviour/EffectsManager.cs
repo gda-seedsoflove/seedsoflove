@@ -35,13 +35,13 @@ public class EffectsManager : MonoBehaviour
      */
     public void PlayEffect()
     {
+        GameObject instance = null;
         if (ParticleEffect)
         {
-            GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+            instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
             Destroy(instance, 1f);
         }
 
-        GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
         GameObject instanceSound = (GameObject)Instantiate(SoundEffect, transform.position, Quaternion.identity);
         Destroy(instance, 1f);
         //vvv This part may need more post-merge adjustment

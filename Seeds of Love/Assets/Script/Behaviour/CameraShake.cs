@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour {
 
     public Camera mainCam;
-    private float shakeAmt = 20;                                     //influences the distance the camera moves from its position
+    private float shakeAmt = 1;                                     //influences the distance the camera moves from its position
     Vector3 originalPos = new Vector3(0, 0, -10);                   //the original position of the main camera
     
     void Awake()
@@ -20,7 +20,7 @@ public class CameraShake : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Shake(0.5f, 1f);
+            Shake(1f, 0.9f);
         }
     }
 
@@ -36,8 +36,11 @@ public class CameraShake : MonoBehaviour {
         if (shakeAmt > 0)
         {
             Vector3 cameraPos = mainCam.transform.position;
-            float shakeX = Random.value * shakeAmt * 2 - shakeAmt;                //how much the camera shakes in the x direction
-            float shakeY = Random.value * shakeAmt * 2 - shakeAmt;                //how much the camera shakes in the y direction
+            float shakeX = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the x direction
+            float shakeY = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the y direction
+            /*
+             * Do some if statements for the camera positions, but I am too lazy and tired to do math
+             */
             cameraPos.x += shakeX;
             cameraPos.y += shakeY;
 

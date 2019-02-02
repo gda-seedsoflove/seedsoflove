@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DialogueManager
   - Detector
+  - Fader
   layers:
   - Default
   - TransparentFX

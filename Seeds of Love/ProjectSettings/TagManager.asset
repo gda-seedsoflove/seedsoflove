@@ -52,6 +52,9 @@ TagManager:
   - name: Middle
     uniqueID: 1132953135
     locked: 0
+  - name: Top
+    uniqueID: 2814552959
+    locked: 0
   - name: Effects
     uniqueID: 2386761141
     locked: 0

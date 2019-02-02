@@ -9,6 +9,8 @@ public class EffectsManager : MonoBehaviour
 {
     // The Particle Prefab that will be created when the Note is hit
     public GameObject ParticleEffect;
+    //The Sound Prefab that will be created when the Note is hit
+    public GameObject SoundEffect;
     public GameObject HitEffect;
     public GameObject HeldEffect;
 
@@ -28,7 +30,7 @@ public class EffectsManager : MonoBehaviour
     }
 
     /*
-     * Creates the ParticleEffect prefab on the note and stops the note from moving
+     * Creates the ParticleEffect and Note_Hit_SFX prefab on the note and stops the note from moving
      * Animates the Note for the Note hit
      */
     public void PlayEffect()
@@ -38,11 +40,19 @@ public class EffectsManager : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
             Destroy(instance, 1f);
         }
+
+        GameObject instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+        GameObject instanceSound = (GameObject)Instantiate(SoundEffect, transform.position, Quaternion.identity);
+        Destroy(instance, 1f);
+        //vvv This part may need more post-merge adjustment
+        Destroy(instanceSound, 1f);
+
         if (HitEffect)
         {
             GameObject instance2 = (GameObject)Instantiate(HitEffect, transform.position, Quaternion.identity);
             Destroy(instance2, 1f);
         }
+        //^^^ This part may need more post-merge adjustment
         if (GetComponent<NoteMovement>())
         {
             GetComponent<NoteMovement>().moving = false;

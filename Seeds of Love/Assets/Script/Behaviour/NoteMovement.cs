@@ -20,6 +20,7 @@ namespace Script.Behaviour
             // Self-destruct if the note is outside of the displayed time range
             if (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)
             {
+                NoteManager.addScore(0, 1);
                 Destroy(gameObject);
             }
             else if (Note.Currtime <= 0 && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))

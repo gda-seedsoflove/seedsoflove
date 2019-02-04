@@ -95,6 +95,7 @@ namespace Script.Behaviour
                     if (!Note.isTouchNote)
                     {
                         OnHit(gameObject);
+                        NoteManager.addScore(1, 1);
                     }
                     else
                     {
@@ -105,6 +106,7 @@ namespace Script.Behaviour
                 if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16)
                 {
                     OnHit(gameObject);
+                    NoteManager.addScore(1, 1);
                 }
             }
             else
@@ -118,6 +120,7 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     OnHit(gameObject);
+                    NoteManager.addScore(.5f, 0); // completes the missing half of the note score.
                 }
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || dlane != Note.Lane) && (holdingspace == false || dlane != Note.Lane))
                 {
@@ -160,6 +163,7 @@ namespace Script.Behaviour
                         GetComponent<NoteMovement>().moving = false;
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                     }
+                    NoteManager.addScore(.5f,1);
                 }
 
             }

@@ -12,11 +12,14 @@ namespace Script.Song
         public GameObject HoldNotePrefab;
 
         public float EndY;
-        public float DisplayedTimeAfter;
-        public float hitwindow;
-        public float HitTimeThreshold;
+
+        [HideInInspector]
+        public float DisplayedTimeAfter, hitwindow, HitTimeThreshold;
 
         public float SpawnTimeInterval;
+
+        private float score;
+        private float fullscore;
 
         public abstract float CurrentSongTime { get; }
 
@@ -64,6 +67,20 @@ namespace Script.Song
             noteJudgement.Note = note;
 
             return note;
+        }
+
+        /**
+        * Adds score out of fullpoints. 1 and 1 is 100% 3 and 10 is 30%
+        */
+        public void addScore(float points, float fullpoints)
+        {
+            score += points;
+            fullscore += fullpoints;
+        }
+
+        public float GetScore()
+        {
+            return score / fullscore;
         }
     }
 }

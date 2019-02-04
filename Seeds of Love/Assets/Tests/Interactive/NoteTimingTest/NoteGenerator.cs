@@ -2,6 +2,7 @@ using System.Collections;
 using Script.Song;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Tests.Interactive.NoteTimingTest
 {
@@ -10,6 +11,7 @@ namespace Tests.Interactive.NoteTimingTest
 
         private float _nextNoteSpawnTime;
 
+        [HideInInspector]
         public float spacing;
 
         public float notespeed;
@@ -18,9 +20,12 @@ namespace Tests.Interactive.NoteTimingTest
 
         private float notetime;
 
+        [HideInInspector]
         public float time;
 
         public bool random;
+
+        public Text scoretext;
 
         private float delay;    //Time it takes for the note to fall down
 
@@ -29,7 +34,6 @@ namespace Tests.Interactive.NoteTimingTest
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
 
-        private int count = 0;
         ///
 
         public override float CurrentSongTime
@@ -67,6 +71,7 @@ namespace Tests.Interactive.NoteTimingTest
             if (!random)
             {
                 SpawnNotes();
+                scoretext.text = GetScore() + "" ;
             }
             else
             {
@@ -257,6 +262,7 @@ namespace Tests.Interactive.NoteTimingTest
                 return 1;
             }
         }
+
 
         private void OnDrawGizmosSelected()
         {

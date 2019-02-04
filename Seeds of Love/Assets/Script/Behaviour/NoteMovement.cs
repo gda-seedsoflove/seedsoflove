@@ -15,7 +15,7 @@ namespace Script.Behaviour
 
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             // Self-destruct if the note is outside of the displayed time range
             if (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)
@@ -55,7 +55,7 @@ namespace Script.Behaviour
                 transform.position = new Vector2(transform.position.x, transform.position.y + (Note.Speed * Time.deltaTime));
             }
         }
-        void FixedUpdate()
+        void Update()
         {
 
         }

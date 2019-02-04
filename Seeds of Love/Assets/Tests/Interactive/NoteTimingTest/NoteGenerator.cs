@@ -44,7 +44,7 @@ namespace Tests.Interactive.NoteTimingTest
 
         private void Awake()
         {
-            if (GameObject.FindGameObjectWithTag("MusicPlayer"))
+            if (GameObject.FindGameObjectWithTag("MusicPlayer") & !random)
             {
                 VolumeValueChange bgp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<VolumeValueChange>();
                 bgp.delay = Mathf.Abs(EndY / notespeed);
@@ -54,7 +54,7 @@ namespace Tests.Interactive.NoteTimingTest
         private void Start()
         {
             BMReader = GetComponent<BeatmapReader>();
-            BMReader.GetNextNote(); //Initialize first note
+            //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;
             delay = Mathf.Abs(EndY / notespeed); // time it takes for a note to fall down.
@@ -100,9 +100,11 @@ namespace Tests.Interactive.NoteTimingTest
                         double endnotetiming = endnote.timing;  
                         holdtime = Mathf.Abs((float)endnotetiming - (float)startnotetiming);    //Difference between the notes for hold length
                     }
-
-                    CreateNote(notetime, note.lane - 1, -notespeed, note.type, holdtime);
-
+                    //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
+                    if (note.lane >= 1 && note.lane <=4)
+                    {
+                        CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime);
+                    }
                     BMReader.GetNextNote();
 
                 }

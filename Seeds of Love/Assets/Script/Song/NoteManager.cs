@@ -52,6 +52,7 @@ namespace Script.Song
                 noteObject = Instantiate(NotePrefab);
             }
 
+            //Debug.Log("Lane:"+lane);
             noteObject.transform.position = new Vector2(LanePositions[lane], transform.position.y);
 
             NoteMovement noteMovement = noteObject.GetComponent<NoteMovement>();

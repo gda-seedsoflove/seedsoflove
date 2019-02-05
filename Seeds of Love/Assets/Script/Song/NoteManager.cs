@@ -80,7 +80,7 @@ namespace Script.Song
 
         public float GetScore()
         {
-            return score / fullscore;
+            return (score / fullscore);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Script.Song
         public float Length { get; set; }
         public bool Holding { get; set; }
 
+        public bool Hit { get; set; }
+
         public char convertType(int type)
         {
             if (type == 0)

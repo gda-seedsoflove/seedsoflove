@@ -95,18 +95,18 @@ namespace Script.Behaviour
                     if (!Note.isTouchNote)
                     {
                         OnHit(gameObject);
-                        NoteManager.addScore(1, 1);
                     }
                     else
                     {
                         touched = true;
                     }
+                    NoteManager.addScore(1, 1);
+                    Note.Hit = true;
                 }
 
                 if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16)
                 {
                     OnHit(gameObject);
-                    NoteManager.addScore(1, 1);
                 }
             }
             else
@@ -164,6 +164,7 @@ namespace Script.Behaviour
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                     }
                     NoteManager.addScore(.5f,1);
+                    Note.Hit = true;
                 }
 
             }

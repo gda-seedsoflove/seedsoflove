@@ -1,0 +1,52 @@
+Maria;(I think I know this guy);0;L
+Maria;(Yeah, isn't he the man that was helping abuela?);0;L
+Maria; Don't I know you?;0;L
+Bartender;Mhm...;0;R
+Maria;Did I see you at the farm?;0;L
+Bartender;Mhm...;0;R
+Maria;(Oh, cool.);0;L
+Maria;(Wait, what do I do now?);0;L
+Maria;(Quick, order something.);0;L
+Maria;Uhhh, can I get a bourbon, with a lemon wedge;0;L
+Bartender;...;0;R
+Maria;...;0;L
+Maria;...;0;L
+Maria;*Takes a sip and gags, spits it out*;0;L
+Bartender;You alright, kid?;0;R
+Maria;Yeah...;0;L
+Bartender;Here, have a sprite;0;R
+Maria;Thanks...;0;L
+Bartender;You’re still going to have to pay for the bourbon;0;R
+Maria;Okay…;0;L
+Maria;...;0;R
+Maria;You know, if you were a vegetable, you’d be a cute-cumber.;0;R
+Sunny;...;0;L
+Maria;(AAAAAAAAAAAAAAAA);0;R
+Maria;(THAT’S SO LAME);0;R
+Maria;(WHO THE HECK SAYS THAT?);0;R
+Maria;(WHERE CAN I HIDE?);0;R
+Sunny;That’s kinda funny;0;L
+Maria;(SHE LAUGHED!);0;R
+Maria;So… uhhh…, is it normal for a girl as pretty as you to be sitting alone?;0;R
+Sunny;I… I just got off of work…;0;L
+Sunny;And the bar was open;0;L
+Sunny;So I came in;0;L
+Sunny;Cause I like drinking here;0;L
+Sunny;Not that I’m an alcoholic, if that’s what you’re thinking;0;L
+Sunny;I just do the occasional social drinking;0;L
+Sunny;But you know… alone...;0;L
+Sunny;So…um…, why are you here?;0;L
+Maria;Just got off from working on the farm.;0;R
+Sunny;Oh, a farm?;0;L
+Maria;Yeah, you know, with all the dirt, and the tools…, and the carrots...;0;R
+Maria;(Come on Maria, figure out something to say);0;R
+Sunny;Whose farm is it?;0;L
+Maria;It’s my abuela’s. Her name is Rosa.;0;R
+Sunny;Oh! Rosa’s farm!;0;L
+Maria;You know it?;0;R
+Sunny;Yeah, it’s a big deal around here. Everyone’s proud of it! The first Mexican owned farm in (Whatever town/city this is)!;0;L
+Maria;Wow, I didn't even know that!";0;R
+Sunny;You know, I never got your name;0;L
+Maria;Maria Veracruz, pleased to meet you.;0;R
+Sunny;My name’s Sunny, I work at the middle school.;0;L
+

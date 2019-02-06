@@ -75,6 +75,14 @@ public class DialogueManager : MonoBehaviour {
             var character = GameObject.Find(characterName);
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = null;
+            if (position == "R")
+            {
+                currSprite.flipX = true;
+            }
+            else
+            {
+                currSprite.flipX = false;
+            }
         }
     }
 

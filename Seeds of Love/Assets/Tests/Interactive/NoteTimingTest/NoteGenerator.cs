@@ -35,7 +35,9 @@ namespace Tests.Interactive.NoteTimingTest
         private int nextlane = 0; //Where the next note will spawn
 
         ///
-
+        VolumeValueChange bgp;
+        private bool delaySet = false;
+        
         public override float CurrentSongTime
         {
             get { return Time.time; }
@@ -48,10 +50,9 @@ namespace Tests.Interactive.NoteTimingTest
 
         private void Awake()
         {
-            if (GameObject.FindGameObjectWithTag("MusicPlayer") & !random)
+            if(GameObject.FindGameObjectWithTag("MusicPlayer") & !random)
             {
-                VolumeValueChange bgp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<VolumeValueChange>();
-                bgp.delay = Mathf.Abs(EndY / notespeed);
+                bgp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<VolumeValueChange>();
             }
         }
 
@@ -62,11 +63,9 @@ namespace Tests.Interactive.NoteTimingTest
 
             _nextNoteSpawnTime = Time.time;
             delay = Mathf.Abs(EndY / notespeed); // time it takes for a note to fall down.
-
-
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!random)
             {
@@ -79,7 +78,6 @@ namespace Tests.Interactive.NoteTimingTest
             }
 
         }
-
 
         /**
          *  Spawns Notes from the BeatMapReader assuming from the same object. 
@@ -95,7 +93,7 @@ namespace Tests.Interactive.NoteTimingTest
                     //Debug.Log(BMReader.nextNote.timing);
                     NoteData note = BMReader.nextNote;
                     notetime = Mathf.Abs(EndY / notespeed);
-
+                    
                     float holdtime = 0;
                     if (note.type == '1')
                     {
@@ -111,7 +109,12 @@ namespace Tests.Interactive.NoteTimingTest
                         CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime);
                     }
                     BMReader.GetNextNote();
-
+                    if (!delaySet)
+                    {
+                        // Debug.Log(BMReader.nextNote.timing);
+                        bgp.delay = BMReader.nextNote.timing + BMReader.delay;
+                        delaySet = true;
+                    }
                 }
                 else
                 {

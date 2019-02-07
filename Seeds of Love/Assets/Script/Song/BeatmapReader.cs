@@ -28,7 +28,7 @@ public class BeatmapReader : MonoBehaviour
     public double spawnY;  // y coordinate of note's spawn position
     public double bottomY; // y coordinate of note's hit position
     public double speed;   // note speed in [whatever units unity uses] / second
-    private double delay;  // delay between spawning and hitting the note in seconds
+    public double delay;  // delay between spawning and hitting the note in seconds
 
     // objects to read from the beatmap file
     public string filepath;
@@ -198,16 +198,16 @@ public class BeatmapReader : MonoBehaviour
     // converts a note's measure:beat timing into seconds
     private void ConvertTiming(ref NoteData n)
     {
-        float bps = 60f/bpm; // convert to beats per second
+        double bps = bpm / 60.0f; // convert to beats per second
         //Debug.Log(bps);
         // raw beat number = (measures * beats/measure) + (beat / subdivisions)
         // mathematically, the 1st measure should be the "0th" measure, likewise with beat
         double totalBeat = (n.measure - 1) * timeSigTop;
-        totalBeat += ((n.beat - 1) / subdivisions) + timeSigBot - timeSigBot;
+        totalBeat += ((double)(n.beat - 1) / (double)subdivisions);
 
         // timing = (raw beat num / beats/sec) - delay
-        n.timing = totalBeat * bps;
-        //Debug.Log(n.timing);
+        n.timing = totalBeat / bps;
+        // Debug.Log(n.timing);
         n.timing -= delay;
     }
 

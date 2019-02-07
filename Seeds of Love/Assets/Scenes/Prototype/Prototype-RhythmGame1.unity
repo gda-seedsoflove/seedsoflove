@@ -479,7 +479,7 @@ Prefab:
     - target: {fileID: 114549606439221780, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
       propertyPath: speed
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114549606439221780, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
@@ -529,7 +529,7 @@ Prefab:
     - target: {fileID: 114072525610783770, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
       propertyPath: notespeed
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114072525610783770, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
@@ -541,6 +541,11 @@ Prefab:
       propertyPath: scoretext
       value: 
       objectReference: {fileID: 362018417}
+    - target: {fileID: 114549606439221780, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: filepath
+      value: Assets/Beatmaps/contrafact.txt
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}
   m_IsPrefabAsset: 0
@@ -621,6 +626,11 @@ Prefab:
     - target: {fileID: 1317211032872224, guid: 8aa49fffe9937874b89e1959df6fdabb, type: 2}
       propertyPath: m_TagString
       value: MusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977477531821048, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: delay
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa49fffe9937874b89e1959df6fdabb, type: 2}

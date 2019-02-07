@@ -9,7 +9,7 @@ public class VolumeValueChange : MonoBehaviour {
     // by dragging slider knob
     private float musicVolume = 1f;
 
-    public float delay;
+    public double delay;
 
 	// Use this for initialization
 	void Start () {

@@ -41,7 +41,7 @@ public class BeatmapReader : MonoBehaviour
     // beatmap info
     private int bpm;
     private int timeSigTop;
-    private int timeSigBot;
+    //private int timeSigBot;
     private int subdivisions;
 
     // info on the next note, read from this in other classes
@@ -157,7 +157,7 @@ public class BeatmapReader : MonoBehaviour
             timeSigTop = ConvertCharBuffer(nextByte, 1);
             reader.Read(); // skip / in time signature
             reader.Read(nextByte, 0, 1);
-            timeSigBot = ConvertCharBuffer(nextByte, 1);
+            //timeSigBot = ConvertCharBuffer(nextByte, 1);
 
             // skip label
             SkipUntilChar(':');

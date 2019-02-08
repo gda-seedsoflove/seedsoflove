@@ -228,6 +228,7 @@ public class NoteDetector : MonoBehaviour
  * Draws the bounds of the object denoted by lines
  *
  */
+    /**
     private void OnDrawGizmos()
     {
         if (origin != new Vector2(0, 0))
@@ -247,4 +248,5 @@ public class NoteDetector : MonoBehaviour
             }
         }
     }
+    */
 }

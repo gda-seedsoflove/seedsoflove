@@ -49,4 +49,6 @@ Maria;Wow, I didn't even know that!";0;R
 Sunny;You know, I never got your name;0;L
 Maria;Maria Veracruz, pleased to meet you.;0;R
 Sunny;My name’s Sunny, I work at the middle school.;0;L
-
+Maria;Do you want to dance?;0;R
+Sunny;Yeah!;0;L
+end;

@@ -63,7 +63,7 @@ namespace Script.Behaviour
         {
 
         }
-
+        /**
         private void OnDrawGizmos()
         {
             if (Note.isHoldNote)
@@ -83,5 +83,6 @@ namespace Script.Behaviour
                 Handles.DrawWireDisc(new Vector2(transform.position.x, transform.position.y + length), Vector3.back,.5f);
             }
         }
+        */
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 namespace Script.Behaviour
@@ -224,24 +224,26 @@ namespace Script.Behaviour
      * Draws the bounds of the object denoted by lines
      *
      */
-        private void OnDrawGizmos()
-        {
-            if (origin != new Vector2(0, 0))
-            {
-                Handles.color = Color.grey;
-                Handles.DrawWireDisc(Object.transform.position, Vector3.back, .02f);
-                if (freezex == false)
-                {
-                    Handles.DrawLine(new Vector2(origin.x - leftbound, origin.y),
-                        new Vector2(origin.x + rightbound, origin.y));
-                }
+        /**
+           private void OnDrawGizmos()
+           {
+               if (origin != new Vector2(0, 0))
+               {
+                   Handles.color = Color.grey;
+                   Handles.DrawWireDisc(Object.transform.position, Vector3.back, .02f);
+                   if (freezex == false)
+                   {
+                       Handles.DrawLine(new Vector2(origin.x - leftbound, origin.y),
+                           new Vector2(origin.x + rightbound, origin.y));
+                   }
 
-                if (freezey == false)
-                {
-                    Handles.DrawLine(new Vector2(origin.x, origin.y - downbound),
-                        new Vector2(origin.x, origin.y + upbound));
-                }
-            }
-        }
-    }
+                   if (freezey == false)
+                   {
+                       Handles.DrawLine(new Vector2(origin.x, origin.y - downbound),
+                           new Vector2(origin.x, origin.y + upbound));
+                   }
+               }
+           }
+    */
+       }
 }

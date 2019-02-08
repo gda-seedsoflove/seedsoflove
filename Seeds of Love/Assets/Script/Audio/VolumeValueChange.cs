@@ -16,7 +16,9 @@ public class VolumeValueChange : MonoBehaviour {
 
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
-	}
+        SetVolume(audioSrc.volume);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

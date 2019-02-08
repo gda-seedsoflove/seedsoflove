@@ -27,8 +27,6 @@ namespace Tests.Interactive.NoteTimingTest
 
         public Text scoretext;
 
-        private float delay;    //Time it takes for the note to fall down
-
         /// Test variables
         private float lastlane = 0;
         private int touchspawning = 0;
@@ -62,7 +60,6 @@ namespace Tests.Interactive.NoteTimingTest
             //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;
-            delay = Mathf.Abs(EndY / notespeed); // time it takes for a note to fall down.
         }
 
         private void FixedUpdate()
@@ -267,6 +264,7 @@ namespace Tests.Interactive.NoteTimingTest
         }
 
 
+        /**
         private void OnDrawGizmosSelected()
         {
             notetime = Mathf.Abs(EndY / notespeed);
@@ -287,6 +285,7 @@ namespace Tests.Interactive.NoteTimingTest
             Handles.DrawLine(new Vector2(transform.position.x - spacing, transform.position.y - tline), new Vector2(transform.position.x + (spacing * LanePositions.Length), transform.position.y -tline ));
             Handles.DrawLine(new Vector2(transform.position.x - spacing, transform.position.y - bline), new Vector2(transform.position.x + (spacing * LanePositions.Length), transform.position.y - bline));
         }
+    */
     }
 
 }

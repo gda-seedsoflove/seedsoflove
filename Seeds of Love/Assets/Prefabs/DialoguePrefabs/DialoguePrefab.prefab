@@ -54,25 +54,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4593201427464762}
   - component: {fileID: 114165916445272122}
+  - component: {fileID: 114850672438786838}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: DialogueManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1386603132581998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4983250430372322}
-  - component: {fileID: 114999328521926704}
-  m_Layer: 0
-  m_Name: DialogueParser
-  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +161,6 @@ Transform:
   - {fileID: 4593201427464762}
   - {fileID: 224382369126629700}
   - {fileID: 4262153489099750}
-  - {fileID: 4983250430372322}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -205,19 +189,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4238925279381434}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4983250430372322
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1386603132581998}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -857.2366, y: -432.55038, z: -25.341743}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4238925279381434}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95670823399111236
 Animator:
@@ -450,6 +421,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: NPC Name
+--- !u!114 &114850672438786838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372769777752456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34617d7e8226f74197dc02893bd6ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114853529714493808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -504,17 +486,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114999328521926704
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1386603132581998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34617d7e8226f74197dc02893bd6ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222465129869904982
 CanvasRenderer:
   m_ObjectHideFlags: 1

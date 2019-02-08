@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueParser : MonoBehaviour
 {
-
+    public TextAsset script;
     //structure to store the relevant information to each line of dialogue
     struct DialogueLine
     {
@@ -36,6 +36,7 @@ public class DialogueParser : MonoBehaviour
     private void Awake()
     {
         Scene thisScene = SceneManager.GetActiveScene();
+        
         string file = "Assets/DialogueText/" + thisScene.name + "_Dialogue.txt";
 
         LoadDialogue(file);
@@ -44,42 +45,66 @@ public class DialogueParser : MonoBehaviour
     //parses text file for each line of dialogue, turns them into instances of DialogueLine and adds them to the list of lines
     public void LoadDialogue(string filename)
     {
-        string line;
-        StreamReader r = new StreamReader(filename);
-
-        using (r)
+        foreach (string line in script.text.Split( new string[]{ "\n", "\r", "\r\n"}, System.StringSplitOptions.RemoveEmptyEntries))
         {
-            do
+            string[] lineData = line.Split(';');
+            DialogueLine lineEntry;
+            if (lineData[0] == "Player")
             {
-                line = r.ReadLine();
-                if (line != null)
+                lineEntry = new DialogueLine(lineData[0], "", 0, "");
+                lineEntry.options = new string[lineData.Length - 1];
+
+                for (int i = 1; i < lineData.Length; i++)
                 {
-                    string[] lineData = line.Split(';');
-                    DialogueLine lineEntry;
-                    if (lineData[0] == "Player")
-                    {
-                        lineEntry = new DialogueLine(lineData[0], "", 0, "");
-                        lineEntry.options = new string[lineData.Length - 1];
-
-                        for (int i = 1; i < lineData.Length; i++)
-                        {
-                            lineEntry.options[i - 1] = lineData[i];
-                        }
-                    }
-                    else if (lineData[0] == "end" || lineData[0] == "\n")
-                    {
-                        lineEntry = new DialogueLine("end", "", 0, "");
-                    }
-                    else
-                    {
-                        lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
-                    }
-                    lines.Add(lineEntry);
+                    lineEntry.options[i - 1] = lineData[i];
                 }
-            } while (line != null);
-
-            r.Close();
+            }
+            else if (lineData[0] == "end" || lineData[0] == "\n")
+            {
+                lineEntry = new DialogueLine("end", "", 0, "");
+            }
+            else
+            {
+                lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
+            }
+            lines.Add(lineEntry);
         }
+        //string line;
+        //StreamReader r = new StreamReader(script.);
+
+        //using (r)
+        //{
+        //    do
+        //    {
+        //        line = r.ReadLine();
+        //        if (line != null)
+        //        {
+        //            string[] lineData = line.Split(';');
+        //            DialogueLine lineEntry;
+        //            if (lineData[0] == "Player")
+        //            {
+        //                lineEntry = new DialogueLine(lineData[0], "", 0, "");
+        //                lineEntry.options = new string[lineData.Length - 1];
+
+        //                for (int i = 1; i < lineData.Length; i++)
+        //                {
+        //                    lineEntry.options[i - 1] = lineData[i];
+        //                }
+        //            }
+        //            else if (lineData[0] == "end" || lineData[0] == "\n")
+        //            {
+        //                lineEntry = new DialogueLine("end", "", 0, "");
+        //            }
+        //            else
+        //            {
+        //                lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
+        //            }
+        //            lines.Add(lineEntry);
+        //        }
+        //    } while (line != null);
+
+        //    r.Close();
+        //}
     }
 
     //gets the position at the line at the int lineNumber

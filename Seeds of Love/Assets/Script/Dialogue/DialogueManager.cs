@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour {
         position = "L";
         playerTalking = false;
 
-        parser = GameObject.Find("DialogueParser").GetComponent<DialogueParser>();
+        parser = GetComponent<DialogueParser>();
 
 
         lineNum = 0;

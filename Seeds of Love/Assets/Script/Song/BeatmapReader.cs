@@ -37,6 +37,7 @@ public class BeatmapReader : MonoBehaviour
     private StreamReader reader;
     private char[] nextByte;
     private char[] buffer;
+    public TextAsset beatmapFile;
 
     // beatmap info
     private int bpm;
@@ -53,10 +54,15 @@ public class BeatmapReader : MonoBehaviour
     {
         // open beatmap file and create a stream to read it
         file = new FileInfo(filepath);
-        if (file.Exists)
+        if (file.Exists || beatmapFile != null)
         {
-            beatmap = file.Open(FileMode.Open, FileAccess.Read);
-            reader = new StreamReader(beatmap, Encoding.UTF8);
+            //beatmap = file.Open(FileMode.Open, FileAccess.Read);
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+            writer.Write(beatmapFile.text);
+            writer.Flush();
+            stream.Position = 0;
+            reader = new StreamReader(stream, Encoding.UTF8);
 
             // initialize char buffers
             nextByte = new char[1];

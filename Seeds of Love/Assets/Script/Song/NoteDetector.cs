@@ -56,8 +56,8 @@ public class NoteDetector : MonoBehaviour
     {
         Lane = (int)pos.x - (int)leftbound;
         transform.position = Object.transform.position; // Stay on the object
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
         checkPos(x, y);
         MoveToPosition();

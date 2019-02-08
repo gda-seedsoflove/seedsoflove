@@ -218,11 +218,12 @@ MonoBehaviour:
   DisplayedTimeAfter: 0.1
   hitwindow: 0.75
   HitTimeThreshold: 0.1
-  SpawnTimeInterval: 0.68
+  SpawnTimeInterval: 0.3333333
   spacing: 1
-  notespeed: 10
-  BMReader: {fileID: 114549606439221780}
+  notespeed: 7
   time: 0
+  random: 0
+  scoretext: {fileID: 0}
 --- !u!114 &114549606439221780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,9 +240,11 @@ MonoBehaviour:
   time: {fileID: 0}
   time2: {fileID: 0}
   spawnY: 0
-  bottomY: 0
-  speed: 0
-  filepath: Assets/Beatmaps/example.txt
+  bottomY: 9
+  speed: 7
+  delay: 0
+  filepath: Assets/Beatmaps/contrafact.txt
+  beatmapFile: {fileID: 4900000, guid: dd50938fcba3be544bfc62dd16ea990d, type: 3}
   songEnd: 0
 --- !u!114 &114584363472229206
 MonoBehaviour:

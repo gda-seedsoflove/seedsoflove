@@ -30,8 +30,10 @@ public class HoldNoteScript : MonoBehaviour {
 
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.startColor = new Color(.95f, .95f, .95f);
+        lr.material = new Material(Shader.Find("Particles/Alpha Blended"));
+        //lr.startColor = new Color(.95f, .95f, .95f);
+        lr.material.SetColor("_TintColor", new Color(.95f, .95f, .95f));
+        //Debug.Log(lr.material);
         //lr.SetColors(new Color(.95f,.95f,.95f), new Color(.95f, .95f, .95f));
         lr.startWidth = .75f;
         //lr.SetWidth(0.75f, 0.75f);
@@ -43,6 +45,7 @@ public class HoldNoteScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        lr = GetComponent<LineRenderer>();
         if (lr)
         {
             lr.SetPosition(0, bottom.transform.position);

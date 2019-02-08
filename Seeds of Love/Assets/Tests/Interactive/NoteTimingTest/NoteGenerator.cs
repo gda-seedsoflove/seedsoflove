@@ -48,7 +48,7 @@ namespace Tests.Interactive.NoteTimingTest
 
         private void Awake()
         {
-            if(GameObject.FindGameObjectWithTag("MusicPlayer") & !random)
+            if(GameObject.FindGameObjectWithTag("MusicPlayer") && !random)
             {
                 bgp = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<VolumeValueChange>();
             }

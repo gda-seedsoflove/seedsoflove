@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour {
 
     public Camera mainCam;
-    private float shakeAmt = 1;                                     //influences the distance the camera moves from its position
+    private float shakeAmt = 7;                                     //influences the distance the camera moves from its position
     Vector3 originalPos = new Vector3(0, 0, -10);                   //the original position of the main camera
     
     void Awake()
@@ -31,6 +31,9 @@ public class CameraShake : MonoBehaviour {
         Invoke("StopShake", length);
     }
 
+    /*
+     * Less for y direction
+     */
     void BeginShake()
     {
         if (shakeAmt > 0)
@@ -43,6 +46,12 @@ public class CameraShake : MonoBehaviour {
              */
             cameraPos.x += shakeX;
             cameraPos.y += shakeY;
+
+            if (cameraPos.x > 9.5 || cameraPos.x < -9.5 || cameraPos.y > 3.5 || cameraPos.y < -3.5)
+            {
+                Debug.Log("Hello: I am sad");
+                mainCam.transform.localPosition = originalPos;
+            }
 
             mainCam.transform.position = cameraPos;
         }

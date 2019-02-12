@@ -15,7 +15,6 @@ public class NoteDetector : MonoBehaviour
     */
 
     public int Lane { get; set; }       // Current lane the notedetector is on
-    public int TargetLane { get; set; } //Lane the notedetector is going toward
     private readonly float speed = 6;
     public float changespeed;
     private float originalspeed;
@@ -76,7 +75,7 @@ public class NoteDetector : MonoBehaviour
 
         float movement = 0;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.A))
         {
             holdingleft = true;
             leftbuffer = .2f;
@@ -87,12 +86,12 @@ public class NoteDetector : MonoBehaviour
                 movement = -4;
             }
         }
-        else if (Input.GetKeyUp("left"))
+        else if (Input.GetKeyUp("left") | Input.GetKeyUp("a"))
         {
             holdingleft = false;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
         {
             holdingright = true;
             rightbuffer = .2f;
@@ -103,13 +102,13 @@ public class NoteDetector : MonoBehaviour
                 movement = 4;
             }
         }
-        else if(Input.GetKeyUp("right"))
+        else if(Input.GetKeyUp("right") || Input.GetKeyUp("d"))
         {
             holdingright = false;
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.UpArrow)||Input.GetKey(KeyCode.W))
         {
             if(rightbuffer > 0)
             {
@@ -127,7 +126,7 @@ public class NoteDetector : MonoBehaviour
             shiftbuffer = .15f;
             changespeed = 40;
         }
-        else if(Input.GetKeyUp("left shift") || Input.GetKeyUp("up"))
+        else if(Input.GetKeyUp("left shift") || Input.GetKeyUp("up") || Input.GetKeyUp("w"))
         {
             holdingshift = false;
             changespeed = originalspeed;

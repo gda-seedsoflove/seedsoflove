@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1864157656314866}
+  m_IsPrefabAsset: 1
+--- !u!1 &1864157656314866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4130300570022014}
+  - component: {fileID: 114236231204697560}
+  - component: {fileID: 114620083381993892}
+  m_Layer: 0
+  m_Name: Note Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4130300570022014
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1864157656314866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114236231204697560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1864157656314866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f52944ab788d8d4abb12b3e0f0a59e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotePrefab: {fileID: 1961062488577778, guid: f284214e856e3e74e82102f79a181f49, type: 2}
+  TouchNotePrefab: {fileID: 1557500103265558, guid: 18422689ac87c0e4fb44562b6e28d129,
+    type: 2}
+  HoldNotePrefab: {fileID: 1984354951464168, guid: 88efd3858f6a6644a8a3cf3f3ac72299,
+    type: 2}
+  EndY: 9
+  DisplayedTimeAfter: 0.1
+  hitwindow: 0.4
+  HitTimeThreshold: 0.1
+  SpawnTimeInterval: 0.3333333
+  spacing: 1
+  notespeed: 7
+  time: 0
+  random: 0
+  scoretext: {fileID: 0}
+--- !u!114 &114620083381993892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1864157656314866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4dca69327130b49bc0d4910600346c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lane: {fileID: 0}
+  type: {fileID: 0}
+  time: {fileID: 0}
+  time2: {fileID: 0}
+  spawnY: 0
+  bottomY: 9
+  speed: 7
+  delay: 0
+  filepath: Assets/Beatmaps/contrafact.txt
+  beatmapFile: {fileID: 4900000, guid: dd50938fcba3be544bfc62dd16ea990d, type: 3}
+  songEnd: 0

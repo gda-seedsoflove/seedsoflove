@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour {
 
     public Camera mainCam;
-    private float shakeAmt = 7;                                     //influences the distance the camera moves from its position
+    private float shakeAmt = 4;                                     //influences the distance the camera moves from its position
     Vector3 originalPos = new Vector3(0, 0, -10);                   //the original position of the main camera
     
     void Awake()
@@ -20,7 +20,7 @@ public class CameraShake : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Shake(1f, 0.9f);
+            Shake(0.6f, 8f);
         }
     }
 
@@ -42,7 +42,7 @@ public class CameraShake : MonoBehaviour {
             float shakeX = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the x direction
             float shakeY = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the y direction
             /*
-             * Do some if statements for the camera positions, but I am too lazy and tired to do math
+             * Should I move the resetting code before the addition code?
              */
             cameraPos.x += shakeX;
             cameraPos.y += shakeY;
@@ -51,9 +51,13 @@ public class CameraShake : MonoBehaviour {
             {
                 Debug.Log("Hello: I am sad");
                 mainCam.transform.localPosition = originalPos;
+                //Debug.Log("Hello: I am happy");
             }
-
-            mainCam.transform.position = cameraPos;
+            else
+            {
+                Debug.Log("Goodbye: I am satisfied");
+                mainCam.transform.position = cameraPos;                                   //This is needed to move the camera
+            }
         }
     }
 

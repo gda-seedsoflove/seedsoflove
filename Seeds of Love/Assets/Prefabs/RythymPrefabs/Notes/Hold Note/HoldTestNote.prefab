@@ -114,7 +114,7 @@ MonoBehaviour:
     type: 2}
   SoundEffect: {fileID: 1904585335911508, guid: 9d14e08f015274d4f8faa367bbc300fd,
     type: 2}
-  HitEffect: {fileID: 1430107362045080, guid: 90d8f648ef393884095f09a47d62d949, type: 2}
+  HitEffect: {fileID: 1836203565894126, guid: 93515f67d010d0e45a3314809f41fb50, type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114451954375200874
 MonoBehaviour:

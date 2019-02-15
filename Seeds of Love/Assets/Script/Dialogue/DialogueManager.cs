@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour {
     string position;
     string[] options;
     public bool playerTalking;
+
     List<Button> buttons = new List<Button>();
     public Canvas thisCanvas;
 
@@ -92,8 +93,8 @@ public class DialogueManager : MonoBehaviour {
         else if(parser.GetContent(lineNum) == "exit")
         {
             //Do Not Dialogue
+            playerTalking = false;
             DisplayImages();
-            ShowDialogue();
         }
         else if (parser.GetName(lineNum) != "Player")
         {

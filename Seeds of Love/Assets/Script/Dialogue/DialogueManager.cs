@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour {
     //animator needed to animate dialogue starting and finishing
     public Animator animator;
 
+    Queue<GameObject> onScreen;
+
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
     {
@@ -35,6 +37,8 @@ public class DialogueManager : MonoBehaviour {
         playerTalking = false;
 
         parser = GetComponent<DialogueParser>();
+
+        onScreen = new Queue<GameObject>();
 
 
         lineNum = 0;
@@ -70,19 +74,11 @@ public class DialogueManager : MonoBehaviour {
     //resets images each time a new line is shown
     void ResetImages()
     {
-        if (characterName != "")
+        if (parser.GetContent(lineNum) == "exit")
         {
             var character = GameObject.Find(characterName);
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = null;
-            if (position == "R")
-            {
-                currSprite.flipX = true;
-            }
-            else
-            {
-                currSprite.flipX = false;
-            }
         }
     }
 
@@ -92,6 +88,12 @@ public class DialogueManager : MonoBehaviour {
         if(parser.GetName(lineNum) == "end")
         {
             EndDialogue();
+        }
+        else if(parser.GetContent(lineNum) == "exit")
+        {
+            //Do Not Dialogue
+            DisplayImages();
+            ShowDialogue();
         }
         else if (parser.GetName(lineNum) != "Player")
         {
@@ -105,10 +107,6 @@ public class DialogueManager : MonoBehaviour {
         else
         {
             playerTalking = true;
-            //characterName = "";
-            //dialogue = "";
-            //pose = 0;
-            //position = "";
             options = parser.GetOptions(lineNum);
             CreateButtons();
         }
@@ -121,11 +119,51 @@ public class DialogueManager : MonoBehaviour {
         {
             var character = GameObject.Find(characterName);
 
-            SetSpritePositions(character);
+            if (!onScreen.Contains(character) && onScreen.Count >= 2)
+            {
+                onScreen.Dequeue().GetComponent<SpriteRenderer>().sprite = null;
+                onScreen.Enqueue(character);
+                Debug.Log("too corwded");
+            }
+            else if (!onScreen.Contains(character) && onScreen.Count < 2)
+            {
+                onScreen.Enqueue(character);
+            }
+            else
+            {
+                //nothing, character is already on screen
+            }
 
-            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-            currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+            if(parser.GetContent(lineNum) == "exit")
+            {
+                onScreen.Dequeue();
+                character.GetComponent<SpriteRenderer>().sprite = null;
+                Debug.Log("is run exit command");
+            }
+            else
+            {
+                SetSpritePositions(character);
+
+                SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+                currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+
+                if (position == "R")
+                {
+                    currSprite.flipX = true;
+                }
+                else
+                {
+                    currSprite.flipX = false;
+                }
+            }
+
+           
+
+            
         }
+
+
+      
     }
 
     //loads image to the correct side for current line

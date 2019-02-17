@@ -10,7 +10,7 @@ public class EffectsManager : MonoBehaviour
     // The Particle Prefab that will be created when the Note is hit
     public GameObject ParticleEffect;
     //The Sound Prefab that will be created when the Note is hit
-    public GameObject SoundEffect;
+    //public GameObject SoundEffect;
     public GameObject HitEffect;
     public GameObject HeldEffect;
 
@@ -59,11 +59,12 @@ public class EffectsManager : MonoBehaviour
 
     public void PlaySoundEffect()
     {
-        if (SoundEffect)
+        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, 1, "Note Hit Effect");
+        /*if (SoundEffect)
         {
             GameObject instanceSound = (GameObject)Instantiate(SoundEffect, transform.position, Quaternion.identity);
             Destroy(instanceSound, 1f);
-        }
+        }*/
 
     }
 

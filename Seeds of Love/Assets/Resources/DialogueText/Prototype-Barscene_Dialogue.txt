@@ -17,8 +17,8 @@ Maria;Yeah...;0;L
 Bartender;Here, have a sprite;0;R
 Maria;Thanks...;0;L
 Bartender;You’re still going to have to pay for the bourbon;0;R
-Bartender;exit;0;L
 Maria;Okay…;0;L
+##;Bartender;exit
 Maria;...;0;R
 Maria;You know, if you were a vegetable, you’d be a cute-cumber.;0;R
 Sunny;...;0;L

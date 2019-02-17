@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour {
     string position;
     string[] options;
     public bool playerTalking;
+    string command;
 
     List<Button> buttons = new List<Button>();
     public Canvas thisCanvas;
@@ -26,7 +27,9 @@ public class DialogueManager : MonoBehaviour {
     //animator needed to animate dialogue starting and finishing
     public Animator animator;
 
-    Queue<GameObject> onScreen;
+    GameObject stageLeft;
+    GameObject stageRight;
+
 
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
@@ -39,8 +42,8 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GetComponent<DialogueParser>();
 
-        onScreen = new Queue<GameObject>();
-
+        stageLeft = null;
+        stageRight = null;
 
         lineNum = 0;
 
@@ -64,7 +67,7 @@ public class DialogueManager : MonoBehaviour {
     {
         if(!playerTalking)
         {
-            ResetImages();
+            //ResetImages();
             ParseLine();
             lineNum++;
         }
@@ -90,11 +93,12 @@ public class DialogueManager : MonoBehaviour {
         {
             EndDialogue();
         }
-        else if(parser.GetContent(lineNum) == "exit")
+        else if(parser.GetCommand(lineNum) == "exit")
         {
-            //Do Not Dialogue
-            playerTalking = false;
+            command = parser.GetCommand(lineNum);
+            characterName = parser.GetName(lineNum);
             DisplayImages();
+            command = "";
         }
         else if (parser.GetName(lineNum) != "Player")
         {
@@ -116,55 +120,31 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
-        if (characterName != "")
+        if (characterName != "" && command!="exit")
         {
             var character = GameObject.Find(characterName);
 
-            if (!onScreen.Contains(character) && onScreen.Count >= 2)
-            {
-                onScreen.Dequeue().GetComponent<SpriteRenderer>().sprite = null;
-                onScreen.Enqueue(character);
-                Debug.Log("too corwded");
-            }
-            else if (!onScreen.Contains(character) && onScreen.Count < 2)
-            {
-                onScreen.Enqueue(character);
-            }
-            else
-            {
-                //nothing, character is already on screen
-            }
+            SetSpritePositions(character);
 
-            if(parser.GetContent(lineNum) == "exit")
-            {
-                onScreen.Dequeue();
-                character.GetComponent<SpriteRenderer>().sprite = null;
-                Debug.Log("is run exit command");
+            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+            currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+
+            if(position == "R")
+            { 
+                currSprite.flipX = true;
             }
             else
             {
-                SetSpritePositions(character);
-
-                SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-                currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
-
-                if (position == "R")
-                {
-                    currSprite.flipX = true;
-                }
-                else
-                {
-                    currSprite.flipX = false;
-                }
+                currSprite.flipX = false;
             }
-
-           
-
-            
         }
+        else if(command == "exit")
+        {
+            var character = GameObject.Find(characterName);
 
-
-      
+            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+            currSprite.sprite = null;
+        }
     }
 
     //loads image to the correct side for current line
@@ -206,7 +186,7 @@ public class DialogueManager : MonoBehaviour {
     //removes player choice buttons if player isn't talking, updates name and dialogue text
     void UpdateUI()
     {
-        if(!playerTalking)
+        if(!playerTalking && parser.GetCommand(lineNum) != "exit")
         {
             ClearButtons();
             nameText.text = characterName;

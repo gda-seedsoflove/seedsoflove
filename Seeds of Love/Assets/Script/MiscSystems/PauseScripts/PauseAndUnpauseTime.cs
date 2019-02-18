@@ -14,9 +14,11 @@ public class PauseAndUnpauseTime : MonoBehaviour {
         if(Time.timeScale == 1.0)
         {
             Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+
         } else
         {
             Time.timeScale = Mathf.Approximately(Time.timeScale, 1.0f) ? 0.0f : 1.0f;
+
         }
     }
 	
@@ -25,6 +27,7 @@ public class PauseAndUnpauseTime : MonoBehaviour {
         if (Input.GetKeyDown("escape"))
         {
             TogglePause();
+            AudioListener.pause = !AudioListener.pause;     //Toggles the pause on audio.
         }
     }
 }

@@ -14,7 +14,7 @@ public class SoundPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //Due to how this and SoundControlScript are structured, ActivateSound will be called before start.
+        //Due to how this and SoundControlScript are structured, ActivateSound will be called before Start.
     }
 
     //This function is called in SoundControlScript and sets the properties of the AudioObject
@@ -29,11 +29,23 @@ public class SoundPlayer : MonoBehaviour {
         soundStarted = true;                //The sound is now playing
     }
 
+    //These two methods are just being put here incase they're needed later, they currently have no function.
+    void PauseSound()
+    {
+        SoundSource.Pause();
+    }
+
+    public void UnPauseSound()
+    {
+        SoundSource.UnPause();
+    }
+
     // Update is called once per frame
     void Update () {
-        if (soundStarted && !SoundSource.isPlaying)
+        if (soundStarted && !SoundSource.isPlaying && !AudioListener.pause)
         {
-            Destroy(gameObject);            //Object self destructs once the sound is done playing.
+            Destroy(gameObject);            //Object self destructs
+            //But only if the sound started then stopped playing. Does not activate is sound stops due to pauses.
         }
 	}
 

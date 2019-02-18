@@ -34,8 +34,8 @@ public class SoundControlScript : MonoBehaviour {
         GameObject instance = Instantiate(AudioObject, gameObject.GetComponent<Transform>());
         instance.GetComponent<SoundPlayer>().ActivateSound
             (delay, volume, Resources.Load<AudioClip>("Audio/" + clipName));
-        //Line 20: Creates a new instance of the AudioObject as a child of the Sound Controller
-        //Line 21: Passes the arguments along to the new object. This keeps the sound manager free to make more
+        //Line 34: Creates a new instance of the AudioObject as a child of the Sound Controller
+        //Line 35: Passes the arguments along to the new object. This keeps the sound manager free to make more
         //  audio as needed. Also, Resources.load takes a string as an argument, so that's easy.
     }
 }

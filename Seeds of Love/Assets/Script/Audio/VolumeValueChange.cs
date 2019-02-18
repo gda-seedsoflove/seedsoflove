@@ -17,13 +17,15 @@ public class VolumeValueChange : MonoBehaviour {
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
         SetVolume(audioSrc.volume);
+        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(2.82f, 1, "Contrafact_Ver3");
+
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if(delay <= 0 && GetComponent<AudioSource>().isPlaying == false)
+        /*if(delay <= 0 && GetComponent<AudioSource>().isPlaying == false)
         {
             GetComponent<AudioSource>().Play();
         }
@@ -32,7 +34,7 @@ public class VolumeValueChange : MonoBehaviour {
             delay -= Time.deltaTime;
         }
         // Setting volume option of Audio Source to be equal to musicVolume
-        audioSrc.volume = musicVolume;
+        audioSrc.volume = musicVolume;*/
 	}
 
     // Method that is called by slider game object

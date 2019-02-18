@@ -21,7 +21,8 @@ public class SoundControlScript : MonoBehaviour {
 	/*// Use this for initialization
 	void Start () {
 		
-	}                   Might not be a needed block, but I'll leave these here just in case.
+	}
+    *Might not be a needed block, but I'll leave these here just in case.
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,8 +31,8 @@ public class SoundControlScript : MonoBehaviour {
 
     public void PlaySound(float delay, float volume, string clipName)
     {
-        Instantiate(AudioObject, gameObject.GetComponent<Transform>());
-        AudioObject.GetComponent<SoundPlayer>().ActivateSound
+        GameObject instance = Instantiate(AudioObject, gameObject.GetComponent<Transform>());
+        instance.GetComponent<SoundPlayer>().ActivateSound
             (delay, volume, Resources.Load<AudioClip>("Audio/" + clipName));
         //Line 20: Creates a new instance of the AudioObject as a child of the Sound Controller
         //Line 21: Passes the arguments along to the new object. This keeps the sound manager free to make more

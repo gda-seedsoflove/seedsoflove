@@ -6,5 +6,10 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public Sprite[] characterPoses = null;
+    public Font personalFont;
 
+    public Font GetFont()
+    {
+        return personalFont;
+    }
 }

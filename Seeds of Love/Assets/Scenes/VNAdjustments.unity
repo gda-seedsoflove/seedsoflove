@@ -229,6 +229,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114685396397439944, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: personalFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f870e41ce03a4488238bd136015232, type: 2}
   m_IsPrefabAsset: 0
@@ -271,6 +277,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114680906898315834, guid: 64a823d9e93184b4ebfe36174f011c75,
+        type: 2}
+      propertyPath: personalFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 9509a4d956f029149b661e4bc81408e4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a823d9e93184b4ebfe36174f011c75, type: 2}
   m_IsPrefabAsset: 0
@@ -360,6 +372,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: personalFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 6b2a7ef0925080a4b8a2573505a518b5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c832d876aa10d459b89a56cce6f717, type: 2}
   m_IsPrefabAsset: 0

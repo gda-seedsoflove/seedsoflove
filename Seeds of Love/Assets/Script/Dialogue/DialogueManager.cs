@@ -186,10 +186,17 @@ public class DialogueManager : MonoBehaviour {
     //removes player choice buttons if player isn't talking, updates name and dialogue text
     void UpdateUI()
     {
-        if(!playerTalking && parser.GetCommand(lineNum) != "exit")
+        if(!playerTalking && command != "exit")
         {
             ClearButtons();
+
+            var charObj = GameObject.Find(characterName);
+            Character character = charObj.GetComponent<Character>();
+
+            nameText.font = character.GetFont();
             nameText.text = characterName;
+
+            dialogueText.font = character.GetFont();
             StopAllCoroutines();
             StartCoroutine(TypeSentence(dialogue));
         }

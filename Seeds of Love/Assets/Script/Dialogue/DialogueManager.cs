@@ -67,7 +67,6 @@ public class DialogueManager : MonoBehaviour {
     {
         if(!playerTalking)
         {
-            //ResetImages();
             ParseLine();
             lineNum++;
         }
@@ -75,16 +74,6 @@ public class DialogueManager : MonoBehaviour {
         UpdateUI();
     }
 
-    //resets images each time a new line is shown
-    void ResetImages()
-    {
-        if (parser.GetContent(lineNum) == "exit")
-        {
-            var character = GameObject.Find(characterName);
-            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-            currSprite.sprite = null;
-        }
-    }
 
     //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
@@ -120,31 +109,55 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
+        var character = GameObject.Find(characterName);
         if (characterName != "" && command!="exit")
         {
-            var character = GameObject.Find(characterName);
-
             SetSpritePositions(character);
 
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
 
             if(position == "R")
-            { 
+            {
+                stageRight = character;
                 currSprite.flipX = true;
             }
             else
             {
+                stageLeft = character;
                 currSprite.flipX = false;
             }
         }
         else if(command == "exit")
         {
-            var character = GameObject.Find(characterName);
-
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = null;
         }
+
+        //dimming sprite NOT WORKING
+        if(character != stageLeft && stageLeft != null)
+        {
+            SpriteRenderer currSprite = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, .5f);
+        }
+        else if(character != stageRight && stageRight!=null)
+        {
+            SpriteRenderer currSprite = stageRight.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, .5f);
+        }
+        else if (character == stageRight)
+        {
+            Debug.Log("stageright");
+            SpriteRenderer currSprite = stageRight.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, 2f);
+        }
+        else if(character == stageLeft)
+        {
+            Debug.Log("stageleft");
+            SpriteRenderer currSprite = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, 2f);
+        }
+
     }
 
     //loads image to the correct side for current line

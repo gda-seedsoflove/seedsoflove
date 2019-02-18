@@ -108,7 +108,6 @@ public class DialogueParser : MonoBehaviour
                     {
                         lineEntry = new DialogueLine(lineData[1], "", 0, "");
                         lineEntry.command = lineData[2];
-                        Debug.Log("Here " + lineEntry.name);
                     }
                     else
                     {

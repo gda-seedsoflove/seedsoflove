@@ -28,6 +28,8 @@ namespace Script.Behaviour
 
         private float lastlanebuffer;
 
+        private Color c;
+
         private void Start()
         {
             // Disable this behaviour after the note is hit once. It doesn't
@@ -48,7 +50,7 @@ namespace Script.Behaviour
                 holdingspace = false;
                 releasebuffertime = .15f;
             }
-            
+
             /**
             if (OnHit != null
                 && Input.GetKeyDown(HitKey)
@@ -58,7 +60,11 @@ namespace Script.Behaviour
             {
                 OnHit(gameObject);
             }
+
+
             */
+            c = NoteManager.c;
+            GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
 
         }
 
@@ -92,7 +98,7 @@ namespace Script.Behaviour
                 if (CanHit() && Note.Holding == true && releasebuffertime > 0) // Correctly releases at right time.
                 {
                     Note.Holding = false;
-                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     OnHit(gameObject);
                     NoteManager.addScore(.5f, 0); // completes the missing half of the note score.
@@ -100,7 +106,7 @@ namespace Script.Behaviour
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || currentlane != Note.Lane) && (holdingspace == false || currentlane != Note.Lane))
                 {
                     Note.Holding = false;
-                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     GetComponent<HoldNoteScript>().held = false;
                     Destroy(GetComponent<HoldNoteScript>().lr);
                 }
@@ -124,7 +130,7 @@ namespace Script.Behaviour
                     if (GetComponent<NoteMovement>())
                     {
                         GetComponent<NoteMovement>().moving = false;
-                        GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+                        GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     }
                     NoteManager.addScore(.5f,1);
                     Note.Hit = true;

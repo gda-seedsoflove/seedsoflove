@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Script.Song;
 
 public class HoldNoteScript : MonoBehaviour {
+
+    public NoteManager NoteManager { get; set; }
+    public Note Note { get; set; }
 
     public GameObject Top;
     public GameObject Bottom;
@@ -24,6 +28,8 @@ public class HoldNoteScript : MonoBehaviour {
 
     [HideInInspector]
     public LineRenderer lr;
+
+    private Color c;
     // Use this for initialization
     void Start () {
         top = (GameObject)Instantiate(Top,transform,true);
@@ -31,6 +37,11 @@ public class HoldNoteScript : MonoBehaviour {
         bottom.transform.position = gameObject.transform.position;
         pos = bottom.transform.position;
         top.transform.position = new Vector2(pos.x, pos.y + length);
+
+        //Set COlors
+        c = NoteManager.c;
+        top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
+        bottom.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
 
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
@@ -89,7 +100,7 @@ public class HoldNoteScript : MonoBehaviour {
         GetComponent<HoldNoteScript>().held = true;
         transform.position = new Vector2(pos.x, distance);
         top.transform.position = new Vector2(pos.x, topy);
-        top.GetComponent<SpriteRenderer>().color = new Color(1, 1, .8f);
+        top.GetComponent<SpriteRenderer>().color = new Color(.8f, .8f, .8f);
         lr.SetPosition(1, top.transform.position);
         lr.startColor = new Color(1f, 1f, 1f, 1);
         lr.endColor = new Color(1f, 1f, 1f, 1);

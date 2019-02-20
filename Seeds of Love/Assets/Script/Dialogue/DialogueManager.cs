@@ -135,27 +135,29 @@ public class DialogueManager : MonoBehaviour {
         }
 
         //dimming sprite NOT WORKING
-        if(character != stageLeft && stageLeft != null)
+        if(character != stageLeft && stageLeft != null) //this character isn't on the left and there is a character on the left
         {
-            SpriteRenderer currSprite = stageLeft.GetComponent<SpriteRenderer>();
-            currSprite.color = new Color(1f, 1f, 1f, .5f);
+            SpriteRenderer currSprite1 = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            SpriteRenderer currSprite2 = stageRight.GetComponent<SpriteRenderer>();
+            currSprite2.color = new Color(1f, 1f, 1f, 1f);
         }
-        else if(character != stageRight && stageRight!=null)
+        else if(character != stageRight && stageRight!=null)//this character isn't on the right and there is a character on the right
+        {
+            SpriteRenderer currSprite1 = stageRight.GetComponent<SpriteRenderer>();
+            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            SpriteRenderer currSprite2 = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite2.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else if (character == stageRight)//this character is on the right
         {
             SpriteRenderer currSprite = stageRight.GetComponent<SpriteRenderer>();
-            currSprite.color = new Color(1f, 1f, 1f, .5f);
+            currSprite.color = new Color(1f, 1f, 1f, 1f);
         }
-        else if (character == stageRight)
+        else if(character == stageLeft)//this character is on the left
         {
-            Debug.Log("stageright");
-            SpriteRenderer currSprite = stageRight.GetComponent<SpriteRenderer>();
-            currSprite.color = new Color(1f, 1f, 1f, 2f);
-        }
-        else if(character == stageLeft)
-        {
-            Debug.Log("stageleft");
             SpriteRenderer currSprite = stageLeft.GetComponent<SpriteRenderer>();
-            currSprite.color = new Color(1f, 1f, 1f, 2f);
+            currSprite.color = new Color(1f, 1f, 1f, 1f);
         }
 
     }

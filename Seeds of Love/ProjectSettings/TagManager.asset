@@ -10,6 +10,8 @@ TagManager:
   - PauseScreen
   - SoundController
   - ActiveSound
+  - Music
+  - SFX
   layers:
   - Default
   - TransparentFX

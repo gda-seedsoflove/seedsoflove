@@ -17,7 +17,7 @@ public class VolumeValueChange : MonoBehaviour {
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
         SetVolume(audioSrc.volume);
-        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(2.82f, 1, "Contrafact_Ver3");
+        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(2.82f, 1, "Contrafact_Ver3", "Music");
 
 
     }

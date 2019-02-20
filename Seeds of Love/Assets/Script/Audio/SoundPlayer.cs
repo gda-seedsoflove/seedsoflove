@@ -9,7 +9,6 @@ public class SoundPlayer : MonoBehaviour {
 
     AudioSource SoundSource;                //The object's AudioSource component
     float delay;                            //How much delay before the sound plays
-    float volume;                           //The AudioSource component's volume setting
     bool soundStarted;                      //Whether or not the audio has started
 
 	// Use this for initialization
@@ -18,26 +17,18 @@ public class SoundPlayer : MonoBehaviour {
     }
 
     //This function is called in SoundControlScript and sets the properties of the AudioObject
-    public void ActivateSound(float delayInput, float volumeInput, AudioClip clipInput)
+    public void ActivateSound(float delayInput, float volumeInput, AudioClip clipInput, string soundTag, bool pauseImmune)
     {
+
+        gameObject.tag = soundTag;
         soundStarted = false;
         SoundSource = gameObject.GetComponent<AudioSource>();
+        SoundSource.ignoreListenerPause = pauseImmune;      //Sets whether or not the sound plays when sound is paused.
         SoundSource.clip = clipInput;       //Sets the AudioSource's clip (set to 'none' by default).
         SoundSource.volume = volumeInput;   //Sets the AudioSource's volume (set to 1.0 by default).
         delay = delayInput;                 //Sets the argument value for PlayDelayed
         SoundSource.PlayDelayed(delay);     //Plays the audio after the argument's value
         soundStarted = true;                //The sound is now playing
-    }
-
-    //These two methods are just being put here incase they're needed later, they currently have no function.
-    void PauseSound()
-    {
-        SoundSource.Pause();
-    }
-
-    public void UnPauseSound()
-    {
-        SoundSource.UnPause();
     }
 
     // Update is called once per frame

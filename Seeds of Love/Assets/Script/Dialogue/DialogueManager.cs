@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour {
     GameObject stageLeft;
     GameObject stageRight;
 
+    bool inCoroutine;
 
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
@@ -46,6 +47,7 @@ public class DialogueManager : MonoBehaviour {
         stageRight = null;
 
         lineNum = 0;
+        inCoroutine = false;
 
         animator.SetBool("IsOpen", true);
 
@@ -56,8 +58,13 @@ public class DialogueManager : MonoBehaviour {
     //waits for keyboard input so user can advance with click or Space
     void Update()
     {
-        if ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
+        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
         {
+            ShowDialogue();
+        }
+        else if(lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking)))
+        {
+            lineNum-=2;
             ShowDialogue();
         }
     }
@@ -214,9 +221,12 @@ public class DialogueManager : MonoBehaviour {
             dialogueText.font = character.GetFont();
             StopAllCoroutines();
             StartCoroutine(TypeSentence(dialogue));
+            inCoroutine = false;
         }
 
     }
+
+    
 
     //removes unneeded buttons
     void ClearButtons()
@@ -229,16 +239,29 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+
     //animates text so that it appears one letter at a time
     IEnumerator TypeSentence (string sentence)
     {
+        inCoroutine = true;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
-            yield return null;
+            if((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
+            {
+                break;
+            }
+            else
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
         }
+        dialogueText.text = sentence;
     }
+
+
+ 
 
     //plays dialogue end animation
     void EndDialogue()

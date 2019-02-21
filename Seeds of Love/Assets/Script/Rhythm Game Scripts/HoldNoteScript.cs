@@ -45,8 +45,10 @@ public class HoldNoteScript : MonoBehaviour {
 
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Custom/Outline"));
+        lr.material = new Material(Shader.Find("Unlit/UnlitOutline"));
         lr.material.SetColor("_Color", new Color(1f, 1f, 1f));
+        //lr.material.SetColor("_Outline", new Color(1f, 1f, 1f)); // this will set the outline color. default is RGBA(.1,.1,.1,1)
+        //lr.material.SetFloat("_OutlineWidth", .02f); // this will set the outline width. default is .02. goes from 0 to 1
         lr.startWidth = .75f;
         lr.sortingLayerName = "Foreground";
         lr.SetPosition(0, bottom.transform.position);

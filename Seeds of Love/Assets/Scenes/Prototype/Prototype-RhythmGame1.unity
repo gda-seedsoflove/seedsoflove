@@ -195,6 +195,7 @@ MonoBehaviour:
   hitwindow: 0.4
   HitTimeThreshold: 0.1
   SpawnTimeInterval: 0.3333333
+  c: {r: 1, g: 0.2028302, b: 0.2028302, a: 0}
   spacing: 1
   notespeed: 7
   time: 0

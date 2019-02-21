@@ -53,13 +53,12 @@ Shader "Unlit/UnlitOutline"
 			fixed4 frag (v2f i) : SV_Target
 			{
                 // calculate UV distance
-			    float distX = abs(i.uv.x - .5) * 2;
 			    float distY = abs(i.uv.y - .5) * 2;
 
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv) * _Color;
 
-                if (distY > (1 - _OutlineWidth) || distX > (1 - _OutlineWidth)){
+                if (distY > (1 - _OutlineWidth)){
 				    col = _Outline;
 			    }
 

@@ -100,6 +100,7 @@ namespace Script.Behaviour
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
+                    GetComponent<HoldNoteScript>().Release();
                     OnHit(gameObject);
                     NoteManager.addScore(.5f, 0); // completes the missing half of the note score.
                 }
@@ -109,6 +110,7 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     GetComponent<HoldNoteScript>().held = false;
                     Destroy(GetComponent<HoldNoteScript>().lr);
+                    GetComponent<HoldNoteScript>().Release();
                 }
                 else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
                 {
@@ -130,7 +132,7 @@ namespace Script.Behaviour
                     if (GetComponent<NoteMovement>())
                     {
                         GetComponent<NoteMovement>().moving = false;
-                        GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
+                        GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 0);
                     }
                     NoteManager.addScore(.5f,1);
                     Note.Hit = true;

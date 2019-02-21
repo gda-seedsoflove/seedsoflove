@@ -40,15 +40,15 @@ public class HoldNoteScript : MonoBehaviour {
 
         //Set COlors
         c = NoteManager.c;
-        top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
-        bottom.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
+        top.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 1);
+        bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 1);
 
         gameObject.AddComponent<LineRenderer>();
         lr = GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Unlit/UnlitOutline"));
-        lr.material.SetColor("_Color", new Color(1f, 1f, 1f));
-        //lr.material.SetColor("_Outline", new Color(1f, 1f, 1f)); // this will set the outline color. default is RGBA(.1,.1,.1,1)
-        //lr.material.SetFloat("_OutlineWidth", .02f); // this will set the outline width. default is .02. goes from 0 to 1
+        lr.material.SetColor("_Color", new Color(.6f, .2f, .2f));
+        lr.material.SetColor("_Outline", new Color(.9f, .9f, .9f, 1)); // this will set the outline color. default is RGBA(.1,.1,.1,1)
+        lr.material.SetFloat("_OutlineWidth", .2f); // this will set the outline width. default is .02. goes from 0 to 1
         lr.startWidth = .75f;
         lr.sortingLayerName = "Foreground";
         lr.SetPosition(0, bottom.transform.position);
@@ -67,6 +67,10 @@ public class HoldNoteScript : MonoBehaviour {
 
         if (held)
         {
+            if (bottom.GetComponentInChildren<SpriteRenderer>())
+            {
+                Destroy(bottom.GetComponentInChildren<SpriteRenderer>());
+            }
             if (online == false)
             {
                 top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
@@ -102,9 +106,19 @@ public class HoldNoteScript : MonoBehaviour {
         GetComponent<HoldNoteScript>().held = true;
         transform.position = new Vector2(pos.x, distance);
         top.transform.position = new Vector2(pos.x, topy);
-        top.GetComponent<SpriteRenderer>().color = new Color(.8f, .8f, .8f);
+        top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.8f, c.b*.8f);
         lr.SetPosition(1, top.transform.position);
         lr.startColor = new Color(1f, 1f, 1f, 1);
         lr.endColor = new Color(1f, 1f, 1f, 1);
+    }
+
+    public void Release()
+    {
+        if (top.GetComponentInChildren<SpriteRenderer>())
+        {
+            Transform child = top.transform.GetChild(0);
+            child.parent = null;
+            Destroy(child.gameObject);
+        }
     }
 }

@@ -96,7 +96,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BGM
+  m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ff02352096a4ac44abc2b777e0efb873
   m_Children: []

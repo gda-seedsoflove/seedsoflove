@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundPlayer : MonoBehaviour {
 
@@ -14,15 +15,18 @@ public class SoundPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        soundStarted = false;
-        SoundSource = gameObject.GetComponent<AudioSource>();
+        //This should stay empty. Due to how the objects are created, ActivateSound gets called first.
     }
 
     //This function is called in SoundControlScript and sets the properties of the AudioObject
     public void ActivateSound(float delayInput, float volumeInput, AudioClip clipInput, string soundTag, bool pauseImmune)
     {
-        Start();
+
+        soundStarted = false;
         gameObject.tag = soundTag;
+        SoundSource = gameObject.GetComponent<AudioSource>();
+        SoundSource.outputAudioMixerGroup = Resources.Load<AudioMixer>("Audio/AudioMixer").FindMatchingGroups(soundTag)[0];
+                                //^Sets the correct output group for the sound
         SoundSource.ignoreListenerPause = pauseImmune;      //Sets whether or not the sound plays when sound is paused.
         SoundSource.clip = clipInput;       //Sets the AudioSource's clip (set to 'none' by default).
         SoundSource.volume = volumeInput;   //Sets the AudioSource's volume (set to 1.0 by default).

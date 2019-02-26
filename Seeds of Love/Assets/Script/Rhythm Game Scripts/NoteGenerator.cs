@@ -66,7 +66,10 @@ namespace Tests.Interactive.NoteTimingTest
             if (!random)
             {
                 SpawnNotes();
-                scoretext.text = GetScore() + "" ;
+                if (GetScore() > 0)
+                {
+                    scoretext.text = ((float)((int)(GetScore() * 100)) / 100) * 100 + " % \n Combo: " + combo + "";
+                }
             }
             else
             {

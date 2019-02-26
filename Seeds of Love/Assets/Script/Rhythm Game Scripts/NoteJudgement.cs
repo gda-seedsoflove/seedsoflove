@@ -78,18 +78,19 @@ namespace Script.Behaviour
                 {
                     if (!Note.isTouchNote)
                     {
+                        NoteManager.addScore(1, 1);
                         OnHit(gameObject);
                     }
                     else
                     {
                         touched = true;
                     }
-                    NoteManager.addScore(1, 1);
                     Note.Hit = true;
                 }
 
                 if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16) // If touch note and was "touched" then it is hit.
                 {
+                    NoteManager.addScore(1, 1);
                     OnHit(gameObject);
                 }
             }
@@ -102,7 +103,7 @@ namespace Script.Behaviour
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     GetComponent<HoldNoteScript>().Release();
                     OnHit(gameObject);
-                    NoteManager.addScore(.5f, 0); // completes the missing half of the note score.
+                    NoteManager.addScore(.5f, .5f); // completes the missing half of the note score.
                 }
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || currentlane != Note.Lane) && (holdingspace == false || currentlane != Note.Lane))
                 {
@@ -111,6 +112,7 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().held = false;
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     GetComponent<HoldNoteScript>().Release();
+                    NoteManager.addScore(0, .5f);
                 }
                 else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
                 {
@@ -134,7 +136,7 @@ namespace Script.Behaviour
                         GetComponent<NoteMovement>().moving = false;
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 0);
                     }
-                    NoteManager.addScore(.5f,1);
+                    NoteManager.addScore(.5f,.5f);
                     Note.Hit = true;
                 }
 
@@ -144,6 +146,7 @@ namespace Script.Behaviour
             
 
         }
+
 
         /**
          *  Returns true if the note is in the correct time and lane.

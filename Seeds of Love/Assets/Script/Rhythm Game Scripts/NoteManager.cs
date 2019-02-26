@@ -1,5 +1,6 @@
 using Script.Behaviour;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.Song
 {
@@ -22,6 +23,9 @@ namespace Script.Song
 
         private float score;
         private float fullscore;
+        protected int combo;
+
+        public Slider moodmeter;
 
         public abstract float CurrentSongTime { get; }
 
@@ -85,6 +89,29 @@ namespace Script.Song
         {
             score += points;
             fullscore += fullpoints;
+
+            if (points>=fullpoints)
+            {
+                combo++;
+            }
+            else
+            {
+                combo = 0;
+            }
+
+            if (combo > 0 && moodmeter != null)
+            {
+                float multiplier = Mathf.Clamp(1+((float)combo / 100),1,3);
+                moodmeter.GetComponent<MoodMeterScript>().AddMood(points * multiplier);
+            }
+            else if (combo == 0 && moodmeter != null)
+            {
+                moodmeter.GetComponent<MoodMeterScript>().AddMood(fullpoints * -10);
+            }
+            else
+            {
+                Debug.Log("Missing MoodMeter");
+            }
         }
 
         public float GetScore()

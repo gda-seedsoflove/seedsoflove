@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour {
     GameObject stageRight;
 
     bool inCoroutine;
+    private IEnumerator typingRoutine;
 
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
@@ -47,7 +48,7 @@ public class DialogueManager : MonoBehaviour {
         stageRight = null;
 
         lineNum = 0;
-        inCoroutine = false;
+        //inCoroutine = false;
 
         animator.SetBool("IsOpen", true);
 
@@ -62,10 +63,17 @@ public class DialogueManager : MonoBehaviour {
         {
             ShowDialogue();
         }
-        else if(lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking)))
+        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking))))
         {
             lineNum-=2;
             ShowDialogue();
+        }
+        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
+        {
+            StopCoroutine(typingRoutine);
+            inCoroutine = false;
+            dialogueText.text = "";
+            dialogueText.text = dialogue;
         }
     }
 
@@ -141,7 +149,7 @@ public class DialogueManager : MonoBehaviour {
             currSprite.sprite = null;
         }
 
-        //dimming sprite NOT WORKING
+        //dimming sprite based on ## command
         if(character != stageLeft && stageLeft != null) //this character isn't on the left and there is a character on the left
         {
             SpriteRenderer currSprite1 = stageLeft.GetComponent<SpriteRenderer>();
@@ -220,8 +228,8 @@ public class DialogueManager : MonoBehaviour {
 
             dialogueText.font = character.GetFont();
             StopAllCoroutines();
-            StartCoroutine(TypeSentence(dialogue));
-            inCoroutine = false;
+            typingRoutine = TypeSentence(dialogue);
+            StartCoroutine(typingRoutine);
         }
 
     }
@@ -247,17 +255,16 @@ public class DialogueManager : MonoBehaviour {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            if((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
+            /*if((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
             {
                 break;
             }
-            else
-            {
-                dialogueText.text += letter;
-                yield return null;
-            }
+            else */
+            
+            dialogueText.text += letter;
+            yield return null;
         }
-        dialogueText.text = sentence;
+        inCoroutine = false;
     }
 
 

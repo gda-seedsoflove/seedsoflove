@@ -11,6 +11,7 @@ public class MoodMeterScript : MonoBehaviour {
     public float percentage;
 
     public Slider moodbar;
+    public float delay;
 	// Use this for initialization
 	void Start () {
        
@@ -23,6 +24,20 @@ public class MoodMeterScript : MonoBehaviour {
         value = Mathf.Clamp(value,0,100);
         percentage = value / 100f;
         moodbar.value = percentage;
+        if (delay <= 0)
+        {
+            //Debug.Log("play");
+            var anims = new List<GameObject>();
+            anims.AddRange(GameObject.FindGameObjectsWithTag("Chibi"));
+            for (int i = 0; i < anims.Count;i++)
+            {
+                anims[i].GetComponent<Animator>().Play("Jumping");
+            }
+        }
+        else
+        {
+            delay -= Time.deltaTime;
+        }
 	}
 
     /**

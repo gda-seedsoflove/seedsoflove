@@ -113,8 +113,9 @@ namespace Tests.Interactive.NoteTimingTest
                     BMReader.GetNextNote();
                     if (!delaySet)
                     {
-                        // Debug.Log(BMReader.nextNote.timing);
+                        //Debug.Log(BMReader.nextNote.timing);
                         bgp.delay = BMReader.nextNote.timing + BMReader.delay;
+                        moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }
                 }

@@ -1,9 +1,13 @@
+/*
+ * Old script is old. Use Volume_Settings instead 
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class VolumeController : MonoBehaviour {
-
     //Remember! Volumes can only go from 0.0 to 1.0!
     //Also, I don't know if this works. It should, but I don't know if it does.
 

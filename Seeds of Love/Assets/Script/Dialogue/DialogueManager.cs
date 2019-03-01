@@ -172,7 +172,7 @@ public class DialogueManager : MonoBehaviour {
             ClearButtons();
             nameText.text = characterName;
             StopAllCoroutines();
-            StartCoroutine(TypeSentence(dialogue));
+            StartCoroutine(TypeSentence(dialogue, characterName));
         }
 
     }
@@ -189,11 +189,22 @@ public class DialogueManager : MonoBehaviour {
     }
 
     //animates text so that it appears one letter at a time
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence (string sentence, string characterName)
     {
+
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+
+            if (characterName.Equals(""))
+            {
+                GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, "Note Hit Effect");
+            }
+            else
+            {
+                GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, characterName + "Blip");
+            }
+            
             dialogueText.text += letter;
             yield return null;
         }

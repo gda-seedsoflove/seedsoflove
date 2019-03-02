@@ -228,7 +228,7 @@ public class DialogueManager : MonoBehaviour {
 
             dialogueText.font = character.GetFont();
             StopAllCoroutines();
-            typingRoutine = TypeSentence(dialogue);
+            typingRoutine = TypeSentence(dialogue, characterName);
             StartCoroutine(typingRoutine);
         }
 

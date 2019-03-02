@@ -191,18 +191,26 @@ public class DialogueManager : MonoBehaviour {
     //animates text so that it appears one letter at a time
     IEnumerator TypeSentence (string sentence, string characterName)
     {
-
+        int blipWait = 3; //makes blips play only every blipWait-th character.
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
 
-            if (characterName.Equals(""))
+            if(blipWait == 3) //make sure this matches the declaration
             {
-                GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, "Note Hit Effect");
+                if (characterName.Equals(""))
+                {
+                    GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, "Note Hit Effect");
+                }
+                else
+                {
+                    GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, characterName + "Blip");
+                }
+                blipWait = 0;
             }
             else
             {
-                GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(1, characterName + "Blip");
+                ++blipWait;
             }
             
             dialogueText.text += letter;

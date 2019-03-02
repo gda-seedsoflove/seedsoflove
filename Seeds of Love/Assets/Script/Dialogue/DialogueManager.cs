@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
     string position;
     string[] options;
     public bool playerTalking;
+    string command;
+
     List<Button> buttons = new List<Button>();
     public Canvas thisCanvas;
 
@@ -24,6 +26,12 @@ public class DialogueManager : MonoBehaviour {
 
     //animator needed to animate dialogue starting and finishing
     public Animator animator;
+
+    GameObject stageLeft;
+    GameObject stageRight;
+
+    bool inCoroutine;
+    private IEnumerator typingRoutine;
 
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
@@ -36,8 +44,11 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GetComponent<DialogueParser>();
 
+        stageLeft = null;
+        stageRight = null;
 
         lineNum = 0;
+        //inCoroutine = false;
 
         animator.SetBool("IsOpen", true);
 
@@ -48,9 +59,21 @@ public class DialogueManager : MonoBehaviour {
     //waits for keyboard input so user can advance with click or Space
     void Update()
     {
-        if ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking))
+        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
         {
             ShowDialogue();
+        }
+        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking))))
+        {
+            lineNum-=2;
+            ShowDialogue();
+        }
+        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
+        {
+            StopCoroutine(typingRoutine);
+            inCoroutine = false;
+            dialogueText.text = "";
+            dialogueText.text = dialogue;
         }
     }
 
@@ -59,7 +82,6 @@ public class DialogueManager : MonoBehaviour {
     {
         if(!playerTalking)
         {
-            ResetImages();
             ParseLine();
             lineNum++;
         }
@@ -67,24 +89,6 @@ public class DialogueManager : MonoBehaviour {
         UpdateUI();
     }
 
-    //resets images each time a new line is shown
-    void ResetImages()
-    {
-        if (characterName != "")
-        {
-            var character = GameObject.Find(characterName);
-            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-            currSprite.sprite = null;
-            if (position == "R")
-            {
-                currSprite.flipX = true;
-            }
-            else
-            {
-                currSprite.flipX = false;
-            }
-        }
-    }
 
     //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
@@ -92,6 +96,13 @@ public class DialogueManager : MonoBehaviour {
         if(parser.GetName(lineNum) == "end")
         {
             EndDialogue();
+        }
+        else if(parser.GetCommand(lineNum) == "exit")
+        {
+            command = parser.GetCommand(lineNum);
+            characterName = parser.GetName(lineNum);
+            DisplayImages();
+            command = "";
         }
         else if (parser.GetName(lineNum) != "Player")
         {
@@ -105,10 +116,6 @@ public class DialogueManager : MonoBehaviour {
         else
         {
             playerTalking = true;
-            //characterName = "";
-            //dialogue = "";
-            //pose = 0;
-            //position = "";
             options = parser.GetOptions(lineNum);
             CreateButtons();
         }
@@ -117,15 +124,57 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
-        if (characterName != "")
+        var character = GameObject.Find(characterName);
+        if (characterName != "" && command!="exit")
         {
-            var character = GameObject.Find(characterName);
-
             SetSpritePositions(character);
 
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = character.GetComponent<Character>().characterPoses[pose];
+
+            if(position == "R")
+            {
+                stageRight = character;
+                currSprite.flipX = true;
+            }
+            else
+            {
+                stageLeft = character;
+                currSprite.flipX = false;
+            }
         }
+        else if(command == "exit")
+        {
+            SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
+            currSprite.sprite = null;
+        }
+
+        //dimming sprite based on ## command
+        if(character != stageLeft && stageLeft != null) //this character isn't on the left and there is a character on the left
+        {
+            SpriteRenderer currSprite1 = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            SpriteRenderer currSprite2 = stageRight.GetComponent<SpriteRenderer>();
+            currSprite2.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else if(character != stageRight && stageRight!=null)//this character isn't on the right and there is a character on the right
+        {
+            SpriteRenderer currSprite1 = stageRight.GetComponent<SpriteRenderer>();
+            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            SpriteRenderer currSprite2 = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite2.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else if (character == stageRight)//this character is on the right
+        {
+            SpriteRenderer currSprite = stageRight.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else if(character == stageLeft)//this character is on the left
+        {
+            SpriteRenderer currSprite = stageLeft.GetComponent<SpriteRenderer>();
+            currSprite.color = new Color(1f, 1f, 1f, 1f);
+        }
+
     }
 
     //loads image to the correct side for current line
@@ -167,15 +216,25 @@ public class DialogueManager : MonoBehaviour {
     //removes player choice buttons if player isn't talking, updates name and dialogue text
     void UpdateUI()
     {
-        if(!playerTalking)
+        if(!playerTalking && command != "exit")
         {
             ClearButtons();
+
+            var charObj = GameObject.Find(characterName);
+            Character character = charObj.GetComponent<Character>();
+
+            nameText.font = character.GetFont();
             nameText.text = characterName;
+
+            dialogueText.font = character.GetFont();
             StopAllCoroutines();
-            StartCoroutine(TypeSentence(dialogue, characterName));
+            typingRoutine = TypeSentence(dialogue);
+            StartCoroutine(typingRoutine);
         }
 
     }
+
+    
 
     //removes unneeded buttons
     void ClearButtons()
@@ -188,9 +247,11 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+
     //animates text so that it appears one letter at a time
     IEnumerator TypeSentence (string sentence, string characterName)
     {
+
         int blipWait = 3; //makes blips play only every blipWait-th character.
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -216,7 +277,11 @@ public class DialogueManager : MonoBehaviour {
             dialogueText.text += letter;
             yield return null;
         }
+        inCoroutine = false;
     }
+
+
+ 
 
     //plays dialogue end animation
     void EndDialogue()

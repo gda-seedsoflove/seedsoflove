@@ -18,6 +18,7 @@ public class DialogueParser : MonoBehaviour
         public int pose;
         public string position;
         public string[] options;
+        public string command;
 
         public DialogueLine(string namein, string contentin, int posein, string positionin)
         {
@@ -26,6 +27,7 @@ public class DialogueParser : MonoBehaviour
             pose = posein;
             position = positionin;
             options = new string[0];
+            command = "";
         }
     }
 
@@ -102,6 +104,11 @@ public class DialogueParser : MonoBehaviour
                     {
                         lineEntry = new DialogueLine("end", "", 0, "");
                     }
+                    else if(lineData[0]=="##")
+                    {
+                        lineEntry = new DialogueLine(lineData[1], "", 0, "");
+                        lineEntry.command = lineData[2];
+                    }
                     else
                     {
                         lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
@@ -167,5 +174,14 @@ public class DialogueParser : MonoBehaviour
             return lines[lineNumber].options;
         }
         return new string[0];
+    }
+
+    public string GetCommand(int lineNumber)
+    {
+        if (lineNumber < lines.Count)
+        {
+            return lines[lineNumber].command;
+        }
+        return "";
     }
 }

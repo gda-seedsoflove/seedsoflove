@@ -15,10 +15,10 @@ public class SpriteColorer : MonoBehaviour
     void Start()
     {
         alphaLevel = 1f;
-        alphaSpeed = 0.009f;
-        red = 2f;
-        green = 1f;
-        blue = 1f;
+        alphaSpeed = 0.0009f;
+        red = 0f;
+        green = 0f;
+        blue = 0f;
     }
 
     // Update is called once per frame
@@ -32,14 +32,14 @@ public class SpriteColorer : MonoBehaviour
          * Can be applied to any sprite. 1f = 100% and 0f = 0%.
          */
 
-        if (Input.GetMouseButtonDown(0))                        //If left mouse button clicked (Just to test the code)
-        {
+        //if (Input.GetKeyDown(KeyCode.T))                        //If left mouse button clicked (Just to test the code)
+        //{
             Color tmp = GetComponent<SpriteRenderer>().color;
             tmp.a = alphaLevel;                                     //modifies opacity
             tmp.r = red;                                            //modifies the red color
             tmp.g = green;                                          //modifies the green color
             tmp.b = blue;                                           //modifies the blue coor
             GetComponent<SpriteRenderer>().color = tmp;
-        }
+        //}
     }
 }

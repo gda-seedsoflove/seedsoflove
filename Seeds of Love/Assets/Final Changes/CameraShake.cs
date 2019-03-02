@@ -6,6 +6,7 @@ public class CameraShake : MonoBehaviour {
 
     public Camera mainCam;
     private float shakeAmt = 4;                                     //influences the distance the camera moves from its position
+    private float decreaseAmt = 0.5f;
     Vector3 originalPos = new Vector3(0, 0, -10);                   //the original position of the main camera
     
     void Awake()
@@ -58,6 +59,8 @@ public class CameraShake : MonoBehaviour {
                 Debug.Log("Goodbye: I am satisfied");
                 mainCam.transform.position = cameraPos;                                   //This is needed to move the camera
             }
+
+
         }
     }
 

@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1135909703683946}
+  m_RootGameObject: {fileID: 1083389637171004}
   m_IsPrefabAsset: 1
---- !u!1 &1135909703683946
+--- !u!1 &1083389637171004
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4654787629158522}
-  - component: {fileID: 212605787425409082}
-  - component: {fileID: 114680906898315834}
+  - component: {fileID: 4772259133711266}
+  - component: {fileID: 212619050448614914}
+  - component: {fileID: 114610909773338620}
   m_Layer: 0
   m_Name: Bartender
   m_TagString: Untagged
@@ -28,38 +28,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4654787629158522
+--- !u!4 &4772259133711266
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135909703683946}
+  m_GameObject: {fileID: 1083389637171004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 489.5296, y: 198.71793, z: -36.125}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 489.5296, y: 197.5, z: -36.125}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114680906898315834
+--- !u!114 &114610909773338620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135909703683946}
+  m_GameObject: {fileID: 1083389637171004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daebe36fba12f8249a210f55f865c049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterPoses:
-  - {fileID: 21300000, guid: 93c0a539edb9c604cbb54fc2c07db87b, type: 3}
---- !u!212 &212605787425409082
+  - {fileID: 21300000, guid: 2e661dbcda1aa1e4fb55cc125756b703, type: 3}
+  personalFont: {fileID: 12800000, guid: 9509a4d956f029149b661e4bc81408e4, type: 3}
+--- !u!212 &212619050448614914
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135909703683946}
+  m_GameObject: {fileID: 1083389637171004}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93c0a539edb9c604cbb54fc2c07db87b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e661dbcda1aa1e4fb55cc125756b703, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

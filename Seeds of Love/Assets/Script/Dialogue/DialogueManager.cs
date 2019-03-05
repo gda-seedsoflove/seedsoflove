@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour {
 
     public string dialogue, characterName;
     public int lineNum;
+    public int sceneNumber;
     int pose;
     string position;
     string[] options;
@@ -286,6 +287,13 @@ public class DialogueManager : MonoBehaviour {
     //plays dialogue end animation
     void EndDialogue()
     {
-         animator.SetBool("IsOpen", false);
+        //Taken From Load Scene Script (Couldn't load trigger function without leaving out the sceneNumer so I transfered the necesarry scripts
+        //Couldn't figure out how to test, so warning as of writing this it is untested
+        //Needs an input of the sceneNumber within script public variables
+        animator.SetBool("IsOpen", false);
+        SceneFade fadeScreen;
+        fadeScreen = GameObject.FindObjectOfType<SceneFade>();
+        Debug.Log("Begin EndScene");
+        fadeScreen.BeginTransition(sceneNumber);
     }
 }

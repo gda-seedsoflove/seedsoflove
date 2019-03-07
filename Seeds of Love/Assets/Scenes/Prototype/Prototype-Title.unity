@@ -534,6 +534,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 496756691}
   m_Script: {fileID: 11500000, guid: 80576b6ff7fa0fd48bc88ed776b7b8eb, type: 3}
+--- !u!1001 &539009002
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.39050445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.26921743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.018770494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!224 &551230336 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224043660529364898, guid: 8526797b0583b0241a1fbe33597b5442,

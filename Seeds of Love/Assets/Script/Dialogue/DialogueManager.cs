@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour {
     public Text dialogueText;
     public GameObject choiceBox;
 
+    private bool inTransition;
+
     //animator needed to animate dialogue starting and finishing
     public Animator animator;
 
@@ -37,6 +39,8 @@ public class DialogueManager : MonoBehaviour {
     //initializes variables, triggers start animation, and starts dialogue
     public void Start()
     {
+        inTransition = false;
+
         dialogue = "";
         characterName = "";
         pose = 0;
@@ -60,16 +64,16 @@ public class DialogueManager : MonoBehaviour {
     //waits for keyboard input so user can advance with click or Space
     void Update()
     {
-        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
+        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition))
         {
             ShowDialogue();
         }
-        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking))))
+        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking) && !inTransition)))
         {
             lineNum-=2;
             ShowDialogue();
         }
-        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking)))
+        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition))
         {
             StopCoroutine(typingRoutine);
             inCoroutine = false;
@@ -217,7 +221,7 @@ public class DialogueManager : MonoBehaviour {
     //removes player choice buttons if player isn't talking, updates name and dialogue text
     void UpdateUI()
     {
-        if(!playerTalking && command != "exit")
+        if(!playerTalking && command != "exit" && !inTransition)
         {
             ClearButtons();
 
@@ -287,6 +291,7 @@ public class DialogueManager : MonoBehaviour {
     //plays dialogue end animation
     void EndDialogue()
     {
+        inTransition = true;
         //Taken From Load Scene Script (Couldn't load trigger function without leaving out the sceneNumer so I transfered the necesarry scripts
         //Couldn't figure out how to test, so warning as of writing this it is untested
         //Needs an input of the sceneNumber within script public variables
@@ -295,5 +300,6 @@ public class DialogueManager : MonoBehaviour {
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
         fadeScreen.BeginTransition(sceneNumber);
+        
     }
 }

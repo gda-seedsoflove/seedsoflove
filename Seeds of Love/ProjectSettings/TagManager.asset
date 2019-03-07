@@ -12,6 +12,7 @@ TagManager:
   - ActiveSound
   - Music
   - SFX
+  - Chibi
   layers:
   - Default
   - TransparentFX

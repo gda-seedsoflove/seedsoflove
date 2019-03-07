@@ -66,7 +66,10 @@ namespace Tests.Interactive.NoteTimingTest
             if (!random)
             {
                 SpawnNotes();
-                scoretext.text = GetScore() + "" ;
+                if (GetScore() > 0)
+                {
+                    scoretext.text = ((float)((int)(GetScore() * 100)) / 100) * 100 + " % \n Combo: " + combo + "";
+                }
             }
             else
             {
@@ -110,8 +113,9 @@ namespace Tests.Interactive.NoteTimingTest
                     BMReader.GetNextNote();
                     if (!delaySet)
                     {
-                        // Debug.Log(BMReader.nextNote.timing);
+                        //Debug.Log(BMReader.nextNote.timing);
                         bgp.delay = BMReader.nextNote.timing + BMReader.delay;
+                        moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }
                 }

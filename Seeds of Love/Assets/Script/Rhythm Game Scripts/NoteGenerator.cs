@@ -29,7 +29,9 @@ namespace Tests.Interactive.NoteTimingTest
         private float lastlane = 0;
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
-
+        private float transitiondelay = 0;
+        private bool inTransition;
+        public int sceneNumber;
         ///
         VolumeValueChange bgp;
         private bool delaySet = false;
@@ -76,6 +78,19 @@ namespace Tests.Interactive.NoteTimingTest
                 RandomSpawn();
             }
 
+
+            if(BMReader.songEnd == true && transitiondelay >= BMReader.delay&& inTransition == false)
+            {
+                inTransition = true;
+                SceneFade fadeScreen;
+                fadeScreen = GameObject.FindObjectOfType<SceneFade>();
+                Debug.Log(sceneNumber);
+                fadeScreen.BeginTransition(sceneNumber);
+            }
+            else if (BMReader.songEnd == true)
+            {
+                transitiondelay += Time.deltaTime;
+            }
         }
 
         /**

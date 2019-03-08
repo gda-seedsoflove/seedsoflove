@@ -367,7 +367,7 @@ MonoBehaviour:
   time: 0
   random: 0
   scoretext: {fileID: 362018417}
-  sceneNumber: 3
+  sceneNumber: 4
 --- !u!1 &132725336
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +976,7 @@ Prefab:
     - target: {fileID: 114666016170802288, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}
       propertyPath: sceneNumber
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114458771681001578, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}

@@ -158,14 +158,14 @@ public class DialogueManager : MonoBehaviour {
         if(character != stageLeft && stageLeft != null) //this character isn't on the left and there is a character on the left
         {
             SpriteRenderer currSprite1 = stageLeft.GetComponent<SpriteRenderer>();
-            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            currSprite1.color = new Color(.7f, .7f, .7f, 1f);
             SpriteRenderer currSprite2 = stageRight.GetComponent<SpriteRenderer>();
             currSprite2.color = new Color(1f, 1f, 1f, 1f);
         }
         else if(character != stageRight && stageRight!=null)//this character isn't on the right and there is a character on the right
         {
             SpriteRenderer currSprite1 = stageRight.GetComponent<SpriteRenderer>();
-            currSprite1.color = new Color(1f, 1f, 1f, .5f);
+            currSprite1.color = new Color(.7f, .7f, .7f, 1f);
             SpriteRenderer currSprite2 = stageLeft.GetComponent<SpriteRenderer>();
             currSprite2.color = new Color(1f, 1f, 1f, 1f);
         }
@@ -213,7 +213,7 @@ public class DialogueManager : MonoBehaviour {
             
             cb.transform.SetParent(thisCanvas.transform);
             RectTransform transform = b.gameObject.GetComponent<RectTransform>();
-            transform.anchoredPosition = new Vector2(xPos + (i * 150), yPos);
+            transform.anchoredPosition = new Vector2(xPos + (i * 300), yPos);
             buttons.Add(b);
         }
     }

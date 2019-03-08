@@ -1,0 +1,38 @@
+﻿Sunny;I got a little frustrated because she’s usually such a sweetheart, and.. Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;0;R
+Maria;No, it’s okay!;0;L
+Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;0;R
+Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed to someone to talk to.;0;L
+Sunny;...;0;R
+Maria;And you shouldn’t have to deal with all that on your own.;0;L
+Sunny;... Thank you.;0;R
+Maria;Besides, it was fun getting to know you. I don't think I've ever really talked to anyone like this before.;0;L
+Sunny;*blushes*;0;R
+Maria;(So cheesy... but it's the truth.);0;L
+Sunny;Um, this is a bit random, but...;0;R
+Maria;Yeah?;0;L
+Sunny;What time is it?;0;R
+Maria;Oh. Uh, around 2:00.;0;L
+Sunny;That’s... pretty late. Sorry, I should head home soon.;0;R
+Maria;Sorry for keeping you so long!;0;L
+Sunny;I would stay longer! If I could. I’ve stayed longer tonight that I ever have.;0;R
+Sunny;And, about what you said...;0;R
+Sunny;I’ve, um, never been able to talk to someone like this before either.;0;R
+Maria;Oh?!;0;L
+Sunny;But I really should be going!;0;R
+Maria;Yes! Got, um,  class tomorrow?;0;L
+Sunny;(giggling) It’s Friday, María. Well, Saturday now.;0;R
+Maria;Oh, right!;0;L
+Sunny;But seriously, thank you for talking to me tonight. Going up to people is hard, so I usually sit alone.;0;R
+Sunny;This was really nice.;0;R
+Maria;Hey, thanks for talking to me too. I'm glad my lame pick-up line didn't scare you off.;0;L
+Sunny;Don’t say that! (I thought it was cute.);0;R
+Maria;(!!!);0;L
+Maria;Nice - nice talking with you though! See you around?;0;L
+Sunny;Oh, definitely. 'Cause, you know, I live here.;0;R
+Maria;Right!;0;L
+Maria;Good night.;0;L
+##;Sunny;exit
+Maria;(AAAAAAAAAAAAAAAA);0;L
+Maria;(SHE WAS SO CUTE!!!!!!);0;L
+Maria;(BUT IT'S 2 AM!!!!!! I HAVE TO BE UP EARLY TOMORROW!!!!);0;L
+end;

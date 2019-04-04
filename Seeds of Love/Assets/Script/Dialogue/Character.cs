@@ -8,6 +8,7 @@ public class Character : MonoBehaviour {
     public Sprite[] characterPoses = null;
     public Font personalFont;
 
+    //personal font for each and every character
     public Font GetFont()
     {
         return personalFont;

@@ -89,8 +89,13 @@ public class DialogueManager : MonoBehaviour {
             ParseLine();
             lineNum++;
         }
-        
         UpdateUI();
+
+        if (command == "exit")
+        {
+            command = "";
+            ShowDialogue();
+        }
     }
 
 
@@ -101,12 +106,12 @@ public class DialogueManager : MonoBehaviour {
         {
             EndDialogue();
         }
-        else if(parser.GetCommand(lineNum) == "exit") //exit stage left the current character
+        else if (parser.GetCommand(lineNum) == "exit") //exit stage left the current character
         {
+            playerTalking = false;
             command = parser.GetCommand(lineNum);
             characterName = parser.GetName(lineNum);
             DisplayImages();
-            command = "";
         }
         else if (parser.GetName(lineNum) != "Player") //character is talking without needed player input
         {
@@ -128,6 +133,7 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
+        Debug.Log("Character: " + characterName);
         var character = GameObject.Find(characterName);
         if (characterName != "" && command!="exit") //if this character is talking, undim
         {

@@ -356,7 +356,7 @@ Prefab:
         type: 2}
       propertyPath: characterPoses.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: ed6ac537356e4c24088b99b6b7cf520c,
+      objectReference: {fileID: 21300000, guid: 05c65994833639240855ea5356e1294c,
         type: 3}
     - target: {fileID: 4772259133711266, guid: 64a823d9e93184b4ebfe36174f011c75, type: 2}
       propertyPath: m_LocalScale.x

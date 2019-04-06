@@ -451,7 +451,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3366da8af04b4614c85e49e201e749ac,
+      objectReference: {fileID: 21300000, guid: e32fd565d0f6555429aef042a3c88aab,
         type: 3}
     - target: {fileID: 224013951688930064, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
@@ -461,22 +461,22 @@ Prefab:
     - target: {fileID: 224013951688930064, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 129.8
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224156863836084060, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -14.2
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 224156863836084060, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 23.9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224879395656504940, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 8.900001
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 224879395656504940, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
@@ -517,6 +517,11 @@ Prefab:
         type: 2}
       propertyPath: sceneNumber
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114743559931587178, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f, type: 2}

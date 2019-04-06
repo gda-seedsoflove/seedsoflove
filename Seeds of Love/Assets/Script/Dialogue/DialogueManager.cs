@@ -25,6 +25,9 @@ public class DialogueManager : MonoBehaviour {
     public Text dialogueText;
     public GameObject choiceBox;
 
+    [SerializeField]
+    private Text spaceText;
+
     private bool inTransition;
 
     //animator needed to animate dialogue starting and finishing
@@ -63,7 +66,14 @@ public class DialogueManager : MonoBehaviour {
 
     void Update()
     {
-        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //advance line if line is finished
+        if(inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //shows whole line if click mid line
+        {
+            StopCoroutine(typingRoutine);
+            inCoroutine = false;
+            dialogueText.text = "";
+            dialogueText.text = dialogue;
+        }
+        else if(!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //advance line if line is finished
         {
             ShowDialogue();
         }
@@ -72,13 +82,7 @@ public class DialogueManager : MonoBehaviour {
             lineNum-=2;
             ShowDialogue();
         }
-        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //shows whole line if click mid line
-        {
-            StopCoroutine(typingRoutine);
-            inCoroutine = false;
-            dialogueText.text = "";
-            dialogueText.text = dialogue;
-        }
+        
     }
 
     //shows current line, increments, and updates UI
@@ -204,8 +208,10 @@ public class DialogueManager : MonoBehaviour {
     //creates buttons for player inputs
     void CreateButtons()
     {
-        int xPos = -150;
-        int yPos = -180;
+        spaceText.color = new Color(0, 0, 0, 0);
+
+        int xPos = -125;
+        int yPos = -127;
 
         for (int i = 0; i < options.Length; i++)
         {
@@ -216,9 +222,9 @@ public class DialogueManager : MonoBehaviour {
             cb.option = options[i].Split(':')[1];
             cb.box = this;
             
-            cb.transform.SetParent(thisCanvas.transform);
+            cb.transform.SetParent(thisCanvas.transform, false);
             RectTransform transform = b.gameObject.GetComponent<RectTransform>();
-            transform.anchoredPosition = new Vector2(xPos + (i * 300), yPos);
+            transform.anchoredPosition = new Vector2(xPos + (i * 250), yPos);
             buttons.Add(b);
         }
     }
@@ -254,13 +260,14 @@ public class DialogueManager : MonoBehaviour {
             buttons.Remove(b);
             Destroy(b.gameObject);
         }
+        spaceText.color = new Color(1, 1, 1, 1);
     }
 
 
     //animates text so that it appears one letter at a time
     IEnumerator TypeSentence (string sentence, string characterName)
     {
-
+        inCoroutine = true;
         int blipWait = 3; //makes blips play only every blipWait-th character.
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())

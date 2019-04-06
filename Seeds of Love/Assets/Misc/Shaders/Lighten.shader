@@ -1,11 +1,9 @@
-Shader "Unlit/UnlitOutline"
+Shader "Unlit/Lighten"
 {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-        _Outline ("Outline", Color) = (0.1,0.1,0.1,1)
-		_OutlineWidth ("OutlineWidth", float) = 0.02
-        _Color ("Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (1, 1, 1, 1)
         _Lightness ("Lightness", float) = 0.0
 	}
 	SubShader
@@ -39,8 +37,6 @@ Shader "Unlit/UnlitOutline"
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
             fixed4 _Color;
-		    fixed4 _Outline;
-		    float _OutlineWidth;
             float _Lightness;
 			
 			v2f vert (appdata v)
@@ -54,15 +50,8 @@ Shader "Unlit/UnlitOutline"
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-                // calculate UV distance
-			    float distY = abs(i.uv.y - .5) * 2;
-
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv) * _Color;
-
-                if (distY > (1 - _OutlineWidth)){
-				    col = _Outline;
-			    }
 
                 fixed4 diff = fixed4(1, 1, 1, 1) - col;
 

@@ -112,7 +112,7 @@ namespace Script.Song
             {
                 Debug.Log("Missing MoodMeter");
             }
-            Debug.Log(moodmeter.GetComponent<MoodMeterScript>().GetMood());
+            //Debug.Log(moodmeter.GetComponent<MoodMeterScript>().GetMood());
         }
 
         public float GetScore()

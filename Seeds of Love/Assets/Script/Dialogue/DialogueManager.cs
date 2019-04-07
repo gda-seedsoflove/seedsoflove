@@ -77,11 +77,11 @@ public class DialogueManager : MonoBehaviour {
         {
             ShowDialogue();
         }
-        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking) && !inTransition))) //back to previous line on right click
+        /*else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking) && !inTransition))) //back to previous line on right click
         {
             lineNum-=2;
             ShowDialogue();
-        }
+        }*/
         
     }
 

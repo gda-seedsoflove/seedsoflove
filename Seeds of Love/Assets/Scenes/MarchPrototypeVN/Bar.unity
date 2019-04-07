@@ -459,6 +459,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: characterPoses.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4936184899664986, guid: 33c832d876aa10d459b89a56cce6f717, type: 2}
       propertyPath: m_LocalPosition.x
       value: 489.5296
@@ -513,7 +518,25 @@ Prefab:
         type: 2}
       propertyPath: characterPoses.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: a6c176c3202ede44397a3f064085b758,
+      objectReference: {fileID: 21300000, guid: c9c0dac6cf1833d4db1580d8da56ec63,
+        type: 3}
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: characterPoses.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 061bdafe8bc9f38489298ad7f9ebd834,
+        type: 3}
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: characterPoses.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f38a1782ed95354eadac00376c7b458,
+        type: 3}
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: characterPoses.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 803b1d24c9cb5c64a955f2184c92782e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c832d876aa10d459b89a56cce6f717, type: 2}
@@ -806,6 +829,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4461635188795316, guid: b7f870e41ce03a4488238bd136015232, type: 2}
       propertyPath: m_LocalPosition.x
       value: 489.5296
@@ -850,6 +878,54 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bcdb8ab9f8c94f4c8b898316125ff9a,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: be6e8bae233ea484da98fd7ab795da58,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5eecfedd575a374b9b34baf270ef0f7,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: a7a3e112d4d220b498ada8be82794323,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: f957a4ad8d7386a48977a982e186f5ea,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9aaf685f8b111dc47985da6017671a4a,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 60ba1d9c35187794b9950c1e9249c02e,
+        type: 3}
+    - target: {fileID: 114563492286229960, guid: b7f870e41ce03a4488238bd136015232,
+        type: 2}
+      propertyPath: characterPoses.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 333c86c3cc55f824c83fdcbd946f30b4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f870e41ce03a4488238bd136015232, type: 2}
   m_IsPrefabAsset: 0

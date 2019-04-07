@@ -1,4 +1,5 @@
-﻿Maria;(This place seems to be the bar...);0;L
+Maria;(This place seems to be the bar...);0;L
+Maria;Hey, uhh…, Bartender?;0;L
 Bartender;Hmm?;0;R
 Maria;Can I get a bourbon with a lemon wedge?;0;L
 Bartender;That’s an unusual order.;0;R
@@ -6,134 +7,134 @@ Maria;Oh, is it?;0;L
 Bartender;Mhmm…;0;R
 Maria;Oh…;0;L
 Maria;(This isn’t turning out as I thought…);0;L
-Maria;(Wait, this guy looks familiar.);0;L
+Maria;(Wait, this guy looks familiar.);6;L
 Maria;Do I know you?;0;L
 Bartender;Mhmm…;0;R
 Maria;On the farm, right?;0;L
 Bartender;Mhmm.;0;R
 Maria;Wow… (This guy has two jobs. Impressive.);0;L
 Bartender;Here’s your bourbon, with a lemon wedge.;0;R
-Maria;Oh! Thank you! *chugs it like a beer*;0;L
-Maria;*gags and chokes*;0;L
+Maria;Oh! Thank you! Well, bottom’s up!;1;L
+Maria;...;2;L
+Maria;Aughuaushdh…!;7;L
 Bartender;You alright, kid?;0;R
-Maria;Yep…;0;L
-Maria;(No, my throat is dying.);0;L
+Maria;Yep…;3;L
+Maria;(No, my throat is dying.);4;L
 Bartender;Here, have some milk.;0;R
-Maria;Thank… you…;0;L
+Maria;Thank… you…;4;L
 Bartender;Milk is free, but you’ll still have to pay for the bourbon.;0;R
-Maria;(...);0;L
+Maria;(...);3;L
 ##;Bartender;exit
-Maria;(Well, this is kinda shitty.);0;L
+Maria;(Well, this is kinda shitty.);6;L
 Sunny;...?;0;R
-Maria;(Hm...);0;L
-Maria;(That girl over there is kinda pretty. I should go over and talk to her.);0;L
+Maria;(Hm… That girl over there is kinda pretty. I should go over and talk to her.);0;L
 Maria;(Wait, what am I going to say to her?);0;L
 Player;You know, if you were a vegetable, you’d be a cutecumber.:line,32;I must have died on this bourbon, cause you’re an angel.:line,86
-Maria;(Here goes!);0;L
-Maria;You know, if you were a vegetable, you’d be a cutecumber.;0;L
-Sunny;Uh...;0;R
-Maria;(AAAAAAAAAAHHAHAHAHAHAHAHAHHAAAHAHHAHDSJADASMFVMAKDFNIFNOIA);0;L
-Maria;(THAT’S SO LAME!!!!!!);0;L
-Maria;(WHO THE HECK SAYS THAT?!?!?);0;L
-Maria;(WHERE CAN I HIDE?!?!?);0;L
-Sunny;...;0;R
-Sunny;Pfft.;0;R
-Sunny;That’s kinda funny.;0;R
+Maria;(Here goes!);6;L
+Maria;You know, if you were a vegetable, you’d be a cutecumber.;2;L
+Sunny;Uh...;3;R
+Maria;(AAAAAAAAAAHHAHAHAHAHAHAHAHHAAAHAHHAHDSJADASMFVMAKDFNIFNOIA);3;L
+Maria;(THAT’S SO LAME!!!!!!);3;L
+Maria;(WHO THE HECK SAYS THAT?!?!?);3;L
+Maria;(WHERE CAN I HIDE?!?!?);4;L
+Sunny;...;3;R
+Sunny;Pfft.;1;R
+Sunny;That’s kinda funny.;1;R
 Maria;Oh, uh, yeah. I’m Maria.;0;L
-Sunny;I'm Sunny, if you're wondering.;0;R
-Maria;So… is it normal for a girl as pretty as you to be sitting alone?;0;L
-Sunny;Oh, uhh… well, I, uhh…;0;R
+Sunny;I'm Sunny, if you're wondering.;1;R
+Maria;So… is it normal for a girl as pretty as you to be sitting alone?;1;L
+Sunny;Oh, uhh… well, I, uhh…;3;R
 Sunny;I mean, I just got off of work...;0;R
 Sunny;And I saw that the bar was open...;0;R
 Sunny;So I came in...;0;R
 Sunny;Cause I like drinking here...;0;R
 Sunny;I like do the occasional social drinking...;0;R
-Sunny;Alone...;0;R
-Sunny;...;0;R
+Sunny;Alone...;2;R
+Sunny;...;2;R
 Sunny;But anyways, what brings you here? Why talk to someone like me?;0;R
 Maria;Oh, you know… I just got off working on a farm.;0;L
 Sunny;A farm?;0;R
 Maria;Yeah! With all the tools, and the dirt… and carrots…;0;L
-Sunny;Wow, you’re a farmer...;0;R
+Sunny;Wow, so you’re a farmer...;1;R
 Maria;Sort of. I'm helping out at my abuela’s farm.;0;L
 Sunny;Abuela?;0;R
-Maria;It means grandma.;0;L
-Sunny;Oh! That’s good to know. Say, your grandma wouldn’t happen to be Rosa, would she?;0;R
+Maria;Grandma.;0;L
+Sunny;Oh, right. Say, your grandma wouldn’t happen to be Rosa, would she?;0;R
 Maria;You know her? I didn't realize she was that famous.;0;L
-Maria;My abuela’s amazing. I came out here to learn something from her.;0;L
-Sunny;Ahh, I knew I’ve never seen you around before. You're the first new person I've seen in a while.;0;R
+Maria;My abuela’s amazing. I came out here to learn something from her.;1;L
+Sunny;Ahh, I knew I’ve never seen you around before. You're the first new person I've seen in a while.;1;R
 Maria;Really?;0;L
-Sunny;I'm used to seeing people leave, but I get really excited whenever someone new comes in. Everything is so samey.;0;R
-Maria;What? But it's so amazing here! Everything seems so different, and new, and there’s like cows everywhere.;0;L
-Sunny;I guess you’ve been having a good time then. What have you seen?;0;R
-Maria;Not much… yet. But I think I’m going to really like it here.;0;L
+Sunny;I'm used to seeing people leave, but I get really excited whenever someone new comes in. Everything is so samey.;2;R
+Maria;What? But it's so amazing here! Everything seems so different, and new, and there’s like cows everywhere.;2;L
+Sunny;I guess you’ve been having a good time then. What have you seen?;1;R
+Maria;Not much… yet. But I think I’m going to really like it here.;1;L
 Sunny;Really? If this little town is so exciting, where are you from?;0;R
 Maria;Oh, I’m from the bay. It’s like big and bustling and busy, but once you’ve tried everything, it feels so empty.;0;L
-Maria;I was going to college in the city, 'cause that’s what you do after high school, but now that I’m almost done, I just… don’t feel right there.;0;L
-Maria;I had a moment where I was like, “What am I doing?” And I decided to come here to figure that out.;0;L
-Sunny;You gave up city life for... this?;0;R
+Maria;I was going to college in the city, 'cause that’s what you do after high school, but now that I’m almost done, I just… didn’t feel right there.;6;L
+Maria;I had a moment where I was like, “What am I doing?” So I decided to come here to figure that out.;0;L
+Sunny;You gave up city life for... this?;3;R
 Maria;I didn’t exactly give it up, just decided to take a break.;0;L
-Sunny;Huh… Well, I hope you get something good out of this little town.;0;R
-Maria;...Yeah, I hope so too.;0;L
-Maria;So, uhhhh, what’s your story?;0;L
-Sunny;Huh? You wanna hear about me?;0;R
-Maria;Well, yeah! I came here to get away from all the stuff back home. You seem like a perfect getaway.;0;L
-Maria;(That didn’t come out right…);0;L
-Sunny;Well, I mean, I don’t have much to say. I’ve lived here all my life. It's been pretty normal…;0;R
+Sunny;Huh… Well, I hope you get something good out of this little town.;1;R
+Maria;...Yeah, I hope so too.;2;L
+Maria;So, uhhhh, what’s your story?;1;L
+Sunny;Huh? You wanna hear about me?;3;R
+Maria;Well, yeah! I came here to get away from all the stuff back home. You seem like a perfect getaway.;2;L
+Maria;(That didn’t come out right…);5;L
+Sunny;Well, I mean, I don’t have much to say. I’ve lived here all my life. It's been pretty normal…;2;R
 Sunny;I honestly don’t know what else there is to know.;0;R
 Maria;Alright then, let me ask the questions.;0;L
 end;
 Maria;(Here goes!);0;L
 Maria;I must have died on this bourbon, cause you’re an angel.;0;L
-Sunny;Uh...;0;R
-Maria;(AAAAAAAAAAHHAHAHAHAHAHAHAHHAAAHAHHAHDSJADASMFVMAKDFNIFNOIA);0;L
-Maria;(THAT’S SO LAME!!!!!!);0;L
-Maria;(WHO THE HECK SAYS THAT?!?!?);0;L
-Maria;(WHERE CAN I HIDE?!?!?);0;L
-Sunny;...;0;R
-Sunny;Pfft.;0;R
-Sunny;That’s kinda funny.;0;R
+Sunny;Uh...;3;R
+Maria;(AAAAAAAAAAHHAHAHAHAHAHAHAHHAAAHAHHAHDSJADASMFVMAKDFNIFNOIA);3;L
+Maria;(THAT’S SO LAME!!!!!!);3;L
+Maria;(WHO THE HECK SAYS THAT?!?!?);3;L
+Maria;(WHERE CAN I HIDE?!?!?);4;L
+Sunny;...;3;R
+Sunny;Pfft.;1;R
+Sunny;That’s kinda funny.;1;R
 Maria;Oh, uh, yeah. I’m Maria.;0;L
-Sunny;I'm Sunny, if you're wondering.;0;R
-Maria;So… is it normal for a girl as pretty as you to be sitting alone?;0;L
-Sunny;Oh, uhh… well, I, uhh…;0;R
+Sunny;I'm Sunny, if you're wondering.;1;R
+Maria;So… is it normal for a girl as pretty as you to be sitting alone?;1;L
+Sunny;Oh, uhh… well, I, uhh…;3;R
 Sunny;I mean, I just got off of work...;0;R
 Sunny;And I saw that the bar was open...;0;R
 Sunny;So I came in...;0;R
 Sunny;Cause I like drinking here...;0;R
 Sunny;I like do the occasional social drinking...;0;R
-Sunny;Alone...;0;R
-Sunny;...;0;R
+Sunny;Alone...;2;R
+Sunny;...;2;R
 Sunny;But anyways, what brings you here? Why talk to someone like me?;0;R
 Maria;Oh, you know… I just got off working on a farm.;0;L
 Sunny;A farm?;0;R
 Maria;Yeah! With all the tools, and the dirt… and carrots…;0;L
-Sunny;Wow, you’re a farmer...;0;R
+Sunny;Wow, so you’re a farmer...;1;R
 Maria;Sort of. I'm helping out at my abuela’s farm.;0;L
 Sunny;Abuela?;0;R
-Maria;It means grandma.;0;L
-Sunny;Oh! That’s good to know. Say, your grandma wouldn’t happen to be Rosa, would she?;0;R
+Maria;Grandma.;0;L
+Sunny;Oh, right. Say, your grandma wouldn’t happen to be Rosa, would she?;0;R
 Maria;You know her? I didn't realize she was that famous.;0;L
-Maria;My abuela’s amazing. I came out here to learn something from her.;0;L
-Sunny;Ahh, I knew I’ve never seen you around before. You're the first new person I've seen in a while.;0;R
+Maria;My abuela’s amazing. I came out here to learn something from her.;1;L
+Sunny;Ahh, I knew I’ve never seen you around before. You're the first new person I've seen in a while.;1;R
 Maria;Really?;0;L
-Sunny;I'm used to seeing people leave, but I get really excited whenever someone new comes in. Everything is so samey.;0;R
-Maria;What? But it's so amazing here! Everything seems so different, and new, and there’s like cows everywhere.;0;L
-Sunny;I guess you’ve been having a good time then. What have you seen?;0;R
-Maria;Not much… yet. But I think I’m going to really like it here.;0;L
+Sunny;I'm used to seeing people leave, but I get really excited whenever someone new comes in. Everything is so samey.;2;R
+Maria;What? But it's so amazing here! Everything seems so different, and new, and there’s like cows everywhere.;2;L
+Sunny;I guess you’ve been having a good time then. What have you seen?;1;R
+Maria;Not much… yet. But I think I’m going to really like it here.;1;L
 Sunny;Really? If this little town is so exciting, where are you from?;0;R
 Maria;Oh, I’m from the bay. It’s like big and bustling and busy, but once you’ve tried everything, it feels so empty.;0;L
-Maria;I was going to college in the city, 'cause that’s what you do after high school, but now that I’m almost done, I just… don’t feel right there.;0;L
-Maria;I had a moment where I was like, “What am I doing?” And I decided to come here to figure that out.;0;L
-Sunny;You gave up city life for... this?;0;R
+Maria;I was going to college in the city, 'cause that’s what you do after high school, but now that I’m almost done, I just… didn’t feel right there.;6;L
+Maria;I had a moment where I was like, “What am I doing?” So I decided to come here to figure that out.;0;L
+Sunny;You gave up city life for... this?;3;R
 Maria;I didn’t exactly give it up, just decided to take a break.;0;L
-Sunny;Huh… Well, I hope you get something good out of this little town.;0;R
-Maria;...Yeah, I hope so too.;0;L
-Maria;So, uhhhh, what’s your story?;0;L
-Sunny;Huh? You wanna hear about me?;0;R
-Maria;Well, yeah! I came here to get away from all the stuff back home. You seem like a perfect getaway.;0;L
-Maria;(That didn’t come out right…);0;L
-Sunny;Well, I mean, I don’t have much to say. I’ve lived here all my life. It's been pretty normal…;0;R
+Sunny;Huh… Well, I hope you get something good out of this little town.;1;R
+Maria;...Yeah, I hope so too.;2;L
+Maria;So, uhhhh, what’s your story?;1;L
+Sunny;Huh? You wanna hear about me?;3;R
+Maria;Well, yeah! I came here to get away from all the stuff back home. You seem like a perfect getaway.;2;L
+Maria;(That didn’t come out right…);5;L
+Sunny;Well, I mean, I don’t have much to say. I’ve lived here all my life. It's been pretty normal…;2;R
 Sunny;I honestly don’t know what else there is to know.;0;R
 Maria;Alright then, let me ask the questions.;0;L
 end;

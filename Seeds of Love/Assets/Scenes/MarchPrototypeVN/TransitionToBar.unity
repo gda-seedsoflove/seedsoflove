@@ -469,6 +469,11 @@ Prefab:
       propertyPath: m_FontData.m_FontSize
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114165916445272122, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
+        type: 2}
+      propertyPath: spaceText
+      value: 
+      objectReference: {fileID: 1784796338}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f, type: 2}
   m_IsPrefabAsset: 0

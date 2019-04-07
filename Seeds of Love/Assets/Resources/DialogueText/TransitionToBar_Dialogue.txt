@@ -1,28 +1,28 @@
-Maria;(Whew… Today has been great! Picking carrots was a piece of carrot cake!);0;L
-Maria;(Oof, that was bad.);0;L
+Maria;(Whew… I knew it was a good idea to come to the farm! Picking carrots was a piece of carrot cake!);1;L
+Maria;(Oof, that was bad.);6;L
+Maria;(Oh, there’s my abuela Rosa.);0;L
 Rosa;How was your first day, mija?;0;R
-Maria;It was so great! The rhythm of farming felt so natural!;0;L
-Maria;(Oh, that one too.);0;L
-Rosa;Well, I do have to admit you picked this up quickly. Not bad, for your first day.;0;R
-Maria;*yawn* Right! I’m so good at this! I can’t wait for tomorrow!;0;L
+Maria;Oh, hey abuelita! It was so great today! The rhythm of farming felt so natural!;1;L
+Maria;(Oh, that one too.);6;L
+Rosa;I do have to admit you picked this up quickly. Not bad, for your first day.;0;R
+Maria;Right! I’m so good at this! I can’t wait for tomorrow!;1;L
 Rosa;Well, why wait? Now that the fields are clear, there’s nothing stopping you from plowing them again.;0;R
 Rosa;If you go now, you might be able to finish by sunrise.;0;R
 Maria;H-huh?;0;L
 Rosa;Oh! And since you’re such a natural, why don’t you plant the lettuce seeds too! I’m sure you can get it all done overnight.;0;R
-Maria;W-wait! What!?;0;L
+Maria;W-wait! What!?;6;L
 Rosa;I’m kidding! I wouldn’t want to overwork you after only one day!;0;R
-Maria;Oh... haha...;0;L
+Maria;Oh... haha...;2;L
 Rosa;Alright, enough messing around. Let’s go inside. You must be tired after such a long day.;0;R
-Maria;Actually, I was thinking that I would go out tonight. It’s my first day here, so I’m excited to see the town!;0;L
-Rosa;I don’t what you usually get up to at night, but if you’re trying to be a farmer, you really should get some sleep.;0;R
+Maria;Actually, I was thinking that I would go out tonight. It’s my first day here, so I’m excited to see the town!;1;L
+Rosa;I don’t know what you usually get up to at night, but if you’re trying to be a farmer, you really should get some sleep.;0;R
 Rosa;We’re going to have to work even harder tomorrow, and that means waking up early too.;0;R
-Maria;Aw, don’t worry about it! I know you’re trying to worry about me like a good grandma, but I can work just fine without much sleep.;0;L
-Maria;College, you know.;0;L
-Rosa;This is not college.;0;R
-Rosa;This is a farm, and you need to be awake tomorrow.;0;R
-Rosa;And it’s not about me just being your grandmother.;0;R
-Rosa;This is about the responsibilities that come with working on a farm, and I think you’ll want to rest.;0;R
-Maria;I know you’re worried about me, but I still want to go out tonight. I know my limits, and I’ll be back when I get tired.;0;L
-Maria;See ya later!;0;L
+Maria;Aw, don’t worry about it! I know you’re trying to worry about me, but I can work just fine without much sleep.;1;L
+Maria;College, you know.;2;L
+Rosa;This is not college, Maria. This is a farm, and you need to be awake early tomorrow.;0;R
+Rosa;And I am not just saying this as tu abuela.;0;R
+Rosa;Working on a farm means having responsibilities, and I think you’ll want to rest.;0;R
+Maria;I know you’re worried about me, but I still want to go out tonight. I know my limits, and I’ll be back when I get tired.;6;L
+Maria;See ya later!;1;L
 Rosa;María, wait…!;0;R
 end;

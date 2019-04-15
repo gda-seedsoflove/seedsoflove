@@ -180,7 +180,7 @@ public class NoteDetector : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect");
+            transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
             whitetime = .1f;
         }
 

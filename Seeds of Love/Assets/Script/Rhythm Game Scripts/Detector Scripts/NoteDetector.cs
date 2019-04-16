@@ -182,6 +182,12 @@ public class NoteDetector : MonoBehaviour
         {
             transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
             whitetime = .1f;
+            transform.localScale = new Vector3(.85f, .85f, 1);
+        }
+
+        if (Input.GetKey(KeyCode.Space) == false)
+        {
+            transform.localScale = new Vector3(1,1,1);
         }
 
         if (whitetime >= 0)

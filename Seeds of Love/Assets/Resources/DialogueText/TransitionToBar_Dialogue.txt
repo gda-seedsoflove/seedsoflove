@@ -19,7 +19,7 @@ Rosa;I don’t know what you usually get up to at night, but if you’re trying 
 Rosa;We’re going to have to work even harder tomorrow, and that means waking up early too.;0;R
 Maria;Aw, don’t worry about it! I know you’re trying to worry about me, but I can work just fine without much sleep.;1;L
 Maria;College, you know.;2;L
-Rosa;This is not college, Maria. This is a farm, and you need to be awake early tomorrow.;0;R
+Rosa;This is not college, María. This is a farm, and you need to be awake early tomorrow.;0;R
 Rosa;And I am not just saying this as tu abuela.;0;R
 Rosa;Working on a farm means having responsibilities, and I think you’ll want to rest.;0;R
 Maria;I know you’re worried about me, but I still want to go out tonight. I know my limits, and I’ll be back when I get tired.;6;L

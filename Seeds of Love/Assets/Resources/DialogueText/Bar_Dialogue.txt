@@ -40,7 +40,7 @@ Maria;(WHERE CAN I HIDE?!?!?);4;L
 Sunny;...;3;R
 Sunny;Pfft.;1;R
 Sunny;That’s kinda funny.;1;R
-Maria;Oh, uh, yeah. I’m Maria.;0;L
+Maria;Oh, uh, yeah. I’m María.;0;L
 Sunny;I'm Sunny, if you're wondering.;1;R
 Maria;So… is it normal for a girl as pretty as you to be sitting alone?;1;L
 Sunny;Oh, uhh… well, I, uhh…;3;R
@@ -94,7 +94,7 @@ Maria;(WHERE CAN I HIDE?!?!?);4;L
 Sunny;...;3;R
 Sunny;Pfft.;1;R
 Sunny;That’s kinda funny.;1;R
-Maria;Oh, uh, yeah. I’m Maria.;0;L
+Maria;Oh, uh, yeah. I’m María.;0;L
 Sunny;I'm Sunny, if you're wondering.;1;R
 Maria;So… is it normal for a girl as pretty as you to be sitting alone?;1;L
 Sunny;Oh, uhh… well, I, uhh…;3;R

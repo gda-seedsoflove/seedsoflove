@@ -241,6 +241,11 @@ public class DialogueManager : MonoBehaviour {
 
             nameText.font = character.GetFont();
             nameText.text = characterName;
+            //Change's Maria's name in the character name slot to María with the accented í.
+            if (characterName == "Maria")
+            {
+                nameText.text = "María";
+            }
 
             dialogueText.font = character.GetFont();
             StopAllCoroutines();

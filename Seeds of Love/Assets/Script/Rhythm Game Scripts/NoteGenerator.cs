@@ -64,7 +64,7 @@ namespace Tests.Interactive.NoteTimingTest
             _nextNoteSpawnTime = Time.time;
         }
 
-        private void FixedUpdate()
+        void Update()
         {
             if (!random)
             {
@@ -79,9 +79,19 @@ namespace Tests.Interactive.NoteTimingTest
                 RandomSpawn();
             }
 
-
-            if(BMReader.songEnd == true && transitiondelay >= BMReader.delay&& inTransition == false)
+            if (paused)
             {
+                bgp.delay = 99;
+                moodmeter.GetComponent<MoodMeterScript>().delay = 99;
+            }
+            else
+            {
+                time = time + Time.deltaTime;
+            }
+
+            if (BMReader.songEnd == true && transitiondelay >= BMReader.delay && inTransition == false)
+            {
+                PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMood();
                 inTransition = true;
                 SceneFade fadeScreen;
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();
@@ -94,6 +104,12 @@ namespace Tests.Interactive.NoteTimingTest
             }
         }
 
+        private void FixedUpdate()
+        {
+
+
+        }
+
         /**
          *  Spawns Notes from the BeatMapReader assuming from the same object. 
          */
@@ -101,15 +117,6 @@ namespace Tests.Interactive.NoteTimingTest
         {
             BMReader = GetComponent<BeatmapReader>();
             //paused = true;
-            if (paused)
-            {
-                bgp.delay = 99;
-                moodmeter.GetComponent<MoodMeterScript>().delay = 99;
-            }
-            else
-            {
-                time = time + Time.deltaTime;
-            }
 
             while (BMReader.songEnd == false && !paused)
             {
@@ -140,7 +147,7 @@ namespace Tests.Interactive.NoteTimingTest
                     if (!delaySet)
                     {
                         //Debug.Log(BMReader.nextNote.timing);
-                        bgp.delay = BMReader.nextNote.timing + BMReader.delay;
+                        bgp.delay =  BMReader.delay + (EndY/ notespeed);
                         moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }

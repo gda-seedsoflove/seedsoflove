@@ -53,7 +53,7 @@ public class MoodMeterScript : MonoBehaviour {
      */
     public float GetMood()
     {
-        return value;
+        return targetvalue;
     }
 
     /**

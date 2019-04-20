@@ -14,6 +14,8 @@ public class HoldNoteScript : MonoBehaviour {
     [HideInInspector]
     public GameObject top, bottom;
 
+    private Vector2 end;
+
     [HideInInspector]
     public float speed, length;
 
@@ -22,14 +24,15 @@ public class HoldNoteScript : MonoBehaviour {
 
     public GameObject pulse;
     [HideInInspector]
-    public float interval,currinterval;
+    public float interval, currinterval;
 
     private Vector2 pos;
 
     [HideInInspector]
     public LineRenderer lr;
 
-    private Color c;
+    [HideInInspector]
+    public Color c;
     // Use this for initialization
     void Start () {
         top = (GameObject)Instantiate(Top,transform,true);
@@ -56,7 +59,7 @@ public class HoldNoteScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         lr = GetComponent<LineRenderer>();
         if (lr)
         {
@@ -71,12 +74,15 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 Destroy(bottom.GetComponentInChildren<SpriteRenderer>());
             }
-            if (online == false)
+            if (online == false && top != null)
             {
                 top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
             }
-
-            float distance = top.transform.position.y - bottom.transform.position.y;
+            float distance = 0;
+            if (top != null)
+            {
+                distance = top.transform.position.y - bottom.transform.position.y;
+            }
             //Debug.Log(interval * speed);
             if (currinterval <= 0 && distance >= interval/2 * -speed) // Pulses in half beats in the hold notes
             {
@@ -112,6 +118,7 @@ public class HoldNoteScript : MonoBehaviour {
         top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.6f, c.b*.6f);
         lr.SetPosition(1, top.transform.position);
         lr.material.SetColor("_Color", new Color(.8f, .4f, .4f));
+
     }
 
     public void Release()
@@ -121,6 +128,7 @@ public class HoldNoteScript : MonoBehaviour {
             Transform child = top.transform.GetChild(0);
             child.parent = null;
             Destroy(child.gameObject);
+            Destroy(top);
         }
     }
 }

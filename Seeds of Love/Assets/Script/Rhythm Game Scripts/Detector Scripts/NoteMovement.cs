@@ -10,9 +10,11 @@ namespace Script.Behaviour
         public Note Note { get; set; }
         public bool moving = true;
 
+        private float timeafter;
+
         void Start()
         {
-
+           
         }
 
         private void FixedUpdate()
@@ -65,6 +67,33 @@ namespace Script.Behaviour
         void Update()
         {
 
+            if (Note.Currtime < 0)
+            {
+                GameObject child = transform.GetChild(0).gameObject;
+                float alpha = Mathf.Clamp(1 - (1 * timeafter / NoteManager.DisplayedTimeAfter), 0, 255);
+                try
+                {
+                    child.GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                }
+                catch { }
+                timeafter += Time.deltaTime;
+                if (Note.isHoldNote && GetComponent<HoldNoteScript>())
+                {
+                    try
+                    {
+                        HoldNoteScript hnote = GetComponent<HoldNoteScript>();
+                        hnote.bottom.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);
+                        hnote.top.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);
+                        hnote.bottom.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                        hnote.top.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                        //hnote.lr.material.SetFloat("_Lightness", 1-alpha);
+                        hnote.lr.material.SetColor("_Color", new Color(hnote.lr.material.color.r *(alpha), hnote.lr.material.color.g * (alpha), hnote.lr.material.color.b * ( alpha), alpha));
+                        hnote.lr.material.SetColor("_Outline", new Color(hnote.lr.material.color.r * (alpha), hnote.lr.material.color.g * (alpha), hnote.lr.material.color.b * (alpha), alpha));
+                        //hnote.lr.material.SetColor("_Color", new Color(0, 0, 0, alpha));
+                    }
+                    catch { }
+                }
+            }
         }
         #if UNITY_EDITOR
         private void OnDrawGizmos()

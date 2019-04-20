@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 0
+  Choicesmade: []
 --- !u!4 &184166049
 Transform:
   m_ObjectHideFlags: 0
@@ -2853,6 +2854,10 @@ Prefab:
       propertyPath: beatmapFile
       value: 
       objectReference: {fileID: 4900000, guid: dd50938fcba3be544bfc62dd16ea990d, type: 3}
+    - target: {fileID: 1916432291987338, guid: 763903625cf46f744961c53cbf567409, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}
   m_IsPrefabAsset: 0

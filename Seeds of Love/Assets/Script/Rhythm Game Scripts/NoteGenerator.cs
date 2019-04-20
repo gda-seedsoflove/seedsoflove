@@ -91,7 +91,8 @@ namespace Tests.Interactive.NoteTimingTest
 
             if (BMReader.songEnd == true && transitiondelay >= BMReader.delay && inTransition == false)
             {
-                PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMood();
+                PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMoodPercentage();
+                Debug.Log("Data:"+PlayerData.instance.Mood+" Mood:"+ moodmeter.GetComponent<MoodMeterScript>().GetMood());
                 inTransition = true;
                 SceneFade fadeScreen;
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();

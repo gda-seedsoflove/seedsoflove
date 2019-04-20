@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour {
 
     public static PlayerData instance;
 
-    public float Mood;
+    public float Mood;  // Value will range from 0 to 1. 1 being max mood
 
     public List<string> Choicesmade;
 

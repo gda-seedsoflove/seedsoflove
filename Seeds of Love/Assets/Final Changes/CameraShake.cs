@@ -41,25 +41,25 @@ public class CameraShake : MonoBehaviour {
         {
             Vector3 cameraPos = mainCam.transform.position;
             float shakeX = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the x direction
-            float shakeY = (Random.value * (shakeAmt * 2)) - shakeAmt;                //how much the camera shakes in the y direction
-            /*
-             * Should I move the resetting code before the addition code?
-             */
+            float shakeY = (Random.value * ((shakeAmt-2) * 2)) - (shakeAmt-2);                //how much the camera shakes in the y direction
+
             cameraPos.x += shakeX;
             cameraPos.y += shakeY;
 
             if (cameraPos.x > 9.5 || cameraPos.x < -9.5 || cameraPos.y > 3.5 || cameraPos.y < -3.5)
             {
-                Debug.Log("Hello: I am sad");
                 mainCam.transform.localPosition = originalPos;
                 //Debug.Log("Hello: I am happy");
             }
             else
             {
-                Debug.Log("Goodbye: I am satisfied");
                 mainCam.transform.position = cameraPos;                                   //This is needed to move the camera
             }
-
+            /*
+             * if(x > 9.5)
+             *  shakeX - 3;
+             *  mainCam.transform.position = cameraPos;
+             */
 
         }
     }
@@ -67,6 +67,9 @@ public class CameraShake : MonoBehaviour {
     void StopShake()
     {
         CancelInvoke("BeginShake");
+        /*
+         * Can use this to gradually return the camera to its original state?
+         */
         mainCam.transform.localPosition = originalPos;                            //resets the camera to the original position
     }
 }

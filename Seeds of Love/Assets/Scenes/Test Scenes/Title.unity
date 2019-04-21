@@ -1906,6 +1906,7 @@ GameObject:
   - component: {fileID: 560086958}
   - component: {fileID: 560086960}
   - component: {fileID: 560086959}
+  - component: {fileID: 560086961}
   m_Layer: 0
   m_Name: GalleryPanel
   m_TagString: Untagged
@@ -1968,6 +1969,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 560086957}
   m_CullTransparentMesh: 0
+--- !u!114 &560086961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560086957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68541f5502c4c374cb627e984bc00d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSystem: {fileID: 201542738}
+  SelectedObject: {fileID: 416577328}
 --- !u!1 &597413458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2067,7 @@ GameObject:
   - component: {fileID: 633652933}
   - component: {fileID: 633652935}
   - component: {fileID: 633652934}
+  - component: {fileID: 633652936}
   m_Layer: 0
   m_Name: StartPanel
   m_TagString: Untagged
@@ -2118,6 +2133,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 633652932}
   m_CullTransparentMesh: 0
+--- !u!114 &633652936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 633652932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68541f5502c4c374cb627e984bc00d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSystem: {fileID: 201542738}
+  SelectedObject: {fileID: 1560808159}
 --- !u!1 &639608687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3425,7 @@ GameObject:
   - component: {fileID: 929867203}
   - component: {fileID: 929867205}
   - component: {fileID: 929867204}
+  - component: {fileID: 929867206}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -3460,6 +3489,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929867202}
   m_CullTransparentMesh: 0
+--- !u!114 &929867206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929867202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68541f5502c4c374cb627e984bc00d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSystem: {fileID: 201542738}
+  SelectedObject: {fileID: 1567675}
 --- !u!1 &957011163
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,6 +5086,7 @@ GameObject:
   - component: {fileID: 1291399813}
   - component: {fileID: 1291399812}
   - component: {fileID: 1291399811}
+  - component: {fileID: 1291399814}
   m_Layer: 0
   m_Name: OptionsPanel
   m_TagString: Untagged
@@ -5133,6 +5176,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1291399809}
   m_CullTransparentMesh: 0
+--- !u!114 &1291399814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1291399809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68541f5502c4c374cb627e984bc00d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSystem: {fileID: 201542738}
+  SelectedObject: {fileID: 531290443}
 --- !u!1 &1294201901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,6 +5750,7 @@ GameObject:
   - component: {fileID: 1479196743}
   - component: {fileID: 1479196745}
   - component: {fileID: 1479196744}
+  - component: {fileID: 1479196746}
   m_Layer: 0
   m_Name: JukeboxPanel
   m_TagString: Untagged
@@ -5757,6 +5814,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479196742}
   m_CullTransparentMesh: 0
+--- !u!114 &1479196746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1479196742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68541f5502c4c374cb627e984bc00d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSystem: {fileID: 201542738}
+  SelectedObject: {fileID: 710334380}
 --- !u!1 &1493289832
 GameObject:
   m_ObjectHideFlags: 0

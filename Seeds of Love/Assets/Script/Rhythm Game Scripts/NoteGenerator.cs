@@ -97,7 +97,7 @@ namespace Tests.Interactive.NoteTimingTest
                 SceneFade fadeScreen;
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();
                 Debug.Log(sceneNumber);
-                fadeScreen.BeginTransition(sceneNumber);
+                fadeScreen.BeginTransition(fadeScreen.Path);
             }
             else if (BMReader.songEnd == true)
             {

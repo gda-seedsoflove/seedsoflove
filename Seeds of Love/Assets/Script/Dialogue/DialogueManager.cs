@@ -11,7 +11,6 @@ public class DialogueManager : MonoBehaviour {
 
     public string dialogue, characterName;
     public int lineNum;
-    public int sceneNumber;
     int pose;
     string position;
     string[] options;
@@ -309,6 +308,6 @@ public class DialogueManager : MonoBehaviour {
         SceneFade fadeScreen;
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
-        fadeScreen.BeginTransition(sceneNumber);
+        fadeScreen.BeginTransition(fadeScreen.Path);
     }
 }

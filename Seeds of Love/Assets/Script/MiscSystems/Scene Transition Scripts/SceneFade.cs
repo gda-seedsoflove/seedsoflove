@@ -3,6 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEditor;
+
+/*-------------------------------------------------------
+SceneFade.cs / LoadScene.cs README
+- Put both SceneFade and LoadScene into the canvas
+    - Make a FadeManager prefab that has the canvas and the scripts so it is easier to implement
+- Set SceneFade's FadeScreen to desired image
+- Set SceneFade's starting color to opaque black
+- Set SceneFade's end color to transparent
+- Duration can be manually set
+- SceneStarting should only be set to true if it is not the first scene in the game
+- LoadScene's scene number corresponds to the scene it will go to in the build
+    - Note: Could exchange the integer value for an obj/scene variable if this is not adequate
+- If a button needs to be used to transition scene, then set the button's click
+to Trigger() from LoadScene.
+- Similarly, trigger() can be used to trigger a transition.
+--------------------------------------------------------*/
 
 public class SceneFade : MonoBehaviour {
 
@@ -12,6 +29,7 @@ public class SceneFade : MonoBehaviour {
     public Color endColor;
     public float duration;
     public bool sceneStarting = true;
+    public string Path;
 
     void Awake() {
         fadeScreen.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
@@ -32,6 +50,7 @@ public class SceneFade : MonoBehaviour {
         
     }
 
+    // Fades from black to clear -> Starting scene
     private IEnumerator FadeToClear() {
         float timer = 0f;
         while (timer <= duration) {
@@ -39,15 +58,19 @@ public class SceneFade : MonoBehaviour {
             timer += Time.deltaTime;
             yield return null;
         }
+        fadeScreen.gameObject.SetActive(false);
     }
 
-    private IEnumerator FadeToBlack(int sceneNumber) {
+    // Fades from clear to black -> Ending scene
+    private IEnumerator FadeToBlack(string scenePath) {
         float timer = 0f;
         while (timer <= duration) {
             fadeScreen.color = Color.Lerp(endColor, startColor, timer / duration);
             timer += Time.deltaTime;
             if (fadeScreen.color.a >= 0.99f || timer > duration) {
-                SceneManager.LoadScene(sceneNumber);
+                var S = AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath);
+                Debug.Log("Loading Scene: "+S.name);
+                SceneManager.LoadScene(S.name);
                 yield break;
             }
             else {
@@ -56,20 +79,23 @@ public class SceneFade : MonoBehaviour {
         }
     }
 
+    // Triggers starting scene in Start
     public void StartScene() {
         StartCoroutine(FadeToClear());
         sceneStarting = false;
     }
 
-    public void BeginTransition(int sceneNumber) { 
+    // Begins transition w/ desired scene number
+    public void BeginTransition(string path) { 
         Debug.Log("Begin Transition");
-        StartCoroutine("FadeTransition", sceneNumber);
+        StartCoroutine("FadeTransition", path);
     }
 
-    private IEnumerator FadeTransition(int sceneNumber) {
+    // Calls FadeToBlack to begin fading
+    private IEnumerator FadeTransition(string path) {
         Debug.Log("Begin Fade");
         fadeScreen.enabled = true;
-        StartCoroutine(FadeToBlack(sceneNumber));
+        StartCoroutine(FadeToBlack(path));
         yield return null;
     }
 }

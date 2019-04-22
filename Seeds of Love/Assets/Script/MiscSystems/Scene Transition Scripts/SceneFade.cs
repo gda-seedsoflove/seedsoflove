@@ -4,6 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*-------------------------------------------------------
+SceneFade.cs / LoadScene.cs README
+- Put both SceneFade and LoadScene into the canvas
+- Set SceneFade's FadeScreen to desired image
+- Set SceneFade's starting color to opaque black
+- Set SceneFade's end color to transparent
+- Duration can be manually set
+- SceneStarting should only be set to true if it is not the first scene in the game
+- LoadScene's scene number corresponds to the scene it will go to in the build
+    - Note: Could exchange the integer value for an obj/scene variable if this is not adequate
+- If a button needs to be used to transition scene, then set the button's click
+to Trigger() from LoadScene.
+--------------------------------------------------------*/
+
 public class SceneFade : MonoBehaviour {
 
     // Variables
@@ -32,6 +46,7 @@ public class SceneFade : MonoBehaviour {
         
     }
 
+    // Fades from black to clear -> Starting scene
     private IEnumerator FadeToClear() {
         float timer = 0f;
         while (timer <= duration) {
@@ -41,6 +56,7 @@ public class SceneFade : MonoBehaviour {
         }
     }
 
+    // Fades from clear to black -> Ending scene
     private IEnumerator FadeToBlack(int sceneNumber) {
         float timer = 0f;
         while (timer <= duration) {
@@ -56,16 +72,19 @@ public class SceneFade : MonoBehaviour {
         }
     }
 
+    // Triggers starting scene in Start
     public void StartScene() {
         StartCoroutine(FadeToClear());
         sceneStarting = false;
     }
 
+    // Begins transition w/ desired scene number
     public void BeginTransition(int sceneNumber) { 
         Debug.Log("Begin Transition");
         StartCoroutine("FadeTransition", sceneNumber);
     }
 
+    // Calls FadeToBlack to begin fading
     private IEnumerator FadeTransition(int sceneNumber) {
         Debug.Log("Begin Fade");
         fadeScreen.enabled = true;

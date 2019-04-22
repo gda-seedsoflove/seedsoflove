@@ -35,7 +35,6 @@ namespace Tests.Interactive.NoteTimingTest
         ///
         VolumeValueChange bgp;
         private bool delaySet = false;
-        private bool paused = true; // if the song stops progressing without the aid of time stop.
         
         public override float CurrentSongTime
         {
@@ -100,18 +99,8 @@ namespace Tests.Interactive.NoteTimingTest
         public void SpawnNotes()
         {
             BMReader = GetComponent<BeatmapReader>();
-            //paused = true;
-            if (paused)
-            {
-                bgp.delay = 99;
-                moodmeter.GetComponent<MoodMeterScript>().delay = 99;
-            }
-            else
-            {
-                time = time + Time.deltaTime;
-            }
 
-            while (BMReader.songEnd == false && !paused)
+            while (BMReader.songEnd == false)
             {
                 if (time >= BMReader.nextNote.timing)//Loops until all notes at the same time or less are spawned.
                 {
@@ -151,6 +140,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
             }
 
+            time = time + Time.deltaTime;
         }
 
         /**
@@ -292,16 +282,6 @@ namespace Tests.Interactive.NoteTimingTest
             {
                 return 1;
             }
-        }
-
-        public void Pause()
-        {
-            paused = true;
-        }
-
-        public void UnPause()
-        {
-            paused = false;
         }
 
 

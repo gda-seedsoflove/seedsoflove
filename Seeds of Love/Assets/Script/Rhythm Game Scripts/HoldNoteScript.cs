@@ -98,9 +98,6 @@ public class HoldNoteScript : MonoBehaviour {
         }
     }
 
-    /**
-     * Trigger effects that happen when the hold note is hit
-     */
     public void Hit(float distance)
     {
         Vector2 pos = bottom.transform.position;
@@ -109,9 +106,10 @@ public class HoldNoteScript : MonoBehaviour {
         GetComponent<HoldNoteScript>().held = true;
         transform.position = new Vector2(pos.x, distance);
         top.transform.position = new Vector2(pos.x, topy);
-        top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.6f, c.b*.6f);
+        top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.8f, c.b*.8f);
         lr.SetPosition(1, top.transform.position);
-        lr.material.SetColor("_Color", new Color(.8f, .4f, .4f));
+        lr.startColor = new Color(1f, 1f, 1f, 1);
+        lr.endColor = new Color(1f, 1f, 1f, 1);
     }
 
     public void Release()

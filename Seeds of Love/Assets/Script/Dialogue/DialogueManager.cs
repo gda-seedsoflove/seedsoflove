@@ -61,18 +61,19 @@ public class DialogueManager : MonoBehaviour {
     }
 
 
+    //waits for keyboard input so user can advance with click or Space
     void Update()
     {
-        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //advance line if line is finished
+        if (!inCoroutine && ((Input.GetMouseButtonDown (0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition))
         {
             ShowDialogue();
         }
-        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking) && !inTransition))) //back to previous line on right click
+        else if(!inCoroutine && (lineNum>=2 &&((Input.GetMouseButtonDown(1) && !playerTalking) || (Input.GetKeyDown("backspace") && !playerTalking) && !inTransition)))
         {
             lineNum-=2;
             ShowDialogue();
         }
-        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition)) //shows whole line if click mid line
+        else if (inCoroutine && ((Input.GetMouseButtonDown(0) && !playerTalking) || (Input.GetKeyDown("space") && !playerTalking) && !inTransition))
         {
             StopCoroutine(typingRoutine);
             inCoroutine = false;
@@ -89,31 +90,26 @@ public class DialogueManager : MonoBehaviour {
             ParseLine();
             lineNum++;
         }
+        
         UpdateUI();
-
-        if (command == "exit")
-        {
-            command = "";
-            ShowDialogue();
-        }
     }
 
 
     //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
     {
-        if(parser.GetName(lineNum) == "end") //end scene, start scene transition
+        if(parser.GetName(lineNum) == "end")
         {
             EndDialogue();
         }
-        else if (parser.GetCommand(lineNum) == "exit") //exit stage left the current character
+        else if(parser.GetCommand(lineNum) == "exit")
         {
-            playerTalking = false;
             command = parser.GetCommand(lineNum);
             characterName = parser.GetName(lineNum);
             DisplayImages();
+            command = "";
         }
-        else if (parser.GetName(lineNum) != "Player") //character is talking without needed player input
+        else if (parser.GetName(lineNum) != "Player")
         {
             playerTalking = false;
             characterName = parser.GetName(lineNum);
@@ -122,7 +118,7 @@ public class DialogueManager : MonoBehaviour {
             position = parser.GetPosition(lineNum);
             DisplayImages();
         }
-        else //player input needed
+        else
         {
             playerTalking = true;
             options = parser.GetOptions(lineNum);
@@ -133,9 +129,8 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
-        Debug.Log("Character: " + characterName);
         var character = GameObject.Find(characterName);
-        if (characterName != "" && command!="exit") //if this character is talking, undim
+        if (characterName != "" && command!="exit")
         {
             SetSpritePositions(character);
 
@@ -153,7 +148,7 @@ public class DialogueManager : MonoBehaviour {
                 currSprite.flipX = false;
             }
         }
-        else if(command == "exit")//if character is exiting... exit
+        else if(command == "exit")
         {
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             currSprite.sprite = null;
@@ -187,7 +182,7 @@ public class DialogueManager : MonoBehaviour {
 
     }
 
-    //loads image to the correct side for current dialogue line
+    //loads image to the correct side for current line
     void SetSpritePositions(GameObject spriteObj)
     {
         if (position == "L")
@@ -243,6 +238,7 @@ public class DialogueManager : MonoBehaviour {
         }
 
     }
+
     
 
     //removes unneeded buttons
@@ -296,12 +292,14 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         inTransition = true;
-
+        //Taken From Load Scene Script (Couldn't load trigger function without leaving out the sceneNumer so I transfered the necesarry scripts
+        //Couldn't figure out how to test, so warning as of writing this it is untested
         //Needs an input of the sceneNumber within script public variables
         animator.SetBool("IsOpen", false);
         SceneFade fadeScreen;
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
         fadeScreen.BeginTransition(sceneNumber);
+        
     }
 }

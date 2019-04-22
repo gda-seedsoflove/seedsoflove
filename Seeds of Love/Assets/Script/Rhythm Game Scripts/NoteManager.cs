@@ -101,18 +101,17 @@ namespace Script.Song
 
             if (combo > 0 && moodmeter != null)
             {
-                float multiplier = Mathf.Clamp(1+((float)combo),0,10);
+                float multiplier = Mathf.Clamp(4+((float)combo),5,100);
                 moodmeter.GetComponent<MoodMeterScript>().AddMood(multiplier);
             }
             else if (combo == 0 && moodmeter != null)
             {
-                moodmeter.GetComponent<MoodMeterScript>().AddMood(fullpoints * -12);
+                moodmeter.GetComponent<MoodMeterScript>().AddMood(fullpoints * -5);
             }
             else
             {
                 Debug.Log("Missing MoodMeter");
             }
-            Debug.Log(moodmeter.GetComponent<MoodMeterScript>().GetMood());
         }
 
         public float GetScore()

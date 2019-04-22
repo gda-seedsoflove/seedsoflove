@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
+    // 
     SceneFade fadeScreen;
     public int sceneNumber;
 
+    // Finds the SceneFade script that has the desired img
     void Awake() {
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
     }

@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class DialogueParser : MonoBehaviour
 {
     public TextAsset script;
-
     //structure to store the relevant information to each line of dialogue
     struct DialogueLine
     {
@@ -35,7 +34,7 @@ public class DialogueParser : MonoBehaviour
     //list of lines that makes up the entirety of dialogue for a scene
     List<DialogueLine> lines = new List<DialogueLine>();
 
-    //loads the file for this scene and calls LoadDialogue
+    //loads the file for this scene and loads the dialogue in
     private void Awake()
     {
         Scene thisScene = SceneManager.GetActiveScene();
@@ -48,6 +47,32 @@ public class DialogueParser : MonoBehaviour
     //parses text file for each line of dialogue, turns them into instances of DialogueLine and adds them to the list of lines
     public void LoadDialogue(string filename)
     {
+        
+        //foreach (string line in script.text.Split( new string[]{ "\n", "\r", "\r\n"}, System.StringSplitOptions.RemoveEmptyEntries))
+        //{
+        //    string[] lineData = line.Split(';');
+        //    DialogueLine lineEntry;
+        //    if (lineData[0] == "Player")
+        //    {
+        //        lineEntry = new DialogueLine(lineData[0], "", 0, "");
+        //        lineEntry.options = new string[lineData.Length - 1];
+
+        //        for (int i = 1; i < lineData.Length; i++)
+        //        {
+        //            lineEntry.options[i - 1] = lineData[i];
+        //        }
+        //    }
+        //    else if (lineData[0] == "end" || lineData[0] == "\n")
+        //    {
+        //        lineEntry = new DialogueLine("end", "", 0, "");
+        //    }
+        //    else
+        //    {
+        //        lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
+        //    }
+        //    lines.Add(lineEntry);
+        //}
+        
         string line;
         var stream = new MemoryStream();
         var writer = new StreamWriter(stream);
@@ -65,7 +90,7 @@ public class DialogueParser : MonoBehaviour
                 {
                     string[] lineData = line.Split(';');
                     DialogueLine lineEntry;
-                    if (lineData[0] == "Player") //player choice line
+                    if (lineData[0] == "Player")
                     {
                         lineEntry = new DialogueLine(lineData[0], "", 0, "");
                         lineEntry.options = new string[lineData.Length - 1];
@@ -75,16 +100,16 @@ public class DialogueParser : MonoBehaviour
                             lineEntry.options[i - 1] = lineData[i];
                         }
                     }
-                    else if (lineData[0] == "end" || lineData[0] == "\n")//end of scene
+                    else if (lineData[0] == "end" || lineData[0] == "\n")
                     {
                         lineEntry = new DialogueLine("end", "", 0, "");
                     }
-                    else if(lineData[0]=="##")//non-dialogue command
+                    else if(lineData[0]=="##")
                     {
                         lineEntry = new DialogueLine(lineData[1], "", 0, "");
                         lineEntry.command = lineData[2];
                     }
-                    else //regular line
+                    else
                     {
                         lineEntry = new DialogueLine(lineData[0], lineData[1], int.Parse(lineData[2]), lineData[3]);
                     }
@@ -151,7 +176,6 @@ public class DialogueParser : MonoBehaviour
         return new string[0];
     }
 
-    //returns command for non-dialogue
     public string GetCommand(int lineNumber)
     {
         if (lineNumber < lines.Count)

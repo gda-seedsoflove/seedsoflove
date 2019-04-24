@@ -1553,6 +1553,7 @@ GameObject:
   - component: {fileID: 1050976659}
   - component: {fileID: 1050976658}
   - component: {fileID: 1050976657}
+  - component: {fileID: 1050976662}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1674,6 +1675,18 @@ Canvas:
   m_SortingLayerID: -1480414337
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1050976662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050976655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePath: Assets/Scenes/MarchPrototypeVN/AfterBar.unity
 --- !u!1 &1061518173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,6 +2883,11 @@ Prefab:
     - target: {fileID: 1916432291987338, guid: 763903625cf46f744961c53cbf567409, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946558855950084, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: speed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}

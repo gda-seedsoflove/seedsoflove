@@ -40,7 +40,8 @@ public class BeatmapReader : MonoBehaviour
     public TextAsset beatmapFile;
 
     // beatmap info
-    private int bpm;
+    [HideInInspector]
+    public int bpm;
     private int timeSigTop;
     //private int timeSigBot;
     private int subdivisions;
@@ -50,7 +51,7 @@ public class BeatmapReader : MonoBehaviour
     public NoteData nextNote;
     public bool songEnd; // whether the song is over
 
-    void Start()
+    void Awake()
     {
         // open beatmap file and create a stream to read it
         file = new FileInfo(filepath);

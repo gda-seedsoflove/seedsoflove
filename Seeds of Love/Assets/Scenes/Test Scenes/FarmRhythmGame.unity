@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8cb7d72a7621746847f9cc815e2f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeatmapReader: {fileID: 1878107790}
+  BeatmapReader: {fileID: 1361994283}
 --- !u!1 &1050976655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1553,7 @@ GameObject:
   - component: {fileID: 1050976659}
   - component: {fileID: 1050976658}
   - component: {fileID: 1050976657}
+  - component: {fileID: 1050976662}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1674,6 +1675,18 @@ Canvas:
   m_SortingLayerID: -1480414337
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1050976662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050976655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePath: Assets/Scenes/Test Scenes/Title.unity
 --- !u!1 &1061518173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2346,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1361994283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1682550002456864, guid: 763903625cf46f744961c53cbf567409,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661839169}
 --- !u!1 &1374690585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,7 +2572,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a793de508291fb42ac37a808bd288d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 89bbac954820da942abfd0b2ecd2a0c5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -2855,7 +2873,7 @@ Prefab:
     - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
       propertyPath: notespeed
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 212997198650794602, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
@@ -2866,10 +2884,25 @@ Prefab:
         type: 2}
       propertyPath: beatmapFile
       value: 
-      objectReference: {fileID: 4900000, guid: dd50938fcba3be544bfc62dd16ea990d, type: 3}
+      objectReference: {fileID: 4900000, guid: a6064811f5d8e2b408a1598836a4170f, type: 3}
     - target: {fileID: 1916432291987338, guid: 763903625cf46f744961c53cbf567409, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946558855950084, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: delay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946558855950084, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: filepath
+      value: Assets/Beatmaps/tomatones.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946558855950084, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}
@@ -2980,7 +3013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8cb7d72a7621746847f9cc815e2f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeatmapReader: {fileID: 1878107790}
+  BeatmapReader: {fileID: 1361994283}
 --- !u!1 &1732200145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,11 +3420,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832046460}
   m_CullTransparentMesh: 0
---- !u!1 &1878107790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1682550002456864, guid: 763903625cf46f744961c53cbf567409,
-    type: 2}
-  m_PrefabInternal: {fileID: 1661839169}
 --- !u!1001 &1969542964
 Prefab:
   m_ObjectHideFlags: 0

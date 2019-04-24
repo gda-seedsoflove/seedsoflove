@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tests.Interactive.NoteTimingTest;
 
+[RequireComponent(typeof(Animator))]
 public class ChibiScript : MonoBehaviour {
 
+    public GameObject BeatmapReader;
 	// Use this for initialization
 	void Start () {
-		
+        //Debug.Log(BeatmapReader.GetComponent<BeatmapReader>().bpm/60);
+        GetComponent<Animator>().speed = BeatmapReader.GetComponent<BeatmapReader>().bpm/60;
 	}
 	
 	// Update is called once per frame

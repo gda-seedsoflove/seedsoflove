@@ -119,6 +119,7 @@ namespace Tests.Interactive.NoteTimingTest
             BMReader = GetComponent<BeatmapReader>();
             //paused = true;
 
+            //Debug.Log(BMReader.nextNote.timing);
             while (BMReader.songEnd == false && !paused)
             {
                 if (time >= BMReader.nextNote.timing)//Loops until all notes at the same time or less are spawned.
@@ -148,10 +149,11 @@ namespace Tests.Interactive.NoteTimingTest
                     if (!delaySet)
                     {
                         //Debug.Log(BMReader.nextNote.timing);
-                        bgp.delay =  BMReader.delay + (EndY/ notespeed);
+                        bgp.delay =  BMReader.nextNote.timing + EndY/notespeed;
                         moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }
+                    //Debug.Log("Timing:" + BMReader.nextNote.timing + " Delay:" + BMReader.delay + " BGM Delay:" + bgp.delay);
                 }
                 else
                 {

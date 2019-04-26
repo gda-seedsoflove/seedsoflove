@@ -121,7 +121,7 @@ namespace Script.Behaviour
                 releasebuffertime -= Time.deltaTime;
 
 
-                if (CanHit() && bufferedtime > 0 && Note.Holding == false)
+                if (CanHit() && bufferedtime > 0 && Note.Holding == false) // Hold note start
                 {
                     holdingspace = true;
                     Note.Currtime = Note.Currtime +  Note.Length/-Note.Speed;

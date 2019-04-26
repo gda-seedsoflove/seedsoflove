@@ -15,7 +15,7 @@ public class NoteDetector : MonoBehaviour
     */
 
     public int Lane { get; set; }       // Current lane the notedetector is on
-    private readonly float speed = 6;
+    private float speed = 6;
     public float changespeed;
     private float originalspeed;
 
@@ -37,6 +37,7 @@ public class NoteDetector : MonoBehaviour
     public float spread;
 
     public float upbound;
+    private float whitetime; // time the detector lights up after pressing space;
 
     [HideInInspector]
     public bool holdingshift, holdingleft, holdingright;
@@ -57,6 +58,7 @@ public class NoteDetector : MonoBehaviour
     {
         origin = Object.transform.position;
         originalspeed = changespeed;
+
     }
 
     // Update is called once per frame
@@ -175,6 +177,28 @@ public class NoteDetector : MonoBehaviour
         {
             rightbuffer = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
+            whitetime = .1f;
+            transform.localScale = new Vector3(.85f, .85f, 1);
+        }
+
+        if (Input.GetKey(KeyCode.Space) == false)
+        {
+            transform.localScale = new Vector3(1,1,1);
+        }
+
+        if (whitetime >= 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,.8f);
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+        }
+        whitetime -= Time.deltaTime;
     }
 
     void FixedUpdate()

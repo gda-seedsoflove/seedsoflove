@@ -27,6 +27,7 @@ public class VolumeValueChange : MonoBehaviour {
         if(delay <= 0 && !soundOn)//GetComponent<AudioSource>().isPlaying == false)
         {
             GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, musicVolume, audioSrc.clip.name, "Music");
+
             //GetComponent<AudioSource>().Play();
             soundOn = true;
 

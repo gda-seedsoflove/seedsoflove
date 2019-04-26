@@ -9,20 +9,21 @@ public class MoodMeterScript : MonoBehaviour {
     public float value = 0;
     public float targetvalue = 0;
     public float percentage;
+    private float maxvalue;
 
     public Slider moodbar;
     public float delay;
 	// Use this for initialization
 	void Start () {
-       
+        maxvalue = 100;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        targetvalue = Mathf.Clamp(targetvalue, 0, 100);
+        targetvalue = Mathf.Clamp(targetvalue, 0, maxvalue);
         value = Mathf.Lerp(value,targetvalue,Time.deltaTime);
-        value = Mathf.Clamp(value,0,100);
-        percentage = value / 100f;
+        value = Mathf.Clamp(value,0,maxvalue);
+        percentage = value / maxvalue;
         moodbar.value = percentage;
         if (delay <= 0)
         {
@@ -53,7 +54,8 @@ public class MoodMeterScript : MonoBehaviour {
      */
     public float GetMood()
     {
-        return value;
+        targetvalue = Mathf.Clamp(targetvalue, 0, maxvalue);
+        return targetvalue;
     }
 
     /**
@@ -61,6 +63,7 @@ public class MoodMeterScript : MonoBehaviour {
      */
     public float GetMoodPercentage()
     {
-        return percentage;
+        targetvalue = Mathf.Clamp(targetvalue, 0, maxvalue);
+        return targetvalue/maxvalue;
     }
 }

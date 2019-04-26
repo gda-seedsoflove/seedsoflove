@@ -64,7 +64,7 @@ namespace Tests.Interactive.NoteTimingTest
             _nextNoteSpawnTime = Time.time;
         }
 
-        private void FixedUpdate()
+        void Update()
         {
             if (!random)
             {
@@ -79,28 +79,6 @@ namespace Tests.Interactive.NoteTimingTest
                 RandomSpawn();
             }
 
-
-            if(BMReader.songEnd == true && transitiondelay >= BMReader.delay&& inTransition == false)
-            {
-                inTransition = true;
-                SceneFade fadeScreen;
-                fadeScreen = GameObject.FindObjectOfType<SceneFade>();
-                Debug.Log(sceneNumber);
-                fadeScreen.BeginTransition(sceneNumber);
-            }
-            else if (BMReader.songEnd == true)
-            {
-                transitiondelay += Time.deltaTime;
-            }
-        }
-
-        /**
-         *  Spawns Notes from the BeatMapReader assuming from the same object. 
-         */
-        public void SpawnNotes()
-        {
-            BMReader = GetComponent<BeatmapReader>();
-            //paused = true;
             if (paused)
             {
                 bgp.delay = 99;
@@ -111,6 +89,37 @@ namespace Tests.Interactive.NoteTimingTest
                 time = time + Time.deltaTime;
             }
 
+            if (BMReader.songEnd == true && transitiondelay >= BMReader.delay && inTransition == false)
+            {
+                PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMoodPercentage();
+                Debug.Log("Data:"+PlayerData.instance.Mood+" Mood:"+ moodmeter.GetComponent<MoodMeterScript>().GetMood());
+                inTransition = true;
+                SceneFade fadeScreen;
+                fadeScreen = GameObject.FindObjectOfType<SceneFade>();
+                Debug.Log(sceneNumber);
+                fadeScreen.BeginTransition(fadeScreen.Path);
+            }
+            else if (BMReader.songEnd == true)
+            {
+                transitiondelay += Time.deltaTime;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+
+
+        }
+
+        /**
+         *  Spawns Notes from the BeatMapReader assuming from the same object. 
+         */
+        public void SpawnNotes()
+        {
+            BMReader = GetComponent<BeatmapReader>();
+            //paused = true;
+
+            //Debug.Log(BMReader.nextNote.timing);
             while (BMReader.songEnd == false && !paused)
             {
                 if (time >= BMReader.nextNote.timing)//Loops until all notes at the same time or less are spawned.
@@ -140,10 +149,11 @@ namespace Tests.Interactive.NoteTimingTest
                     if (!delaySet)
                     {
                         //Debug.Log(BMReader.nextNote.timing);
-                        bgp.delay = BMReader.nextNote.timing + BMReader.delay;
+                        bgp.delay =  BMReader.nextNote.timing + EndY/notespeed;
                         moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }
+                    //Debug.Log("Timing:" + BMReader.nextNote.timing + " Delay:" + BMReader.delay + " BGM Delay:" + bgp.delay);
                 }
                 else
                 {

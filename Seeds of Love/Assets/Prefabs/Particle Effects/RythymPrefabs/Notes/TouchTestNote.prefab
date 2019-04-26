@@ -106,8 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 1847972573023464, guid: b252ce5ec9618f947b3e2b71d5eacc86,
     type: 2}
-  SoundEffect: {fileID: 1923382505787642, guid: 3ce0e7a9f2eba2647accce035a9e5424,
-    type: 2}
   HitEffect: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114309931851187804

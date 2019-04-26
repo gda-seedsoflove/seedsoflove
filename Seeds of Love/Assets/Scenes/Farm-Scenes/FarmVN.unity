@@ -425,6 +425,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8526797b0583b0241a1fbe33597b5442, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1989602287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1214843970714008, guid: 8526797b0583b0241a1fbe33597b5442,
+    type: 2}
+  m_PrefabInternal: {fileID: 1989602286}
+--- !u!114 &1989602288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1989602287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePath: Assets/Scenes/Test Scenes/FarmRhythmGame.unity
 --- !u!1 &2082074025
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f36ca40a97e2a4b83c453279163de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mood: 0
+  Mood: 1
   Choicesmade: []
 --- !u!4 &2082074027
 Transform:

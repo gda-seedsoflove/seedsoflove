@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenePath: Assets/Scenes/Test Scenes/BarRhythmGame.unity
+  scenePath: Assets/Scenes/MarchPrototypeVN/Bar.unity
 --- !u!1001 &497752767
 Prefab:
   m_ObjectHideFlags: 0

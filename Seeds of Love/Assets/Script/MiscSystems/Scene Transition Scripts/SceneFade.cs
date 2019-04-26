@@ -46,7 +46,7 @@ public class SceneFade : MonoBehaviour {
         while (timer <= duration) {
             fadeScreen.color = Color.Lerp(endColor, startColor, timer / duration);
             timer += Time.deltaTime;
-            if (fadeScreen.color.a >= 0.99f || timer > duration) {
+            if (fadeScreen.color.a >= 0.99f) {
                 SceneManager.LoadScene(sceneNumber);
                 yield break;
             }

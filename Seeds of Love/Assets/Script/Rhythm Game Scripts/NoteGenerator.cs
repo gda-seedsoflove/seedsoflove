@@ -29,13 +29,10 @@ namespace Tests.Interactive.NoteTimingTest
         private float lastlane = 0;
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
-        private float transitiondelay = 0;
-        private bool inTransition;
-        public int sceneNumber;
+
         ///
         VolumeValueChange bgp;
         private bool delaySet = false;
-        private bool paused = true; // if the song stops progressing without the aid of time stop.
         
         public override float CurrentSongTime
         {
@@ -69,29 +66,13 @@ namespace Tests.Interactive.NoteTimingTest
             if (!random)
             {
                 SpawnNotes();
-                if (GetScore() > 0)
-                {
-                    scoretext.text = ((float)((int)(GetScore() * 100)) / 100) * 100 + " % \n Combo: " + combo + "";
-                }
+                scoretext.text = GetScore() + "" ;
             }
             else
             {
                 RandomSpawn();
             }
 
-
-            if(BMReader.songEnd == true && transitiondelay >= BMReader.delay&& inTransition == false)
-            {
-                inTransition = true;
-                SceneFade fadeScreen;
-                fadeScreen = GameObject.FindObjectOfType<SceneFade>();
-                Debug.Log(sceneNumber);
-                fadeScreen.BeginTransition(sceneNumber);
-            }
-            else if (BMReader.songEnd == true)
-            {
-                transitiondelay += Time.deltaTime;
-            }
         }
 
         /**
@@ -100,18 +81,8 @@ namespace Tests.Interactive.NoteTimingTest
         public void SpawnNotes()
         {
             BMReader = GetComponent<BeatmapReader>();
-            //paused = true;
-            if (paused)
-            {
-                bgp.delay = 99;
-                moodmeter.GetComponent<MoodMeterScript>().delay = 99;
-            }
-            else
-            {
-                time = time + Time.deltaTime;
-            }
 
-            while (BMReader.songEnd == false && !paused)
+            while (BMReader.songEnd == false)
             {
                 if (time >= BMReader.nextNote.timing)//Loops until all notes at the same time or less are spawned.
                 {
@@ -139,9 +110,8 @@ namespace Tests.Interactive.NoteTimingTest
                     BMReader.GetNextNote();
                     if (!delaySet)
                     {
-                        //Debug.Log(BMReader.nextNote.timing);
+                        // Debug.Log(BMReader.nextNote.timing);
                         bgp.delay = BMReader.nextNote.timing + BMReader.delay;
-                        moodmeter.GetComponent<MoodMeterScript>().delay = (float)(BMReader.nextNote.timing + BMReader.delay - ((double)1/(1*(double)BMReader.GetBps())));
                         delaySet = true;
                     }
                 }
@@ -151,6 +121,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
             }
 
+            time = time + Time.deltaTime;
         }
 
         /**
@@ -292,16 +263,6 @@ namespace Tests.Interactive.NoteTimingTest
             {
                 return 1;
             }
-        }
-
-        public void Pause()
-        {
-            paused = true;
-        }
-
-        public void UnPause()
-        {
-            paused = false;
         }
 
 

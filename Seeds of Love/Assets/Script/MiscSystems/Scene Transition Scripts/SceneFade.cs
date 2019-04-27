@@ -64,6 +64,7 @@ public class SceneFade : MonoBehaviour {
     // Fades from clear to black -> Ending scene
     private IEnumerator FadeToBlack(string scenePath) {
         float timer = 0f;
+        fadeScreen.gameObject.SetActive(true);
         while (timer <= duration) {
             fadeScreen.color = Color.Lerp(endColor, startColor, timer / duration);
             timer += Time.deltaTime;

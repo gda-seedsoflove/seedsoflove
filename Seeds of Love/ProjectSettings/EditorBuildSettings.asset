@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype/Prototype-RhythmGame1.unity
     guid: f37a9c17fa1c2e34ea719e662448a37e
+  - enabled: 1
+    path: Assets/Scenes/Farm-Scenes/FarmVN.unity
+    guid: 8ab10a136f0b8b541af6b73e5f14d32a
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/FarmRhythmGame.unity
+    guid: 87f6a4913e97f0b42a1a9ee28e25a283
   m_configObjects: {}

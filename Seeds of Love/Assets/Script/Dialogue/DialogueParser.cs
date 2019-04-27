@@ -40,11 +40,14 @@ public class DialogueParser : MonoBehaviour
     private void Awake()
     {
         string file = "";
-
-        if (PlayerData.instance.Mood < 0.5f)
+        try
         {
-            script = scriptBad;
+            if (PlayerData.instance.Mood < 0.5f)
+            {
+                script = scriptBad;
+            }
         }
+        catch { }
 
         LoadDialogue();
     }

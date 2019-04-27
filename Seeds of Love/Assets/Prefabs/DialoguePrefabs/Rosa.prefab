@@ -53,11 +53,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPoses:
-  - {fileID: 21300000, guid: b01aaa9be457e26488a736d29ee82d5e, type: 3}
-  - {fileID: 21300000, guid: 25f399ad09462fb45a81613b1e2bc990, type: 3}
-  - {fileID: 21300000, guid: a8b22cd2b8e4abc40870c523ce3dd743, type: 3}
-  - {fileID: 21300000, guid: 51b5453afaab35f48b4dc9e853cfd5d0, type: 3}
-  - {fileID: 21300000, guid: de97cf369f03a6640b991449dfa88cda, type: 3}
+  - {fileID: 21300000, guid: f3d62090d1047ef4d94ad38f1e7dfac9, type: 3}
+  - {fileID: 21300000, guid: ea1f73c5704427d498b5d4bb18adc214, type: 3}
+  - {fileID: 21300000, guid: d21f77d44a0f6724d96a1794909f8139, type: 3}
+  - {fileID: 21300000, guid: f743377b2f765be49bc026f8e92dc3a6, type: 3}
+  - {fileID: 21300000, guid: 952462b0e63091a428439a4dc171ebc6, type: 3}
   personalFont: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
 --- !u!212 &212591722369422066
 SpriteRenderer:
@@ -102,6 +102,6 @@ SpriteRenderer:
   m_Size: {x: 27.99, y: 34.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

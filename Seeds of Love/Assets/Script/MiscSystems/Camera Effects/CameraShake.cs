@@ -49,13 +49,13 @@ public class CameraShake : MonoBehaviour {
 
             if (cameraPos.x > 9.5 || cameraPos.x < -9.5 || cameraPos.y > 3.5 || cameraPos.y < -3.5)
             {
-                Debug.Log("Hello: I am sad");
+                //Debug.Log("Hello: I am sad");
                 mainCam.transform.localPosition = originalPos;
                 //Debug.Log("Hello: I am happy");
             }
             else
             {
-                Debug.Log("Goodbye: I am satisfied");
+                //Debug.Log("Goodbye: I am satisfied");
                 mainCam.transform.position = cameraPos;                                   //This is needed to move the camera
             }
         }

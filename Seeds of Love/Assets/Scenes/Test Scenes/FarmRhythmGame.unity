@@ -1474,7 +1474,7 @@ SpriteRenderer:
   m_SortingLayerID: 1132953135
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9743373bf241f7d44bdd54c7694117fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44bab61e4c448b14fb03ef9a143d3680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1497,6 +1497,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeatmapReader: {fileID: 1361994283}
+  HappyChibi: {fileID: 21300000, guid: 0b8f18bcbaf7de4409c942b68c8891d6, type: 3}
+  NormalChibi: {fileID: 21300000, guid: 44bab61e4c448b14fb03ef9a143d3680, type: 3}
+  SadChibi: {fileID: 21300000, guid: 9c3d4fbef718a4d4488ee4add1fd9431, type: 3}
 --- !u!1 &1050976655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2003,11 @@ Prefab:
     - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114149958129474412, guid: c1966642114e18b4584d9300e9703e4f,
+        type: 2}
+      propertyPath: Mood
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
@@ -2992,9 +3000,9 @@ SpriteRenderer:
   m_SortingLayerID: 1132953135
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92851dacb00d0bc4bb592ddc16adc130, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44bab61e4c448b14fb03ef9a143d3680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.6, y: 3.6}
@@ -3015,6 +3023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeatmapReader: {fileID: 1361994283}
+  HappyChibi: {fileID: 21300000, guid: 0b8f18bcbaf7de4409c942b68c8891d6, type: 3}
+  NormalChibi: {fileID: 21300000, guid: 44bab61e4c448b14fb03ef9a143d3680, type: 3}
+  SadChibi: {fileID: 21300000, guid: 9c3d4fbef718a4d4488ee4add1fd9431, type: 3}
 --- !u!1 &1732200145
 GameObject:
   m_ObjectHideFlags: 0

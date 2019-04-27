@@ -7,6 +7,9 @@ using Tests.Interactive.NoteTimingTest;
 public class ChibiScript : MonoBehaviour {
 
     public GameObject BeatmapReader;
+    public Sprite HappyChibi;
+    public Sprite NormalChibi;
+    public Sprite SadChibi;
 	// Use this for initialization
 	void Start () {
         //Debug.Log(BeatmapReader.GetComponent<BeatmapReader>().bpm/60);
@@ -15,19 +18,19 @@ public class ChibiScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (PlayerData.instance != null)
+        if (PlayerData.instance != null && BeatmapReader.GetComponent<BeatmapReader>().songEnd == false)
         {
-            if (PlayerData.instance.Mood < .2f)
+            if (PlayerData.instance.Mood < .5f)
             {
-                //sad face
+                GetComponent<SpriteRenderer>().sprite = SadChibi;
             }
             else if (PlayerData.instance.Mood > .8f)
             {
-                //Really happy
+                GetComponent<SpriteRenderer>().sprite = HappyChibi;
             }
             else
             {
-                //Normal?
+                GetComponent<SpriteRenderer>().sprite = NormalChibi;
             }
         }
         else

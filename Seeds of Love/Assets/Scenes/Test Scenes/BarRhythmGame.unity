@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f36ca40a97e2a4b83c453279163de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mood: 0
+  Mood: 0.5
   Choicesmade: []
 --- !u!4 &184166049
 Transform:
@@ -1539,6 +1539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeatmapReader: {fileID: 1878107790}
+  HappyChibi: {fileID: 21300000, guid: 0134155d11ebf36448b41e998b90e666, type: 3}
+  NormalChibi: {fileID: 21300000, guid: 9743373bf241f7d44bdd54c7694117fd, type: 3}
+  SadChibi: {fileID: 21300000, guid: eee32d073cb325744ba5ee7ccb4be60f, type: 3}
 --- !u!1 &1050976655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +2907,7 @@ GameObject:
   - component: {fileID: 1669669348}
   - component: {fileID: 1669669350}
   m_Layer: 0
-  m_Name: ChibiMaria
+  m_Name: ChibiSunny
   m_TagString: Chibi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,6 +3002,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeatmapReader: {fileID: 1878107790}
+  HappyChibi: {fileID: 21300000, guid: e7fe45f143bef3941a8b8dadc505a30a, type: 3}
+  NormalChibi: {fileID: 21300000, guid: 92851dacb00d0bc4bb592ddc16adc130, type: 3}
+  SadChibi: {fileID: 21300000, guid: c2182e6a730fe8340877b2a47a499b8b, type: 3}
 --- !u!1 &1732200145
 GameObject:
   m_ObjectHideFlags: 0

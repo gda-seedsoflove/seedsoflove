@@ -87,6 +87,7 @@ namespace Tests.Interactive.NoteTimingTest
             else
             {
                 time = time + Time.deltaTime;
+                PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMoodPercentage();
             }
 
             if (BMReader.songEnd == true && transitiondelay >= BMReader.delay && inTransition == false)

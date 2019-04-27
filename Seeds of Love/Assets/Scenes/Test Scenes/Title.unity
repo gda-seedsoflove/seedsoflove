@@ -404,6 +404,53 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 29383492}
   m_CullTransparentMesh: 0
+--- !u!1001 &47849651
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.8695341
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.5365537
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.14840381
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621871494830478, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114149958129474412, guid: c1966642114e18b4584d9300e9703e4f,
+        type: 2}
+      propertyPath: Mood
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1966642114e18b4584d9300e9703e4f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &67364421
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,7 +939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Tomatones
 --- !u!222 &295758394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4335,6 +4382,7 @@ GameObject:
   - component: {fileID: 1069591357}
   - component: {fileID: 1069591356}
   - component: {fileID: 1069591355}
+  - component: {fileID: 1069591358}
   m_Layer: 0
   m_Name: Song (1)
   m_TagString: Untagged
@@ -4399,7 +4447,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 295758393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1932704528}
+        m_MethodName: ChangePath
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1069591358}
+          m_ObjectArgumentAssemblyTypeName: ScenePicker, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1932704526}
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1069591356
@@ -4436,6 +4506,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069591353}
   m_CullTransparentMesh: 0
+--- !u!114 &1069591358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069591353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePath: Assets/Scenes/Test Scenes/FarmRhythmGame.unity
 --- !u!1 &1073931741
 GameObject:
   m_ObjectHideFlags: 0

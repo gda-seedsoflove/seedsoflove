@@ -22,7 +22,7 @@ Maria;It’s the perfect time! I’m going to go check out the nightlife! Meet s
 Rosa;But if you're this tired after just a day, you really should stay in and get some rest.;0;R
 Rosa;We’re going to have to wake up early and work just as hard tomorrow.;0;R
 Maria;I know I messed up today, but I'll get the hang of it.;1;L
-Maria;I'm going to go out tonight. I'll be back, so don't worry about me.;6;L
+Maria;I'm going to go out tonight. I'll be back soon, so don't worry about me.;6;L
 Maria;Bye, abuelita.;1;L
 Rosa;María, wait...!;0;R
 end;

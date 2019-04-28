@@ -1,28 +1,28 @@
-Maria;(Whew… I knew it was a good idea to come to the farm! Picking carrots was a piece of carrot cake!);1;L
-Maria;(Oof, that was bad.);6;L
-Maria;(Oh, there’s my abuela Rosa.);0;L
-Rosa;How was your first day, mija?;0;R
-Maria;Oh, hey abuelita! It was so great today! The rhythm of farming felt so natural!;1;L
-Maria;(Oh, that one too.);6;L
-Rosa;I do have to admit you picked this up quickly. Not bad, for your first day.;0;R
-Maria;Right! I’m so good at this! I can’t wait for tomorrow!;1;L
-Rosa;Well, why wait? Now that the fields are clear, there’s nothing stopping you from plowing them again.;0;R
-Rosa;If you go now, you might be able to finish by sunrise.;0;R
-Maria;H-huh?;0;L
-Rosa;Oh! And since you’re such a natural, why don’t you plant the lettuce seeds too! I’m sure you can get it all done overnight.;0;R
-Maria;W-wait! What!?;6;L
-Rosa;I’m kidding! I wouldn’t want to overwork you after only one day!;0;R
-Maria;Oh... haha...;2;L
-Rosa;Alright, enough messing around. Let’s go inside. You must be tired after such a long day.;0;R
-Maria;Actually, I was thinking that I would go out tonight. It’s my first day here, so I’m excited to see the town!;1;L
-Rosa;I don’t know what you usually get up to at night, but if you’re trying to be a farmer, you really should get some sleep.;0;R
-Rosa;We’re going to have to work even harder tomorrow, and that means waking up early too.;0;R
-Maria;Aw, don’t worry about it! I know you’re trying to worry about me, but I can work just fine without much sleep.;1;L
-Maria;College, you know.;2;L
-Rosa;This is not college, María. This is a farm, and you need to be awake early tomorrow.;0;R
-Rosa;And I am not just saying this as tu abuela.;0;R
-Rosa;Working on a farm means having responsibilities, and I think you’ll want to rest.;0;R
-Maria;I know you’re worried about me, but I still want to go out tonight. I know my limits, and I’ll be back when I get tired.;6;L
-Maria;See ya later!;1;L
-Rosa;María, wait…!;0;R
+Maria;(Ugh... That could have gone better...);1;L
+Maria;(There’s dirt in my shoes... in my hair... in my clothes...);6;L
+Maria;(Actually, it’s hard to think of any part of me that ISN’T covered in dirt...);0;L
+Maria;(I don't know if coming here was a good idea...);6;L
+Rosa;How are you doing, mija?;0;R
+Maria;I'm fine...;1;L
+Maria;(I just want to go to bed.);6;L
+Rosa;Are you sure? You look upset.;0;R
+Maria;No, I'm fine! I'm having a great time.;1;L
+Maria;(I couldn't even handle picking carrots.);1;L
+Rosa;...;0;R
+Rosa;... All right. Let's go inside. Once we get cleaned up, we can do something fun.;0;R
+Maria;Fun?;1;L
+Rosa;You know, I still have all your favorite board games in the attic. You want to give them a try?;0;R
+Maria;Abuelita, I haven’t played any of those things in years.;1;L
+Rosa;Oh, come on. It’s always good to relax with something familiar after a bad day at work.;0;R
+Maria;(She's right, but board games?);1;L
+Maria;(I'm not a kid anymore!);1;L
+Maria;I told you, Rosa, I’m fine! And besides...I already have plans to go out tonight!;1;L
+Rosa;Into town? Really? Isn’t it a bit late for that?;0;R
+Maria;It’s the perfect time! I’m going to go check out the nightlife! Meet some new people!;0;L
+Rosa;But if you're this tired after just a day, you really should stay in and get some rest.;0;R
+Rosa;We’re going to have to wake up early and work just as hard tomorrow.;0;R
+Maria;I know I messed up today, but I'll get the hang of it.;1;L
+Maria;I'm going to go out tonight. I'll be back, so don't worry about me.;6;L
+Maria;Bye, abuelita.;1;L
+Rosa;María, wait...!;0;R
 end;

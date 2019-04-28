@@ -1,4 +1,4 @@
-Maria;(Whew… I knew it was a good idea to come to the farm! Picking carrots was a piece of carrot cake!);1;L
+Maria;(Whew... I knew it was a good idea to come to the farm! Picking carrots was a piece of carrot cake!);1;L
 Maria;(Oof, that was bad.);6;L
 Maria;(Oh, there’s my abuela Rosa.);0;L
 Rosa;How was your first day, mija?;0;R
@@ -24,5 +24,5 @@ Rosa;And I am not just saying this as tu abuela.;0;R
 Rosa;Working on a farm means having responsibilities, and I think you’ll want to rest.;0;R
 Maria;I know you’re worried about me, but I still want to go out tonight. I know my limits, and I’ll be back when I get tired.;6;L
 Maria;See ya later!;1;L
-Rosa;María, wait…!;0;R
+Rosa;María, wait...!;0;R
 end;

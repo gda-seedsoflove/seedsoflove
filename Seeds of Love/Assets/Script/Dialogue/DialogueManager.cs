@@ -195,11 +195,11 @@ public class DialogueManager : MonoBehaviour {
     {
         if (position == "L")
         {
-            spriteObj.transform.position = new Vector3(-5, -0.2f);
+            spriteObj.transform.position = new Vector3(spriteObj.GetComponent<Character>().xpos * -1, spriteObj.GetComponent<Character>().ypos);
         }
         else if (position == "R")
         {
-            spriteObj.transform.position = new Vector3(5, -0.2f);
+            spriteObj.transform.position = new Vector3(spriteObj.GetComponent<Character>().xpos, spriteObj.GetComponent<Character>().ypos);
         }
         spriteObj.transform.position = new Vector3(spriteObj.transform.position.x, spriteObj.transform.position.y, 0);
     }

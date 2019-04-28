@@ -1,43 +1,44 @@
-Maria;... and the atmosphere was so suffocating, I felt like I would go crazy if I stayed there any longer. I just didn't belong there ;0;L
-Maria;Ugh... At this point, I’m just whining like a baby...;0;L
-Sunny;Oh no, it’s fine! I’m sorry you've had such a tough time.;2;R
-Sunny;Funny you say that you don’t belong... I understand that feeling.;2;R
-Sunny;I’ve lived in the same place all my life. I haven't seen anything new in years.;0;R
-Sunny;I’m not sure when, but after a while, I just felt like... I didn’t belong anymore.;2;R
+Maria;... and the atmosphere was so suffocating, I felt like I would go crazy if I stayed there any longer. I just didn't belong there.;6;L
+Sunny;Mhmm...;6;R
+Maria;Ugh... At this point, I’m just whining like a baby...;6;L
+Sunny;Oh no, it’s fine! I’m sorry you've had such a tough time.;6;R
+Sunny;Funny you say that you don’t belong... I understand that feeling.;5;R
+Sunny;I’ve lived in the same place all my life. I haven't seen anything new in years.;5;R
+Sunny;I’m not sure when, but after a while, I just felt like... I didn’t belong anymore.;11;R
 Maria;Really? Can't you just... leave?;0;L
-Sunny;Well... not really. My whole life is here, and I can’t really abandon it.;0;R
-Maria;(Not the way I did, I guess.);0;L
-Sunny;My family, my friends, my students... I can’t just leave them all behind.;2;R
+Sunny;Well... not really. My whole life is here, and I can’t really abandon it.;11;R
+Maria;(Not the way I did, I guess.);6;L
+Sunny;My family, my friends, my students... I can’t just leave them all behind.;11;R
 Maria;Students? You're a teacher?;0;L
-Sunny;Well, student teacher.;2;R
-Maria;Oh, I see. Who knew being an adult was so hard...;0;L
+Sunny;Well, student teacher.;5;R
+Maria;Oh, I see. Who knew being an adult was so hard...;6;L
 Maria;I wish I was better at it. I'm not as strong as you, Sunny.;0;L
 Sunny;I'm not so sure about that.;2;R
 Sunny;B-but anyway! Don't worry, you'll still have plenty of time to figure things out!;0;R
-Sunny;That's why you're here, aren't you?;2;R
-Maria;...;0;R
+Sunny;That's why you're here, aren't you?;1;R
+Maria;...;0;L
 Sunny;You're a good person, Maria. I'm not usually the kind of person to go up to strangers, but I felt comfortable talking to you.;0;R
-Sunny;Sometimes I feel like I'm a real nuisance...;0;R
-Maria;O-of course you're not!;0;L
-Sunny;Oh, I'm sorry, I didn't mean to -;0;R
+Sunny;Sometimes I feel like I'm a real nuisance...;5;R
+Maria;O-of course you're not!;6;L
+Sunny;Oh, I'm sorry, I didn't mean to -;3;R
 Maria;You're really not! You listened to me blabber on and on about my problems tonight...;0;L
-Maria;And if you need someone to talk to, I can be there to listen.;0;L
-Sunny;...I guess we listened to each other’s problems plenty tonight.;0;R
-Maria;And we don't just have to talk about our problems! We can also -;0;L
-Maria;!;0;L
-Sunny;Is something wrong?;0;R
-Maria;Oh, I uh, just realized it's midnight...;0;L
-Maria;I told my grandma I wouldn't be out too long. Farmers have to get up early, and all that...;0;L
-Sunny;Oh! That's... actually pretty late.;0;R
-Sunny;I don't usually stay out this long.;0;R
-Maria;Hey, thanks for talking with someone as lame as me.;0;L
-Sunny;Don’t say that! ...I think you’re really cool.;0;R
-Maria;(!!!);0;L
-Maria;Nice - nice talking with you though! See you around?;0;L
-Sunny;Absolutely. If you ever want to chat, I would love to meet up again.;0;R
-Maria;Bye Sunny! I’ll be sure to -;0;L
-Maria:ACK!;0;L
+Maria;And if you need someone to talk to, I can be there to listen.;1;L
+Sunny;...I guess we listened to each other’s problems plenty tonight.;1;R
+Maria;And we don't just have to talk about our problems! We can also -;2;L
+Maria;!;3;L
+Sunny;Is something wrong?;6;R
+Maria;Oh, I uh, just realized it's midnight...;3;L
+Maria;I told my grandma I wouldn't be out too long. Farmers have to get up early, and all that...;4;L
+Sunny;Oh! That's... actually pretty late.;3;R
+Sunny;I don't usually stay out this long.;3;R
+Maria;But hey, thanks for talking with someone as lame as me.;2;L
+Sunny;Don’t say that! ...I think you’re really cool.;9;R
+Maria;(!!!);5;L
+Maria;Nice - nice talking with you though! See you around?;2;L
+Sunny;Absolutely. If you ever want to chat, I would love to meet up again.;1;R
+Maria;Bye Sunny! I’ll be sure to -;2;L
 ##;Sunny;exit
+Maria;ACK!;7;L
 Barnabus;The door.;0;R
-Maria;Haha, I meant to do that...;0;L
+Maria;Haha, I meant to do that...;2;L
 end;

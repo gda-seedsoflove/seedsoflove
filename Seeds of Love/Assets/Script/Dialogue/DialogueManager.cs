@@ -313,6 +313,6 @@ public class DialogueManager : MonoBehaviour {
         SceneFade fadeScreen;
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
-        fadeScreen.BeginTransition(fadeScreen.Path);
+        fadeScreen.BeginTransition(fadeScreen.Scenename);
     }
 }

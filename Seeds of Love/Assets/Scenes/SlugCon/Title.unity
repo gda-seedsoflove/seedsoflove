@@ -8311,7 +8311,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   duration: 1
   sceneStarting: 1
-  Path: 
+  Scenename: IntroVN
 --- !u!114 &1932704528
 MonoBehaviour:
   m_ObjectHideFlags: 0

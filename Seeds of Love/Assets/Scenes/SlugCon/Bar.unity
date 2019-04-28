@@ -900,26 +900,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114458771681001578, guid: 8526797b0583b0241a1fbe33597b5442,
+        type: 2}
+      propertyPath: Scenename
+      value: BarRhythmGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8526797b0583b0241a1fbe33597b5442, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &2013942758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1214843970714008, guid: 8526797b0583b0241a1fbe33597b5442,
-    type: 2}
-  m_PrefabInternal: {fileID: 2013942757}
---- !u!114 &2013942759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2013942758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenePath: Assets/Scenes/Test Scenes/BarRhythmGame.unity
 --- !u!1001 &2084461672
 Prefab:
   m_ObjectHideFlags: 0

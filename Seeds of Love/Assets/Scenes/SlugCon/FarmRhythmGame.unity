@@ -1514,7 +1514,6 @@ GameObject:
   - component: {fileID: 1050976659}
   - component: {fileID: 1050976658}
   - component: {fileID: 1050976657}
-  - component: {fileID: 1050976662}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1564,7 +1563,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   duration: 1
   sceneStarting: 1
-  Path: 
+  Scenename: TransitionToBar
 --- !u!114 &1050976658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,18 +1635,6 @@ Canvas:
   m_SortingLayerID: -1480414337
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1050976662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1050976655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenePath: Assets/Scenes/MarchPrototypeVN/TransitionToBar.unity
 --- !u!1 &1061518173
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,6 +3414,10 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.z
       value: 0.41666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321322499809020, guid: 662e36401a962a1439c283fc8e103b82, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 662e36401a962a1439c283fc8e103b82, type: 2}

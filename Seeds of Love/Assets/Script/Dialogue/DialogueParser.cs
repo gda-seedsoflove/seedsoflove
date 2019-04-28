@@ -39,7 +39,7 @@ public class DialogueParser : MonoBehaviour
     //loads the file for this scene and calls LoadDialogue
     private void Awake()
     {
-        string file = "";
+        //string file = "";
         try
         {
             if (PlayerData.instance.Mood < 0.5f)

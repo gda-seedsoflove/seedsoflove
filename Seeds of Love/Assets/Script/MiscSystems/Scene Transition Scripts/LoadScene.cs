@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
-[RequireComponent(typeof(ScenePicker))]
 public class LoadScene : MonoBehaviour
 {
     // Sets variables for fadeScreen and sceneNumber
@@ -18,10 +16,10 @@ public class LoadScene : MonoBehaviour
 
     void Start()
     {
-        fadeScreen.Path = GetComponent<ScenePicker>().scenePath;
+        //fadeScreen.Path = GetComponent<ScenePicker>().scenePath;
     }
 
     public void Trigger() {
-        fadeScreen.BeginTransition(GetComponent<ScenePicker>().scenePath);
+        fadeScreen.BeginTransition(GetComponent<SceneFade>().Scenename);
     }
 }

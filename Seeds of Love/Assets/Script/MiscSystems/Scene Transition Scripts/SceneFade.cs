@@ -29,7 +29,7 @@ public class SceneFade : MonoBehaviour {
     public Color endColor;
     public float duration;
     public bool sceneStarting = true;
-    public string Path;
+    public string Scenename;
 
     void Awake() {
         fadeScreen.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
@@ -62,16 +62,15 @@ public class SceneFade : MonoBehaviour {
     }
 
     // Fades from clear to black -> Ending scene
-    private IEnumerator FadeToBlack(string scenePath) {
+    private IEnumerator FadeToBlack(string Scenename) {
         float timer = 0f;
         fadeScreen.gameObject.SetActive(true);
         while (timer <= duration) {
             fadeScreen.color = Color.Lerp(endColor, startColor, timer / duration);
             timer += Time.deltaTime;
             if (fadeScreen.color.a >= 0.99f || timer > duration) {
-                var S = AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath);
-                Debug.Log("Loading Scene: "+S.name);
-                SceneManager.LoadScene(S.name);
+                Debug.Log("Loading Scene: "+Scenename);
+                SceneManager.LoadScene(Scenename);
                 yield break;
             }
             else {
@@ -87,16 +86,16 @@ public class SceneFade : MonoBehaviour {
     }
 
     // Begins transition w/ desired scene number
-    public void BeginTransition(string path) { 
+    public void BeginTransition(string scenename) { 
         Debug.Log("Begin Transition");
-        StartCoroutine("FadeTransition", path);
+        StartCoroutine("FadeTransition", scenename);
     }
 
     // Calls FadeToBlack to begin fading
-    private IEnumerator FadeTransition(string path) {
+    private IEnumerator FadeTransition(string scenename) {
         Debug.Log("Begin Fade");
         fadeScreen.enabled = true;
-        StartCoroutine(FadeToBlack(path));
+        StartCoroutine(FadeToBlack(scenename));
         yield return null;
     }
 }

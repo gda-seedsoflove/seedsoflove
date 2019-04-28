@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/FarmRhythmGame.unity
     guid: 87f6a4913e97f0b42a1a9ee28e25a283
+  - enabled: 1
+    path: Assets/Scenes/Farm-Scenes/IntroVN.unity
+    guid: 7a3e0d2d60d803c49a71e4f56ee63aa9
   m_configObjects: {}

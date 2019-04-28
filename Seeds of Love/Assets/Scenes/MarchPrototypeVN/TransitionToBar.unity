@@ -334,7 +334,7 @@ Prefab:
         type: 2}
       propertyPath: script
       value: 
-      objectReference: {fileID: 4900000, guid: 0c26b0d40d1471b42b5caa05803464dd, type: 3}
+      objectReference: {fileID: 4900000, guid: 21b6566a344ebb649a899b356aace498, type: 3}
     - target: {fileID: 114642502970670470, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_Sprite

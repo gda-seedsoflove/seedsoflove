@@ -1,0 +1,22 @@
+Maria;... And that’s why business school is a huge scam. But I'm just blabbering, what do you think?;1;L
+Rosa;Hm? Oh, sorry mija. I was focusing on carrying your bags. What were you saying?;0;R
+Maria;Oh.;1;L
+Maria;Not much...;1;L
+Rosa;Ah, we're here.;0;R
+Maria;Wah, it’s so beautiful! The house, the barn, the fields, the-!;1;L
+Rosa;Maria, I need you to put your things in the house.;0;R
+Rosa;If I don't start on the carrots now, I won't finish before dark.;0;R
+Maria;Wait, I can help pick the carrots!;1;L
+Rosa;Don’t you think you should get settled in first?;0;R
+Maria;I can do that later. Plus, how hard can picking carrots be?;1;L
+Rosa;Well, I guess you should be able to handle it. And I do need to feed the chickens...;0;R
+Rosa;I'll put your things away. In the meantime, ask Barnabus if you need any help.;0;R
+##;Rosa;exit
+Maria;Wait, who?;1;L
+Barnabus;Mm.;0;R
+Maria;Oh. Uh, hi.;0;L
+Barnabus;Mmhmm.;0;R
+##;Barnabus;exit
+Maria;Huh.;0;L
+Maria;Anyway, it's time to get to those carrots! I may not know much, but I'll try my best!;0;L
+end;

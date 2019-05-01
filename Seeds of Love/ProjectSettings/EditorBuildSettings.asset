@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/Title.unity
+    path: Assets/Scenes/SlugCon/Title.unity
     guid: 64a95e0867ee9184b9102ceb6effa39f
   - enabled: 1
     path: Assets/Scenes/Prototype/Prototype-Title.unity
     guid: 8be6ffda3b482524fb5c5eca043c2f72
   - enabled: 1
-    path: Assets/Scenes/MarchPrototypeVN/TransitionToBar.unity
+    path: Assets/Scenes/SlugCon/TransitionToBar.unity
     guid: 94e38717b43793348b3729e6c15c89b8
   - enabled: 1
-    path: Assets/Scenes/MarchPrototypeVN/Bar.unity
+    path: Assets/Scenes/SlugCon/Bar.unity
     guid: 5aea6aae705d10442852b4140eba157d
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/BarRhythmGame.unity
+    path: Assets/Scenes/SlugCon/BarRhythmGame.unity
     guid: 9c47b04a8c0d098438391bf6e65b31c5
   - enabled: 1
-    path: Assets/Scenes/MarchPrototypeVN/AfterBar.unity
+    path: Assets/Scenes/SlugCon/AfterBar.unity
     guid: 9a53feb72f0ec674eb58afc133042f3d
   - enabled: 0
     path: Assets/Scenes/Prototype/Prototype-BarScene.unity
@@ -30,12 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype/Prototype-RhythmGame1.unity
     guid: f37a9c17fa1c2e34ea719e662448a37e
   - enabled: 1
-    path: Assets/Scenes/Farm-Scenes/FarmVN.unity
+    path: Assets/Scenes/SlugCon/FarmVN.unity
     guid: 8ab10a136f0b8b541af6b73e5f14d32a
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/FarmRhythmGame.unity
+    path: Assets/Scenes/SlugCon/FarmRhythmGame.unity
     guid: 87f6a4913e97f0b42a1a9ee28e25a283
   - enabled: 1
-    path: Assets/Scenes/Farm-Scenes/IntroVN.unity
+    path: Assets/Scenes/SlugCon/IntroVN.unity
     guid: 7a3e0d2d60d803c49a71e4f56ee63aa9
   m_configObjects: {}

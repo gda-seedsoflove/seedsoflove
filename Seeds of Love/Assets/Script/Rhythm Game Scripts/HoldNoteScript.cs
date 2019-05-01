@@ -10,9 +10,10 @@ public class HoldNoteScript : MonoBehaviour {
 
     public GameObject Top;
     public GameObject Bottom;
+    public GameObject HitCircle;
 
     [HideInInspector]
-    public GameObject top, bottom;
+    public GameObject top, bottom, hitcircle;
 
     private Vector2 end;
 
@@ -40,6 +41,9 @@ public class HoldNoteScript : MonoBehaviour {
         bottom.transform.position = gameObject.transform.position;
         pos = bottom.transform.position;
         top.transform.position = new Vector2(pos.x, pos.y + length);
+        hitcircle = (GameObject)Instantiate(HitCircle, transform, true);
+        hitcircle.transform.position = new Vector3(top.transform.position.x, top.transform.position.y, 0);
+        hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0f);
 
         //Set COlors
         c = NoteManager.c;
@@ -83,6 +87,37 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 distance = top.transform.position.y - bottom.transform.position.y;
             }
+
+            if (hitcircle.gameObject)
+            {
+                //hitcircle.transform.position = new Vector3(top.transform.position.x, top.transform.position.y, 0);
+                hitcircle.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+                float maxscale = 5;
+                float scale = Mathf.Lerp(.3f, maxscale, distance / -speed);
+                hitcircle.transform.localScale = new Vector3(scale, scale, scale);
+
+                if (scale >= maxscale)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0f);
+                }
+                else if (scale > 3)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .05f);
+                }
+                else if (scale >= 1.5)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Mathf.Lerp(.2f,.05f, scale-1));
+                }
+                else if(scale > 1)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .2f);
+                }
+                else
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Mathf.Clamp(scale - .3f, 0, .5f));
+                }
+            }
+
             //Debug.Log(interval * speed);
             if (currinterval <= 0 && distance >= interval/2 * -speed) // Pulses in half beats in the hold notes
             {
@@ -95,6 +130,7 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 currinterval -= Time.deltaTime;
             }
+
         }
         else
         {
@@ -139,6 +175,7 @@ public class HoldNoteScript : MonoBehaviour {
             child.parent = null;
             Destroy(child.gameObject);
             Destroy(top);
+            Destroy(hitcircle);
         }
     }
 }

@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984354951464168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.67, y: -2.33, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,8 +89,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Top: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
   Bottom: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
+  HitCircle: {fileID: 1050089359498490, guid: c4db5036cedbd0a4ba8da562113ca9cd, type: 2}
   top: {fileID: 0}
   bottom: {fileID: 0}
+  hitcircle: {fileID: 0}
   speed: 0
   length: 3
   held: 0
@@ -99,6 +101,7 @@ MonoBehaviour:
   interval: 0
   currinterval: 0
   lr: {fileID: 0}
+  c: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114390592664406716
 MonoBehaviour:
   m_ObjectHideFlags: 1

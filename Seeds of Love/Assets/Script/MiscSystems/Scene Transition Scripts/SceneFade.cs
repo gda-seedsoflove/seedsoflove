@@ -98,4 +98,9 @@ public class SceneFade : MonoBehaviour {
         StartCoroutine(FadeToBlack(scenename));
         yield return null;
     }
+
+    public void ChangeSceneNamePath(string name)
+    {
+        Scenename = name;
+    }
 }

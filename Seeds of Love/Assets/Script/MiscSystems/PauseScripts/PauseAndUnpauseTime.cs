@@ -1,33 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseAndUnpauseTime : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+    }
 
-    public void TogglePause()
+    public void TogglePause(float t)
     {
-        if(Time.timeScale == 1.0)
+        float currTime = Time.timeScale; 
+        if(currTime != 0.0)
         {
-            Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+            Time.timeScale = 0.0f;
 
         } else
         {
-            Time.timeScale = Mathf.Approximately(Time.timeScale, 1.0f) ? 0.0f : 1.0f;
-
+            Time.timeScale = t;
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
+        float currentUnpausedTime = 1;
+        if(Time.timeScale != 0)
+        {
+            currentUnpausedTime = Time.timeScale;
+        }
         if (Input.GetKeyDown("escape"))
         {
-            TogglePause();
-            AudioListener.pause = !AudioListener.pause;     //Toggles the pause on audio.
+            TogglePause(currentUnpausedTime);
         }
     }
 }

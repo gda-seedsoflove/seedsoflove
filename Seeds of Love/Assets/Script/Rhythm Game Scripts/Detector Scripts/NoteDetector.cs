@@ -40,6 +40,9 @@ public class NoteDetector : MonoBehaviour
     private float whitetime; // time the detector lights up after pressing space;
 
     [HideInInspector]
+    public bool leftdown, rightdown, leftup, rightup;
+
+    [HideInInspector]
     public bool holdingshift, holdingleft, holdingright;
 
     [HideInInspector]
@@ -70,14 +73,36 @@ public class NoteDetector : MonoBehaviour
         transform.position = Object.transform.position; // Stay on the object
 
 
-        //float x = Input.GetAxisRaw("Horizontal");
-        //float y = Input.GetAxisRaw("Vertical");
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.F))
+        {
+            leftdown = true;
+        }
+        if (leftup)
+        {
+            leftup = false; // since this is above the true setter, this value is only true for one frame
+        }
+        if (Input.GetKeyUp("left") || Input.GetKeyUp("a") || Input.GetKeyUp(KeyCode.F))
+        {
+            leftup = true;
 
-        //checkPos(x, y);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J))
+        {
+            rightdown = true;
+        }
+        if (rightup)
+        {
+            rightup = false; // since this is above the true setter, this value is only true for one frame
+        }
+        if (Input.GetKeyUp("right") || Input.GetKeyUp("d") || Input.GetKeyUp(KeyCode.J))
+        {
+            rightup = true;
+        }
 
         float movement = 0;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.A))
+        if (leftdown)
         {
             holdingleft = true;
             leftbuffer = .2f;
@@ -87,13 +112,14 @@ public class NoteDetector : MonoBehaviour
                 changespeed = 40;
                 movement = -4;
             }
+            leftdown = false;
         }
-        else if (Input.GetKeyUp("left") | Input.GetKeyUp("a"))
+        else if (leftup)
         {
             holdingleft = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetKeyDown(KeyCode.D))
+        if (rightdown)
         {
             holdingright = true;
             rightbuffer = .2f;
@@ -103,8 +129,9 @@ public class NoteDetector : MonoBehaviour
                 changespeed = 40;
                 movement = 4;
             }
+            rightdown = false;
         }
-        else if(Input.GetKeyUp("right") || Input.GetKeyUp("d"))
+        else if(rightup)
         {
             holdingright = false;
         }

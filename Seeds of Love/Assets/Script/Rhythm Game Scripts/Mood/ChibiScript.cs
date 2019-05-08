@@ -53,7 +53,7 @@ public class ChibiScript : MonoBehaviour {
         }
         else
         {
-            Debug.LogWarning("ChibiScript: PlayerData(required) does not exist in this context. ");
+            //Debug.LogWarning("ChibiScript: PlayerData(required) does not exist in this context. ");
         }
 	}
 }

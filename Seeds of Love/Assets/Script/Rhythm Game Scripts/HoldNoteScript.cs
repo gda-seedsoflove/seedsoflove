@@ -78,10 +78,16 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 Destroy(bottom.GetComponentInChildren<SpriteRenderer>());
             }
-            if (online == false && top != null)
+            if (top != null)
             {
                 top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
             }
+
+            if (online == true && lr)
+            {
+                lr.enabled = false;
+            }
+
             float distance = 0;
             if (top != null)
             {
@@ -145,9 +151,11 @@ public class HoldNoteScript : MonoBehaviour {
         bottom.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
         top.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
         bottom.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
-        top.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
-        lr.material.SetColor("_Color", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
-        lr.material.SetColor("_Outline", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
+        if (lr)
+        {
+            lr.material.SetColor("_Color", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
+            lr.material.SetColor("_Outline", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
+        }
     }
 
     /**

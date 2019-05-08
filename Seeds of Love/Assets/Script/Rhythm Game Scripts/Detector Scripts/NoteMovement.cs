@@ -70,7 +70,7 @@ namespace Script.Behaviour
             if (Note.Currtime < -Note.HitTimeThreshold)
             {
                 GameObject child = transform.GetChild(0).gameObject;
-                float alpha = Mathf.Clamp(1 - (1 * timeafter / (NoteManager.DisplayedTimeAfter)), 0, 255);
+                float alpha = Mathf.Clamp(1 - (2 * timeafter / (3*NoteManager.DisplayedTimeAfter)), 0, 255);
                 try
                 {
                     child.GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
@@ -79,9 +79,14 @@ namespace Script.Behaviour
                 timeafter += Time.deltaTime;
                 if (Note.isHoldNote && GetComponent<HoldNoteScript>())
                 {
+                    HoldNoteScript hnote = GetComponent<HoldNoteScript>();
+                    if (hnote.top)
+                    {
+                        hnote.top.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
+                    }
                     try
                     {
-                        HoldNoteScript hnote = GetComponent<HoldNoteScript>();
+                       
                         hnote.SetAlpha(alpha);
                         /**
                         hnote.bottom.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);

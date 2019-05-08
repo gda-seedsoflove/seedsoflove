@@ -14,6 +14,7 @@ namespace Script.Song
         public bool Holding { get; set; }
 
         public bool Hit { get; set; }
+        public bool Missed { get; set; }
 
         public char convertType(int type)
         {

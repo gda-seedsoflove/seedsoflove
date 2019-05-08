@@ -23,10 +23,6 @@ namespace Script.Behaviour
             // Self-destruct if the note is outside of the displayed time range
             if (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)
             {
-                if(Note.Hit == false)
-                {
-                    NoteManager.addScore(0, 1);
-                }
                 Destroy(gameObject);
             }
             else if (Note.Currtime <= -Note.HitTimeThreshold && Note.Hit == false && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))
@@ -44,6 +40,12 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
                 }
                 catch { }
+            }
+
+            if (GetComponent<NoteJudgement>().missed && Note.isHoldNote == false && Note.Missed == false)
+            {
+                NoteManager.addScore(0, 1);
+                Note.Missed = true;
             }
 
             Note.Currtime = Note.Currtime -= Time.deltaTime;

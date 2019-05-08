@@ -8,6 +8,11 @@ namespace Tests.Interactive.NoteTimingTest
 {
     public class NoteGenerator : NoteManager
     {
+        /// <Description>
+        /// Front end code for the rhythm game system (the rhythm game manager)
+        /// Note generator is responible for the logistics of the note spawning and keeping everything in beat
+        /// It references from many other scripts to adjust their code and to retrieve from them
+        ///
 
         private float _nextNoteSpawnTime;
 

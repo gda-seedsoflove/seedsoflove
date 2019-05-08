@@ -8,6 +8,12 @@ namespace Script.Song
     [RequireComponent(typeof(NoteJudgement))]
     public abstract class NoteManager : MonoBehaviour
     {
+        /// <Descriptiom>
+        /// Note manager is the backend system for managing the notes that will spawn in the rhythm game.
+        /// It keeps track of the combo, score, and rhythm game characteristics like hitwindows and threshholds
+        /// It also does the acutal spawning/creation of the notes and adjusts them accordingly given their type.
+        ///
+
         public GameObject NotePrefab;
         public GameObject TouchNotePrefab;
         public GameObject HoldNotePrefab;

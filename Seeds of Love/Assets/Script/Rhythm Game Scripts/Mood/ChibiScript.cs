@@ -43,7 +43,8 @@ public class ChibiScript : MonoBehaviour {
 
             if (PlayerData.instance.Mood < PrevMood)
             {
-                SadTime += .35f; // Sad time will increase but .1 seconds
+                //Debug.Log(1/(float)(BeatmapReader.GetComponent<BeatmapReader>().bpm / 60);
+                SadTime += 1/(float)(BeatmapReader.GetComponent<BeatmapReader>().bpm / 60); // Sad time will increase but .1 seconds
             }
             else if(SadTime >= 0)
             {

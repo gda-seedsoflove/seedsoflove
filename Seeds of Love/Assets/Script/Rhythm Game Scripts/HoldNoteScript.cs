@@ -183,7 +183,12 @@ public class HoldNoteScript : MonoBehaviour {
             child.parent = null;
             Destroy(child.gameObject);
             Destroy(top);
+            
             Destroy(hitcircle);
+        }
+        if (bottom.GetComponentInChildren<SpriteRenderer>())
+        {
+            Destroy(bottom.transform.GetChild(0).gameObject);
         }
     }
 }

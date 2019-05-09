@@ -87,7 +87,7 @@ namespace Script.Behaviour
 
                 if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16) // If touch note and was "touched" then it is hit.
                 {
-                    NoteManager.addScore(1, 1);
+                    NoteManager.addScore(2, 2);
                     OnHit(gameObject);
                 }
 
@@ -105,7 +105,7 @@ namespace Script.Behaviour
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     GetComponent<HoldNoteScript>().Release();
                     OnHit(gameObject);
-                    NoteManager.addScore(.5f, .5f); // completes the missing half of the note score.
+                    NoteManager.addScore(10f, 10f); // completes the missing half of the note score.
                 }
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || currentlane != Note.Lane) && (holdingspace == false || currentlane != Note.Lane))
                 {
@@ -116,7 +116,8 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().Release();
                     if(missed == false)
                     {
-                        NoteManager.addScore(0, .5f);
+                        NoteManager.addScore(0, 1.3f);
+                        missed = true;
                     }
                 }
                 else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
@@ -126,7 +127,7 @@ namespace Script.Behaviour
 
                 if(Note.Currtime < bottomthreshhold && missed == false && Note.Missed == false)
                 {
-                    NoteManager.addScore(0, .5f);
+                    NoteManager.addScore(0, 1.3f);
                     missed = true;
                 }
                 releasebuffertime -= Time.deltaTime;
@@ -147,7 +148,7 @@ namespace Script.Behaviour
                         GetComponent<NoteMovement>().moving = false;
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 0);
                     }
-                    NoteManager.addScore(.5f,.5f);
+                    NoteManager.addScore(1f,1f);
                     Note.Hit = true;
                 }
 

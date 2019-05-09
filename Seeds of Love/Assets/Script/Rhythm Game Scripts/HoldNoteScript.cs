@@ -164,12 +164,17 @@ public class HoldNoteScript : MonoBehaviour {
     public void Hit(float distance)
     {
         Vector2 pos = bottom.transform.position;
-        float topy = top.transform.position.y;
-        //GetComponent<HoldNoteScript>().bottom.transform.position = new Vector2(pos.x, NoteManager.transform.position.y - NoteManager.EndY);
-        GetComponent<HoldNoteScript>().held = true;
-        transform.position = new Vector2(pos.x, distance);
-        top.transform.position = new Vector2(pos.x, topy);
-        top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.6f, c.b*.6f);
+        try
+        {
+            float topy = top.transform.position.y;
+            //GetComponent<HoldNoteScript>().bottom.transform.position = new Vector2(pos.x, NoteManager.transform.position.y - NoteManager.EndY);
+            GetComponent<HoldNoteScript>().held = true;
+            transform.position = new Vector2(pos.x, distance);
+            top.transform.position = new Vector2(pos.x, topy);
+            top.GetComponent<SpriteRenderer>().color = new Color(c.r * .8f, c.g * .6f, c.b * .6f);
+        }
+        catch { }
+
         lr.SetPosition(1, top.transform.position);
         lr.material.SetColor("_Color", new Color(.8f, .4f, .4f));
 

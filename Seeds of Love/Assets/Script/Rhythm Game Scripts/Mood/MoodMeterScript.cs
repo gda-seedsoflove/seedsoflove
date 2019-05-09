@@ -21,7 +21,7 @@ public class MoodMeterScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         targetvalue = Mathf.Clamp(targetvalue, 0, maxvalue);
-        value = Mathf.Lerp(value,targetvalue,Time.deltaTime);
+        value = Mathf.Lerp(value,targetvalue,Time.deltaTime*3/2);
         value = Mathf.Clamp(value,0,maxvalue);
         percentage = value / maxvalue;
         moodbar.value = percentage;

@@ -108,11 +108,31 @@ namespace Script.Song
 
             if (combo > 0 && moodmeter != null)
             {
-                float multiplier = Mathf.Clamp(1+((float)combo),0,10);
+                float multiplier = Mathf.Clamp(points+((float)combo),0,10);
+                if(moodmeter.GetComponent<MoodMeterScript>().targetvalue < 20 && combo <= 1) // hidden comeback mood
+                {
+                    multiplier += 10;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 40 && combo <= 1) // hidden comeback mood
+                {
+                    multiplier += 5;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue >= 75)
+                {
+                    multiplier = Mathf.Clamp(Mathf.Clamp(points,1,6) + ((float)combo)/10, 0, 6f);
+                }
                 moodmeter.GetComponent<MoodMeterScript>().AddMood(multiplier);
             }
             else if (combo == 0 && moodmeter != null)
             {
+                if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 12) // Reduces points loss when low mood
+                {
+                    fullpoints *= .5f;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 24) // Reduces points loss when low mood
+                {
+                    fullpoints *= .75f;
+                }
                 moodmeter.GetComponent<MoodMeterScript>().AddMood(fullpoints * -12);
             }
             else

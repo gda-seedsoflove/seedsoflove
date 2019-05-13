@@ -8,7 +8,9 @@ public class PlayerData : MonoBehaviour {
 
     public float Mood;  // Value will range from 0 to 1. 1 being max mood
 
-    public List<string> Choicesmade;
+    //public List<string> Choicesmade;
+
+    public Hashtable Choicesmade;
 
     void Awake()
     {

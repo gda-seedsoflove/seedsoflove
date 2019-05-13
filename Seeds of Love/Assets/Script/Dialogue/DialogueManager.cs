@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour {
 
     //object to turn text file into usable dialogue objects
     DialogueParser parser;
+    PlayerData playerData;
 
     public string dialogue, characterName;
     public int lineNum;
@@ -50,6 +51,7 @@ public class DialogueManager : MonoBehaviour {
         playerTalking = false;
 
         parser = GetComponent<DialogueParser>();
+        playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>(); //PlayerData.InstanceOf();
 
         stageLeft = null;
         stageRight = null;
@@ -105,7 +107,7 @@ public class DialogueManager : MonoBehaviour {
     //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
     {
-        if(parser.GetName(lineNum) == "end") //end scene, start scene transition
+        if (parser.GetName(lineNum) == "end") //end scene, start scene transition
         {
             EndDialogue();
         }
@@ -115,6 +117,13 @@ public class DialogueManager : MonoBehaviour {
             command = parser.GetCommand(lineNum);
             characterName = parser.GetName(lineNum);
             DisplayImages();
+        }
+        else if (parser.GetName(lineNum) == "Scene")  //this line is a scene command
+        {
+            playerTalking = false;
+            command = parser.GetCommand(lineNum);
+            string[] commandData = command.Substring(1, command.Length - 1).Split(':');
+            SceneCommand(commandData);//some stuff to determine which kind of command it is. commandData!
         }
         else if (parser.GetName(lineNum) != "Player") //character is talking without needed player input
         {
@@ -217,8 +226,23 @@ public class DialogueManager : MonoBehaviour {
             GameObject button = Instantiate(choiceBox);
             Button b = button.GetComponent<Button>();
             ChoiceButton cb = button.GetComponent<ChoiceButton>();
-            cb.SetText(options[i].Split(':')[0]);
-            cb.option = options[i].Split(':')[1];
+            if(options.Length == 2)
+            {
+                //handles choices that DON'T matter
+                cb.SetText(options[i].Split(':')[0]);
+                cb.option = options[i].Split(':')[1];
+                cb.choiceKey = "";
+                cb.choiceValue = "";
+            }
+            else
+            {
+                //handles choices that DO matter
+                cb.SetText(options[i].Split(':')[0]);
+                cb.option = options[i].Split(':')[1];
+                cb.choiceKey = options[i].Split(':')[2];
+                cb.choiceValue = options[i].Split(':')[3];
+            }
+            
             cb.box = this;
             
             cb.transform.SetParent(thisCanvas.transform, false);
@@ -314,5 +338,45 @@ public class DialogueManager : MonoBehaviour {
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
         fadeScreen.BeginTransition(fadeScreen.Scenename);
+    }
+
+    //runs commands that don't effect a specific character sprite.
+    void SceneCommand(string[] commandData)
+    {
+        //scene command assumes that the command is properly formatted. You'll get an ArrayOutOfBounds if it isn't.
+        //"choice" assumes the choice it references has already happened. You'll get an error if it isn't.
+
+        if (commandData[0].Equals("choice"))
+        {
+            //checks if the [1] value is in the Choicesmade hashtable, then goes to the associated choiceValue header
+            if (playerData.Choicesmade.Contains[commandData[1]])
+            {
+                GoToHeader("##;Scene;{header:" + playerData.Choicesmade[commandData[1]] + "}");
+            }
+        }
+        else if(commandData[0].Equals("header"))
+        {
+            //headers do nothing when called. They are simply markers for other commands
+        }
+        else if (commandData[0].Equals("jumpTo"))
+        {
+            lineNum = int.Parse(commandData[1]);
+            
+        }
+        else
+        {
+            Debug.Log("No such command " + commandData[0] + " at line " + lineNum);
+        }
+    }
+
+    //looks for a specific, word-for-word line without printing anything out
+    void GoToHeader(string target)
+    {
+        //If you get EOF, that means that it couldn't find the header
+        while (parser.GetContent(lineNum).Equals(target))
+        {
+            ParseLine(); //will this cause other stuff to happen? If no, we good.
+            ++lineNum;
+        }
     }
 }

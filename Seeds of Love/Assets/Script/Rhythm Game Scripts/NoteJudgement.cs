@@ -48,11 +48,11 @@ namespace Script.Behaviour
 
         private void Update()
         {
-            if (Input.GetKeyDown(HitKey) && Note.Holding == false)
+            if ((Input.GetKeyDown(PlayerData.instance.spacekeybind)) && Note.Holding == false)
             {
                 bufferedtime = .1f;
             }
-            if (Input.GetKeyUp(HitKey) && Note.Holding == true)
+            if ((Input.GetKeyUp(PlayerData.instance.spacekeybind)) && Note.Holding == true)
             {
                 holdingspace = false;
                 releasebuffertime = .15f;
@@ -75,6 +75,7 @@ namespace Script.Behaviour
                 {
                     if (!Note.isTouchNote)
                     {
+                        
                         NoteManager.addScore(1, 1);
                         OnHit(gameObject);
                     }
@@ -109,12 +110,16 @@ namespace Script.Behaviour
                 }
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || currentlane != Note.Lane) && (holdingspace == false || currentlane != Note.Lane))
                 {
-                    Note.Holding = false;
-                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
+                    Note.Holding = false;                 
                     GetComponent<HoldNoteScript>().held = false;
-                    Destroy(GetComponent<HoldNoteScript>().lr);
-                    GetComponent<HoldNoteScript>().Release();
-                    if(missed == false)
+                    GetComponent<HoldNoteScript>().hitcircle.SetActive(false);
+                    //Destroy(GetComponent<HoldNoteScript>().lr);
+                    //GetComponent<HoldNoteScript>().Release();
+                    GetComponent<NoteMovement>().moving = true;
+                    GetComponent<HoldNoteScript>().earlyrelease = true;
+                    GetComponent<HoldNoteScript>().DestoryPulses();
+                    Note.Currtime = bottomthreshhold;
+                    if (missed == false)
                     {
                         NoteManager.addScore(0, 1.3f);
                         missed = true;

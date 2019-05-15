@@ -18,14 +18,18 @@ public class HoldNoteScript : MonoBehaviour {
     private Vector2 end;
 
     [HideInInspector]
-    public float speed, length;
+    public float speed, length, timeafter;
 
     [HideInInspector]
-    public bool held, online;
+    public bool held, online, earlyrelease;
 
-    public GameObject pulse;
     [HideInInspector]
     public float interval, currinterval;
+
+    public GameObject pulse;
+
+    [HideInInspector]
+    public GameObject pulseobject;
 
     private Vector2 pos;
 
@@ -44,6 +48,7 @@ public class HoldNoteScript : MonoBehaviour {
         hitcircle = (GameObject)Instantiate(HitCircle, transform, true);
         hitcircle.transform.position = new Vector3(top.transform.position.x, top.transform.position.y, 0);
         hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0f);
+        pulseobject =GameObject.FindGameObjectWithTag("Detector");
 
         //Set COlors
         c = NoteManager.c;
@@ -125,10 +130,10 @@ public class HoldNoteScript : MonoBehaviour {
             }
 
             //Debug.Log(interval * speed);
-            if (currinterval <= 0 && distance >= interval/2 * -speed) // Pulses in half beats in the hold notes
+            if (currinterval <= 0 && distance >= 3/2 * interval * -speed && earlyrelease == false) // Pulses in half beats in the hold notes
             {
                 GameObject instance = (GameObject)Instantiate(pulse, transform.position, Quaternion.identity);
-                instance.transform.parent = gameObject.transform;
+                instance.transform.parent = pulseobject.transform;
                 Destroy(instance, 1f);
                 currinterval = interval;
             }
@@ -144,18 +149,40 @@ public class HoldNoteScript : MonoBehaviour {
             pos = bottom.transform.position;
             //top.transform.position = new Vector2(pos.x, pos.y + length);
         }
+
+ 
+    }
+
+    void Update()
+    {
+        if (earlyrelease)
+        {
+            float alpha = Mathf.Clamp(1 - (2 * timeafter / (3 * NoteManager.DisplayedTimeAfter)), 0, 255);
+            timeafter += Time.deltaTime;
+            SetAlpha(alpha);
+        }
     }
 
     public void SetAlpha(float alpha)
     {
-        bottom.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
-        top.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
-        bottom.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+        if (bottom.GetComponent<SpriteRenderer>())
+        {
+            bottom.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, alpha);
+            bottom.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, alpha);
+        }
+        top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, alpha);
+        top.transform.GetChild(0).GetComponent<SpriteRenderer>().material.color = new Color(alpha, alpha, alpha, alpha);
+        //Debug.Log(lr);
         if (lr)
         {
             lr.material.SetColor("_Color", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
             lr.material.SetColor("_Outline", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
         }
+    }
+
+    public void DestoryPulses()
+    {
+        //remove pulses
     }
 
     /**

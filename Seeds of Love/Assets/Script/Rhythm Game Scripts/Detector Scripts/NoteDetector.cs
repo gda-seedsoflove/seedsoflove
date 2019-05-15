@@ -73,7 +73,7 @@ public class NoteDetector : MonoBehaviour
         transform.position = Object.transform.position; // Stay on the object
 
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(PlayerData.instance.leftkeybind))
         {
             leftdown = true;
         }
@@ -81,13 +81,13 @@ public class NoteDetector : MonoBehaviour
         {
             leftup = false; // since this is above the true setter, this value is only true for one frame
         }
-        if (Input.GetKeyUp("left") || Input.GetKeyUp("a") || Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(PlayerData.instance.leftkeybind))
         {
             leftup = true;
 
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(PlayerData.instance.rightkeybind))
         {
             rightdown = true;
         }
@@ -95,7 +95,7 @@ public class NoteDetector : MonoBehaviour
         {
             rightup = false; // since this is above the true setter, this value is only true for one frame
         }
-        if (Input.GetKeyUp("right") || Input.GetKeyUp("d") || Input.GetKeyUp(KeyCode.J))
+        if (Input.GetKeyUp(PlayerData.instance.rightkeybind))
         {
             rightup = true;
         }
@@ -137,7 +137,7 @@ public class NoteDetector : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.UpArrow)||Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(PlayerData.instance.dashkeybind))
         {
             if(rightbuffer > 0)
             {
@@ -155,7 +155,7 @@ public class NoteDetector : MonoBehaviour
             shiftbuffer = .15f;
             changespeed = 40;
         }
-        else if(Input.GetKeyUp("left shift") || Input.GetKeyUp("up") || Input.GetKeyUp("w"))
+        else if(Input.GetKeyUp("left shift") || Input.GetKeyUp(PlayerData.instance.dashkeybind))
         {
             holdingshift = false;
             changespeed = originalspeed;
@@ -205,14 +205,14 @@ public class NoteDetector : MonoBehaviour
             rightbuffer = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(PlayerData.instance.spacekeybind))
         {
             transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
             whitetime = .1f;
             transform.localScale = new Vector3(.85f, .85f, 1);
         }
 
-        if (Input.GetKey(KeyCode.Space) == false)
+        if (Input.GetKey(PlayerData.instance.spacekeybind) == false)
         {
             transform.localScale = new Vector3(1,1,1);
         }

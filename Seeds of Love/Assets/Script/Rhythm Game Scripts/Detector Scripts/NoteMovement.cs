@@ -29,7 +29,7 @@ namespace Script.Behaviour
             {
                 GetComponent<Animator>().Play("Fade_Out_Animation");
             }
-            else if (Note.isHoldNote && Note.Currtime < -Note.HitTimeThreshold && Note.Holding == false)
+            else if (Note.isHoldNote && Note.Currtime < -Note.HitTimeThreshold *4/3 && Note.Holding == false)
             {
                 try
                 {
@@ -69,7 +69,7 @@ namespace Script.Behaviour
         void Update()
         {
 
-            if (Note.Currtime < -Note.HitTimeThreshold)
+            if (Note.Currtime < -Note.HitTimeThreshold*4/3)
             {
                 GameObject child = transform.GetChild(0).gameObject;
                 float alpha = Mathf.Clamp(1 - (2 * timeafter / (3*NoteManager.DisplayedTimeAfter)), 0, 255);
@@ -88,7 +88,6 @@ namespace Script.Behaviour
                     }
                     try
                     {
-                       
                         hnote.SetAlpha(alpha);
                         /**
                         hnote.bottom.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);

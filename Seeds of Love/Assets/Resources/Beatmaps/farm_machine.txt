@@ -1,0 +1,5 @@
+BPM: 99
+Time Signature: 4/4
+Subdivisions: 2
+
+            (2,a,03:001)

@@ -13,4 +13,5 @@ Instructions for Use:
       reusable GameObject with the same properties)
 3. Make sure that the text file containing dialugue for this scene is
    located in folder Assets/DialogueText and follows naming convention
-   SceneName_Dialogue.txt
+   SceneName_Dialogue.txt, or SceneName_Dialogue_Bad.txt if that scene
+   has mood specific dialogue.

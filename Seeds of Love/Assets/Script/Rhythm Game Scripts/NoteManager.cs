@@ -57,6 +57,7 @@ namespace Script.Song
                 noteObject.GetComponent<HoldNoteScript>().speed = speed;
                 noteObject.GetComponent<HoldNoteScript>().length = -speed * holdtime;
                 note.setHoldLength(noteObject.GetComponent<HoldNoteScript>().length);
+                //Debug.Log(1 / (BMReader.GetBps() * 2));
                 noteObject.GetComponent<HoldNoteScript>().interval = 1 / (BMReader.GetBps() * 2);
 
                 HoldNoteScript holdscript = noteObject.GetComponent<HoldNoteScript>();

@@ -10,7 +10,9 @@ Shader "Unlit/UnlitOutline"
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Transparent" "Queue"="Transparent"}
+
+        Blend One OneMinusSrcAlpha
 		LOD 100
 
 		Pass
@@ -64,9 +66,11 @@ Shader "Unlit/UnlitOutline"
 				    col = _Outline;
 			    }
 
-                fixed4 diff = fixed4(1, 1, 1, 1) - col;
+                fixed4 diff = fixed4(1, 1, 1, 0) - col;
 
                 col = col + (diff * _Lightness);
+
+                //col.w = 1 - _Lightness;
 
 				// apply fog
 				UNITY_APPLY_FOG(i.fogCoord, col);

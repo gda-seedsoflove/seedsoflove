@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984354951464168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.67, y: -2.33, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,8 +89,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Top: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
   Bottom: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
+  HitCircle: {fileID: 1050089359498490, guid: c4db5036cedbd0a4ba8da562113ca9cd, type: 2}
   top: {fileID: 0}
   bottom: {fileID: 0}
+  hitcircle: {fileID: 0}
   speed: 0
   length: 3
   held: 0
@@ -99,6 +101,7 @@ MonoBehaviour:
   interval: 0
   currinterval: 0
   lr: {fileID: 0}
+  c: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114390592664406716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,8 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 1242121508986312, guid: ad6d0a34036d83241b7b75931f806021,
-    type: 2}
-  SoundEffect: {fileID: 1904585335911508, guid: 9d14e08f015274d4f8faa367bbc300fd,
     type: 2}
   HitEffect: {fileID: 1836203565894126, guid: 93515f67d010d0e45a3314809f41fb50, type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}

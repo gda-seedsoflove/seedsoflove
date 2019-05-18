@@ -10,9 +10,11 @@ namespace Script.Behaviour
         public Note Note { get; set; }
         public bool moving = true;
 
+        private float timeafter;
+
         void Start()
         {
-
+           
         }
 
         private void FixedUpdate()
@@ -27,7 +29,7 @@ namespace Script.Behaviour
                 }
                 Destroy(gameObject);
             }
-            else if (Note.Currtime <= 0 && Note.Hit == false && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))
+            else if (Note.Currtime <= -Note.HitTimeThreshold && Note.Hit == false && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))
             {
                 GetComponent<Animator>().Play("Fade_Out_Animation");
             }
@@ -37,9 +39,9 @@ namespace Script.Behaviour
                 {
                     Color c = GetComponent<HoldNoteScript>().lr.startColor;
                     //Debug.Log(1 - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
-                    GetComponent<HoldNoteScript>().lr.startColor = new Color(c.r, c.g, c.b, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
-                    GetComponent<HoldNoteScript>().lr.endColor = new Color(c.r, c.g, c.b, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
-                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .8f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().lr.startColor = new Color(c.r, c.g, c.b, 1f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().lr.endColor = new Color(c.r, c.g, c.b, 1f - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
+                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
                 }
                 catch { }
             }
@@ -65,6 +67,36 @@ namespace Script.Behaviour
         void Update()
         {
 
+            if (Note.Currtime < -Note.HitTimeThreshold)
+            {
+                GameObject child = transform.GetChild(0).gameObject;
+                float alpha = Mathf.Clamp(1 - (1 * timeafter / (NoteManager.DisplayedTimeAfter)), 0, 255);
+                try
+                {
+                    child.GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                }
+                catch { }
+                timeafter += Time.deltaTime;
+                if (Note.isHoldNote && GetComponent<HoldNoteScript>())
+                {
+                    try
+                    {
+                        HoldNoteScript hnote = GetComponent<HoldNoteScript>();
+                        hnote.SetAlpha(alpha);
+                        /**
+                        hnote.bottom.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);
+                        hnote.top.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);
+                        hnote.bottom.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                        hnote.top.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+                        //hnote.lr.material.SetFloat("_Lightness", 1-alpha);
+                        hnote.lr.material.SetColor("_Color", new Color(hnote.lr.material.color.r *(alpha), hnote.lr.material.color.g * (alpha), hnote.lr.material.color.b * ( alpha), alpha));
+                        hnote.lr.material.SetColor("_Outline", new Color(hnote.lr.material.color.r * (alpha), hnote.lr.material.color.g * (alpha), hnote.lr.material.color.b * (alpha), alpha));
+                        //hnote.lr.material.SetColor("_Color", new Color(0, 0, 0, alpha));
+                        */
+                    }
+                    catch { }
+                }
+            }
         }
         #if UNITY_EDITOR
         private void OnDrawGizmos()

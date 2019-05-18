@@ -18,12 +18,6 @@ public struct NoteData
 
 public class BeatmapReader : MonoBehaviour
 {
-    // ***DELETE LATER*** Text objects to print to, for testing/debugging
-    public Text lane;
-    public Text type;
-    public Text time;
-    public Text time2;
-
     // for calculating delay for spawning notes
     public double spawnY;  // y coordinate of note's spawn position
     public double bottomY; // y coordinate of note's hit position
@@ -40,7 +34,8 @@ public class BeatmapReader : MonoBehaviour
     public TextAsset beatmapFile;
 
     // beatmap info
-    private int bpm;
+    [HideInInspector]
+    public int bpm;
     private int timeSigTop;
     //private int timeSigBot;
     private int subdivisions;
@@ -50,7 +45,7 @@ public class BeatmapReader : MonoBehaviour
     public NoteData nextNote;
     public bool songEnd; // whether the song is over
 
-    void Start()
+    void Awake()
     {
         // open beatmap file and create a stream to read it
         file = new FileInfo(filepath);
@@ -221,134 +216,4 @@ public class BeatmapReader : MonoBehaviour
     {
         return bpm / 60.0f;
     }
-
-    public void printDebugInfo()
-    {
-        GetNextNote();
-        lane.text = nextNote.lane.ToString();
-        type.text = nextNote.type.ToString();
-        time.text = nextNote.measure.ToString() + ":" + nextNote.beat.ToString();
-        time2.text = nextNote.timing.ToString();
-
-    }
-
-    /**
-     
-    // reads next note from the file stream, store in nextNote struct of this class
-    public IEnumerator GetNextNote()
-    {
-        // if not at the end of file
-        if (!reader.EndOfStream)
-        {
-            // skip until a ( is found (this is always the start of a note)
-            yield return StartCoroutine(SkipUntilChar('('));
-
-            if (!reader.EndOfStream)
-            {
-                // next byte is the lane
-                reader.Read(nextByte, 0, 1);
-                nextNote.lane = ConvertCharBuffer(nextByte, 1);
-                reader.Read(); // skip the next comma
-
-                // next byte is the note type
-                reader.Read(nextByte, 0, 1);
-                nextNote.type = nextByte[0];
-                reader.Read(); // skip the next comma
-
-                // read the next 3 bytes, this is measure #
-                reader.Read(buffer, 0, 3);
-                nextNote.measure = ConvertCharBuffer(buffer, 3);
-                reader.Read(); // skip : between measure and beat
-
-                // read the next 2 bytes, this is beat #
-                reader.Read(buffer, 0, 2);
-                nextNote.beat = ConvertCharBuffer(buffer, 2);
-
-                ConvertTiming(ref nextNote);
-            }
-            else
-            {
-                Debug.Log("end of file reached");
-                songEnd = true;
-            }
-        }
-        else
-        {
-            Debug.Log("end of file reached");
-            songEnd = true;
-        }
-    }
-
-
-    // reads the properties of the beatmap from the beginning of the file
-    private IEnumerator GetMapData()
-    {
-        // if not at end of file
-        if (!reader.EndOfStream)
-        {
-            // skip label
-            yield return StartCoroutine(SkipUntilChar(':'));
-            reader.Read(); // skip additional space
-
-            // read the next 3 characters, this is bpm
-            // Read(buffer, index, count)
-            reader.Read(buffer, 0, 3);
-            bpm = ConvertCharBuffer(buffer, 3);
-            // skip label
-            yield return StartCoroutine(SkipUntilChar(':'));
-            reader.Read(); // skip additional space
-
-            // read next 3 characters, this is time signature
-            reader.Read(nextByte, 0, 1);
-            timeSigTop = ConvertCharBuffer(nextByte, 1);
-            reader.Read(); // skip / in time signature
-            reader.Read(nextByte, 0, 1);
-            timeSigBot = ConvertCharBuffer(nextByte, 1);
-
-            // skip label
-            yield return StartCoroutine(SkipUntilChar(':'));
-            reader.Read(); // skip additional space
-
-            // read next char, this is subdivisions
-            reader.Read(nextByte, 0, 1);
-            subdivisions = ConvertCharBuffer(nextByte, 1);
-        }
-        else Debug.Log("end of file reached");
-    }
-
-    // reads bytes from the stream until a target char is found
-    private IEnumerator SkipUntilChar(char target)
-    {
-        do
-        {
-            // if not at end of file
-            if (!reader.EndOfStream)
-            {
-                reader.Read(nextByte, 0, 1);
-                yield return null;
-            }
-            else
-            {
-                Debug.Log("end of file reached");
-                break;
-            }
-        } while (nextByte[0] != target);
-    }
-
-    public void LifeHackButtonCoroutine()
-    {
-        StartCoroutine(PrintDebugInfo());
-    }
-
-    public IEnumerator PrintDebugInfo()
-    {
-        yield return StartCoroutine(GetNextNote());
-        lane.text = nextNote.lane.ToString();
-        type.text = nextNote.type.ToString();
-        time.text = nextNote.measure.ToString() + ":" + nextNote.beat.ToString();
-        time2.text = nextNote.timing.ToString();
-
-    }
-     */
-
 }

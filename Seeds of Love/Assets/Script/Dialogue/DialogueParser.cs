@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class DialogueParser : MonoBehaviour
 {
     public TextAsset script;
+    public TextAsset scriptBad;
 
     //structure to store the relevant information to each line of dialogue
     struct DialogueLine
@@ -38,15 +39,21 @@ public class DialogueParser : MonoBehaviour
     //loads the file for this scene and calls LoadDialogue
     private void Awake()
     {
-        Scene thisScene = SceneManager.GetActiveScene();
-        
-        string file = "Assets/DialogueText/" + thisScene.name + "_Dialogue.txt";
+        //string file = "";
+        try
+        {
+            if (PlayerData.instance.Mood < 0.5f)
+            {
+                script = scriptBad;
+            }
+        }
+        catch { }
 
-        LoadDialogue(file);
+        LoadDialogue();
     }
 
     //parses text file for each line of dialogue, turns them into instances of DialogueLine and adds them to the list of lines
-    public void LoadDialogue(string filename)
+    public void LoadDialogue()
     {
         string line;
         var stream = new MemoryStream();

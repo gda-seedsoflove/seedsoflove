@@ -1,26 +1,26 @@
-Sunny;I got a little frustrated because she’s usually such a sweetheart, and.. Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;2;R
+Sunny;I got a little frustrated because she’s usually such a sweetheart, and.. Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
 Maria;No-no, it’s okay!;0;L
-Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;2;R
+Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;11;R
 Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed to someone to talk to.;0;L
-Sunny;...;2;R
+Sunny;...;5;R
 Maria;And you shouldn’t have to deal with all that on your own.;6;L
 Sunny;... Thank you.;0;R
 Maria;Besides, it was fun getting to know you. I don't think I've ever really talked to anyone like this before.;2;L
-Sunny;...;2;R
+Sunny;...;9;R
 Maria;(So cheesy... but it's the truth.);2;L
 Sunny;Um, this is a bit random, but...;0;R
 Maria;Yeah?;0;L
 Sunny;What time is it?;3;R
 Maria;Oh. Uh, around midnight.;0;L
-Sunny;That’s... pretty late. Sorry, I should head home soon.;0;R
+Sunny;That’s... pretty late. Sorry, I should head home soon.;3;R
 Maria;Sorry for keeping you so long!;0;L
 Sunny;I would stay longer! If I could. I’ve stayed longer tonight than I ever have.;0;R
 Sunny;And, about what you said...;0;R
-Sunny;I’ve, um, never been able to talk to someone like this before either.;1;R
+Sunny;I’ve, um, never been able to talk to someone like this before either.;9;R
 Maria;Oh?!;5;L
-Sunny;But I really should be going!;3;R
-Maria;Yes! Got, um,  class tomorrow?;2;L
-Sunny;Pfft..! It’s Friday, María. Well, Saturday now.;0;R
+Sunny;But I really should be going!;6;R
+Maria;Yes! Got, um, class tomorrow?;2;L
+Sunny;Pfft..! It’s Friday, María. Well, Saturday now.;1;R
 Maria;Oh, right!;5;L
 Sunny;But seriously, thank you for talking to me tonight. Going up to people is hard, so I usually sit alone.;0;R
 Sunny;This was really nice.;1;R
@@ -28,7 +28,7 @@ Maria;Hey, thanks for talking to me too. I'm glad my lame pick-up line didn't sc
 Sunny;Don’t say that! I thought it was cute.;0;R
 Maria;(!!!);4;L
 Maria;Nice - nice talking with you though! See you around?;2;L
-Sunny;Oh, definitely. 'Cause, you know, I live here.;0;R
+Sunny;Oh, definitely. 'Cause, you know, I live here.;1;R
 Maria;Right!;5;L
 Maria;Good night, Sunny.;1;L
 ##;Sunny;exit

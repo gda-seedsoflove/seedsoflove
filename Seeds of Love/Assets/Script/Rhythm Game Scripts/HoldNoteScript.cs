@@ -10,9 +10,12 @@ public class HoldNoteScript : MonoBehaviour {
 
     public GameObject Top;
     public GameObject Bottom;
+    public GameObject HitCircle;
 
     [HideInInspector]
-    public GameObject top, bottom;
+    public GameObject top, bottom, hitcircle;
+
+    private Vector2 end;
 
     [HideInInspector]
     public float speed, length;
@@ -22,14 +25,15 @@ public class HoldNoteScript : MonoBehaviour {
 
     public GameObject pulse;
     [HideInInspector]
-    public float interval,currinterval;
+    public float interval, currinterval;
 
     private Vector2 pos;
 
     [HideInInspector]
     public LineRenderer lr;
 
-    private Color c;
+    [HideInInspector]
+    public Color c;
     // Use this for initialization
     void Start () {
         top = (GameObject)Instantiate(Top,transform,true);
@@ -37,6 +41,9 @@ public class HoldNoteScript : MonoBehaviour {
         bottom.transform.position = gameObject.transform.position;
         pos = bottom.transform.position;
         top.transform.position = new Vector2(pos.x, pos.y + length);
+        hitcircle = (GameObject)Instantiate(HitCircle, transform, true);
+        hitcircle.transform.position = new Vector3(top.transform.position.x, top.transform.position.y, 0);
+        hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0f);
 
         //Set COlors
         c = NoteManager.c;
@@ -56,7 +63,7 @@ public class HoldNoteScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         lr = GetComponent<LineRenderer>();
         if (lr)
         {
@@ -71,12 +78,46 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 Destroy(bottom.GetComponentInChildren<SpriteRenderer>());
             }
-            if (online == false)
+            if (online == false && top != null)
             {
                 top.transform.position = new Vector2(top.transform.position.x, top.transform.position.y + speed * Time.deltaTime);
             }
+            float distance = 0;
+            if (top != null)
+            {
+                distance = top.transform.position.y - bottom.transform.position.y;
+            }
 
-            float distance = top.transform.position.y - bottom.transform.position.y;
+            if (hitcircle.gameObject)
+            {
+                //hitcircle.transform.position = new Vector3(top.transform.position.x, top.transform.position.y, 0);
+                hitcircle.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+                float maxscale = 5;
+                float scale = Mathf.Lerp(.3f, maxscale, distance / -speed);
+                hitcircle.transform.localScale = new Vector3(scale, scale, scale);
+
+                if (scale >= maxscale)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0f);
+                }
+                else if (scale > 3)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .05f);
+                }
+                else if (scale >= 1.5)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Mathf.Lerp(.2f,.05f, scale-1));
+                }
+                else if(scale > 1)
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .2f);
+                }
+                else
+                {
+                    hitcircle.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, Mathf.Clamp(scale - .3f, 0, .5f));
+                }
+            }
+
             //Debug.Log(interval * speed);
             if (currinterval <= 0 && distance >= interval/2 * -speed) // Pulses in half beats in the hold notes
             {
@@ -89,6 +130,7 @@ public class HoldNoteScript : MonoBehaviour {
             {
                 currinterval -= Time.deltaTime;
             }
+
         }
         else
         {
@@ -96,6 +138,16 @@ public class HoldNoteScript : MonoBehaviour {
             pos = bottom.transform.position;
             //top.transform.position = new Vector2(pos.x, pos.y + length);
         }
+    }
+
+    public void SetAlpha(float alpha)
+    {
+        bottom.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
+        top.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, alpha);
+        bottom.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+        top.transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
+        lr.material.SetColor("_Color", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
+        lr.material.SetColor("_Outline", new Color(lr.material.color.r * (alpha), lr.material.color.g * (alpha), lr.material.color.b * (alpha), alpha));
     }
 
     /**
@@ -112,6 +164,7 @@ public class HoldNoteScript : MonoBehaviour {
         top.GetComponent<SpriteRenderer>().color = new Color(c.r*.8f, c.g*.6f, c.b*.6f);
         lr.SetPosition(1, top.transform.position);
         lr.material.SetColor("_Color", new Color(.8f, .4f, .4f));
+
     }
 
     public void Release()
@@ -121,6 +174,8 @@ public class HoldNoteScript : MonoBehaviour {
             Transform child = top.transform.GetChild(0);
             child.parent = null;
             Destroy(child.gameObject);
+            Destroy(top);
+            Destroy(hitcircle);
         }
     }
 }

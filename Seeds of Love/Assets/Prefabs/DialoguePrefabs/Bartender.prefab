@@ -55,6 +55,8 @@ MonoBehaviour:
   characterPoses:
   - {fileID: 21300000, guid: 2e661dbcda1aa1e4fb55cc125756b703, type: 3}
   personalFont: {fileID: 12800000, guid: 9509a4d956f029149b661e4bc81408e4, type: 3}
+  xpos: 5
+  ypos: -0.2
 --- !u!212 &212619050448614914
 SpriteRenderer:
   m_ObjectHideFlags: 1

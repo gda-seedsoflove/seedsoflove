@@ -147,7 +147,7 @@ namespace Tests.Interactive.NoteTimingTest
                     //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
                     if (note.lane >= 1 && note.lane <=4)
                     {
-                        CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime);
+                        CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime, note.snum);
                     }
 
 
@@ -184,7 +184,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, 'b', SpawnTimeInterval);
+                CreateNote(notetime, lane, -notespeed, 'b', SpawnTimeInterval, 0);
                 nextlane = Random.Range(0, LanePositions.Length);
 
                 touchspawning = touchspawning - 1;
@@ -228,7 +228,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
+                CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval,0);
                 nextlane = Random.Range(0, LanePositions.Length);
 
                 if (type == 'b')//touchnote
@@ -251,7 +251,7 @@ namespace Tests.Interactive.NoteTimingTest
                         {
                             lane = LaneNextTo(lane);
                             nextlane = lane;
-                            CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
+                            CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval,0);
                         }
                         _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval;
                     }

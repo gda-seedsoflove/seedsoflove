@@ -40,7 +40,7 @@ namespace Script.Song
         public Color c;
 
         //Types: 0 = Normal Note (On top of and hit) 1 = Touch Note (Just on top of) 2 = Hold Note (On top of and hold)
-        protected Note CreateNote(float time, int lane, float speed, char type, float holdtime)
+        protected Note CreateNote(float time, int lane, float speed, char type, float holdtime, int specialnum)
         {
             Note note = new Note
             {
@@ -48,7 +48,8 @@ namespace Script.Song
                 Lane = lane,
                 Speed = speed,
                 Currtime = time,
-                HitTimeThreshold = HitTimeThreshold
+                SpecialNum = specialnum,
+                HitTimeThreshold = HitTimeThreshold              
             };
 
             note.setType(type);

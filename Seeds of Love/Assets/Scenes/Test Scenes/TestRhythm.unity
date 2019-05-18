@@ -3111,7 +3111,7 @@ Prefab:
         type: 2}
       propertyPath: moodmeter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 600628375}
     - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
       propertyPath: scoretext

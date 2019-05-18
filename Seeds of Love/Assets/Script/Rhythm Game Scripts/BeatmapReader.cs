@@ -14,6 +14,7 @@ public struct NoteData
     public int measure; // raw measure/beat timing
     public int beat;
     public double timing; // converted timing in seconds
+    public int snum;    //Special number defalt 0
 }
 
 public class BeatmapReader : MonoBehaviour
@@ -100,6 +101,20 @@ public class BeatmapReader : MonoBehaviour
                 // read the next 2 bytes, this is beat #
                 reader.Read(buffer, 0, 2);
                 nextNote.beat = ConvertCharBuffer(buffer, 2);
+                reader.Read();
+
+                // read the next 2 bytes, this is the note's special number. If its 0, its just a normal note
+                reader.Read(buffer, 0, 1);
+                int special = ConvertCharBuffer(buffer, 1);
+                if (special >= 0)
+                {
+                    nextNote.snum = special;
+                }
+                else
+                {
+                    nextNote.snum = 0;
+                }
+                
 
                 ConvertTiming(ref nextNote);
             }

@@ -8,6 +8,7 @@ namespace Script.Song
         public float Speed { get; set; }
 
         public bool isTouchNote { get; set;}
+        public int SpecialNum { get; set;} // Default 0, if not then its special!
 
         public bool isHoldNote { get; set; }
         public float Length { get; set; }

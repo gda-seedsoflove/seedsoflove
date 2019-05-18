@@ -12,11 +12,28 @@ public class MoodMeterScript : MonoBehaviour {
     private float maxvalue;
 
     public Slider moodbar;
+    public List<GameObject> moodwords;
     public float delay;
+
+    private Color fillcolor;
+    private Image fill;
+
+    private float deviation;        //Distance in mood how far apart the moodwords are
+
 	// Use this for initialization
 	void Start () {
         maxvalue = 100;
-	}
+        fill = moodbar.transform.Find("Fill Area").GetChild(0).GetComponent<Image>();
+        fillcolor = fill.color;
+        if (moodwords.Count >= 2)
+        {
+            deviation = maxvalue / (moodwords.Count - 1);
+        }
+        else
+        {
+            deviation = 0;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,6 +55,29 @@ public class MoodMeterScript : MonoBehaviour {
         else
         {
             delay -= Time.deltaTime;
+        }
+
+        if (targetvalue == maxvalue) // Moodbar color
+        {            
+            fill.color = new Color(fillcolor.r*1.5f, fillcolor.g*1.5f, fillcolor.b*1.5f);
+        }
+        else
+        {
+            float value = Mathf.Lerp(.85f,1.15f, Mathf.Clamp(this.value/this.maxvalue, 0,1));
+            fill.color = new Color(fillcolor.r * value, fillcolor.g * value, fillcolor.b * value);
+        }
+
+        for (int i = 0; i < moodwords.Count;i++)
+        {
+            try
+            {
+                float wordmoodvalue = i * deviation;
+                Text text = moodwords[i].GetComponent<Text>();
+                float alpha = 1 - (Mathf.Abs(wordmoodvalue - value) / deviation);
+                //Debug.Log(Mathf.Clamp(alpha, 0, 1));
+                text.color = new Color(text.color.r, text.color.g, text.color.b, Mathf.Clamp(alpha, .1f, 1));
+            }
+            catch { }
         }
 	}
 

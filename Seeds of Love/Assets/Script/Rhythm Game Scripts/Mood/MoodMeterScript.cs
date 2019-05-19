@@ -13,6 +13,9 @@ public class MoodMeterScript : MonoBehaviour {
 
     public Slider moodbar;
     public List<GameObject> moodwords;
+    public GameObject ParticleEffect;
+    private GameObject particleeffect;
+
     public float delay;
 
     private Color fillcolor;
@@ -32,6 +35,12 @@ public class MoodMeterScript : MonoBehaviour {
         else
         {
             deviation = 0;
+        }
+
+        if (ParticleEffect != null)
+        {
+            particleeffect = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+            particleeffect.GetComponent<ParticleSystem>().Stop();
         }
     }
 	
@@ -59,12 +68,23 @@ public class MoodMeterScript : MonoBehaviour {
 
         if (targetvalue == maxvalue) // Moodbar color
         {            
-            fill.color = new Color(fillcolor.r*1.5f, fillcolor.g*1.5f, fillcolor.b*1.5f);
+            fill.color = new Color(fillcolor.r*1.3f, fillcolor.g*1.3f, fillcolor.b*1.3f);
+            if (particleeffect && particleeffect.GetComponent<ParticleSystem>().isPlaying == false)
+            {
+                particleeffect.gameObject.SetActive(true);
+                particleeffect.GetComponent<ParticleSystem>().Play();
+            }
+
         }
         else
         {
-            float value = Mathf.Lerp(.85f,1.15f, Mathf.Clamp(this.value/this.maxvalue, 0,1));
+            float value = Mathf.Lerp(.80f,1.1f, Mathf.Clamp(this.value/this.maxvalue, 0,1));
             fill.color = new Color(fillcolor.r * value, fillcolor.g * value, fillcolor.b * value);
+            if (particleeffect && particleeffect.GetComponent<ParticleSystem>().isPlaying == true)
+            {
+                particleeffect.gameObject.SetActive(false);
+                particleeffect.GetComponent<ParticleSystem>().Stop();
+            }
         }
 
         for (int i = 0; i < moodwords.Count;i++)

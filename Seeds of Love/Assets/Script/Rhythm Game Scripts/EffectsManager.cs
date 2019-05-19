@@ -44,7 +44,6 @@ public class EffectsManager : MonoBehaviour
      */
     public void PlayEffect()
     {
-        Debug.Log("NoteSpecial");
         GameObject instance = null;
         if (ParticleEffect)
         {
@@ -80,7 +79,6 @@ public class EffectsManager : MonoBehaviour
 
     public void PlaySpecialEffect()
     {
-        Debug.Log("Special");
         GameObject instance = null;
         if (ParticleEffect)
         {

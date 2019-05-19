@@ -101,21 +101,10 @@ public class BeatmapReader : MonoBehaviour
                 // read the next 2 bytes, this is beat #
                 reader.Read(buffer, 0, 2);
                 nextNote.beat = ConvertCharBuffer(buffer, 2);
-                reader.Read();
 
-                // read the next 2 bytes, this is the note's special number. If its 0, its just a normal note
-                reader.Read(buffer, 0, 1);
-                int special = ConvertCharBuffer(buffer, 1);
-                if (special >= 0)
-                {
-                    nextNote.snum = special;
-                }
-                else
-                {
-                    nextNote.snum = 0;
-                }
-                
-
+                nextNote.snum = 0;
+                SearchSpecialChar(')'); //Searches if the note has an extra part in it. If it does, it will be a special note
+ 
                 ConvertTiming(ref nextNote);
             }
             else
@@ -144,6 +133,35 @@ public class BeatmapReader : MonoBehaviour
             else
             {
                 Debug.Log("end of file reached");
+                break;
+            }
+        } while (nextByte[0] != target);
+    }
+
+    // reads bytes from the stream until a target char is found
+    private void SearchSpecialChar(char target)
+    {
+        do
+        {
+            // if not at end of file
+            if (!reader.EndOfStream)
+            {
+                reader.Read(nextByte, 0, 1);
+                if (nextByte[0] != target)
+                {
+                    if ((int)nextByte[0] >= 0)
+                    {
+                        nextNote.snum = nextByte[0];
+                    }
+                    else
+                    {
+                        nextNote.snum = 0;
+                    }
+                    break;
+                }
+            }
+            else
+            {
                 break;
             }
         } while (nextByte[0] != target);
@@ -202,6 +220,7 @@ public class BeatmapReader : MonoBehaviour
         return result;
          
     }
+
 
     // calculates the delay between when the note spawns and when it should be hit
     private void CalculateDelay()

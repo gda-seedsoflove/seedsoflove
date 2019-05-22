@@ -3195,6 +3195,11 @@ Prefab:
       propertyPath: speed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: transitiondelay
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}
   m_IsPrefabAsset: 0

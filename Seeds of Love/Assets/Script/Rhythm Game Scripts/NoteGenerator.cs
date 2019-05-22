@@ -34,7 +34,8 @@ namespace Tests.Interactive.NoteTimingTest
         private float lastlane = 0;
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
-        private float transitiondelay = 0;
+
+        public float transitiondelay;
         private bool inTransition;
         public int sceneNumber;
         ///
@@ -64,6 +65,7 @@ namespace Tests.Interactive.NoteTimingTest
         {
             Time.fixedDeltaTime = .001f;
             BMReader = GetComponent<BeatmapReader>();
+            transitiondelay *= -1;
             //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;

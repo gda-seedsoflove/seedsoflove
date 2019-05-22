@@ -208,12 +208,14 @@ public class NoteDetector : MonoBehaviour
         if (Input.GetKeyDown(PlayerData.instance.spacekeybind))
         {
             transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
+            transform.Find("Outline").GetComponent<SpriteRenderer>().color = new Color(1,1,1,.7f);
             whitetime = .1f;
             transform.localScale = new Vector3(.85f, .85f, 1);
         }
 
         if (Input.GetKey(PlayerData.instance.spacekeybind) == false)
         {
+            transform.Find("Outline").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
             transform.localScale = new Vector3(1,1,1);
         }
 

@@ -13,6 +13,7 @@ public class EffectsManager : MonoBehaviour
     //public GameObject SoundEffect;
     public GameObject HitEffect;
     public GameObject SpecialEffect;
+    public GameObject HeldEffect;
 
     private void Start()
     {
@@ -29,13 +30,13 @@ public class EffectsManager : MonoBehaviour
 
     void Update()
     {
-        /**
+        
         if (GetComponent<NoteJudgement>().Note.Holding && Random.Range(0,4) == 1 && GetComponent<NoteJudgement>().Note.Currtime >= 0)
         {
             GameObject instance = (GameObject)Instantiate(HeldEffect, transform.position, Quaternion.identity);
             Destroy(instance, 1f);
         }
-        */
+        
     }
 
     /*

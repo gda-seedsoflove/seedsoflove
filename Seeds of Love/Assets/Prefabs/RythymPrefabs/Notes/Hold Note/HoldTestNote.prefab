@@ -123,7 +123,7 @@ MonoBehaviour:
   HitEffect: {fileID: 1836203565894126, guid: 93515f67d010d0e45a3314809f41fb50, type: 2}
   SpecialEffect: {fileID: 1430107362045080, guid: 06500672b08defc49b72418c8591711d,
     type: 2}
-  HeldEffect: {fileID: 1908691920617262, guid: a405f39145dcacc47801600be7974157, type: 2}
+  HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114451954375200874
 MonoBehaviour:
   m_ObjectHideFlags: 1

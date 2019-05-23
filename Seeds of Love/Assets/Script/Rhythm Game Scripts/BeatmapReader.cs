@@ -23,6 +23,7 @@ public class BeatmapReader : MonoBehaviour
     public double spawnY;  // y coordinate of note's spawn position
     public double bottomY; // y coordinate of note's hit position
     public double speed;   // note speed in [whatever units unity uses] / second
+    [HideInInspector]
     public double delay;  // delay between spawning and hitting the note in seconds
 
     // objects to read from the beatmap file
@@ -44,13 +45,14 @@ public class BeatmapReader : MonoBehaviour
     // info on the next note, read from this in other classes
     [HideInInspector]
     public NoteData nextNote;
+    [HideInInspector]
     public bool songEnd; // whether the song is over
 
     void Awake()
     {
         // open beatmap file and create a stream to read it
         file = new FileInfo(filepath);
-        if (file.Exists || beatmapFile != null)
+        if(file.Exists || beatmapFile != null)
         {
             //beatmap = file.Open(FileMode.Open, FileAccess.Read);
             var stream = new MemoryStream();
@@ -76,12 +78,18 @@ public class BeatmapReader : MonoBehaviour
     public void GetNextNote()
     {
         // if not at the end of file
-        if (!reader.EndOfStream)
+        if(!reader.EndOfStream)
         {
             // skip until a ( is found (this is always the start of a note)
-            SkipUntilChar('(');
+            char next = SkipUntilChar('(', '=');
 
-            if (!reader.EndOfStream)
+            // if a '=' was read, indicates that some map data should change
+            if(next == '=')
+            {
+                UpdateMapData();
+            }
+            // else a '(' was read, get the next note from file
+            else if(!reader.EndOfStream)
             {
                 // next byte is the lane
                 reader.Read(nextByte, 0, 1);
@@ -126,7 +134,7 @@ public class BeatmapReader : MonoBehaviour
         do
         {
             // if not at end of file
-            if (!reader.EndOfStream)
+            if(!reader.EndOfStream)
             {
                 reader.Read(nextByte, 0, 1);
             }
@@ -135,7 +143,27 @@ public class BeatmapReader : MonoBehaviour
                 Debug.Log("end of file reached");
                 break;
             }
-        } while (nextByte[0] != target);
+        } while(nextByte[0] != target);
+    }
+
+    // overloaded version, takes in extra char to check and returns the char found
+    private char SkipUntilChar(char target, char target2)
+    {
+        do
+        {
+            // if not at end of file
+            if(!reader.EndOfStream)
+            {
+                reader.Read(nextByte, 0, 1);
+            }
+            else
+            {
+                Debug.Log("end of file reached");
+                break;
+            }
+        } while(nextByte[0] != target && nextByte[0] != target2);
+
+        return nextByte[0];
     }
 
     // reads bytes from the stream until a target char is found
@@ -171,7 +199,7 @@ public class BeatmapReader : MonoBehaviour
     private void GetMapData()
     {
         // if not at end of file
-        if (!reader.EndOfStream)
+        if(!reader.EndOfStream)
         {
             // skip label
             SkipUntilChar(':');
@@ -202,6 +230,48 @@ public class BeatmapReader : MonoBehaviour
             subdivisions = ConvertCharBuffer(nextByte, 1);
         }
         else Debug.Log("end of file reached");
+    }
+
+    private void UpdateMapData()
+    {
+        // read the next char
+        reader.Read(nextByte, 0, 1);
+
+        // determine which field is being updated based on this char
+        // 'B' == updating BPM
+        if(nextByte[0] == 'B')
+        {
+            // skip label
+            SkipUntilChar(':');
+            reader.Read();
+
+            // read bpm from the next 3 chars, update field
+            reader.Read(buffer, 0, 3);
+            bpm = ConvertCharBuffer(buffer, 3);
+            Debug.Log("BPM changed to " + bpm);
+        }
+        // 'T' == updating Time Signature
+        else if(nextByte[0] == 'T')
+        {
+            // skip label
+            SkipUntilChar(':');
+            reader.Read();
+
+            // read time signature from the next char, update field
+            reader.Read(nextByte, 0, 1);
+            timeSigTop = ConvertCharBuffer(nextByte, 1);
+        }
+        // 'S' == updating Subdivisions
+        else if(nextByte[0] == 'S')
+        {
+            // skip label
+            SkipUntilChar(':');
+            reader.Read();
+
+            // read subdivisions from the next char, update field
+            reader.Read(nextByte, 0, 1);
+            subdivisions = ConvertCharBuffer(nextByte, 1);
+        }
     }
 
     // convert chars in a buffer to an int value    

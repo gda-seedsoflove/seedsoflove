@@ -367,15 +367,31 @@ public class DialogueManager : MonoBehaviour {
             //can we get rid of hard-coded line numbers all together?
             GoToHeader("header:" + PlayerData.Choicesmade[commandData[1]].ToString());
         }*/
+        //moodJump:moodValue:headerValueOne:headerValueTwo
+        //moodJump:SceneName:moodValue:headerValueOne:headerValueTwo
         else if (commandData[0].Equals("moodJump"))
         {
-            if(PlayerData.Mood >= float.Parse(commandData[1]))
+            if(commandData.Length == 4)
             {
-                GoToHeader("header:" + commandData[2]);
+                if (PlayerData.Mood >= float.Parse(commandData[1]))
+                {
+                    GoToHeader("header:" + commandData[2]);
+                }
+                else
+                {
+                    GoToHeader("header:" + commandData[3]);
+                }
             }
             else
             {
-                GoToHeader("header:" + commandData[3]);
+                if((float)PlayerData.Choicesmade[commandData[1]] >= float.Parse(commandData[2]))
+                {
+                    GoToHeader("header:" + commandData[3]);
+                }
+                else
+                {
+                    GoToHeader("header:" + commandData[4]);
+                }
             }
         }
         else

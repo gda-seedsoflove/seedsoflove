@@ -49,6 +49,7 @@ public class DialogueParser : MonoBehaviour
         }
         catch { }
 
+        PlayerData.instance.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.instance.Mood);
         LoadDialogue();
     }
 

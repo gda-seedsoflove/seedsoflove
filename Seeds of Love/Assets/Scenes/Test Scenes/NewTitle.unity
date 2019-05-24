@@ -5485,7 +5485,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4856447959487510, guid: e6e4bdab0decc47439aa13518a2c1555, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 4856447959487510, guid: e6e4bdab0decc47439aa13518a2c1555, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5519,12 +5519,18 @@ Prefab:
     - target: {fileID: 198418774787142788, guid: e6e4bdab0decc47439aa13518a2c1555,
         type: 2}
       propertyPath: InitialModule.startSize.scalar
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1063035335172162, guid: e6e4bdab0decc47439aa13518a2c1555, type: 2}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198418774787142788, guid: e6e4bdab0decc47439aa13518a2c1555,
+        type: 2}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b91b0d6742a734c47a9d9b93a84ebf01,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6e4bdab0decc47439aa13518a2c1555, type: 2}
   m_IsPrefabAsset: 0

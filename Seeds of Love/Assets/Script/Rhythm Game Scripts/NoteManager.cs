@@ -71,23 +71,32 @@ namespace Script.Song
                 holdscript.NoteManager = this;
                 holdscript.Note = note;
             }
-            else
+            else if(note.isHitNote)
             {
                 noteObject = Instantiate(NotePrefab);
             }
+            else
+            {
+                //Do nothing
+            }
 
             //Debug.Log("Lane:"+lane);
-            noteObject.transform.position = new Vector2(LanePositions[lane], transform.position.y);
+            if (noteObject)
+            {
+                noteObject.transform.position = new Vector2(LanePositions[lane], transform.position.y);
 
-            NoteMovement noteMovement = noteObject.GetComponent<NoteMovement>();
-            noteMovement.NoteManager = this;
-            noteMovement.Note = note;
+                NoteMovement noteMovement = noteObject.GetComponent<NoteMovement>();
+                noteMovement.NoteManager = this;
+                noteMovement.Note = note;
 
-            NoteJudgement noteJudgement = noteObject.GetComponent<NoteJudgement>();
-            noteJudgement.NoteManager = this;
-            noteJudgement.Note = note;
+                NoteJudgement noteJudgement = noteObject.GetComponent<NoteJudgement>();
+                noteJudgement.NoteManager = this;
+                noteJudgement.Note = note;
 
-            return note;
+                return note;
+            }
+
+            return null;
         }
 
         /**

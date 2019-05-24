@@ -99,7 +99,7 @@ namespace Script.Behaviour
             }
             else if(Note.isHoldNote)
             {
-                if (CanHit() && Note.Holding == true && releasebuffertime > 0) // Correctly releases at right time.
+                if (CanHit() && Note.Holding == true && (releasebuffertime > 0 || Input.GetKeyUp(PlayerData.instance.spacekeybind))) // Correctly releases at right time.
                 {
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
@@ -135,6 +135,7 @@ namespace Script.Behaviour
                     NoteManager.addScore(0, 1.3f);
                     missed = true;
                 }
+
                 releasebuffertime -= Time.deltaTime;
 
 

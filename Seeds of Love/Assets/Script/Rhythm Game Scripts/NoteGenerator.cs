@@ -146,11 +146,12 @@ namespace Tests.Interactive.NoteTimingTest
                         double endnotetiming = endnote.timing;  
                         holdtime = Mathf.Abs((float)endnotetiming - (float)startnotetiming);    //Difference between the notes for hold length
                     }
-                    //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
+
                     if (note.lane >= 1 && note.lane <=4)
                     {
                         CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime, note.snum);
                     }
+                    //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
 
 
                     BMReader.GetNextNote();

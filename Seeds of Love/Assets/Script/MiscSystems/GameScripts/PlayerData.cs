@@ -16,6 +16,7 @@ public class PlayerData : MonoBehaviour {
     {
         if(instance == null)
         {
+            Choicesmade = new Hashtable();
             instance = this;
             DontDestroyOnLoad(this);
         }

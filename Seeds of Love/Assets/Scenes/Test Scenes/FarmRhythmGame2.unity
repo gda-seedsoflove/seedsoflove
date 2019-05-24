@@ -3282,7 +3282,7 @@ Prefab:
     - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
       propertyPath: transitiondelay
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 212743475318101192, guid: 763903625cf46f744961c53cbf567409,
         type: 2}

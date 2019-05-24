@@ -1,12 +1,12 @@
-Rosa;Mar�a!!!;2;R
+Rosa;María!!!;2;R
 Rosa;...;2;R
-Rosa;Mar�a!!!!!!!;2;R
+Rosa;María!!!!!!!;2;R
 Maria;Ahh, I'm coming, I'm coming.;0;L
 Rosa;...;0;R
 Maria;I'm up, and here, and... yaaaaawn... yeah.;0;L
 Rosa;I thought after a month of working here that you would start waking up in the morning without me having to call you.
-Maria;I�m sorry. It�s just that last night, it was just...;0;L
-Rosa;And what�s with you going out every weekend? Don�t you ever get tired of that?;0;R
+Maria;I’m sorry. It’s just that last night, it was just...;0;L
+Rosa;And what’s with you going out every weekend? Don’t you ever get tired of that?;0;R
 Maria;No... I don't think so.;1;L
 Maria;(Not as long as I get to see Sunny again.);2;L
 Rosa;Maria!;2;R
@@ -14,4 +14,54 @@ Maria;Yes!;0;L
 Rosa;Honestly, I think these late nights are getting to you.;3;R
 Maria;What? No... I think I'm doing great!;1;L
 Rosa;I'm talking to you, and you're barely paying attention.;3;R
-Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.
+Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC1-2
+Rosa;I don't care.
+Maria;(Oh...)
+Rosa;María...;as farmers, we need to trust each other that we can all get our work done.
+Rosa;So far, you've been handling it, but I'm worried that you'll lose interest and just quit.
+Maria;(Wait, did she just call me a farmer?)
+Maria;(Am I a real farmer now?)
+Rosa;I... hold on. Let me get the phone.
+Rosa;Hello?
+Rosa;Oh Donna! Hi!
+Maria;(Donna?)
+Rosa;Oh it's been great!
+Rosa;Yeah everything's very good.
+Rosa;Yeah, the farm is great! In fact my granddaughter is helping out over here as well!
+Maria;(Aww... she's talking about me!)
+Rosa;What? Was that today?
+Rosa;I can't I'm alone on the farm today.
+Rosa;No, Barnabus is working in the post office today.
+Rosa;What, María? No... She can't handle the farm by herself.
+Maria;Wait what?
+Rosa;She's only been here for a month. I could never ask her to do that.
+Maria;Wait, I could do it.
+Rosa;What? No, hold on Donna... What'd you just say, María?
+Maria;I can take care of the farm. You go do that thing you were going to do.
+Rosa;Are you... No, hold on Donna, I'm asking her!
+Rosa;Are you sure?
+Maria;Yes!
+Maria;See, you go do whatever you have to do, and I can show you that you can trust me to handle the farm.
+Rosa;Okay, let me... Yes Donna, she said yes... Yes... Yes, we'll meet there. Okay... Bye!
+Rosa;María.
+Maria;Yes?
+Rosa;Do you know what to do today?
+Maria;Yes?...
+Rosa;Since you sound unsure, let's go over it.
+Rosa;Most of the spring harvest is over so all you have to do is...
+Maria;(Wow, abuela thinks I'm a real farmer now.)
+Maria;(She's going to trust me with the whole farm. I can't let her down.)
+Maria;(I'm going to show her that when I say I can do something, I can do it.)
+Maria;(I'm going to do an amazing job on the farm today!)
+Maria;(And abuela is going to be like "Oh my, María! You're so good at this!")
+Maria;(And I'll be like "Yeah, I'm amazing" and we'll go to the bar to meet Sunny...)
+Maria;(And then abuela will tell Sunny about all the amazing things I do on the farm...)
+Maria;(And then BArnabus will start playing that son I told him to!)
+Maria;(Then Sunny and I will dance and it'll be great!)
+Rosa;... Once you're done with all those things, drive the tractor back into the shed and leave it parked there.
+Rosa;You got all that, María?
+Maria;Huh, oh! Yeah! I totally got it!
+Rosa;Great! The keys are on the counter. I've got to go.
+Rosa;Good Luck!
+##;Rosa;exit
+Maria;Okay... Don't worry abuela, I've got this...

@@ -5,11 +5,11 @@ Maria;You're a bartender here?;0;L
 Barnabus;Mhmm...;0;R
 Maria;Can I get a bourbon with a lemon wedge?;0;L
 Barnabus;That's an unsual order.;0;R
-Maria;Oh is it?;0;L
+Maria;Oh is it?;1;L
 Barnabus;Mhmm...;0;R
-Maria;Oh...;0;L
-##;Bartender;exit
-Maria;(This isn’t turning out as I thought...);0;L
+Maria;Oh...;4;L
+##;Barnabus;exit
+Maria;(This isn’t turning out as I thought...);4;L
 Barnabus;Here’s your bourbon, with a lemon wedge.;0;R
 Maria;Oh! Thank you! Well, bottom’s up!;1;L
 Maria;...;2;L
@@ -27,13 +27,13 @@ Sunny;...?;0;R
 Maria;(Hm... That girl over there is kinda pretty. I should go over and talk to her.);0;L
 Maria;(Small town hospitality, and all that.);0;L
 Maria;(Wait, what am I going to say to her?);0;L
-Player;You know, if you were a vegetable, you’d be a cutecumber.:line,30,D1BarC1,D1BarD1;I must have died on this bourbon, cause you’re an angel.:line,30,D1BarC1,D1BarD2
+Player;You know, if you were a vegetable, you’d be a cutecumber.:line,30,D1BarC1,D1GoodBarD1;I must have died on this bourbon, cause you’re an angel.:line,30,D1BarC1,D1GoodBarD2
 Maria;(Here goes!);6;L
 ##;Scene;choice:D1BarC1
-##;Scene;header:D1BarD1
+##;Scene;header:D1GoodBarD1
 Maria;You know, if you were a vegetable, you’d be a cutecumber.;2;L
 ##;Scene;jumpTo:38
-##;Scene;header:D1BarD2
+##;Scene;header:D1GoodBarD2
 Maria;I must have died on this bourbon, cause you're an angel.;2;L
 ##;Scene;jumpTo:38
 Sunny;Uh...;12;R

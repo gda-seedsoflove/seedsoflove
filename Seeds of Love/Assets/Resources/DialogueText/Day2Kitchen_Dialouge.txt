@@ -1,0 +1,17 @@
+Rosa;María!!!;2;R
+Rosa;...;2;R
+Rosa;María!!!!!!!;2;R
+Maria;Ahh, I'm coming, I'm coming.;0;L
+Rosa;...;0;R
+Maria;I'm up, and here, and... yaaaaawn... yeah.;0;L
+Rosa;I thought after a month of working here that you would start waking up in the morning without me having to call you.
+Maria;I’m sorry. It’s just that last night, it was just...;0;L
+Rosa;And what’s with you going out every weekend? Don’t you ever get tired of that?;0;R
+Maria;No... I don't think so.;1;L
+Maria;(Not as long as I get to see Sunny again.);2;L
+Rosa;Maria!;2;R
+Maria;Yes!;0;L
+Rosa;Honestly, I think these late nights are getting to you.;3;R
+Maria;What? No... I think I'm doing great!;1;L
+Rosa;I'm talking to you, and you're barely paying attention.;3;R
+Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.

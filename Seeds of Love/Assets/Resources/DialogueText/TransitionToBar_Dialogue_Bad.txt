@@ -14,7 +14,7 @@ Maria;Fun?;6;L
 Rosa;You know, I still have all your favorite board games in the attic. You want to give them a try?;1;R
 Maria;Abuelita, I haven’t played any of those things in years.;6;L
 Rosa;Oh, come on. It’s always good to relax with something familiar after a bad day at work.;0;R
-Maria;(She's right, but board games?);6;L
+Maria;(But board games?);6;L
 Maria;(I'm not a kid anymore!);6;L
 Maria;I told you, Rosa, I’m fine! And besides...I already have plans to go out tonight!;6;L
 Rosa;Into town? Really? Isn’t it a bit late for that?;0;R

@@ -362,11 +362,11 @@ public class DialogueManager : MonoBehaviour {
         {
             lineNum = int.Parse(commandData[1]);
         }
-        /*else if (commandData[0].Equals("jumpToHeader"))
+        else if (commandData[0].Equals("jumpToHeader"))
         {
             //can we get rid of hard-coded line numbers all together?
-            GoToHeader("header:" + PlayerData.Choicesmade[commandData[1]].ToString());
-        }*/
+            GoToHeader("header:" + commandData[1]);
+        }
         //moodJump:moodValue:headerValueOne:headerValueTwo
         //moodJump:SceneName:moodValue:headerValueOne:headerValueTwo
         else if (commandData[0].Equals("moodJump"))

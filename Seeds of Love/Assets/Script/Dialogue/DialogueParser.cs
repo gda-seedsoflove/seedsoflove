@@ -49,7 +49,9 @@ public class DialogueParser : MonoBehaviour
         }
         catch { }
 
-        PlayerData.instance.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.instance.Mood);
+        //PlayerData PlayerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+        //PlayerData.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.instance.Mood);
+        //PlayerData.instance.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.instance.Mood);
         LoadDialogue();
     }
 

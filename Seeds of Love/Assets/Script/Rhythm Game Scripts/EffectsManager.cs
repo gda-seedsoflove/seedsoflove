@@ -12,21 +12,31 @@ public class EffectsManager : MonoBehaviour
     //The Sound Prefab that will be created when the Note is hit
     //public GameObject SoundEffect;
     public GameObject HitEffect;
+    public GameObject SpecialEffect;
     public GameObject HeldEffect;
 
     private void Start()
     {
         // The OnHit event. Calls PlayEffect() when the note is Hit
-        GetComponent<NoteJudgement>().OnHit += note => PlayEffect();
+        if(GetComponent<NoteJudgement>().Note.SpecialNum == 0)
+        {
+            GetComponent<NoteJudgement>().OnHit += note => PlayEffect();
+        }
+        else
+        {
+            GetComponent<NoteJudgement>().OnHit += note => PlaySpecialEffect();
+        }
     }
 
     void Update()
     {
-        if (GetComponent<NoteJudgement>().Note.Holding && Random.Range(0,4) == 1)
+        
+        if (GetComponent<NoteJudgement>().Note.Holding && Random.Range(0,4) == 1 && GetComponent<NoteJudgement>().Note.Currtime >= 0)
         {
             GameObject instance = (GameObject)Instantiate(HeldEffect, transform.position, Quaternion.identity);
             Destroy(instance, 1f);
         }
+        
     }
 
     /*
@@ -66,6 +76,30 @@ public class EffectsManager : MonoBehaviour
             Destroy(instanceSound, 1f);
         }*/
 
+    }
+
+    public void PlaySpecialEffect()
+    {
+        GameObject instance = null;
+        if (ParticleEffect)
+        {
+            instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+        }
+        PlaySoundEffect();
+        if (HitEffect)
+        {
+            GameObject instance2 = (GameObject)Instantiate(SpecialEffect, transform.position, Quaternion.identity);
+            Destroy(instance2, 1f);
+        }
+
+        if (GetComponent<NoteMovement>())
+        {
+            GetComponent<NoteMovement>().moving = false;
+        }
+        //GetComponent<NoteMovement>().Moving = false;
+        GetComponent<Animator>().SetBool("NoteHit", true);
+        GetComponent<Animator>().Play("Note_Hit_Animation");
     }
 
 

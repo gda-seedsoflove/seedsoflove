@@ -8,6 +8,12 @@ namespace Script.Song
     [RequireComponent(typeof(NoteJudgement))]
     public abstract class NoteManager : MonoBehaviour
     {
+        /// <Descriptiom>
+        /// Note manager is the backend system for managing the notes that will spawn in the rhythm game.
+        /// It keeps track of the combo, score, and rhythm game characteristics like hitwindows and threshholds
+        /// It also does the acutal spawning/creation of the notes and adjusts them accordingly given their type.
+        ///
+
         public GameObject NotePrefab;
         public GameObject TouchNotePrefab;
         public GameObject HoldNotePrefab;
@@ -34,7 +40,7 @@ namespace Script.Song
         public Color c;
 
         //Types: 0 = Normal Note (On top of and hit) 1 = Touch Note (Just on top of) 2 = Hold Note (On top of and hold)
-        protected Note CreateNote(float time, int lane, float speed, char type, float holdtime)
+        protected Note CreateNote(float time, int lane, float speed, char type, float holdtime, int specialnum)
         {
             Note note = new Note
             {
@@ -42,7 +48,8 @@ namespace Script.Song
                 Lane = lane,
                 Speed = speed,
                 Currtime = time,
-                HitTimeThreshold = HitTimeThreshold
+                SpecialNum = specialnum,
+                HitTimeThreshold = HitTimeThreshold              
             };
 
             note.setType(type);
@@ -64,23 +71,32 @@ namespace Script.Song
                 holdscript.NoteManager = this;
                 holdscript.Note = note;
             }
-            else
+            else if(note.isHitNote)
             {
                 noteObject = Instantiate(NotePrefab);
             }
+            else
+            {
+                //Do nothing
+            }
 
             //Debug.Log("Lane:"+lane);
-            noteObject.transform.position = new Vector2(LanePositions[lane], transform.position.y);
+            if (noteObject)
+            {
+                noteObject.transform.position = new Vector2(LanePositions[lane], transform.position.y);
 
-            NoteMovement noteMovement = noteObject.GetComponent<NoteMovement>();
-            noteMovement.NoteManager = this;
-            noteMovement.Note = note;
+                NoteMovement noteMovement = noteObject.GetComponent<NoteMovement>();
+                noteMovement.NoteManager = this;
+                noteMovement.Note = note;
 
-            NoteJudgement noteJudgement = noteObject.GetComponent<NoteJudgement>();
-            noteJudgement.NoteManager = this;
-            noteJudgement.Note = note;
+                NoteJudgement noteJudgement = noteObject.GetComponent<NoteJudgement>();
+                noteJudgement.NoteManager = this;
+                noteJudgement.Note = note;
 
-            return note;
+                return note;
+            }
+
+            return null;
         }
 
         /**
@@ -102,11 +118,31 @@ namespace Script.Song
 
             if (combo > 0 && moodmeter != null)
             {
-                float multiplier = Mathf.Clamp(1+((float)combo),0,10);
+                float multiplier = Mathf.Clamp(points+((float)combo),0,10);
+                if(moodmeter.GetComponent<MoodMeterScript>().targetvalue < 20 && combo <= 1) // hidden comeback mood
+                {
+                    multiplier += 10;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 40 && combo <= 1) // hidden comeback mood
+                {
+                    multiplier += 5;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue >= 75)
+                {
+                    multiplier = Mathf.Clamp(Mathf.Clamp(points,1,6) + ((float)combo)/10, 0, 6f);
+                }
                 moodmeter.GetComponent<MoodMeterScript>().AddMood(multiplier);
             }
             else if (combo == 0 && moodmeter != null)
             {
+                if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 12) // Reduces points loss when low mood
+                {
+                    fullpoints *= .5f;
+                }
+                else if (moodmeter.GetComponent<MoodMeterScript>().targetvalue < 24) // Reduces points loss when low mood
+                {
+                    fullpoints *= .75f;
+                }
                 moodmeter.GetComponent<MoodMeterScript>().AddMood(fullpoints * -12);
             }
             else

@@ -8,7 +8,9 @@ public class PlayerData : MonoBehaviour {
 
     public float Mood;  // Value will range from 0 to 1. 1 being max mood
 
-    public List<string> Choicesmade;
+    //public List<string> Choicesmade;
+
+    public Hashtable Choicesmade;
 
     //[HideInInspector]
     public KeyCode leftkeybind, rightkeybind, spacekeybind, dashkeybind;
@@ -17,6 +19,7 @@ public class PlayerData : MonoBehaviour {
     {
         if(instance == null)
         {
+            Choicesmade = new Hashtable();
             instance = this;
             leftkeybind = KeyCode.LeftArrow;
             rightkeybind = KeyCode.RightArrow;

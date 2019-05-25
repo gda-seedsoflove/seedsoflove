@@ -8,6 +8,11 @@ namespace Tests.Interactive.NoteTimingTest
 {
     public class NoteGenerator : NoteManager
     {
+        /// <Description>
+        /// Front end code for the rhythm game system (the rhythm game manager)
+        /// Note generator is responible for the logistics of the note spawning and keeping everything in beat
+        /// It references from many other scripts to adjust their code and to retrieve from them
+        ///
 
         private float _nextNoteSpawnTime;
 
@@ -29,7 +34,8 @@ namespace Tests.Interactive.NoteTimingTest
         private float lastlane = 0;
         private int touchspawning = 0;
         private int nextlane = 0; //Where the next note will spawn
-        private float transitiondelay = 0;
+
+        public float transitiondelay;
         private bool inTransition;
         public int sceneNumber;
         ///
@@ -59,6 +65,7 @@ namespace Tests.Interactive.NoteTimingTest
         {
             Time.fixedDeltaTime = .001f;
             BMReader = GetComponent<BeatmapReader>();
+            transitiondelay *= -1;
             //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;
@@ -139,11 +146,12 @@ namespace Tests.Interactive.NoteTimingTest
                         double endnotetiming = endnote.timing;  
                         holdtime = Mathf.Abs((float)endnotetiming - (float)startnotetiming);    //Difference between the notes for hold length
                     }
-                    //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
+
                     if (note.lane >= 1 && note.lane <=4)
                     {
-                        CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime);
+                        CreateNote(notetime, (note.lane - 1), -notespeed, note.type, holdtime, note.snum);
                     }
+                    //Debug.Log("Type:"+note.type+"  Lane:"+(note.lane-1));
 
 
                     BMReader.GetNextNote();
@@ -179,7 +187,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, 'b', SpawnTimeInterval);
+                CreateNote(notetime, lane, -notespeed, 'b', SpawnTimeInterval, 0);
                 nextlane = Random.Range(0, LanePositions.Length);
 
                 touchspawning = touchspawning - 1;
@@ -223,7 +231,7 @@ namespace Tests.Interactive.NoteTimingTest
                 }
 
                 lastlane = lane;
-                CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
+                CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval,0);
                 nextlane = Random.Range(0, LanePositions.Length);
 
                 if (type == 'b')//touchnote
@@ -246,7 +254,7 @@ namespace Tests.Interactive.NoteTimingTest
                         {
                             lane = LaneNextTo(lane);
                             nextlane = lane;
-                            CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval);
+                            CreateNote(notetime, lane, -notespeed, type, SpawnTimeInterval,0);
                         }
                         _nextNoteSpawnTime = CurrentSongTime + SpawnTimeInterval;
                     }

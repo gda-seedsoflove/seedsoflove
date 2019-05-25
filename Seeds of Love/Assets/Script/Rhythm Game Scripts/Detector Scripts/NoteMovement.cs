@@ -23,17 +23,13 @@ namespace Script.Behaviour
             // Self-destruct if the note is outside of the displayed time range
             if (Note.Currtime < -Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)
             {
-                if(Note.Hit == false)
-                {
-                    NoteManager.addScore(0, 1);
-                }
                 Destroy(gameObject);
             }
             else if (Note.Currtime <= -Note.HitTimeThreshold && Note.Hit == false && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Note_Hit_Animation") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Fade_Out_Animation"))
             {
                 GetComponent<Animator>().Play("Fade_Out_Animation");
             }
-            else if (Note.isHoldNote && Note.Currtime < -Note.HitTimeThreshold && Note.Holding == false)
+            else if (Note.isHoldNote && Note.Currtime < -Note.HitTimeThreshold *4/3 && Note.Holding == false)
             {
                 try
                 {
@@ -44,6 +40,12 @@ namespace Script.Behaviour
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - (Note.Currtime / (-Note.HitTimeThreshold * 4 - NoteManager.DisplayedTimeAfter)));
                 }
                 catch { }
+            }
+
+            if (GetComponent<NoteJudgement>().missed && Note.isHoldNote == false && Note.Missed == false)
+            {
+                NoteManager.addScore(0, 1);
+                Note.Missed = true;
             }
 
             Note.Currtime = Note.Currtime -= Time.deltaTime;
@@ -67,10 +69,10 @@ namespace Script.Behaviour
         void Update()
         {
 
-            if (Note.Currtime < -Note.HitTimeThreshold)
+            if (Note.Currtime < -Note.HitTimeThreshold*4/3)
             {
                 GameObject child = transform.GetChild(0).gameObject;
-                float alpha = Mathf.Clamp(1 - (1 * timeafter / (NoteManager.DisplayedTimeAfter)), 0, 255);
+                float alpha = Mathf.Clamp(1 - (2 * timeafter / (3*NoteManager.DisplayedTimeAfter)), 0, 255);
                 try
                 {
                     child.GetComponent<Renderer>().material.color = new Color(1, 1, 1, alpha);
@@ -79,9 +81,13 @@ namespace Script.Behaviour
                 timeafter += Time.deltaTime;
                 if (Note.isHoldNote && GetComponent<HoldNoteScript>())
                 {
+                    HoldNoteScript hnote = GetComponent<HoldNoteScript>();
+                    if (hnote.top)
+                    {
+                        hnote.top.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
+                    }
                     try
                     {
-                        HoldNoteScript hnote = GetComponent<HoldNoteScript>();
                         hnote.SetAlpha(alpha);
                         /**
                         hnote.bottom.GetComponent<Renderer>().material.color = new Color(hnote.c.r, hnote.c.g, hnote.c.b, alpha);

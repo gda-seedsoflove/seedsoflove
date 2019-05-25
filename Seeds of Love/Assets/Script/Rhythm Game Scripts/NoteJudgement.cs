@@ -28,6 +28,12 @@ namespace Script.Behaviour
 
         private float lastlanebuffer;
 
+        [HideInInspector]
+        public float bottomthreshhold;
+
+        [HideInInspector]
+        public bool missed;
+
         private Color c;
 
         private void Start()
@@ -37,32 +43,22 @@ namespace Script.Behaviour
             OnHit += _ => enabled = false;
             lastlane = 0;
             currentlane = 0;
+            bottomthreshhold = -Note.HitTimeThreshold * 5 / 3;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(HitKey) && Note.Holding == false)
+            if ((Input.GetKeyDown(PlayerData.instance.spacekeybind)) && Note.Holding == false)
             {
                 bufferedtime = .1f;
             }
-            if (Input.GetKeyUp(HitKey) && Note.Holding == true)
+            if ((Input.GetKeyUp(PlayerData.instance.spacekeybind)) && Note.Holding == true)
             {
                 holdingspace = false;
                 releasebuffertime = .15f;
             }
 
-            /**
-            if (OnHit != null
-                && Input.GetKeyDown(HitKey)
-                && NoteManager.CurrentSongTime > Note.Time - Note.HitTimeThreshold
-                && NoteManager.CurrentSongTime < Note.Time + Note.HitTimeThreshold
-                && dlane == Note.Lane)
-            {
-                OnHit(gameObject);
-            }
 
-
-            */
             c = NoteManager.c;
             GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 1);
 
@@ -70,6 +66,7 @@ namespace Script.Behaviour
 
         void FixedUpdate()
         {
+
             CheckLanes();
 
             if (!Note.isHoldNote)
@@ -78,6 +75,7 @@ namespace Script.Behaviour
                 {
                     if (!Note.isTouchNote)
                     {
+                        
                         NoteManager.addScore(1, 1);
                         OnHit(gameObject);
                     }
@@ -90,34 +88,54 @@ namespace Script.Behaviour
 
                 if(OnHit != null && touched && Note.Currtime <= Note.HitTimeThreshold*7/16) // If touch note and was "touched" then it is hit.
                 {
-                    NoteManager.addScore(1, 1);
+                    NoteManager.addScore(2, 2);
                     OnHit(gameObject);
+                }
+
+                if (Note.Currtime < bottomthreshhold && missed == false && Note.Missed == false)
+                {
+                    missed = true;
                 }
             }
             else if(Note.isHoldNote)
             {
-                if (CanHit() && Note.Holding == true && releasebuffertime > 0) // Correctly releases at right time.
+                if (CanHit() && Note.Holding == true && (releasebuffertime > 0 || Input.GetKeyUp(PlayerData.instance.spacekeybind))) // Correctly releases at right time.
                 {
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
                     Destroy(GetComponent<HoldNoteScript>().lr);
                     GetComponent<HoldNoteScript>().Release();
                     OnHit(gameObject);
-                    NoteManager.addScore(.5f, .5f); // completes the missing half of the note score.
+                    NoteManager.addScore(10f, 10f); // completes the missing half of the note score.
                 }
                 else if (OnHit != null && Note.Holding == true && (releasebuffertime <= 0 || currentlane != Note.Lane) && (holdingspace == false || currentlane != Note.Lane))
                 {
-                    Note.Holding = false;
-                    GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);
+                    Note.Holding = false;                 
                     GetComponent<HoldNoteScript>().held = false;
-                    Destroy(GetComponent<HoldNoteScript>().lr);
-                    GetComponent<HoldNoteScript>().Release();
-                    NoteManager.addScore(0, .5f);
+                    GetComponent<HoldNoteScript>().hitcircle.SetActive(false);
+                    //Destroy(GetComponent<HoldNoteScript>().lr);
+                    //GetComponent<HoldNoteScript>().Release();
+                    GetComponent<NoteMovement>().moving = true;
+                    GetComponent<HoldNoteScript>().earlyrelease = true;
+                    GetComponent<HoldNoteScript>().DestoryPulses();
+                    Note.Currtime = bottomthreshhold;
+                    if (missed == false)
+                    {
+                        NoteManager.addScore(0, 1.3f);
+                        missed = true;
+                    }
                 }
                 else if(OnHit != null && Note.Holding == true && Note.Currtime <= 0)
                 {
                     GetComponent<HoldNoteScript>().online = true;
                 }
+
+                if(Note.Currtime < bottomthreshhold && missed == false && Note.Missed == false)
+                {
+                    NoteManager.addScore(0, 1.3f);
+                    missed = true;
+                }
+
                 releasebuffertime -= Time.deltaTime;
 
 
@@ -136,11 +154,14 @@ namespace Script.Behaviour
                         GetComponent<NoteMovement>().moving = false;
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 0);
                     }
-                    NoteManager.addScore(.5f,.5f);
+                    NoteManager.addScore(1f,1f);
                     Note.Hit = true;
                 }
 
             }
+
+
+
             bufferedtime -= Time.deltaTime;
 
             
@@ -154,7 +175,7 @@ namespace Script.Behaviour
         public bool CanHit()
         {
             if (OnHit != null
-                && Note.Currtime > -Note.HitTimeThreshold * 5 / 3
+                && Note.Currtime > bottomthreshhold
                 && Note.Currtime < Note.HitTimeThreshold
                 && (currentlane == Note.Lane || (Note.Lane == lastlane && lastlanebuffer > 0)))
             {

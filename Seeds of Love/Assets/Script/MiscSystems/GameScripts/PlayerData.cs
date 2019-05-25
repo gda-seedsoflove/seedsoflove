@@ -12,12 +12,19 @@ public class PlayerData : MonoBehaviour {
     //contains past choices made AND former moods. A bit jank on the latter, but nobody needs to know.
     public Hashtable Choicesmade;
 
+    //[HideInInspector]
+    public KeyCode leftkeybind, rightkeybind, spacekeybind, dashkeybind;
+
     void Awake()
     {
         if(instance == null)
         {
             Choicesmade = new Hashtable();
             instance = this;
+            leftkeybind = KeyCode.LeftArrow;
+            rightkeybind = KeyCode.RightArrow;
+            spacekeybind = KeyCode.Space;
+            dashkeybind = KeyCode.UpArrow;
             DontDestroyOnLoad(this);
         }
         else
@@ -30,6 +37,32 @@ public class PlayerData : MonoBehaviour {
 		
 	}
 
-	
+    //Sets the keybindings to arrowkeys and space
+    public void ArrowPreset()
+    {
+        leftkeybind = KeyCode.LeftArrow;
+        rightkeybind = KeyCode.RightArrow;
+        spacekeybind = KeyCode.Space;
+        dashkeybind = KeyCode.UpArrow;
+    }
+
+    //Sets the keybindings to WASD and space
+    public void WASDPreset()
+    {
+        leftkeybind = KeyCode.A;
+        rightkeybind = KeyCode.D;
+        spacekeybind = KeyCode.Space;
+        dashkeybind = KeyCode.W;
+    }
+
+    //Sets the keybindings to JKL and space
+    public void JKLPreset()
+    {
+        leftkeybind = KeyCode.J;
+        rightkeybind = KeyCode.L;
+        spacekeybind = KeyCode.K;
+        dashkeybind = KeyCode.I;
+    }
+
 
 }

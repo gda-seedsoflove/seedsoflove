@@ -402,7 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 0.5
-  Choicesmade: []
   leftkeybind: 0
   rightkeybind: 0
   spacekeybind: 0
@@ -3346,6 +3345,11 @@ Prefab:
     - target: {fileID: 4333975837790636, guid: 763903625cf46f744961c53cbf567409, type: 2}
       propertyPath: m_LocalPosition.z
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207127518211426, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: changespeed
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}

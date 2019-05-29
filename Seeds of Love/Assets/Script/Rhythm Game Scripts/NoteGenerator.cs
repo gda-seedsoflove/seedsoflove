@@ -66,6 +66,8 @@ namespace Tests.Interactive.NoteTimingTest
             Time.fixedDeltaTime = .001f;
             BMReader = GetComponent<BeatmapReader>();
             transitiondelay *= -1;
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 120;
             //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;
@@ -101,6 +103,10 @@ namespace Tests.Interactive.NoteTimingTest
             {
                 PlayerData.instance.Mood = moodmeter.GetComponent<MoodMeterScript>().GetMoodPercentage();
                 Debug.Log("Data:"+PlayerData.instance.Mood+" Mood:"+ moodmeter.GetComponent<MoodMeterScript>().GetMood());
+
+                QualitySettings.vSyncCount = 1;
+                Application.targetFrameRate = -1;
+
                 inTransition = true;
                 SceneFade fadeScreen;
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();

@@ -61,6 +61,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a190bdc1bed6fee4caa6da4eff31c2d1, type: 3}
   - {fileID: 21300000, guid: aad71fc66fa8d5a4b925218f737ce7e6, type: 3}
   - {fileID: 21300000, guid: ef654d0d80e6aa740bc59547af24dbee, type: 3}
+  - {fileID: 21300000, guid: cc2a0b6382b177d4f8b2441ccc36a6ab, type: 3}
+  - {fileID: 21300000, guid: 58d79995e434cf746879cc5dfaf6fb09, type: 3}
+  - {fileID: 21300000, guid: b1eb30ea89fe0df439e8ddc2c1e91679, type: 3}
+  - {fileID: 21300000, guid: 25d0449bf4f045645905aa6d59ea8cce, type: 3}
+  - {fileID: 21300000, guid: 155c9126baf72d74aadec05ca8067c31, type: 3}
+  - {fileID: 21300000, guid: 1225cd87b91d9484f9bb90dc37ef3527, type: 3}
+  - {fileID: 21300000, guid: a8c834e60ff3e6f4da5d9e79a3cc7e3b, type: 3}
+  - {fileID: 21300000, guid: 7b606ce61a244284ebab66ffa1ed0a1f, type: 3}
   personalFont: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
   xpos: 5
   ypos: -3.8

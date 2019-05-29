@@ -36,7 +36,6 @@ public class ChoiceButton : MonoBehaviour {
             choiceKey = OptionData[2];
             choiceValue = OptionData[3];
             PlayerData.Choicesmade.Add(choiceKey, choiceValue);
-            Debug.Log("Choice mattered: " + choiceKey + " " + choiceValue);
         }
         box.playerTalking = false;
 

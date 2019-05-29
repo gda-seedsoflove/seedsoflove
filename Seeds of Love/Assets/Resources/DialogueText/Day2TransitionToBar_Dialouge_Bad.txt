@@ -1,0 +1,53 @@
+Maria;Ughhh...;15;L
+Rosa;Maria! What happened here!?;2;R
+Rosa;What happened to the field!?;2;R
+Maria;Uhh... funny story actually.;5;L
+Maria;Right after you left, the tractor broke down, but I didn't want to let you down, so I decided to plow the fields by hand instead!;4;L
+Maria;But, it turns out that plowing a field by hand is really difficult...;4;L
+Rosa;How did the tractor break?;3;R
+Maria;I don't know! I tried to turn it on, and nothing happened!;0;L
+Rosa;Why didn't you just call me!?;2;R
+Maria;I didn't want to bother you! This was your day off, and I wanted to make sure you had a good time!;4;L
+Rosa;Alright, give me the keys. I want to see the problem for myself.;2;R
+Maria;Uhhh... the keys?;13;L
+Rosa;Yes. The keys to the tractor. Where are they?;2;R
+Maria; That's what the keys were for?;4;L
+Rosa;...;2;R
+Maria;...;3;L
+Rosa;...Maria?;2;R
+Maria;...yes?;3;L
+Rosa;Are you telling me that you couldn't start the tractor because you didn't even try to use the keys!?;2;R
+Rosa;Did you not listen when I told you how to use the tractor?;2;R
+Maria;Well... yeah...;3;L
+Rosa;And then when you couldn't get the tractor working, your first instinct wasn't to call me or Banabus, but to try and plow the fields by hand?;2;R
+Maria;...yeah?;3;L
+Rosa;...;2;R
+Rosa;At least you tried. We're just going to have to redo the fields again tomorrow.;4;R
+Maria;I'm sorry.;4;L
+Maria;I thought this would be my only chance to show you that I can do this myself, and I blew it.;4;L
+Maria;I just ended up creating more work for you...;4;L
+Rosa;It's not your fault. I guess I shouldn't have left you at this farm alone. Even the most capable farmers need farmhands.;4;R
+Rosa;Don't worry too much about it. You'll get it one day.;0;R
+Maria;Thanks abuela.;9;L
+Rosa;No worries. Now come on, let's get inside.;0;R
+Maria;Wait, how was it today?;0;L
+Rosa;How was what?;0;R
+Maria;YOUR DAY OFF!;1;L
+Maria;How was it? What'd you do? Who's Donna? Where'd you go?;1;L
+Rosa;It was good, but maybe not worth it if I'm going to come back to a destroyed field everytime.;1;R
+Maria;No! You more than anyone deserves a break. Don't let me messing up this one time stop you from enjoying yourself.;9;L
+Maria;I still have room to grow. Just you wait! Someday, I'll be able to do it all for you!;9;L
+Rosa;You'll make a great farmer Maria...;0;R
+Maria;Really?;5;L
+Rosa;Yes. And I guess you have a point. I'll make sure to schedule more time off if that makes you happy.;1;R
+Rosa;And I'll make sure Barnabus is around to help you next time.;0;R
+Maria;Speaking of Barnabus, let's go to the bar!;1;L
+Rosa;Huh? Why?;0;R
+Maria;Uhh... So you can plan your next day off?;5;L
+Rosa;Can't we do that over the phone? It's getting late.;3;R
+Maria;Umm... No! We have to go in person!;5;L
+Rosa;Okay, but why?;0;R
+Maria;Because... I'm going to the bar and I need you there to make sure I get home at a resonable hour?;5;L
+Rosa;You have been coming home rather late these last few days... Sure, I guess I can come with you this time.;0;R
+Maria;Great! Let's go!;1;L
+end;

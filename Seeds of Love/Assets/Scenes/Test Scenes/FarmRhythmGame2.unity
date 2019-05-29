@@ -402,7 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 0.5
-  Choicesmade: []
   leftkeybind: 0
   rightkeybind: 0
   spacekeybind: 0
@@ -2037,7 +2036,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   duration: 1
   sceneStarting: 1
-  Scenename: AfterBar
+  Scenename: Day2Transition_To_Bar
 --- !u!114 &1050976658
 MonoBehaviour:
   m_ObjectHideFlags: 0

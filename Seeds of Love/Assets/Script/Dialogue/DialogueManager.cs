@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GetComponent<DialogueParser>();
         PlayerData = GameObject.Find("PlayerData").GetComponent<PlayerData>(); //PlayerData.InstanceOf();
+        PlayerData.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.Mood);
 
         stageLeft = null;
         stageRight = null;

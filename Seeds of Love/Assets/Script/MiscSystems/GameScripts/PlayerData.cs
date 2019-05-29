@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class PlayerData : MonoBehaviour {
     //[HideInInspector]
     public KeyCode leftkeybind, rightkeybind, spacekeybind, dashkeybind;
 
+    public string lastscene;
+
+    private bool jukebox;      //If true, the next rhythm game scene will return back to the last scene. 
+
     void Awake()
     {
         if(instance == null)
@@ -25,6 +30,7 @@ public class PlayerData : MonoBehaviour {
             rightkeybind = KeyCode.RightArrow;
             spacekeybind = KeyCode.Space;
             dashkeybind = KeyCode.UpArrow;
+            lastscene = SceneManager.GetActiveScene().name;
             DontDestroyOnLoad(this);
         }
         else
@@ -64,5 +70,19 @@ public class PlayerData : MonoBehaviour {
         dashkeybind = KeyCode.I;
     }
 
+    public void SetLastScene(string scenename)
+    {
+        lastscene = scenename;
+    }
+
+    public void SetJukebox(bool isjukebox)
+    {
+        jukebox = isjukebox;
+    }
+
+    public bool GetJukebox()
+    {
+        return jukebox;
+    }
 
 }

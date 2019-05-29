@@ -108,10 +108,19 @@ namespace Tests.Interactive.NoteTimingTest
                 Application.targetFrameRate = -1;
 
                 inTransition = true;
+
                 SceneFade fadeScreen;
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();
                 Debug.Log(sceneNumber);
-                fadeScreen.BeginTransition(fadeScreen.Scenename);
+
+                if (PlayerData.instance.GetJukebox() == true) //return to last scene
+                {
+                    fadeScreen.BeginTransition(PlayerData.instance.lastscene);
+                }
+                else
+                {
+                    fadeScreen.BeginTransition(fadeScreen.Scenename);
+                }
             }
             else if (BMReader.songEnd == true)
             {

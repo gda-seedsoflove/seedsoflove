@@ -181,6 +181,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82860190063208576, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4c00b7ce6c5184c91d0ade83f28632, type: 3}
+    - target: {fileID: 82860190063208576, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa49fffe9937874b89e1959df6fdabb, type: 2}
   m_IsPrefabAsset: 0
@@ -591,7 +601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b103093346c614eb95dd74c71dafed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenePath: Assets/Scenes/Farm-Scenes/FarmVN.unity
 --- !u!1 &2082074025
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +629,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 1
-  Choicesmade: []
+  leftkeybind: 0
+  rightkeybind: 0
+  spacekeybind: 0
+  dashkeybind: 0
 --- !u!4 &2082074027
 Transform:
   m_ObjectHideFlags: 0

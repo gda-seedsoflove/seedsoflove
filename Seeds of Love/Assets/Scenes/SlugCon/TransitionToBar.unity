@@ -720,6 +720,11 @@ Prefab:
       value: 
       objectReference: {fileID: 243411467764034330, guid: 4c0f63caab2019248b1df91cb4d61551,
         type: 2}
+    - target: {fileID: 82860190063208576, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa49fffe9937874b89e1959df6fdabb, type: 2}
   m_IsPrefabAsset: 0
@@ -751,7 +756,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 0
-  Choicesmade: []
+  leftkeybind: 0
+  rightkeybind: 0
+  spacekeybind: 0
+  dashkeybind: 0
 --- !u!4 &2044258344
 Transform:
   m_ObjectHideFlags: 0

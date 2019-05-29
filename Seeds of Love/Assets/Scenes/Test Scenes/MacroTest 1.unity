@@ -319,6 +319,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &797694250
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 489.5296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 197.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -36.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1108349018
 Prefab:
   m_ObjectHideFlags: 0
@@ -362,7 +404,7 @@ Prefab:
         type: 2}
       propertyPath: script
       value: 
-      objectReference: {fileID: 4900000, guid: 290b487d1e1b3ea4db35dee3b8503481, type: 3}
+      objectReference: {fileID: 4900000, guid: 508ebe02f7f29cd49a89b1183f88a637, type: 3}
     - target: {fileID: 114642502970670470, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_Sprite
@@ -448,7 +490,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: cbec2e21279f290478ed26e65ba8e076, type: 3}
+      objectReference: {fileID: 4900000, guid: 508ebe02f7f29cd49a89b1183f88a637, type: 3}
     - target: {fileID: 224090678099549884, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder
@@ -565,6 +607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 0
+  leftkeybind: 0
+  rightkeybind: 0
+  spacekeybind: 0
+  dashkeybind: 0
 --- !u!4 &1189118472
 Transform:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ Maria; That's what the keys were for?;4;L
 Rosa;...;2;R
 Maria;...;3;L
 Rosa;...Maria?;2;R
-Maria;...yes?3;L
+Maria;...yes?;3;L
 Rosa;Are you telling me that you couldn't start the tractor because you didn't even try to use the keys!?;2;R
 Rosa;Did you not listen when I told you how to use the tractor?;2;R
 Maria;Well... yeah...;3;L

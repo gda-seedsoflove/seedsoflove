@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GetComponent<DialogueParser>();
         PlayerData = GameObject.Find("PlayerData").GetComponent<PlayerData>(); //PlayerData.InstanceOf();
+        PlayerData.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.Mood);
 
         stageLeft = null;
         stageRight = null;
@@ -244,6 +245,10 @@ public class DialogueManager : MonoBehaviour {
             RectTransform transform = b.gameObject.GetComponent<RectTransform>();
             transform.anchoredPosition = new Vector2(xPos + (i * 250), yPos);
             buttons.Add(b);
+            if(i == 0)
+            {
+                b.Select();
+            }
         }
     }
 

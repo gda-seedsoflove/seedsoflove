@@ -4,7 +4,7 @@ Rosa;María!!!!!!!;2;R
 Maria;Ahh, I'm coming, I'm coming.;0;L
 Rosa;...;0;R
 Maria;I'm up, and here, and... yaaaaawn... yeah.;0;L
-Rosa;I thought after a month of working here that you would start waking up in the morning without me having to call you.
+Rosa;I thought after a month of working here that you would start waking up in the morning without me having to call you.;3;R
 Maria;I’m sorry. It’s just that last night, it was just...;0;L
 Rosa;And what’s with you going out every weekend? Don’t you ever get tired of that?;0;R
 Maria;No... I don't think so.;1;L
@@ -17,7 +17,7 @@ Rosa;I'm talking to you, and you're barely paying attention.;3;R
 Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC1-2
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
-Rosa;María...;as farmers, we need to trust each other that we can all get our work done.;0;R
+Rosa;María...,as farmers, we need to trust each other that we can all get our work done.;0;R
 Rosa;So far, you've been handling it, but I'm worried that you'll lose interest and just quit.;0;R
 Maria;(Wait, did she just call me a farmer?);0;L
 Maria;(Am I a real farmer now?);9;L
@@ -41,7 +41,7 @@ Maria;I can take care of the farm. You go do that thing you were going to do.;0;
 Rosa;Are you... No, hold on Donna, I'm asking her!;3;R
 Rosa;Are you sure?;3;R
 Maria;Yes!;1;L
-Maria;See, you go do whatever you have to do, and I can show you that you can trust me to handle the farm.1;L
+Maria;See, you go do whatever you have to do, and I can show you that you can trust me to handle the farm.;1;L
 Rosa;Okay, let me... Yes Donna, she said yes... Yes... Yes, we'll meet there. Okay... Bye!;1;R
 Rosa;María.;0;R
 Maria;Yes?;0;L
@@ -52,7 +52,7 @@ Rosa;Most of the spring harvest is over so all you have to do is...;0;R
 Maria;(Wow, abuela thinks I'm a real farmer now.);1;L
 Maria;(She's going to trust me with the whole farm. I can't let her down.);1;L
 Maria;(I'm going to show her that when I say I can do something, I can do it.);1;L
-Maria;(I'm going to do an amazing job on the farm today!)1;L
+Maria;(I'm going to do an amazing job on the farm today!);1;L
 Maria;(And abuela is going to be like "Oh my, María! You're so good at this!");1;L
 Maria;(And I'll be like "Yeah, I'm amazing" and we'll go to the bar to meet Sunny...);1;L
 Maria;(And then abuela will tell Sunny about all the amazing things I do on the farm...);2;L

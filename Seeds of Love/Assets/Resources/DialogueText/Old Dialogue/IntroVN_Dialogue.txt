@@ -1,0 +1,26 @@
+Maria;Wow... look at that sky! It's never this blue in the city.;1;L
+Maria;Is it always like this around here?;1;L
+Rosa;Mmhm.;0;R
+Maria;Thanks again for letting me stay at your place.;1;L
+Maria;I can't wait to see what it's like at the farm. Nice and peaceful... Maybe I'll get a breath of fresh air for once!;2;L
+Maria;Man... Crops grown by my own two hands... A bright red tractor... A cute little sheep...;1;L
+Rosa;There's no sheep.;0;R
+Maria;Just me and my abuela....;2;L
+Maria;No loud noises, no annoying traffic, no scary dark alleyways... just open fields and -;1;L
+Maria;AGH!;7;L
+Rosa;Rock.;3;R
+Maria;Ahaha... Got a lot of those around here?;2;L
+Rosa;Mm. You okay?;3;R
+Maria;(Uh, am I okay?);6;L
+Player;Totally fine!:line,15;Yeah, but my pride...:line,20
+Maria;Y-yeah, I'm totally fine!;2;L
+Rosa;Be careful, bebe.;3;R
+Maria;Will do! Haha...;2;L
+Maria;(Haven't seen my abuela in years, and the first thing I do is embarrass myself in front of her...);4;L
+end;
+Maria;Yeah, but my pride...;0;L
+Maria;It hurts, abuelita...;0;L
+Rosa;Okay, okay.;0;R
+Rosa;Let's pick up the pace, funny girl.;0;R
+Maria;Will do!;2;L
+end;

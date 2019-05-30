@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadeOutScript : MonoBehaviour
 {
 
-    SpriteRenderer Image;
+    Image Image;
     public float FadeOutSpeed;
 
     // Use this for initialization
     void Start()
     {
 
-        Image = GetComponent<SpriteRenderer>();
+        Image = GetComponent<Image>();
         Color c = Image.material.color;
         c.a = 0f;
         Image.material.color = c;

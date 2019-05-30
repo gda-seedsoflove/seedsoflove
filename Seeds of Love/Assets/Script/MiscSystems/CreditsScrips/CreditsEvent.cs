@@ -31,16 +31,20 @@ public class CreditsEvent : MonoBehaviour {
         Credits.GetComponent<CreditsScroll>().enabled = false;
         GameTitle.GetComponent<FadeInScript>().enabled = false;
         ThankYou.GetComponent<FadeOutScript>().enabled = false;
+        Debug.Log("Before DoTheThings");
         StartCoroutine("DoTheThing");
+        Debug.Log("Function Called");
 		
 	}
 
-    IEnumerable DoTheThing()
+    IEnumerator DoTheThing()
     {
         GameObject Credits = GameObject.Find("Credits");
         GameObject GameTitle = GameObject.Find("Credits/Game Title");
-        GameObject ThankYou = GameObject.Find("Credits/Thank You");
+        GameObject ThankYou = GameObject.Find("Credits/GameObject/Thank You");
+        Debug.Log("Before 1st wait");
         yield return new WaitForSeconds(CreditsFadeInTime);
+        Debug.Log("After Wait");
         GameTitle.GetComponent<FadeInScript>().enabled = true;
         yield return new WaitForSeconds(ScrollStartTime);
         Credits.GetComponent<CreditsScroll>().enabled = true;
@@ -52,6 +56,7 @@ public class CreditsEvent : MonoBehaviour {
         Credits.GetComponent<CreditsScroll>().enabled = false;
         yield return new WaitForSeconds(CreditsFadeOutTime);
         ThankYou.GetComponent<FadeOutScript>().enabled = true;
+        Debug.Log("End of function");
 
     }
 	

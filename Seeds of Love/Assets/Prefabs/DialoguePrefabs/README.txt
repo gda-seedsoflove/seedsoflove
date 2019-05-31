@@ -15,3 +15,6 @@ Instructions for Use:
    located in folder Assets/DialogueText and follows naming convention
    SceneName_Dialogue.txt, or SceneName_Dialogue_Bad.txt if that scene
    has mood specific dialogue.
+
+Additional Information is in the Seeds of Love google drive at:
+    Seeds of Love > 3 - Programming > 00 - References > Visual Novel System Explanation

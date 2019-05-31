@@ -21,6 +21,10 @@ public class Options_Panel_Spawn : MonoBehaviour
 
             optionsPanel.SetActive(true);
             pausePanel.SetActive(false);
+        } else
+        {
+            optionsPanel.SetActive(false);
+            pausePanel.SetActive(true);
         }
     }
 

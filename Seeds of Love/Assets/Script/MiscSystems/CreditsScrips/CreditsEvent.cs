@@ -19,44 +19,49 @@ public class CreditsEvent : MonoBehaviour {
     public int ScrollStartTime; // Wait to start scrolling up
     public int CreditsFadeOutTime; // Wait for fade out
 
-    // Use this for initialization
-    void Start () {
+    public GameObject Credits;
+    public GameObject GameTitle;
+    public GameObject ThankYou;
 
-        //Setting Dependancies
-        GameObject Credits = GameObject.Find("Credits");
-        GameObject GameTitle = GameObject.Find("Credits/Game Title");
-        GameObject ThankYou = GameObject.Find("Credits/GameObject/Thank You");
+    // Use this for initialization
+    void Awake () {
 
         // Setting script states
         Credits.GetComponent<CreditsScroll>().enabled = false;
         GameTitle.GetComponent<FadeInScript>().enabled = false;
         ThankYou.GetComponent<FadeOutScript>().enabled = false;
-        Debug.Log("Before DoTheThings");
-        StartCoroutine("DoTheThing");
-        Debug.Log("Function Called");
+       
 		
 	}
 
+    void Start()
+    {
+        Debug.Log("Before DoTheThings");
+        StartCoroutine("DoTheThing");
+        Debug.Log("Function Called");
+    }
+
     IEnumerator DoTheThing()
     {
-        GameObject Credits = GameObject.Find("Credits");
-        GameObject GameTitle = GameObject.Find("Credits/Game Title");
-        GameObject ThankYou = GameObject.Find("Credits/GameObject/Thank You");
         Debug.Log("Before 1st wait");
         yield return new WaitForSeconds(CreditsFadeInTime);
         Debug.Log("After Wait");
         GameTitle.GetComponent<FadeInScript>().enabled = true;
         yield return new WaitForSeconds(ScrollStartTime);
+        Debug.Log("Start Scrolling");
         Credits.GetComponent<CreditsScroll>().enabled = true;
         /* Wait for distance threshold on GO Credits or ThankYou
          *
          *
          *
          */
-        Credits.GetComponent<CreditsScroll>().enabled = false;
+        //Credits.GetComponent<CreditsScroll>().enabled = false;
         yield return new WaitForSeconds(CreditsFadeOutTime);
         ThankYou.GetComponent<FadeOutScript>().enabled = true;
         Debug.Log("End of function");
+        //yield return new WaitForSeconds(10);
+        //ThankYou.GetComponent<FadeOutScript>().enabled = false;
+        //GameTitle.GetComponent<FadeInScript>().GetImage().material.color = new Color(1, 1, 1, 1);
 
     }
 	

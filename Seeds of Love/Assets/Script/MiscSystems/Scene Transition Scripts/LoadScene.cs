@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
-    // 
+    // Sets variables for fadeScreen and sceneNumber
     SceneFade fadeScreen;
     public int sceneNumber;
 

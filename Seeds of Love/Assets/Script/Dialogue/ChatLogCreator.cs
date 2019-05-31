@@ -5,21 +5,12 @@ using UnityEngine.UI;
 
 public class ChatLogCreator : MonoBehaviour
 {
-    public GameObject chatLogImage;
+    public CanvasGroup chatLogImage;
     public bool isActive = false;
 
-    // Start is called before the first frame update
-    void Start()  {
-        chatLogImage.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
-
+    // Set chatLogImage to immediately false
     void Awake() {
-        
+        chatLogImage.alpha = 0f;
     }
 
     public void createOrDestroy() {
@@ -32,12 +23,12 @@ public class ChatLogCreator : MonoBehaviour
     }
 
     public void createChatLog() {
-        chatLogImage.SetActive(true);
+        chatLogImage.alpha = 1f;
         isActive = true;
     }
 
     public void destroyChatLog() {
-        chatLogImage.SetActive(false);
+        chatLogImage.alpha = 0f;
         isActive = false;
     }
 

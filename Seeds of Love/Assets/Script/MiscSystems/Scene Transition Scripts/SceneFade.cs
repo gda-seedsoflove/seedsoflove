@@ -7,6 +7,7 @@ using UnityEngine.UI;
 /*-------------------------------------------------------
 SceneFade.cs / LoadScene.cs README
 - Put both SceneFade and LoadScene into the canvas
+    - Make a FadeManager prefab that has the canvas and the scripts so it is easier to implement
 - Set SceneFade's FadeScreen to desired image
 - Set SceneFade's starting color to opaque black
 - Set SceneFade's end color to transparent
@@ -16,6 +17,7 @@ SceneFade.cs / LoadScene.cs README
     - Note: Could exchange the integer value for an obj/scene variable if this is not adequate
 - If a button needs to be used to transition scene, then set the button's click
 to Trigger() from LoadScene.
+- Similarly, trigger() can be used to trigger a transition.
 --------------------------------------------------------*/
 
 public class SceneFade : MonoBehaviour {

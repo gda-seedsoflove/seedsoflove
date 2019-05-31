@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
-    //object to turn text file into usable dialogue objects
+    //object to turn text file into usable 8 objects
     DialogueParser parser;
 
     public string dialogue, characterName;
@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour {
     public Text dialogueText;
     public GameObject choiceBox;
 
-    private bool inTransition;
+    public bool inTransition;
 
     //animator needed to animate dialogue starting and finishing
     public Animator animator;
@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour {
     GameObject stageLeft;
     GameObject stageRight;
 
-    bool inCoroutine;
+    public bool inCoroutine;
     private IEnumerator typingRoutine;
 
     //initializes variables, triggers start animation, and starts dialogue

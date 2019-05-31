@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class CreditsScroll : MonoBehaviour {
 
     public float ScrollSpeed;
+    float OriginalScrollSpeed;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
+        OriginalScrollSpeed = ScrollSpeed;
 
     }
 	
@@ -16,5 +19,14 @@ public class CreditsScroll : MonoBehaviour {
 	void Update () {
         Vector2 pos = gameObject.transform.position;
         gameObject.transform.position = new Vector2(pos.x, pos.y+ScrollSpeed);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            ScrollSpeed = 0.3f;
+        }
+        else
+        {
+            ScrollSpeed = OriginalScrollSpeed;
+        }
     }
 }

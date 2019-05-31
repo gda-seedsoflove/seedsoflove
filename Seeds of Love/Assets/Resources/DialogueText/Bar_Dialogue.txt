@@ -1,5 +1,5 @@
 Maria;(This place seems to be the bar...);0;L
-Maria;Oh, Hey Barnabus?;0;L
+Maria;Oh, Hey Barnabus!;0;L
 Barnabus;Hmm?;0;R
 Maria;You're a bartender here?;0;L
 Barnabus;Mhmm...;0;R
@@ -23,7 +23,7 @@ Barnabus;You’ll still have to pay for the bourbon.;0;R
 Maria;(...);3;L
 ##;Barnabus;exit
 Maria;(Well, this is kinda shitty.);6;L
-Sunny;...?;0;R
+Sunny;...;0;R
 Maria;(Hm... That girl over there is kinda pretty. I should go over and talk to her.);0;L
 Maria;(Small town hospitality, and all that.);0;L
 Maria;(Wait, what am I going to say to her?);0;L
@@ -59,7 +59,7 @@ Sunny;...;5;R
 Sunny;But anyways, what brings you here? Why talk to someone like me?;9;R
 Maria;Oh, you know... I just got off working on a farm.;0;L
 Sunny;A farm?;3;R
-Maria;Yeah! With all the tools, and the dirt... and carrots...;0;L
+Maria;Yeah! With all the tools, and the dirt..., and carrots...;0;L
 Sunny;Wow, so you’re a farmer...;0;R
 Maria;Sort of. I'm helping out at my abuela’s farm.;0;L
 Sunny;Abuela?;3;R
@@ -76,16 +76,16 @@ Sunny;I'm used to seeing people leave, but I get really excited whenever someone
 Maria;What? But it's so amazing here! Everything seems so different, and new, and there’s like sheep everywhere.;2;L
 Maria;Well, probably. I still haven't seen any sheep.;6;L
 Sunny;I guess you’ve been having a good time then. Have you been around town?;1;R
-Maria;Not much... But I think I’m going to really like it here.;1;L
+Maria;Not much yet... But I think I’m going to really like it here.;1;L
 Sunny;Really? If you're excited by a little town like ours, where are you from?;0;R
 Maria;Oh, I’m from the bay. It’s like big and bustling and busy, but once you’ve tried everything, it feels so empty.;0;L
-Maria;I was going to college in the city, 'cause that’s what you do after high school, but now that I’m almost done, I just... didn’t feel right there.;6;L
+Maria;I was going to college in the city, 'cause that was just what you do after high school, but now that I’m almost done, I just... didn’t feel right there.;6;L
 Maria;I had a moment where I was like, “What am I doing?” So I decided to come here to figure that out.;0;L
 Sunny;You gave up city life for... this?;6;R
 Maria;I didn’t exactly give it up, just decided to take a break.;0;L
 Sunny;Huh... Well, I hope you get something good out of this little town.;1;R
 Maria;...Yeah, I hope so too.;2;L
-Maria;But that's enough about me. So, uhhhh, what’s your story?;1;L
+Maria;So, uhhhh that's enough about me. What’s your story?;1;L
 Sunny;Huh? You wanna hear about me?;3;R
 Maria;Well, yeah! I came here to get away from all the stuff back home. You seem like a perfect getaway.;2;L
 Maria;(That didn’t come out right...);5;L

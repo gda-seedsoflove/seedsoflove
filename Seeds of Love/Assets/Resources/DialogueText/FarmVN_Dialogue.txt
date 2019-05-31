@@ -9,8 +9,8 @@ Rosa;If I don't start on the carrots now, I won't finish before dark.;0;R
 Maria;Wait, I can help pick the carrots!;1;L
 Rosa;Don’t you think you should get settled in first?;0;R
 Maria;I can do that later. Plus, how hard can picking carrots be?;2;L
-Rosa;Well, I guess you should be able to handle it.;0;R
-Rosa;Barnabus, come over and watch over Maria. I need to go feed the chickens;0;R
+Rosa;I guess you should be able to handle it.;0;R
+Rosa;Barnabus, come over and watch over Maria. I need to go feed the chickens.;0;R
 ##;Rosa;exit
 Maria;Wait, who?;6;L
 Barnabus;Hello.;0;R

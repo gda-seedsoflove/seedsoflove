@@ -1,5 +1,5 @@
 Maria;Ughhh...;15;L
-Rosa;Maria! What happened here!?;2;R
+Rosa;María! What happened here!?;2;R
 Rosa;What happened to the field!?;2;R
 Maria;Uhh... funny story actually.;5;L
 Maria;Right after you left, the tractor broke down, but I didn't want to let you down, so I decided to plow the fields by hand instead!;4;L
@@ -14,12 +14,12 @@ Rosa;Yes. The keys to the tractor. Where are they?;2;R
 Maria; That's what the keys were for?;4;L
 Rosa;...;2;R
 Maria;...;3;L
-Rosa;...Maria?;2;R
+Rosa;...María?;2;R
 Maria;...yes?;3;L
 Rosa;Are you telling me that you couldn't start the tractor because you didn't even try to use the keys!?;2;R
 Rosa;Did you not listen when I told you how to use the tractor?;2;R
 Maria;Well... yeah...;3;L
-Rosa;And then when you couldn't get the tractor working, your first instinct wasn't to call me or Banabus, but to try and plow the fields by hand?;2;R
+Rosa;And then when you couldn't get the tractor working, your first instinct wasn't to call me or Barnabus, but to try and plow the fields by hand?;2;R
 Maria;...yeah?;3;L
 Rosa;...;2;R
 Rosa;At least you tried. We're just going to have to redo the fields again tomorrow.;4;R

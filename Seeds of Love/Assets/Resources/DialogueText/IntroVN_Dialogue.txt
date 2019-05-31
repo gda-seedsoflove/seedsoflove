@@ -12,7 +12,7 @@ Rosa;Rock.;3;R
 Maria;Ahaha... Got a lot of those around here?;2;L
 Rosa;Mmhm. You okay?;3;R
 Maria;(Uh, am I okay?);6;L
-Player;Totally fine!:line,15,introC1,introD1;Yeah, but my pride...:line,15,introC1,introD2
+Player;Y-yeah, I'm totally fine!:line,15,introC1,introD1;Yeah, but my pride...:line,15,introC1,introD2
 ##;Scene;choice:introC1
 ##;Scene;header:introD1
 Maria;Y-yeah, I'm totally fine!;2;L
@@ -27,5 +27,5 @@ Rosa;Okay, funny girl.;0;R
 ##;Scene;jumpTo:28
 ##;Scene;header:introEND
 Rosa;Come on, let's pick up the pace.;0;R
-Maria;Will do!;2;L
+Maria;Coming!;2;L
 end;

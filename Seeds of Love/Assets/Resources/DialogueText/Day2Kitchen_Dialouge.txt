@@ -17,7 +17,7 @@ Rosa;I'm talking to you, and you're barely paying attention.;3;R
 Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC1-2
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
-Rosa;María...,as farmers, we need to trust each other that we can all get our work done.;0;R
+Rosa;María... as farmers, we need to trust each other that we can all get our work done.;0;R
 Rosa;So far, you've been handling it, but I'm worried that you'll lose interest and just quit.;0;R
 Maria;(Wait, did she just call me a farmer?);0;L
 Maria;(Am I a real farmer now?);9;L
@@ -46,7 +46,7 @@ Rosa;Okay, let me... Yes Donna, she said yes... Yes... Yes, we'll meet there. Ok
 Rosa;María.;0;R
 Maria;Yes?;0;L
 Rosa;Do you know what to do today?;3;R
-Maria;Yes?...;6;L
+Maria;Yes...?;6;L
 Rosa;Since you sound unsure, let's go over it.;3;R
 Rosa;Most of the spring harvest is over so all you have to do is...;0;R
 Maria;(Wow, abuela thinks I'm a real farmer now.);1;L
@@ -56,13 +56,13 @@ Maria;(I'm going to do an amazing job on the farm today!);1;L
 Maria;(And abuela is going to be like "Oh my, María! You're so good at this!");1;L
 Maria;(And I'll be like "Yeah, I'm amazing" and we'll go to the bar to meet Sunny...);1;L
 Maria;(And then abuela will tell Sunny about all the amazing things I do on the farm...);2;L
-Maria;(And then BArnabus will start playing that son I told him to!);2;L
+Maria;(And then Barnabus will start playing that song I told him to!);2;L
 Maria;(Then Sunny and I will dance and it'll be great!);2;L
 Rosa;... Once you're done with all those things, drive the tractor back into the shed and leave it parked there.;0;R
 Rosa;You got all that, María?;3;R
 Maria;Huh, oh! Yeah! I totally got it!;1;L
 Rosa;Great! The keys are on the counter. I've got to go.;0;R
-Rosa;Good Luck!;1;R
+Rosa;Good luck!;1;R
 ##;Rosa;exit
 Maria;Okay... Don't worry abuela, I've got this...;11;L
 end;

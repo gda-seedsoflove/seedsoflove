@@ -18,6 +18,7 @@ public class ChatLogParser : MonoBehaviour
      * nameText = NPC Name
      * dialogueText = NPC's dialogue
      * parser = Object for getting the script of DialogueParser*/
+    int lineNum;
     int chatLogCounter;
     public Image chatLogImage;
     public Canvas thisCanvas;
@@ -37,6 +38,7 @@ public class ChatLogParser : MonoBehaviour
         }
         parser = dialogueManager.GetComponent<DialogueParser>();
         currentDialogueText = "";
+        lineNum = manager.lineNum;
         chatLogCounter = 0;
 
         dialogueTextArray = GameObject.FindGameObjectsWithTag("DialogueLine");

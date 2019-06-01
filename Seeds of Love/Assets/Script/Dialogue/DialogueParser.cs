@@ -11,6 +11,8 @@ public class DialogueParser : MonoBehaviour
 {
     public TextAsset script;
     public TextAsset scriptBad;
+    [HideInInspector]
+    public string lineForChatLog;
 
     //structure to store the relevant information to each line of dialogue
     struct DialogueLine
@@ -30,6 +32,7 @@ public class DialogueParser : MonoBehaviour
             position = positionin;
             options = new string[0];
             command = "";
+
         }
     }
 
@@ -68,6 +71,8 @@ public class DialogueParser : MonoBehaviour
             do
             {
                 line = r.ReadLine();
+                lineForChatLog = line;
+                //Debug.Log(line);
                 if (line != null)
                 {
                     string[] lineData = line.Split(';');

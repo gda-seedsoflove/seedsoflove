@@ -18,7 +18,6 @@ public class ChatLogParser : MonoBehaviour
      * nameText = NPC Name
      * dialogueText = NPC's dialogue
      * parser = Object for getting the script of DialogueParser*/
-    int lineNum;
     int chatLogCounter;
     public Image chatLogImage;
     public Canvas thisCanvas;
@@ -32,30 +31,38 @@ public class ChatLogParser : MonoBehaviour
     Queue<string> chatLogQueue = new Queue<string>();
 
     public void Start(){
-        parser = GetComponent<DialogueParser>();
         dialogueManager = GameObject.FindWithTag("DialogueManager");
         if (dialogueManager != null) {
             manager = dialogueManager.GetComponent<DialogueManager>();
         }
+        parser = dialogueManager.GetComponent<DialogueParser>();
         currentDialogueText = "";
-        lineNum = 0;
         chatLogCounter = 0;
 
         dialogueTextArray = GameObject.FindGameObjectsWithTag("DialogueLine");
     }
 
     public void Update(){
-        if (((Input.GetMouseButtonDown(0) && !manager.playerTalking) || (Input.GetKeyDown("space") && !manager.playerTalking))) {
+        if (((Input.GetMouseButtonDown(0) && !manager.playerTalking && manager.inCoroutine) || (Input.GetKeyDown("space") && !manager.playerTalking && manager.inCoroutine))) {
             updateChatLogUI();
         }
     }
- 
-    void updateChatLogUI(){
-        currentDialogueText = "<b>" + parser.GetName(lineNum) + "</b>" + ": " + parser.GetContent(lineNum);
-        Debug.Log(currentDialogueText);
+
+    void updateChatLogUI() {
+        if (!manager.playerTalking) {
+            if (!parser.GetContent(lineNum).Equals("")) {
+                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+            } else {
+                lineNum++;
+                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+            }
+        }
+        else {
+            currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+        }
 
         chatLogQueue.Enqueue(currentDialogueText);
-        if(chatLogCounter == 4) {
+        if(chatLogCounter == 5) {
             chatLogQueue.Dequeue();
         } else {
             chatLogCounter++;
@@ -63,7 +70,7 @@ public class ChatLogParser : MonoBehaviour
 
         string[] chatLogArray = chatLogQueue.ToArray();
 
-        int i = dialogueTextArray.Length -1;
+        int i = dialogueTextArray.Length - 1;
         for(int j = chatLogArray.Length - 1; j >= 0; j--) {
             Text currentText = dialogueTextArray[i].GetComponent<Text>();
             currentText.text = chatLogArray[j];

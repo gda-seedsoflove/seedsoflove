@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour {
     int pose;
     string position;
     string[] options;
+    public int getLineNum;
     public bool playerTalking;
     string command;
 
@@ -35,7 +36,8 @@ public class DialogueManager : MonoBehaviour {
     GameObject stageLeft;
     GameObject stageRight;
 
-    bool inCoroutine;
+    // - Modified
+    public bool inCoroutine;
     private IEnumerator typingRoutine;
 
     //initializes variables, triggers start animation, and starts dialogue
@@ -121,6 +123,7 @@ public class DialogueManager : MonoBehaviour {
             playerTalking = false;
             characterName = parser.GetName(lineNum);
             dialogue = parser.GetContent(lineNum);
+            Debug.Log(dialogue);
             pose = parser.GetPose(lineNum);
             position = parser.GetPosition(lineNum);
             DisplayImages();
@@ -136,7 +139,7 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
-        Debug.Log("Character: " + characterName);
+        //Debug.Log("Character: " + characterName);
         var character = GameObject.Find(characterName);
         if (characterName != "" && command!="exit") //if this character is talking, undim
         {

@@ -107,7 +107,8 @@ MonoBehaviour:
   ParticleEffect: {fileID: 1847972573023464, guid: b252ce5ec9618f947b3e2b71d5eacc86,
     type: 2}
   HitEffect: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
-  HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
+  SpecialEffect: {fileID: 1430107362045080, guid: 06500672b08defc49b72418c8591711d,
+    type: 2}
 --- !u!114 &114309931851187804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitKey: 32
+  bottomthreshhold: 0
+  missed: 0
 --- !u!114 &114885593400999060
 MonoBehaviour:
   m_ObjectHideFlags: 1

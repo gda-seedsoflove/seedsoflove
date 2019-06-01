@@ -1,0 +1,20 @@
+Maria;No-no, it’s okay!;0;L
+Maria;It's time to test macros. The game crashes whenever the choice command finds the header it's looking for.;0;L
+Maria;The phrase "No-no, it's okay!" will appear alot, because it needs to? I'm not sure why.;0;L
+Maria;Choice Effect Test.;0;L
+Player;Option One.:line,7,OriginalChoice,Option1;Option Two.:line,5,OriginalChoice,Option2
+Maria;Option Two Selected;0;L
+##;Scene;jumpTo:9
+Maria;Option One Selected;0;L
+##;Scene;jumpTo:9
+Maria;Jumping seems to work fine;0;L
+Maria;Testing functional headers. If you only saw the option selected message, jumpTo worked.;0;L
+##;Scene;choice:OriginalChoice
+Maria;If you're seeing this, choice didn't work. Stop the game now or Unity will crash.;0;L
+##;Scene;header:Option1
+Maria;You've arrived at the option 1 head. Good stuff.;0;L
+##;Scene;jumpTo:19
+##;Scene;header:Option2
+Maria;You've arrived at the option 2 head. Good stuff.;0;L
+##;Scene;jumpTo:19
+end;

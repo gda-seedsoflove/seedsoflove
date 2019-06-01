@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//currently, the choice line in the test script isn't being parsed at all. Why?
+
 public class DialogueManager : MonoBehaviour {
 
     //object to turn text file into usable dialogue objects
     DialogueParser parser;
+    PlayerData PlayerData;
 
     public string dialogue, characterName;
     public int lineNum;
@@ -50,6 +53,7 @@ public class DialogueManager : MonoBehaviour {
         playerTalking = false;
 
         parser = GetComponent<DialogueParser>();
+        PlayerData = GameObject.Find("PlayerData").GetComponent<PlayerData>(); //PlayerData.InstanceOf();
 
         stageLeft = null;
         stageRight = null;
@@ -105,7 +109,8 @@ public class DialogueManager : MonoBehaviour {
     //determines if line is player choice, NPC dialogue, or the end of the scene
     void ParseLine()
     {
-        if(parser.GetName(lineNum) == "end") //end scene, start scene transition
+        Debug.Log("Current Script Line: " + lineNum);
+        if (parser.GetName(lineNum) == "end") //end scene, start scene transition
         {
             EndDialogue();
         }
@@ -116,8 +121,19 @@ public class DialogueManager : MonoBehaviour {
             characterName = parser.GetName(lineNum);
             DisplayImages();
         }
+        else if (parser.GetName(lineNum) == "Scene")  //this line is a scene command
+        {
+            playerTalking = false;
+            command = parser.GetCommand(lineNum);
+            string[] commandData = command.Split(':');
+            Debug.Log(commandData[0]);
+            SceneCommand(commandData);//some stuff to determine which kind of command it is. commandData!
+            ParseLine(); //re-parses the line and checks it again
+        }
         else if (parser.GetName(lineNum) != "Player") //character is talking without needed player input
         {
+            Debug.Log(lineNum);
+            Debug.Log(parser.GetName(lineNum));
             playerTalking = false;
             characterName = parser.GetName(lineNum);
             dialogue = parser.GetContent(lineNum);
@@ -136,9 +152,8 @@ public class DialogueManager : MonoBehaviour {
     //loads relevant images for current line of dialogue
     void DisplayImages()
     {
-        Debug.Log("Character: " + characterName);
         var character = GameObject.Find(characterName);
-        if (characterName != "" && command!="exit") //if this character is talking, undim
+        if (/*characterName != "" && */command!="exit") //if this character is talking, undim
         {
             SetSpritePositions(character);
 
@@ -217,8 +232,12 @@ public class DialogueManager : MonoBehaviour {
             GameObject button = Instantiate(choiceBox);
             Button b = button.GetComponent<Button>();
             ChoiceButton cb = button.GetComponent<ChoiceButton>();
+
             cb.SetText(options[i].Split(':')[0]);
             cb.option = options[i].Split(':')[1];
+            cb.choiceKey = "";
+            cb.choiceValue = "";
+
             cb.box = this;
             
             cb.transform.SetParent(thisCanvas.transform, false);
@@ -314,5 +333,66 @@ public class DialogueManager : MonoBehaviour {
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
         fadeScreen.BeginTransition(fadeScreen.Scenename);
+    }
+
+    //runs commands that don't effect a specific character sprite.
+    void SceneCommand(string[] commandData)
+    {
+        //scene command assumes that the command is properly formatted. You'll get an ArrayOutOfBounds if it isn't.
+        //"choice" assumes the choice it references has already happened. You'll get an error if it isn't.
+        if (commandData[0].Equals("choice"))
+        {
+            //checks if the [1] value is in the Choicesmade hashtable, then goes to the associated choiceValue header
+            if (PlayerData.Choicesmade.Contains(commandData[1]))
+            {
+                //string value = PlayerData.Choicesmade[commandData[1]].ToString();
+                GoToHeader("header:" + PlayerData.Choicesmade[commandData[1]].ToString());
+            }
+            else
+            {
+                Debug.Log("Choices hasn't been made yet/Wasn't found.");
+                ++lineNum;
+            }
+        }
+        else if (commandData[0].Equals("header"))
+        {
+            //headers do nothing when called. They are simply markers for other commands
+        }
+        else if (commandData[0].Equals("jumpTo"))
+        {
+            lineNum = int.Parse(commandData[1]);
+        }
+        /*else if (commandData[0].Equals("jumpToHeader"))
+        {
+            //can we get rid of hard-coded line numbers all together?
+            GoToHeader("header:" + PlayerData.Choicesmade[commandData[1]].ToString());
+        }*/
+        else if (commandData[0].Equals("moodJump"))
+        {
+            if(PlayerData.Mood >= float.Parse(commandData[1]))
+            {
+                GoToHeader("header:" + commandData[2]);
+            }
+            else
+            {
+                GoToHeader("header:" + commandData[3]);
+            }
+        }
+        else
+        {
+            Debug.Log("No such command " + commandData[0] + " at line " + lineNum);
+        }
+    }
+
+    void GoToHeader(string header)
+    {
+        while (!string.Equals(parser.GetCommand(lineNum), header))
+        {
+            //soft parse until you find the exact header.
+            //If the header can't be found, the game will crash
+            Debug.Log(parser.GetCommand(lineNum) + header);
+            ++lineNum;
+        }
+        ++lineNum;
     }
 }

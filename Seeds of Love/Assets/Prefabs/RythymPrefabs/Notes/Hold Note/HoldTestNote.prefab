@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitKey: 32
+  bottomthreshhold: 0
+  missed: 0
 --- !u!114 &114200827436220952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3b4b0ed209e8b43af295c7ae55641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Top: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
+  Top: {fileID: 1685365348680654, guid: bb3b8e930fcac8b45ada18c1c1e508c2, type: 2}
   Bottom: {fileID: 1923337279594222, guid: 2b27f53fcbf32b7438d06004f3c79b31, type: 2}
   HitCircle: {fileID: 1050089359498490, guid: c4db5036cedbd0a4ba8da562113ca9cd, type: 2}
   top: {fileID: 0}
@@ -95,11 +97,14 @@ MonoBehaviour:
   hitcircle: {fileID: 0}
   speed: 0
   length: 3
+  timeafter: 0
   held: 0
   online: 0
-  pulse: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
+  earlyrelease: 0
   interval: 0
   currinterval: 0
+  pulse: {fileID: 1409592073400744, guid: 872dfe66a9f21824a9b29cfadec47288, type: 2}
+  pulseobject: {fileID: 0}
   lr: {fileID: 0}
   c: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114390592664406716
@@ -116,6 +121,8 @@ MonoBehaviour:
   ParticleEffect: {fileID: 1242121508986312, guid: ad6d0a34036d83241b7b75931f806021,
     type: 2}
   HitEffect: {fileID: 1836203565894126, guid: 93515f67d010d0e45a3314809f41fb50, type: 2}
+  SpecialEffect: {fileID: 1430107362045080, guid: 06500672b08defc49b72418c8591711d,
+    type: 2}
   HeldEffect: {fileID: 1811766744049844, guid: b0d5493429fb48b47a229ac195e05a74, type: 2}
 --- !u!114 &114451954375200874
 MonoBehaviour:

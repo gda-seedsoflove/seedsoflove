@@ -7,13 +7,16 @@ namespace Script.Song
         public int Lane { get; set; }
         public float Speed { get; set; }
 
+        public bool isHitNote { get; set; }
         public bool isTouchNote { get; set;}
+        public int SpecialNum { get; set;} // Default 0, if not then its special!
 
         public bool isHoldNote { get; set; }
         public float Length { get; set; }
         public bool Holding { get; set; }
 
         public bool Hit { get; set; }
+        public bool Missed { get; set; }
 
         public char convertType(int type)
         {
@@ -38,7 +41,7 @@ namespace Script.Song
         public void setType(char type)
         {
             if (type == 'a') {
-                //Do nothing, its a normal not
+                isHitNote = true;
             }
             else if(type == 'b')
             {
@@ -47,7 +50,12 @@ namespace Script.Song
             else if (type == '1')
             {
                 Length = 1;
+
                 isHoldNote = true;
+            }
+            else if (type == '2')
+            {
+                //do nothing
             }
         }
 

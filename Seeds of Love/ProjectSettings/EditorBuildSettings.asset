@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype/Prototype-Title.unity
     guid: 8be6ffda3b482524fb5c5eca043c2f72
   - enabled: 1
+    path: Assets/Scenes/Test Scenes/NewTitle.unity
+    guid: c84247cdfac17aa4fa51a060f10008bf
+  - enabled: 1
     path: Assets/Scenes/SlugCon/TransitionToBar.unity
     guid: 94e38717b43793348b3729e6c15c89b8
   - enabled: 1
@@ -38,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlugCon/IntroVN.unity
     guid: 7a3e0d2d60d803c49a71e4f56ee63aa9
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/FarmRhythmGame1.unity
+    guid: e538d5e8770581a4d8c858b069a632b4
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/FarmRhythmGame2.unity
+    guid: 1e4347507f0d981488028a4e1af96880
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/BarRhythmGame1.unity
+    guid: 8e0af4b1fb86a1f40aaa56efd7850e5f
   m_configObjects: {}

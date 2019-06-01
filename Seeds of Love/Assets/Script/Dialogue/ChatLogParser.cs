@@ -72,11 +72,11 @@ public class ChatLogParser : MonoBehaviour
 
         string[] chatLogArray = chatLogQueue.ToArray();
 
-        int i = dialogueTextArray.Length - 1;
+        int i = 0;
         for(int j = chatLogArray.Length - 1; j >= 0; j--) {
             Text currentText = dialogueTextArray[i].GetComponent<Text>();
             currentText.text = chatLogArray[j];
-            i--;
+            i++;
         }
         lineNum++;
     }

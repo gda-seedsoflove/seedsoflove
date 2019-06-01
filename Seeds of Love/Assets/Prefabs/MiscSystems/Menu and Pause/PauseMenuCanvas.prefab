@@ -741,6 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bf2b9c5bd13c40932438459bc148f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newSelect: {fileID: 1244131015882476}
   optionsPanel: {fileID: 1345608927360756}
   pausePanel: {fileID: 1888534146321232}
 --- !u!114 &114514303984057730
@@ -754,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30bf2b9c5bd13c40932438459bc148f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newSelect: {fileID: 1379787028672182}
   optionsPanel: {fileID: 1345608927360756}
   pausePanel: {fileID: 1888534146321232}
 --- !u!114 &114571122088342360

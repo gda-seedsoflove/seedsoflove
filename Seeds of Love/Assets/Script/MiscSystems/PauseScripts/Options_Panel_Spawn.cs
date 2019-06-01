@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class Options_Panel_Spawn : MonoBehaviour
 {
+    public GameObject newSelect;
 
     public GameObject optionsPanel;
     public GameObject pausePanel;
@@ -21,10 +24,12 @@ public class Options_Panel_Spawn : MonoBehaviour
 
             optionsPanel.SetActive(true);
             pausePanel.SetActive(false);
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(newSelect);
         } else
         {
             optionsPanel.SetActive(false);
             pausePanel.SetActive(true);
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(newSelect);
         }
     }
 

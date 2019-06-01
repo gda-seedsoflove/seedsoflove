@@ -188,7 +188,7 @@ MonoBehaviour:
 
     Editing
 
-    Editing & Dialogue'
+    Dialogue'
 --- !u!222 &25875295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ RectTransform:
   m_LocalScale: {x: 0.9997383, y: 0.9997383, z: 0.9997383}
   m_Children: []
   m_Father: {fileID: 1040559353}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -811,10 +811,12 @@ MonoBehaviour:
 
 
 
+
+
+
     Composer
 
-
-    Sound Design'
+'
 --- !u!222 &571551077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -889,11 +891,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Lead
+  m_Text: 'Lead Programer
+
 
     Sound System & Technical Design
 
+
     Gameplay
+
+
+    Programmer
 
 
 
@@ -1053,8 +1060,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1661624322}
   - {fileID: 225564033}
+  - {fileID: 1661624322}
   - {fileID: 636555690}
   m_Father: {fileID: 2070680729}
   m_RootOrder: 5
@@ -2110,7 +2117,7 @@ RectTransform:
   m_LocalScale: {x: 0.9996534, y: 0.9996534, z: 0.9996534}
   m_Children: []
   m_Father: {fileID: 1040559353}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2151,9 +2158,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Kenny Doan
 
+
     Thomas Applewhite
 
+
     Rachel Haub
+
 
     Parker Soto
 
@@ -2378,11 +2388,12 @@ MonoBehaviour:
 
     Madeleine Glenn
 
-    Parmpreet Gill
+    Dallas Truong
 
     Angel Martinez-Portillo
 
-    Dallas Truong'
+
+    Parmpreet Gill'
 --- !u!222 &1927650661
 CanvasRenderer:
   m_ObjectHideFlags: 0

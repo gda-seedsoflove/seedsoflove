@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 301837475}
   - component: {fileID: 301837477}
   m_Layer: 5
-  m_Name: Credit Chunk (3)
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -584,23 +584,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Rythm & Sunnny  VN Sprite
-
-    Character Concept & UI
-
-    Barnabus and Sunny Concept & BG
-
-
-
-    Sunny Clothes Concept
-
-    Rhythm Sprites
-
-    Rhythm BG
-
-    Character Outfit Concep & UI Emoji
-
-'
+  m_Text: "Sunny\u2019s VN & Rhythm Sprites\nCharacter Concept & UI\nBarnabus and
+    Sunny Concept & BG\nRosa Concept & VN Sprite\n\nSunny Clothes Concept\nRhythm
+    Sprites\nRhythm BG\nCharacter Outfit Concep & UI Emoji\n"
 --- !u!222 &400602143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -819,8 +805,6 @@ MonoBehaviour:
 
 
 
-    Composer
-
 '
 --- !u!222 &571551077
 CanvasRenderer:
@@ -899,7 +883,7 @@ MonoBehaviour:
   m_Text: 'Lead Programer
 
 
-    Sound System & Technical Design
+    Sound & Dialogue Systems
 
 
     Gameplay
@@ -931,7 +915,7 @@ GameObject:
   - component: {fileID: 643724310}
   - component: {fileID: 643724312}
   m_Layer: 5
-  m_Name: Credit Chunk
+  m_Name: Original Concept
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1231,7 @@ GameObject:
   - component: {fileID: 1379644863}
   - component: {fileID: 1379644865}
   m_Layer: 5
-  m_Name: Credit Chunk (2)
+  m_Name: Artists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1559,6 +1543,8 @@ MonoBehaviour:
     Gigi Bachtel
 
     Kenny Doan
+
+    Eric Long
 
     Paige R.'
 --- !u!222 &1425497183
@@ -2393,7 +2379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Fernando Zamora
+  m_Text: 'Fernando "dusk" Zamora
 
     Griffin "grifbot" Conway
 
@@ -2402,7 +2388,6 @@ MonoBehaviour:
     Dallas Truong
 
     Angel Martinez-Portillo
-
 
     Parmpreet Gill'
 --- !u!222 &1927650661

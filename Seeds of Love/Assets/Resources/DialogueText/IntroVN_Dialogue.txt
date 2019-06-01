@@ -7,7 +7,7 @@ Maria;Man... Crops grown by my own two hands... A bright red tractor... cute lit
 Rosa;There's no sheep.;0;R
 Maria;Just me and my abuela....;2;L
 Maria;No loud noises, no annoying traffic, no scary dark alleyways... just open fields and -;1;L
-Maria;AGH!;7;L
+Maria;AGH!;13;L
 Rosa;Rock.;3;R
 Maria;Ahaha... Got a lot of those around here?;2;L
 Rosa;Mmhm. You okay?;3;R

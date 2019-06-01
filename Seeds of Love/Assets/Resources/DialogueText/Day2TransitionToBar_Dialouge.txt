@@ -2,13 +2,13 @@ Maria;Phew, I'm finally done... I thought I'd never finish!! All that hard work 
 Rosa;María, how did it go today?;2;R
 Maria;It was exhausting. This morning, right after you left, I think the tractor broke...;15;L
 Rosa;The tractor broke?!;3;R
-Maria;Yeah, I couldn't get it started, but...;0;L
+Maria;Yeah, I couldn't get it started, but -;0;L
 Rosa;Why didn't you call me?;3;R
 Maria;I didn't want to bother you on your day off! Besides, look! I got the job done!;0;L
+Rosa;Dios mío! María, did you plow all this by hand?;3;R
 Maria;Yes I did!;1;L
 Rosa;Goodness, María. I'm impressed and all, but I still think you should have called me to fix the tractor!;1;R
-Rosa;Dios mío! María, did you plow all this by hand?;3;R
-Rosa;Hard work is imporant, but it's also importnat to save your energy wherever you can.;1;R
+Rosa;Hard work is imporant, but it's also important to save your energy wherever you can.;1;R
 Maria;Oh... Oops.;2;L
 Rosa;...However, you did some really good work today. Well done, mija.;1;R
 Rosa;What a farmer you've become.;1;R
@@ -20,7 +20,7 @@ Maria;Yes! Go out and have fun!;9;L
 Maria;If I've learned anything here, it's that farming is hard work, and because of that, you more than anyone deserve breaks.;9;L
 Rosa;...;0;R
 Rosa;Thanks you, mija.;0;R
-Rosa;I'm glad I have such a responsible granddaughter to help me around the garm. I'll make sure I schedule some more days off.;1;R
+Rosa;I'm glad I have such a responsible granddaughter to help me around the farm. I'll make sure I schedule some more days off.;1;R
 Maria;Yay!;1;L
 Rosa;I guess I need to go fix the tractor now.;0;R
 Rosa;Hand me the keys?;0;R

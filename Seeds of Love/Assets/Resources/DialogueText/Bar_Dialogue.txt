@@ -53,7 +53,7 @@ Sunny;I mean, I just got off of work...;0;R
 Sunny;And I saw that the bar was open...;0;R
 Sunny;So I came in...;0;R
 Sunny;Cause I like drinking here...;0;R
-Sunny;I like do the occasional social drinking...;2;R
+Sunny;I just do the occasional social drinking...;2;R
 Sunny;Alone...;5;R
 Sunny;...;5;R
 Sunny;But anyways, what brings you here? Why talk to someone like me?;9;R

@@ -1,7 +1,7 @@
-Sunny;I got a little frustrated because she’s usually such a sweetheart, and.. Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
+Sunny;I guess I just got a little frustrated because she’s usually such a sweetheart, and all but... Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
 Maria;No-no, it’s okay!;0;L
 Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;11;R
-Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed to someone to talk to.;0;L
+Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed someone to talk to.;0;L
 Sunny;...;5;R
 Maria;And you shouldn’t have to deal with all that on your own.;6;L
 Sunny;... Thank you.;0;R
@@ -12,9 +12,9 @@ Sunny;Um, this is a bit random, but...;0;R
 Maria;Yeah?;0;L
 Sunny;What time is it?;3;R
 Maria;Oh. Uh, around midnight.;0;L
-Sunny;That’s... pretty late. Sorry, I should head home soon.;3;R
-Maria;Sorry for keeping you so long!;0;L
-Sunny;I would stay longer! If I could. I’ve stayed longer tonight than I ever have.;0;R
+Sunny;That’s... actually pretty late. Sorry, I should head home now.;3;R
+Maria;Oh, sorry for keeping you so long!;0;L
+Sunny;I would stay longer! If I could. I’ve stayed longer tonight than I ever have before.;0;R
 Sunny;And, about what you said...;0;R
 Sunny;I’ve, um, never been able to talk to someone like this before either.;9;R
 Maria;Oh?!;5;L
@@ -22,7 +22,7 @@ Sunny;But I really should be going!;6;R
 Maria;Yes! Got, um, class tomorrow?;2;L
 Sunny;Pfft..! It’s Friday, María. Well, Saturday now.;1;R
 Maria;Oh, right!;5;L
-Sunny;But seriously, thank you for talking to me tonight. Going up to people is hard, so I usually sit alone.;0;R
+Sunny;But seriously, thank you for talking to me tonight. I'm too shy to go up to people, so I usually sit alone.;0;R
 Sunny;This was really nice.;1;R
 Maria;Hey, thanks for talking to me too. I'm glad my lame pick-up line didn't scare you off.;1;L
 Sunny;Don’t say that! I thought it was cute.;0;R
@@ -30,9 +30,18 @@ Maria;(!!!);4;L
 Maria;Nice - nice talking with you though! See you around?;2;L
 Sunny;Oh, definitely. 'Cause, you know, I live here.;1;R
 Maria;Right!;5;L
+Sunny;Bye María.;1;R
 Maria;Good night, Sunny.;1;L
 ##;Sunny;exit
-Maria;(AAAAAAAAAAAAAAAA);2;L
-Maria;(SHE WAS SO CUTE!!!!!!);2;L
-Maria;(BUT WE ENDED UP TALKING UNTIL MIDNIGHT!!!!!! I HAVE TO BE UP EARLY TOMORROW!!!!);5;L
+Maria;(Woah.);0;L
+Maria;(...);11;L
+Maria;(Ahhhhhhhhhhh!!!);2;L
+Maria;(She was so cute!!!!!!);2;L
+Maria;(And we ended up talking until midnight!!!!!!);5;L
+Maria;(Wait... midnight?);14;L
+Maria;(OH NO, I HAVE TO BE UP EARLY TOMORROW!!!!!);14;L
+Maria;(ABUELA IS GOING TO BE SO MAD AT ME! I HAVE TO...);14;L
+Maria;Ack!;13;L
+Barnabus;The door.;0;R
+Maria;I MEANT TO DO THAT!;0;L
 end;

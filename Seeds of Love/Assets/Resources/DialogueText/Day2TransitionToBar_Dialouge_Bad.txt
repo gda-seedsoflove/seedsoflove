@@ -1,6 +1,6 @@
 Maria;Ughhh...;15;L
 Rosa;María! What happened here!?;2;R
-Rosa;What happened to the field!?;2;R
+Rosa;What happened to the fields!?;2;R
 Maria;Uhh... funny story actually.;5;L
 Maria;Right after you left, the tractor broke down, but I didn't want to let you down, so I decided to plow the fields by hand instead!;4;L
 Maria;But, it turns out that plowing a field by hand is really difficult...;4;L
@@ -28,7 +28,16 @@ Maria;I thought this would be my only chance to show you that I can do this myse
 Maria;I just ended up creating more work for you...;4;L
 Rosa;It's not your fault. I guess I shouldn't have left you at this farm alone. Even the most capable farmers need farmhands.;4;R
 Rosa;Don't worry too much about it. You'll get it one day.;0;R
-Maria;Thanks abuela.;9;L
+Maria;Thanks abuela...;9;L
+##Scene;moodJump:Bar:0.5:D2TranTBarS1-1:D2TranTBarS1-2
+##Scene;header:D2TranTBarS1-1
+Maria;I thought since I've been doing so well up to this point that I could handle it by myself.;0;L
+##Scene;jumpToHeader:D2TranTBarS1-C
+##Scene;header:D2TranTBarS1-2
+Maria;I guess even after a full month here, I'm still messing up.;0;L
+##Scene;jumpToHeader:D2TranTBarS1-C
+##Scene;header:D2TranTBarS1-C
+Maria;I'm sorry;0;L
 Rosa;No worries. Now come on, let's get inside.;0;R
 Maria;Wait, how was it today?;0;L
 Rosa;How was what?;0;R
@@ -37,7 +46,8 @@ Maria;How was it? What'd you do? Who's Donna? Where'd you go?;1;L
 Rosa;It was good, but maybe not worth it if I'm going to come back to a destroyed field everytime.;1;R
 Maria;No! You more than anyone deserves a break. Don't let me messing up this one time stop you from enjoying yourself.;9;L
 Maria;I still have room to grow. Just you wait! Someday, I'll be able to do it all for you!;9;L
-Rosa;You'll make a great farmer Maria...;0;R
+Rosa;...;0;R
+Rosa;You'll make a great farmer María...;1;R
 Maria;Really?;5;L
 Rosa;Yes. And I guess you have a point. I'll make sure to schedule more time off if that makes you happy.;1;R
 Rosa;And I'll make sure Barnabus is around to help you next time.;0;R
@@ -47,7 +57,7 @@ Maria;Uhh... So you can plan your next day off?;5;L
 Rosa;Can't we do that over the phone? It's getting late.;3;R
 Maria;Umm... No! We have to go in person!;5;L
 Rosa;Okay, but why?;0;R
-Maria;Because... I'm going to the bar and I need you there to make sure I get home at a resonable hour?;5;L
+Maria;Because... I'm going to the bar and I need you there to make sure I get home at a reasonable hour?;5;L
 Rosa;You have been coming home rather late these last few days... Sure, I guess I can come with you this time.;0;R
 Maria;Great! Let's go!;1;L
 end;

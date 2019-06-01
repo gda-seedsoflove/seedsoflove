@@ -1,24 +1,32 @@
 Rosa;María!!!;2;R
 Rosa;...;2;R
 Rosa;María!!!!!!!;2;R
-Maria;Ahh, I'm coming, I'm coming.;0;L
+Maria;Agh, I'm coming, I'm coming.;15;L
 Rosa;...;0;R
-Maria;I'm up, and here, and... yaaaaawn... yeah.;0;L
+Maria;I'm up, and here, and... yaaaaawn... yeah.;15;L
 Rosa;I thought after a month of working here that you would start waking up in the morning without me having to call you.;3;R
 Maria;I’m sorry. It’s just that last night, it was just...;0;L
 Rosa;And what’s with you going out every weekend? Don’t you ever get tired of that?;0;R
 Maria;No... I don't think so.;1;L
 Maria;(Not as long as I get to see Sunny again.);2;L
-Rosa;Maria!;2;R
+Rosa;María!;2;R
 Maria;Yes!;0;L
 Rosa;Honestly, I think these late nights are getting to you.;3;R
 Maria;What? No... I think I'm doing great!;1;L
 Rosa;I'm talking to you, and you're barely paying attention.;3;R
 Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC1-2
+##Scene;choice:D2KitchenC1
+##Scene;header:D2KitchenC1-1
+Maria;Sorry, this is just me. I never woke up before 7am in college.;2;L
+##Scence;jumpToHeader;D2KitchenC1-C
+##Scene;header:D2KitchenC1-2
+Maria;Sorry, I was daydreaming about somebody.;2;L
+##Scence;jumpToHeader;D2KitchenC1-C
+##Scence;header:D2KitchenC1-C
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
 Rosa;María... as farmers, we need to trust each other that we can all get our work done.;0;R
-Rosa;So far, you've been handling it, but I'm worried that you'll lose interest and just quit.;0;R
+Rosa;So far, you've been handling it, but I'm worried that one day you'll lose interest and just quit.;0;R
 Maria;(Wait, did she just call me a farmer?);0;L
 Maria;(Am I a real farmer now?);9;L
 Rosa;I... hold on. Let me get the phone.;0;R
@@ -48,7 +56,7 @@ Maria;Yes?;0;L
 Rosa;Do you know what to do today?;3;R
 Maria;Yes...?;6;L
 Rosa;Since you sound unsure, let's go over it.;3;R
-Rosa;Most of the spring harvest is over so all you have to do is...;0;R
+Rosa;Most of the spring harvest is over so all you have to do is -;0;R
 Maria;(Wow, abuela thinks I'm a real farmer now.);1;L
 Maria;(She's going to trust me with the whole farm. I can't let her down.);1;L
 Maria;(I'm going to show her that when I say I can do something, I can do it.);1;L

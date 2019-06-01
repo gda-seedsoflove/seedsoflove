@@ -77,7 +77,7 @@ Maria;What? But it's so amazing here! Everything seems so different, and new, an
 Maria;Well, probably. I still haven't seen any sheep.;6;L
 Sunny;I guess you’ve been having a good time then. Have you been around town?;1;R
 Maria;Not much yet... But I think I’m going to really like it here.;1;L
-Sunny;Really? If you're excited by a little town like ours, where are you from?;0;R
+Sunny;Really? Why do you say that?;0;R
 Maria;Oh, I’m from the bay. It’s like big and bustling and busy, but once you’ve tried everything, it feels so empty.;0;L
 Maria;I was going to college in the city, 'cause that was just what you do after high school, but now that I’m almost done, I just... didn’t feel right there.;6;L
 Maria;I had a moment where I was like, “What am I doing?” So I decided to come here to figure that out.;0;L

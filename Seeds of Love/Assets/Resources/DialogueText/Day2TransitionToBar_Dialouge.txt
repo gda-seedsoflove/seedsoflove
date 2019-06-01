@@ -1,12 +1,12 @@
 Maria;Phew, I'm finally done... I thought I'd never finish!! All that hard work paid off.;15;L
-Rosa;Maria, how did it go today?;2;R
+Rosa;María, how did it go today?;2;R
 Maria;It was exhausting. This morning, right after you left, I think the tractor broke...;15;L
 Rosa;The tractor broke?!;3;R
 Maria;Yeah, I couldn't get it started, but...;0;L
 Rosa;Why didn't you call me?;3;R
 Maria;I didn't want to bother you on your day off! Besides, look! I got the job done!;0;L
 Maria;Yes I did!;1;L
-Rosa;Goodness, Maria. I'm impressed and all, but I still think you should have called me to fix the tractor!;1;R
+Rosa;Goodness, María. I'm impressed and all, but I still think you should have called me to fix the tractor!;1;R
 Rosa;Dios mío! María, did you plow all this by hand?;3;R
 Rosa;Hard work is imporant, but it's also importnat to save your energy wherever you can.;1;R
 Maria;Oh... Oops.;2;L

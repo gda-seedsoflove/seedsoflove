@@ -1,7 +1,7 @@
 Maria;(Well, I guess this place seems okay...);0;L
 Bartender;Here for a drink?;0;R
 Maria;(!!!);3;L
-Maria; No! I mean, yes! I... I... yeah.;4;L
+Maria;No! I mean, yes! I... I... yeah.;4;L
 Bartender;After what I saw on the farm, I think you need one.;0;R
 Maria;You saw what happened?;3;L
 Bartender;Mhmm...;0;R
@@ -49,21 +49,22 @@ Maria;(WHY DID I SAY THAT?!!!!!!);3;L
 Maria;(WHERE CAN I HIDE?!?!?);4;L
 Maria;(Today is NOT working out for me...);4;L
 Sunny;Pfft...;1;R
-Sunny;That's an interesting response to a greeting;1;R
+Sunny;That's an interesting response to a greeting.;1;R
 Sunny;You okay there?;6;R
 Maria;Oh, yeah... sorry. Uhm... Hello.;3;L
 Sunny;Long day?;6;R
 Maria;Uhh... yeah... something like that.;0;L
 Sunny;Yeah. It gets like that around here.;0;R
 Maria;You too then?;0;L
-Sunny;Yeah, I guess… ;5;R
+Sunny;Yeah, I guess... ;5;R
 Maria;I feel that. Farming apparently isn’t something I'm cut out for.;0;L
 Sunny;Yeah, it’s harder than it looks.;6;R
 Maria;Tell me about it.;0;L
 Sunny;You're a farmer?;0;R
 Maria;Well, trying to be at least.;6;L
+Sunny;...;0;R
 Sunny;My name is Sunny, by the way.;0;R
-Maria;Oh, Maria. Nice to meet you.;0;L
+Maria;Oh, María. Nice to meet you.;0;L
 Sunny;So, first time in a bar?;0;R
 Maria;Yeah, how’d you figure?;0;L
 Sunny;Well, I saw you choking on a bourbon, so I assumed you don’t drink much.;2;R
@@ -86,9 +87,9 @@ Maria;I fell over trying to get the goddamn thing out of the ground and my hair 
 Sunny;...;6;R
 Maria;... Sorry;3;L
 Sunny;No, it’s okay. I was just worried that you might break a glass and hurt yourself.;6;R
-Maria;What? Me? Hurt myself? I’d never…;3;L
+Maria;What? Me? Hurt myself? I’d never...;3;L
 Sunny;You just said that you fell over trying to pull a carrot out of the ground.;6;R
-Maria;What? That was just a… I didn’t mean…;3;L
+Maria;What? That was just a... I didn’t mean...;3;L
 Maria;(She hates me.);4;L
 Sunny;Don't Worry, I’m just messing with you.;5;R
 Maria;Oh, ahha ha ha… you got me…;5;L
@@ -97,7 +98,7 @@ Maria;Well, the sheep are really cute.;1;L
 Maria;...Probably. I still haven't seen one.;6;L
 Maria;And the fact that I get to talk to a cute girl makes this entire day worth it.;2;L
 Sunny;...;9;R
-Maria;(Good job, Maria, good job.);4;L
+Maria;(Good job, María, good job.);4;L
 Sunny;Well, uh… thank you.;1;R
-Sunny;So… uh… um… tell me more about yourself, Maria.;0;R
+Sunny;So... uh... um... tell me more about yourself, María.;0;R
 end;

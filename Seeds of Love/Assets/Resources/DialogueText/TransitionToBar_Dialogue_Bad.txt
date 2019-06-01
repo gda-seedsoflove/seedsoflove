@@ -1,7 +1,7 @@
 Maria;(Ugh... That could have gone better...);6;L
 Maria;(There’s dirt in my shoes... in my hair... in my clothes...);6;L
 Maria;(Actually, it’s hard to think of any part of me that ISN’T covered in dirt...);6;L
-Maria;(I don't know if coming here was a good idea...);6;L
+Maria;(I don't know if coming here was such a good idea...);6;L
 Rosa;How are you doing, mija?;0;R
 Maria;I'm fine...;2;L
 Maria;(I just want to go to bed.);0;L
@@ -11,12 +11,12 @@ Maria;(I couldn't even handle picking carrots.);0;L
 Rosa;...;3;R
 Rosa;... All right. Let's go inside. Once we get cleaned up, we can do something fun.;0;R
 Maria;Fun?;6;L
-Rosa;You know, I still have all your favorite board games in the attic. You want to give them a try?;1;R
+Rosa;I still have all your favorite board games in the attic. You want to give them a try?;1;R
 Maria;Abuelita, I haven’t played any of those things in years.;6;L
 Rosa;Oh, come on. It’s always good to relax with something familiar after a bad day at work.;0;R
 Maria;(But board games?);6;L
 Maria;(I'm not a kid anymore!);6;L
-Maria;I told you, Rosa, I’m fine! And besides...I already have plans to go out tonight!;6;L
+Maria;I told you, I’m fine! And besides...I already have plans to go out tonight!;6;L
 Rosa;Into town? Really? Isn’t it a bit late for that?;0;R
 Maria;It’s the perfect time! I’m going to go check out the nightlife! Meet some new people!;1;L
 Rosa;But if you're this tired after just a day, you really should stay in and get some rest.;3;R
@@ -26,4 +26,5 @@ Maria;I'm going to go out tonight. I'll be back soon, so don't worry about me.;1
 Maria;Bye, abuelita.;0;L
 ##;Maria;exit
 Rosa;María, wait...!;3;R
+Rosa;You're caked in dirt...;3;R
 end;

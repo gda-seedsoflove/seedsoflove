@@ -3,8 +3,8 @@ Maria;(Oof, that was a bad pun.);3;L
 Maria;(Oh, there’s my abuela.);0;L
 Rosa;How was your first day, mija?;0;R
 Maria;Oh, hey abuelita! It was so great today! The rhythm of farming felt so natural!;1;L
-Maria;(Oh, that one wasn't any better.);3;L
-Rosa;I do have to admit you picked this up quickly. Not bad, for your first day.;0;R
+Maria;(Oh, that pun wasn't any better.);3;L
+Rosa;I do have to admit you picked this up rather quickly. Not bad, for your first day.;0;R
 Maria;Right! I’m so good at this! I can’t wait for tomorrow!;1;L
 Rosa;Well, why wait? Now that the fields are clear, there’s nothing stopping you from plowing them again.;0;R
 Rosa;If you go now, you might be able to finish by sunrise.;0;R
@@ -17,10 +17,10 @@ Rosa;Alright, enough messing around. Let’s go inside. You must be tired after 
 Maria;Actually, I was thinking that I would go out tonight. It’s my first day here, so I’m excited to see the town!;1;L
 Rosa;Yes, and while we're doing that, why don't we tip some cows too.;0;R
 Maria;Can we?;0;L
-Rosa;No, now come on, let's go inside;0;R
+Rosa;No, now come on, let's go inside.;0;R
 Maria;So, I can't go out?;0;L
 Rosa;Oh, you were serious.;0;R
-Rosa;Maria, I don’t know what you usually get up to at night, but if you’re trying to be a farmer, you really should get some sleep.;0;R
+Rosa;María, I don’t know what you usually get up to at night, but if you’re trying to be a farmer, you really should get some sleep.;0;R
 Rosa;We’re going to have to work even harder tomorrow, and that means waking up early too.;0;R
 Maria;Aw, don’t worry about it! I can work just fine without much sleep.;1;L
 Maria;College, you know.;2;L

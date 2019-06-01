@@ -19,7 +19,7 @@ public class DragObject : MonoBehaviour {
             b = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, a.z))- gameObject.transform.position;
             //Debug.Log(b);
             Vector2 prev = gameObject.GetComponent<Rigidbody2D>().velocity;
-            Vector2 curr = new Vector2(prev.x * .8f + b.x * speedMult, prev.y * .8f + b.y * speedMult);
+            Vector2 curr = new Vector2(prev.x * .83f + b.x * speedMult, prev.y * .83f + b.y * speedMult);
             if (curr.magnitude > maxSpeed)
             {
                 float x = maxSpeed / curr.magnitude;

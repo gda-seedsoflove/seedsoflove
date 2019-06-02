@@ -18,11 +18,11 @@ Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2
 ##;Scene;choice:D2KitchenC1
 ##;Scene;header:D2KitchenC11
 Maria;Sorry, this is just me. I never woke up before 7am in college.;2;L
-##;Scence;jumpToHeader;D2KitchenC1C
+##;Scene;jumpToHeader:D2KitchenC1C
 ##;Scene;header:D2KitchenC12
 Maria;Sorry, I was daydreaming about somebody.;2;L
-##;Scence;jumpToHeader;D2KitchenC1C
-##;Scence;header:D2KitchenC1C
+##;Scene;jumpToHeader:D2KitchenC1C
+##;Scene;header:D2KitchenC1C
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
 Rosa;María... as farmers, we need to trust each other that we can all get our work done.;0;R

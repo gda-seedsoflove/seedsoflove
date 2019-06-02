@@ -63,8 +63,8 @@ Sunny;I'm sorry, I'm not usually like this.;9;R
 Rosa;Right...;0;L
 Rosa;So, how did you get to know my granddaughter?;0;L
 Sunny;Oh! Interestingly enough, we met right here!;3;L
-##;Scene;moodJump:Bar:0.5:D2BarS1-1:D2BarS1-2
-##;Scene;header:D2BarS1-1
+##;Scene;moodJump:Bar:0.5:D2BarS11:D2BarS12
+##;Scene;header:D2BarS11
 Sunny;I remember her walking in, brimming with confidence.;0;R
 Sunny;She ordered a bourbon, and proceeded to choke on it.;1;R
 Sunny;That didn't seem to stop her though, so after Barnabus gave her a glass of milk, she came over, and...;1;R
@@ -72,11 +72,11 @@ Sunny;... Maybe this was a joke... but she said the funniest pick-up line.;5;R
 ##;Scene;choice:D1BarC1
 ##;Scene;header:D1GoodBarD1
 Sunny;She said if I was a vegetable, I must be a cutecumber.;9;R
-##;Scene;jumpToHeader;D2BarS1-C
+##;Scene;jumpToHeader:D2BarS1C
 ##;Scene;header:D1GoodBarD2
 Sunny;She said she died on the bourbon, and I was the angel in heaven.;9;R
-##Scene;jumpToHeader;D2BarS1-C
-##;Scene;header:D2BarS1-2
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS12
 Sunny;I remember she walked in really sad and covered in dirt.;0;R
 Sunny;I guess Barnabus must have notieced how bad she felt, so he gave María a drink on the house.;0;R
 Sunny;She ended up choking on it though...;6;R
@@ -84,13 +84,56 @@ Sunny;She was a new person in the bar, and I felt bad, so I came over to see if 
 ##;Scene;choice:D1BarC1
 ##;Scene;header:D1BadBarD1
 Sunny;I don't know what was going on in her head, but when I said hi to her, she called me a cutecumber.;1;R
-##;Scene;jumpToHeader;D2BarS1-
+##;Scene;jumpToHeader:D2BarS1C
 ##;Scene;header:D1BadBarD2
 Sunny;I don't know what was going on in her head, but when I said hi to her, she called me a bourbon angel.;1;R
-##;Scene;jumpToHeader;D2BarS1-C
+##;Scene;jumpToHeader:D2BarS1C
 ##;Scene;header:D2BarS1-C
 Rosa;Quite a conversation starter.;1;L
 Sunny;I know right? I was trying so hard not to laugh.;1;R
 Sunny;Anyways, after that whole thing, we just started talking to each other about stuff. She told me why she decided to come here.;
-
+##;Scene;moodJump;AfterBar:0.5:D2BarS11;D2BarS12
+##;Scene;header:D2BarS11
+Sunny;Then I accidentally went into a full on rant about my students.;1;R
+Sunny;But she listened to the entire thing, which is why I really like her...;0;R
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS12
+Sunny;I asked her more about herself, and she went into this whole rant about how her college life didn't work out for her, and how she made the leap to come here.;0;R
+Sunny;And I felt like i really connected with her in that moment, which is why I ended up really liking her...;0;R
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS1C
+Rosa;Oh, are the two of you...?;1;L
+Sunny;What? Oh, uhhh..., no...;3;R
+Sunny;I didn't meant that I like her like that...;3;R
+Sunny;She's just been a really great... friend...;3;R
+Rosa;Uh huh...;0;L
+##;Rosa;exit
+Maria;Hey, how are you guys?;9;L
+Sunny;Maria! Hey... hi... Oh, yeah... no... it's been great talking to your grandma;4;R
+##;Maria;exit
+Rosa;Yes, I got to learn a lot more about you.;2;L
+##;Rosa;exit
+Maria;Oh that's cool.;9;L
+Maria;Wait, what'd you tell her?;0;L
+Sunny;Nothing! Just telling her about the first time we met...;4;R
+Maria;Oh, right... that was quite a day...;2;L
+Maria;(Great, now Rosa knows...);5;L
+##;Maria;exit
+Rosa;I'll leave you two kids to your talk. Remember María, we're leaving at ten.;0;L
+##;Rosa;exit
+Maria;Yes abuela.;0;L
+Sunny;Wow, your grandma gave you a curfew?;0;R
+Maria;Yeah... she wanted to make sure I stopped coming home at four in the morning;2;L
+Sunny;Oh... yeah, I guess our late night are starting to get later and later.;5;R
+Maria;I don't mind, just menas I get to spend more time with you.;2;L
+Sunny;...;3;R
+Sunny;I feel the same way...;2;R
+Maria;(She feels the same way?);5;L
+Sunny;...;5;R
+Maria;...;5;L
+Maria;Hey Sunny?;L
+Sunny;Yeah?;3;R
+Maria;May I have this dance?;9;L
+Sunny;...;3;R
+Sunny;How can I say no?;1;R
 end;

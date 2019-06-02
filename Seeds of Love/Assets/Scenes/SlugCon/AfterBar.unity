@@ -367,7 +367,7 @@ Prefab:
         type: 2}
       propertyPath: script
       value: 
-      objectReference: {fileID: 4900000, guid: 5dc7069d3ba3fb941a3b500a3834e3bc, type: 3}
+      objectReference: {fileID: 4900000, guid: 66ba0cfe97a4e674488e42651047f226, type: 3}
     - target: {fileID: 114642502970670470, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_Sprite
@@ -453,7 +453,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: bf6cd1c4137ce8f4ca2025bd40fa6658, type: 3}
+      objectReference: {fileID: 4900000, guid: a4b6d3b4569f29d41affac2442931ba7, type: 3}
     - target: {fileID: 224090678099549884, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder
@@ -574,6 +574,7 @@ MonoBehaviour:
   rightkeybind: 0
   spacekeybind: 0
   dashkeybind: 0
+  lastscene: 
 --- !u!4 &1189118472
 Transform:
   m_ObjectHideFlags: 0

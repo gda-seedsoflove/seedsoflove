@@ -37,8 +37,10 @@ Sunny;Absolutely. If you ever want to chat, I would love to meet up again.;1;R
 Maria;That would be amazing...;5;L
 Maria;Okay, I really have to go now. Good night Sunny! I’ll be sure to -;2;L
 Maria;ACK!;13;L
+##;Sunny;exit
 Barnabus;The door.;0;R
 Maria;Haha, I meant to do that...;2;L
+##;Barnabus;exit
 Sunny;Pfft.;1;R
 Sunny;Bye, María.;1;R
 ##;Maria;exit

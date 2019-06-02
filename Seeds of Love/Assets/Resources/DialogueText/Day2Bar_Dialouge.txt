@@ -1,9 +1,49 @@
 Maria;Yay, we're here!;0;L
 Rosa;I haven't been here in a good while.;0;R
 Rosa;Hello Barnabus!;0;R
+##Maria;exit;
 Barnabus;Rosa! It's been a while since you were last here!;0;L
 Barnabus;What brings you into my bar all of a sudden?;0;L
 Rosa;Maria.;0;R
 Barnabus;Oh, right. Did she bring you here to -;0;L
-Maria;TO RELAX AND TALK TO YOU!;
-Maria;And for no other reason, Barnabus.;
+##Rosa;exit;
+Maria;TO RELAX AND TALK TO YOU!;2;R
+Maria;And for no other reason, Barnabus.;10;R
+Maria;No. Other. Reason.;10;R
+Barnabus;...;0;L
+##Barnabus;exit;
+Maria;(Phew.);11;R
+Maria;Hey abuela, are you gonna get a drink?;0;R
+Rosa;Oh, sure. Barnabus, a bourbon please.;0;L
+##Rosa;exit
+Maria;(Excellent. The plan is unfolding quite nicely.);9;L
+Sunny;...Hi Maria.;0;R
+Maria;Oh hey Sunny! How was your day?;1;L
+Sunny;It was okay. I had to spend the day grading homework, but otherwise, it was fine.;0;R
+Sunny;Hey, so why did you call me over today?;0;R
+Maria;Oh, uhhhh... talking to you last night was amazing, and I couldn't wait to see you again.;2;L
+Sunny;Aww, that's sweet. Hey, is that your abūela?;3;R
+Maria;Yes! You said abuela wrong, but yes!;1;L
+Maria;I managed to bring her out here fore once.;0;L
+Maria;Here, let me introduce you.;9;L
+Sunny;Oh no, that's okay. I don't -;5;R
+Maria;Come on!;9;L
+##Maria;exit;
+##Sunny;exit;
+##Scene;transition //From first bar background to second.
+Barnabus;Here's your drink.;0;R
+Rosa;Thanks;0;L
+Rosa;What's with the lemon wedge?;3;L
+Barnabus;Oh, sorry. Your granddaughter always gets it with a lemon wedge. Haven't done it any other way for a month now.;0;R
+Rosa;Oh. That's... interesting...;3;L
+Rosa;Let me just take this wedge out...;3;L
+##Barnabus;exit;
+Maria;Abuela!;9;R
+Rosa;!!! Huh?;0;L
+Rosa;Oh, yes mija?;0;L
+Maria;I want you to meet someone! This is Sunny! She's a big fan.;1;L
+##Maria;exit
+Sunny;Hi...;
+
+
+end;

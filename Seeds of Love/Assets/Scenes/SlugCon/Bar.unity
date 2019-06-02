@@ -673,6 +673,7 @@ MonoBehaviour:
   rightkeybind: 0
   spacekeybind: 0
   dashkeybind: 0
+  lastscene: 
 --- !u!4 &1332872625
 Transform:
   m_ObjectHideFlags: 0
@@ -810,6 +811,12 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 485
       objectReference: {fileID: 0}
+    - target: {fileID: 114671202986142286, guid: 33c832d876aa10d459b89a56cce6f717,
+        type: 2}
+      propertyPath: characterPoses.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 68e116bd875626840a603a72482fd745,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c832d876aa10d459b89a56cce6f717, type: 2}
   m_IsPrefabAsset: 0

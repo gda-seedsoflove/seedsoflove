@@ -863,7 +863,7 @@ Prefab:
         type: 2}
       propertyPath: script
       value: 
-      objectReference: {fileID: 4900000, guid: 60f7cedf85a172e45a21c057c73b9d6d, type: 3}
+      objectReference: {fileID: 4900000, guid: 350cb7561d398d44bbd6720f45701b03, type: 3}
     - target: {fileID: 114642502970670470, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_Sprite
@@ -974,7 +974,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: 563392626270e5d42b7b53d58fa1b5be, type: 3}
+      objectReference: {fileID: 4900000, guid: 7a895a0bb3e40e140b0eb84915f1f9d0, type: 3}
     - target: {fileID: 224090678099549884, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder

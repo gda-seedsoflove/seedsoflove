@@ -1,0 +1,9 @@
+Maria;Yay, we're here!;0;L
+Rosa;I haven't been here in a good while.;0;R
+Rosa;Hello Barnabus!;0;R
+Barnabus;Rosa! It's been a while since you were last here!;0;L
+Barnabus;What brings you into my bar all of a sudden?;0;L
+Rosa;Maria.;0;R
+Barnabus;Oh, right. Did she bring you here to -;0;L
+Maria;TO RELAX AND TALK TO YOU!;
+Maria;And for no other reason, Barnabus.;

@@ -38,6 +38,9 @@ public class NoteDetector : MonoBehaviour
 
     public float upbound;
     private float whitetime; // time the detector lights up after pressing space;
+    private bool moving;
+    private float currscale = 1;
+    private float middle;
 
     [HideInInspector]
     public bool leftdown, rightdown, leftup, rightup;
@@ -99,6 +102,8 @@ public class NoteDetector : MonoBehaviour
         {
             rightup = true;
         }
+
+
 
         float movement = 0;
 
@@ -205,6 +210,14 @@ public class NoteDetector : MonoBehaviour
             rightbuffer = 0;
         }
 
+
+        if (Input.GetKeyDown(PlayerData.instance.rightkeybind) || Input.GetKeyDown(PlayerData.instance.leftkeybind))
+        {
+            Vector2 currentpos = new Vector2(origin.x + pos.x * spread, origin.y + pos.y * spread);
+            middle = ((currentpos.x - transform.position.x) / 2f) + transform.position.x;
+        }
+
+
         if (Input.GetKeyDown(PlayerData.instance.spacekeybind))
         {
             transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
@@ -212,12 +225,12 @@ public class NoteDetector : MonoBehaviour
             whitetime = .1f;
             transform.localScale = new Vector3(.85f, .85f, 1);
         }
-
-        if (Input.GetKey(PlayerData.instance.spacekeybind) == false)
+        else if (Input.GetKey(PlayerData.instance.spacekeybind) == false)
         {
             transform.Find("Outline").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
-            transform.localScale = new Vector3(1,1,1);
+            //transform.localScale = new Vector3(1,1,1);
         }
+
 
         if (whitetime >= 0)
         {
@@ -233,6 +246,32 @@ public class NoteDetector : MonoBehaviour
     void FixedUpdate()
     {
         MoveToPosition();
+        Vector2 targetpos = new Vector2(origin.x + pos.x * spread, origin.y + pos.y * spread);
+        if ((Vector2)Object.transform.position != targetpos)
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
+
+
+        if (moving && Input.GetKey(PlayerData.instance.spacekeybind) == false)
+        {
+            float distance = Mathf.Abs(middle - Object.transform.position.x);
+            float scale = Mathf.Clamp(((distance * 2) / spread), .3f, 1);
+
+           // Debug.Log("Position:" + Object.transform.position.x + " Target:" + targetpos.x + " Middle:" + middle + " Scale:"+scale);
+            float speed = 0;
+            currscale = Mathf.SmoothDamp(currscale, scale, ref speed, .012f);
+            transform.localScale = new Vector3(1, currscale, 1);
+        }
+        else if(Input.GetKey(PlayerData.instance.spacekeybind) == false && moving == false)
+        {
+            currscale = 1;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     public void checkPos(float x, float y)
@@ -290,6 +329,7 @@ public class NoteDetector : MonoBehaviour
     {
         Object.transform.position = Vector2.MoveTowards(Object.transform.position,
             new Vector2(origin.x + pos.x * spread, origin.y + pos.y * spread), changespeed*Time.deltaTime);
+
        // Debug.Log((Object.transform.position.x - origin.x));
     }
 

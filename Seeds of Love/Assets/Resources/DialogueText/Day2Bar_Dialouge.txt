@@ -1,21 +1,21 @@
 Maria;Yay, we're here!;0;L
 Rosa;I haven't been here in a good while.;0;R
 Rosa;Hello Barnabus!;0;R
-##Maria;exit;
+##;Maria;exit;
 Barnabus;Rosa! It's been a while since you were last here!;0;L
 Barnabus;What brings you into my bar all of a sudden?;0;L
 Rosa;Maria.;0;R
 Barnabus;Oh, right. Did she bring you here to -;0;L
-##Rosa;exit;
+##;Rosa;exit
 Maria;TO RELAX AND TALK TO YOU!;2;R
 Maria;And for no other reason, Barnabus.;10;R
 Maria;No. Other. Reason.;10;R
 Barnabus;...;0;L
-##Barnabus;exit;
+##;Barnabus;exit
 Maria;(Phew.);11;R
 Maria;Hey abuela, are you gonna get a drink?;0;R
 Rosa;Oh, sure. Barnabus, a bourbon please.;0;L
-##Rosa;exit
+##;Rosa;exit
 Maria;(Excellent. The plan is unfolding quite nicely.);9;L
 Sunny;...Hi Maria.;0;R
 Maria;Oh hey Sunny! How was your day?;1;L
@@ -28,31 +28,31 @@ Maria;I managed to bring her out here fore once.;0;L
 Maria;Here, let me introduce you.;9;L
 Sunny;Oh no, that's okay. I don't -;5;R
 Maria;Come on!;9;L
-##Maria;exit;
-##Sunny;exit;
-##Scene;transition //From first bar background to second.
+##;Maria;exit
+##;Sunny;exit
+##;Scene;transition //From first bar background to second.
 Barnabus;Here's your drink.;0;R
 Rosa;Thanks;0;L
 Rosa;What's with the lemon wedge?;3;L
 Barnabus;Oh, sorry. Your granddaughter always gets it with a lemon wedge. Haven't done it any other way for a month now.;0;R
 Rosa;Oh. That's... interesting...;3;L
 Rosa;Let me just take this wedge out...;3;L
-##Barnabus;exit;
+##;Barnabus;exit
 Maria;Abuela!;9;R
 Rosa;!!! Huh?;0;L
 Rosa;Oh, yes mija?;0;L
 Maria;I want you to meet someone! This is Sunny! She's a big fan.;1;L
-##Maria;exit
+##;Maria;exit
 Sunny;Hi...;R
 Rosa;Hello there.;1;L
-##Sunny;exit
+##;Sunny;exit
 Maria;Well, how about you guys talk fro a bit while I get a drink from Barnabus?;9;R
-##Maria;exit
+##;Maria;exit
 Sunny;Oh, uh, sure, I -;4;R
-##Sunny;exit
+##;Sunny;exit
 Maria;Great!;1;R
 Maria;(Hehehe,all according to plan.);2;R
-##Maria;exit
+##;Maria;exit
 Sunny;Um...;2;R
 Rosa;María says you're a big fan?;0;L
 Sunny;Uhhh, I don't know where she got that!;9;R
@@ -63,32 +63,32 @@ Sunny;I'm sorry, I'm not usually like this.;9;R
 Rosa;Right...;0;L
 Rosa;So, how did you get to know my granddaughter?;0;L
 Sunny;Oh! Interestingly enough, we met right here!;3;L
-##Scene;moodJump:Bar:0.5:D2BarS1-1:D2BarS1-2
-##Scene;header:D2BarS1-1
+##;Scene;moodJump:Bar:0.5:D2BarS1-1:D2BarS1-2
+##;Scene;header:D2BarS1-1
 Sunny;I remember her walking in, brimming with confidence.;0;R
 Sunny;She ordered a bourbon, and proceeded to choke on it.;1;R
 Sunny;That didn't seem to stop her though, so after Barnabus gave her a glass of milk, she came over, and...;1;R
 Sunny;... Maybe this was a joke... but she said the funniest pick-up line.;5;R
-##Scene;choice:D1BarC1
+##;Scene;choice:D1BarC1
 ##;Scene;header:D1GoodBarD1
 Sunny;She said if I was a vegetable, I must be a cutecumber.;9;R
-##Scene;jumpToHeader;D2BarS1-C
+##;Scene;jumpToHeader;D2BarS1-C
 ##;Scene;header:D1GoodBarD2
 Sunny;She said she died on the bourbon, and I was the angel in heaven.;9;R
 ##Scene;jumpToHeader;D2BarS1-C
-##Scene;header:D2BarS1-2
+##;Scene;header:D2BarS1-2
 Sunny;I remember she walked in really sad and covered in dirt.;0;R
 Sunny;I guess Barnabus must have notieced how bad she felt, so he gave María a drink on the house.;0;R
 Sunny;She ended up choking on it though...;6;R
 Sunny;She was a new person in the bar, and I felt bad, so I came over to see if she was alright;0;R
-##Scene;choice:D1BarC1
+##;Scene;choice:D1BarC1
 ##;Scene;header:D1BadBarD1
 Sunny;I don't know what was going on in her head, but when I said hi to her, she called me a cutecumber.;1;R
-##Scene;jumpToHeader;D2BarS1-
+##;Scene;jumpToHeader;D2BarS1-
 ##;Scene;header:D1BadBarD2
 Sunny;I don't know what was going on in her head, but when I said hi to her, she called me a bourbon angel.;1;R
-##Scene;jumpToHeader;D2BarS1-C
-##Scene;header:D2BarS1-C
+##;Scene;jumpToHeader;D2BarS1-C
+##;Scene;header:D2BarS1-C
 Rosa;Quite a conversation starter.;1;L
 Sunny;I know right? I was trying so hard not to laugh.;1;R
 Sunny;Anyways, after that whole thing, we just started talking to each other about stuff. She told me why she decided to come here.;

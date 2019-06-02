@@ -14,15 +14,15 @@ Maria;Yes!;0;L
 Rosa;Honestly, I think these late nights are getting to you.;3;R
 Maria;What? No... I think I'm doing great!;1;L
 Rosa;I'm talking to you, and you're barely paying attention.;3;R
-Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC1-1;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC1-2
-##Scene;choice:D2KitchenC1
-##Scene;header:D2KitchenC1-1
+Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC11;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC12
+##;Scene;choice:D2KitchenC1
+##;Scene;header:D2KitchenC11
 Maria;Sorry, this is just me. I never woke up before 7am in college.;2;L
-##Scence;jumpToHeader;D2KitchenC1-C
-##Scene;header:D2KitchenC1-2
+##;Scence;jumpToHeader;D2KitchenC1C
+##;Scene;header:D2KitchenC12
 Maria;Sorry, I was daydreaming about somebody.;2;L
-##Scence;jumpToHeader;D2KitchenC1-C
-##Scence;header:D2KitchenC1-C
+##;Scence;jumpToHeader;D2KitchenC1C
+##;Scence;header:D2KitchenC1C
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
 Rosa;María... as farmers, we need to trust each other that we can all get our work done.;0;R

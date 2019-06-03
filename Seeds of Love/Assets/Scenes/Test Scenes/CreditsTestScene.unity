@@ -462,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1153}
+  m_AnchoredPosition: {x: 0, y: -1476}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &301837477
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CreditsFadeInTime: 2
   ScrollStartTime: 2
+  CreditsFadeOutTime: 3
   Credits: {fileID: 2070680728}
   GameTitle: {fileID: 2083536881}
   ThankYou: {fileID: 1760257702}
@@ -584,9 +585,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Sunny\u2019s VN & Rhythm Sprites\nCharacter Concept & UI\nBarnabus and
-    Sunny Concept & BG\nRosa Concept & VN Sprite\n\nSunny Clothes Concept\nRhythm
-    Sprites\nRhythm BG\nCharacter Outfit Concep & UI Emoji\n"
+  m_Text: "Sunny\u2019s VN & Rhythm Sprites\n\nCharacter Concept & UI\n\nBarnabus
+    and Sunny Concept & BG\n\nRosa Concept & VN Sprite\n\nSunny Clothes Concept\n\nRhythm
+    Sprites\n\nRhythm BG\n\nCharacter Outfit Concep & UI Emoji\n"
 --- !u!222 &400602143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1033,7 +1034,7 @@ GameObject:
   - component: {fileID: 1040559353}
   - component: {fileID: 1040559355}
   m_Layer: 5
-  m_Name: Credit Chunk (5)
+  m_Name: Programming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2471}
+  m_AnchoredPosition: {x: 0, y: -2758}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1040559355
@@ -1077,7 +1078,7 @@ GameObject:
   - component: {fileID: 1200976263}
   - component: {fileID: 1200976265}
   m_Layer: 5
-  m_Name: Credit Chunk (6)
+  m_Name: Design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3103}
+  m_AnchoredPosition: {x: 0, y: -3454}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1200976265
@@ -1143,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4443}
+  m_AnchoredPosition: {x: 0, y: -5062}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1255137653
@@ -1439,21 +1440,29 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Holly Cheng
 
+
     Paige R.
+
 
     Nox Ngo
 
+
     Griffin "grifbot" Conway
 
-    Dennis (Vin) T Nguyen
 
     Allison Pham
 
+
     Ben Schwartz
+
 
     artsy_vii
 
+
     Cathy tram
+
+
+    Dennis (Vin) T Nguyen
 
     Gigi Bachtel'
 --- !u!222 &1423076217
@@ -1495,7 +1504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -350}
+  m_AnchoredPosition: {x: 0, y: -350}
   m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425497182
@@ -1524,7 +1533,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 0
     m_HorizontalOverflow: 1
@@ -1696,21 +1705,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Emily Hoang
+  m_Text: '
 
-    Jason Yang
-
-    Benjamin Roisen
-
-    Abel Ting
-
-    Riley S.
-
-    Gigi Bachtel
-
-    Kenny Doan
-
-    Paige R.'
+'
 --- !u!222 &1464766156
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1933,7 +1930,7 @@ GameObject:
   - component: {fileID: 1571384677}
   - component: {fileID: 1571384679}
   m_Layer: 5
-  m_Name: Credit Chunk (7)
+  m_Name: Special Thanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1957,7 +1954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3576}
+  m_AnchoredPosition: {x: 0, y: -3999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1571384679
@@ -1977,7 +1974,7 @@ GameObject:
   - component: {fileID: 1628741589}
   - component: {fileID: 1628741591}
   m_Layer: 5
-  m_Name: Credit Chunk (4)
+  m_Name: Writing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,7 +1998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1620}
+  m_AnchoredPosition: {x: 0, y: -1906}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1628741591
@@ -2214,7 +2211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -350}
+  m_AnchoredPosition: {x: 0, y: -350}
   m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713734636
@@ -2243,27 +2240,36 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Emily Hoang
+  m_Text: 'Kan-stlevania
 
-    Jason Yang
+    Muhammad
 
-    Benjamin Roisen
+    ValentinoAbate1
 
-    Abel Ting
+    ak
 
-    Riley S.
+    Carl Erez
 
-    Gigi Bachtel
+    Gian
 
-    Kenny Doan
+    James Iwamasa
 
-    Paige R.'
+    No Longer Excommunicated
+
+    Geogio Klironomos
+
+    plaant
+
+    Seiji
+
+
+    University of California: Santa Cruz'
 --- !u!222 &1713734637
 CanvasRenderer:
   m_ObjectHideFlags: 0

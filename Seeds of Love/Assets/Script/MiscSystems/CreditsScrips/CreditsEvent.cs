@@ -18,7 +18,7 @@ public class CreditsEvent : MonoBehaviour {
 
     public int CreditsFadeInTime; // Wait for fade in
     public int ScrollStartTime; // Wait to start scrolling up
-    //public int CreditsFadeOutTime; // Wait for fade out
+    public int CreditsFadeOutTime; // Wait for fade out
 
     public GameObject Credits;
     public GameObject GameTitle;
@@ -58,13 +58,17 @@ public class CreditsEvent : MonoBehaviour {
         }
             
         Credits.GetComponent<CreditsScroll>().enabled = false;
-        //yield return new WaitForSeconds(CreditsFadeOutTime);
-        //ThankYou.GetComponent<FadeOutScript>().enabled = true;
-        Debug.Log("End of function");
-        //yield return new WaitForSeconds(10);
-        //ThankYou.GetComponent<FadeOutScript>().enabled = false;
-        //GameTitle.GetComponent<FadeInScript>().GetImage().material.color = new Color(1, 1, 1, 1);
 
+        yield return new WaitForSeconds(CreditsFadeOutTime);
+        ToTitle();
+
+        Debug.Log("End of function");
+
+    }
+
+    void ToTitle()
+    {
+        //Write this function to go back to title
     }
 
     // Update is called once per frame

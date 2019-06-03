@@ -1144,9 +1144,86 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -5062}
+  m_AnchoredPosition: {x: 0, y: -5603}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1248828984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248828985}
+  - component: {fileID: 1248828987}
+  - component: {fileID: 1248828986}
+  m_Layer: 5
+  m_Name: Name(s)(2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1248828985
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248828984}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999521, y: 0.9999521, z: 0.9999521}
+  m_Children: []
+  m_Father: {fileID: 1571384677}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 180, y: -349.9999}
+  m_SizeDelta: {x: 300, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1248828986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248828984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 1
+    m_RichText: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "Jason Yang\n\nLiam Dugard\r\nValentino Abate\r\nEric Mitchell\r\nGian Paolo
+    Paredes\r\nMuhammad Al-Suwaidi\r\nMadeleine Glenn\r\nThomas Applewhite\r\nJeven
+    McCoy\n"
+--- !u!222 &1248828987
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248828984}
+  m_CullTransparentMesh: 0
 --- !u!1 &1255137653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,9 +1782,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '
+  m_Text: 'Social Media Management
 
-'
+
+    The GDA Cabinet'
 --- !u!222 &1464766156
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1949,6 +2027,7 @@ RectTransform:
   - {fileID: 1513836709}
   - {fileID: 1713734635}
   - {fileID: 1464766154}
+  - {fileID: 1248828985}
   m_Father: {fileID: 2070680729}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2246,30 +2325,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Kan-stlevania
-
-    Muhammad
-
-    ValentinoAbate1
-
-    ak
-
-    Carl Erez
-
-    Gian
-
-    James Iwamasa
-
-    No Longer Excommunicated
-
-    Geogio Klironomos
-
-    plaant
-
-    Seiji
-
-
-    University of California: Santa Cruz'
+  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\nThe Occultus Ocularus Team\r\n\nThe Student Game
+    Developers Alliance\r\n\nThe UCSC Queer Fashion Show\r\n\nSlug Anime and Manga
+    Association\r\n\nLevel Up Games\r\n\nThe UCSC Farm and Garden\r\n\nIshmael the
+    Cat\r\n\n\r\n... and you!\n"
 --- !u!222 &1713734637
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -18,11 +18,12 @@ public class TogglePauseMenu : MonoBehaviour {
             if (PausePanel.activeSelf == false)
             {
                 PausePanel.SetActive(true);
+                AudioListener.pause = !AudioListener.pause;
             }
             else
             {
                 PausePanel.SetActive(false);
-
+                AudioListener.pause = !AudioListener.pause;
             }
     }
 	// Update is called once per frame

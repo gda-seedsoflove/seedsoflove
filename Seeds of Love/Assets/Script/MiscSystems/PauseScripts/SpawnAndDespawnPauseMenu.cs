@@ -10,19 +10,25 @@ public class SpawnAndDespawnPauseMenu : MonoBehaviour {
 	}
 
     public GameObject PausePanel;
+    public GameObject optionsPanel;
     public GameObject pButton;
 
     public void TogglePauseMenu()
     {
-        if (PausePanel.activeSelf == false)
+        if (optionsPanel.activeSelf == true)
+        {
+            optionsPanel.SetActive(false);
+            PausePanel.SetActive(false);
+        }
+        else if (PausePanel.activeSelf == false)
         {
             PausePanel.SetActive(true);
         }
         else
         {
             PausePanel.SetActive(false);
-
         }
+        
     }
 	
 	// Update is called once per frame

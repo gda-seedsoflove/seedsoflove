@@ -68,7 +68,9 @@ public class CreditsEvent : MonoBehaviour {
 
     void ToTitle()
     {
-        //Write this function to go back to title
+        SceneFade fadeScreen;
+        fadeScreen = GameObject.FindObjectOfType<SceneFade>();
+        fadeScreen.BeginTransition(fadeScreen.Scenename);
     }
 
     // Update is called once per frame

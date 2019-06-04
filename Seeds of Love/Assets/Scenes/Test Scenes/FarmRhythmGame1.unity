@@ -2036,7 +2036,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   duration: 1
   sceneStarting: 1
-  Scenename: AfterBar
+  Scenename: TransitionToBar
 --- !u!114 &1050976658
 MonoBehaviour:
   m_ObjectHideFlags: 0

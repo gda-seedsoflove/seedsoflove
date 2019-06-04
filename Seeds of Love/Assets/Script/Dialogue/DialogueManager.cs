@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour {
 
         parser = GetComponent<DialogueParser>();
         PlayerData = GameObject.Find("PlayerData").GetComponent<PlayerData>(); //PlayerData.InstanceOf();
+        PlayerData.Choicesmade.Add(SceneManager.GetActiveScene().name, PlayerData.Mood);
 
         stageLeft = null;
         stageRight = null;
@@ -248,6 +249,10 @@ public class DialogueManager : MonoBehaviour {
             RectTransform transform = b.gameObject.GetComponent<RectTransform>();
             transform.anchoredPosition = new Vector2(xPos + (i * 250), yPos);
             buttons.Add(b);
+            if(i == 0)
+            {
+                b.Select();
+            }
         }
     }
 
@@ -366,20 +371,36 @@ public class DialogueManager : MonoBehaviour {
         {
             lineNum = int.Parse(commandData[1]);
         }
-        /*else if (commandData[0].Equals("jumpToHeader"))
+        else if (commandData[0].Equals("jumpToHeader"))
         {
             //can we get rid of hard-coded line numbers all together?
-            GoToHeader("header:" + PlayerData.Choicesmade[commandData[1]].ToString());
-        }*/
+            GoToHeader("header:" + commandData[1]);
+        }
+        //moodJump:moodValue:headerValueOne:headerValueTwo
+        //moodJump:SceneName:moodValue:headerValueOne:headerValueTwo
         else if (commandData[0].Equals("moodJump"))
         {
-            if(PlayerData.Mood >= float.Parse(commandData[1]))
+            if(commandData.Length == 4)
             {
-                GoToHeader("header:" + commandData[2]);
+                if (PlayerData.Mood >= float.Parse(commandData[1]))
+                {
+                    GoToHeader("header:" + commandData[2]);
+                }
+                else
+                {
+                    GoToHeader("header:" + commandData[3]);
+                }
             }
             else
             {
-                GoToHeader("header:" + commandData[3]);
+                if((float)PlayerData.Choicesmade[commandData[1]] >= float.Parse(commandData[2]))
+                {
+                    GoToHeader("header:" + commandData[3]);
+                }
+                else
+                {
+                    GoToHeader("header:" + commandData[4]);
+                }
             }
         }
         else

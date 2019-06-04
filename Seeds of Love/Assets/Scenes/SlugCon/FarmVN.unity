@@ -181,6 +181,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82860190063208576, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f4c00b7ce6c5184c91d0ade83f28632, type: 3}
+    - target: {fileID: 82860190063208576, guid: 8aa49fffe9937874b89e1959df6fdabb,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa49fffe9937874b89e1959df6fdabb, type: 2}
   m_IsPrefabAsset: 0
@@ -661,7 +671,7 @@ Prefab:
     - target: {fileID: 114458771681001578, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}
       propertyPath: Scenename
-      value: FarmRhythmGame
+      value: FarmRhythmGame1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8526797b0583b0241a1fbe33597b5442, type: 2}
@@ -694,7 +704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mood: 1
-  Choicesmade: []
+  leftkeybind: 0
+  rightkeybind: 0
+  spacekeybind: 0
+  dashkeybind: 0
 --- !u!4 &2082074027
 Transform:
   m_ObjectHideFlags: 0

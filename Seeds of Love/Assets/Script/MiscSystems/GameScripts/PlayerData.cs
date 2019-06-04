@@ -10,7 +10,7 @@ public class PlayerData : MonoBehaviour {
     public float Mood;  // Value will range from 0 to 1. 1 being max mood
 
     //public List<string> Choicesmade;
-
+    //contains past choices made AND former moods. A bit jank on the latter, but nobody needs to know.
     public Hashtable Choicesmade;
 
     //[HideInInspector]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class CreditsEvent : MonoBehaviour {
         // Setting script states
         Credits.GetComponent<CreditsScroll>().enabled = false;
         GameTitle.GetComponent<FadeInScript>().enabled = false;
-        ThankYou.GetComponent<FadeOutScript>().enabled = false;
+        //ThankYou.GetComponent<FadeOutScript>().enabled = false;
        
 		
 	}
@@ -50,23 +51,30 @@ public class CreditsEvent : MonoBehaviour {
         yield return new WaitForSeconds(ScrollStartTime);
         Debug.Log("Start Scrolling");
         Credits.GetComponent<CreditsScroll>().enabled = true;
-        /* Wait for distance threshold on GO Credits or ThankYou
-         *
-         *
-         *
-         */
-        //Credits.GetComponent<CreditsScroll>().enabled = false;
+        
+        while (ThankYou.transform.position.y < 0)
+        {
+            yield return null;
+        }
+            
+        Credits.GetComponent<CreditsScroll>().enabled = false;
+
         yield return new WaitForSeconds(CreditsFadeOutTime);
-        ThankYou.GetComponent<FadeOutScript>().enabled = true;
+        ToTitle();
+
         Debug.Log("End of function");
-        //yield return new WaitForSeconds(10);
-        //ThankYou.GetComponent<FadeOutScript>().enabled = false;
-        //GameTitle.GetComponent<FadeInScript>().GetImage().material.color = new Color(1, 1, 1, 1);
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void ToTitle()
+    {
+        SceneFade fadeScreen;
+        fadeScreen = GameObject.FindObjectOfType<SceneFade>();
+        fadeScreen.BeginTransition(fadeScreen.Scenename);
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

@@ -36,10 +36,10 @@ Maria;(Okay, here goes!);6;L
 Maria;(Wait, I can’t even pick carrots right. How can I even think about saying something this embarrassing?);3;L
 Sunny;Hi stranger! Are you new around here?;1;R
 ##;Scene;choice:D1BarC1
-##;Scene;header:D1BadBarD2
+##;Scene;header:D1BadBarD1
 Maria;YOU'RE A CUTECUMBER!!!;7;L
 ##;Scene;jumpTo:44
-##;Scene;header:D1BadBarD1
+##;Scene;header:D1BadBarD2
 Maria;YOU'RE A BOURBON ANGEL!!!;7;l
 ##;Scene;jumpTo:44
 Sunny;Uhhh... What?;4;R

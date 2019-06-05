@@ -29,14 +29,14 @@ Maria;I just ended up creating more work for you...;4;L
 Rosa;It's not your fault. I guess I shouldn't have left you at this farm alone. Even the most capable farmers need farmhands.;4;R
 Rosa;Don't worry too much about it. You'll get it one day.;0;R
 Maria;Thanks abuela...;9;L
-##Scene;moodJump:Bar:0.5:D2TranTBarS1-1:D2TranTBarS1-2
-##Scene;header:D2TranTBarS1-1
+##;Scene;moodJump:Bar:0.5:D2TranTBarS11:D2TranTBarS12
+##;Scene;header:D2TranTBarS11
 Maria;I thought since I've been doing so well up to this point that I could handle it by myself.;0;L
-##Scene;jumpToHeader:D2TranTBarS1-C
-##Scene;header:D2TranTBarS1-2
+##;Scene;jumpToHeader:D2TranTBarS1C
+##;Scene;header:D2TranTBarS12
 Maria;I guess even after a full month here, I'm still messing up.;0;L
-##Scene;jumpToHeader:D2TranTBarS1-C
-##Scene;header:D2TranTBarS1-C
+##;Scene;jumpToHeader:D2TranTBarS1C
+##;Scene;header:D2TranTBarS1C
 Maria;I'm sorry;0;L
 Rosa;No worries. Now come on, let's get inside.;0;R
 Maria;Wait, how was it today?;0;L

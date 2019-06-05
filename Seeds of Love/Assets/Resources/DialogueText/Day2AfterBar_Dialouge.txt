@@ -1,0 +1,53 @@
+Maria;(That was so fun!)
+Maria;(I'm so glad I was able to dance with her.)
+Maria;(Her smile is adorable, and gosh, her eyes... they're beautiful.)
+Sunny;That was amazing.
+Maria;Really?
+Sunny;Yeah...
+##;Scene;moodJump:Bar:0.5:D2BarS11:D2BarS12
+##;Scene;header:D2BarS11
+Sunny;Honestly, I'm so glad that you came over and talked to me.
+Sunny;I loved that pick up line you used. It was the best thing I heard in a long time.
+Maria;Really? It wasn't too cheesy?
+Sunny;That's what made it amazing!
+Maria;(AHHHH!!!)
+Maria;(She loved my cheesy pick up line???)
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header;D2BarS12
+Maria;Honestly, I'm so glad that you came over and talked to me.
+Sunny;Me too. What was it that you called me when I came to talk to you?
+##;Scene;choice:D1BarC1
+##;Scene;header:D1BadBarD1
+Sunny;A Cutecumber?
+##;Scene;jumpToHeader:D2BarS12C
+##;Scene;header:D1BadBarD2
+Sunny;A Burbon Angel?
+##;Scene;jumpToHeader:D2BarS12C
+##;Scene;header:D2BarS12C
+Maria;Oh yeah... That was supposed to be part of a pick-up line.
+Sunny;Yeah, I figured. But it was cute!
+Maria;Really? It wasn't too weird?
+Sunny;That's what made it amazing!
+Maria;(She though me little outburst was cute...)
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS1C
+Maria;I'm really glad. Talking to you was one of the best decisions I've made here.
+Sunny;Oh it was?
+Maria;Yeah. I love coming and spending time with you. And also...
+Sunny;Also?
+Maria;You're really cute.
+Sunny;...
+Sunny;Thanks. You're pretty cute as well.
+Maria;(AHHHHHHHHH!!!)
+Maria;(SHE CALLED ME CUTE!!!)
+Maria;(WHAT DO I EVEN SAY TO THAT?!?)
+Sunny;This might be a bit selfish, but I hope you never leave town.
+Sunny;You've livened up the town quite a lot. It's not as boring and repetitive with you around.
+Sunny;I'll miss you if you leave.
+Maria;Don't worry, I kinda need to stay here.
+Sunny;Oh really? Why?
+Maria;Because you're here.
+Sunny;...
+Maria;...
+Maria;(Kiss Sunny?)
+Player;Yes.:line,53,D2GoodBar1,D2GoodBar11;YESSSSSSSSSSSSSSSSSSSSSSS.:line,53,D2GoodBar1,D2GoodBar12

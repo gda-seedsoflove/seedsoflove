@@ -4,7 +4,7 @@ Barnabus;Hmm?;0;R
 Maria;You're a bartender here?;0;L
 Barnabus;Mhmm...;0;R
 Maria;Can I get a bourbon with a lemon wedge?;0;L
-Barnabus;That's an unsual order.;0;R
+Barnabus;That's an unusual order.;0;R
 Maria;Oh is it?;1;L
 Barnabus;Mhmm...;0;R
 Maria;Oh...;4;L

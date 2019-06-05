@@ -24,15 +24,14 @@ Sunny;Hey, so why did you call me over today?;0;R
 Maria;Oh, uhhhh... talking to you last night was amazing, and I couldn't wait to see you again.;2;L
 Sunny;Aww, that's sweet. Hey, is that your abūela?;3;R
 Maria;Yes! You said abuela wrong, but yes!;1;L
-Maria;I managed to bring her out here fore once.;0;L
+Maria;I managed to bring her out here for once.;0;L
 Maria;Here, let me introduce you.;9;L
 Sunny;Oh no, that's okay. I don't -;5;R
 Maria;Come on!;9;L
 ##;Maria;exit
 ##;Sunny;exit
-##;Scene;transition //From first bar background to second.
 Barnabus;Here's your drink.;0;R
-Rosa;Thanks;0;L
+Rosa;Thanks.;0;L
 Rosa;What's with the lemon wedge?;3;L
 Barnabus;Oh, sorry. Your granddaughter always gets it with a lemon wedge. Haven't done it any other way for a month now.;0;R
 Rosa;Oh. That's... interesting...;3;L
@@ -41,28 +40,28 @@ Rosa;Let me just take this wedge out...;3;L
 Maria;Abuela!;9;R
 Rosa;!!! Huh?;0;L
 Rosa;Oh, yes mija?;0;L
-Maria;I want you to meet someone! This is Sunny! She's a big fan.;1;L
+Maria;I want you to meet someone! This is Sunny! She's a big fan.;1;R
 ##;Maria;exit
-Sunny;Hi...;R
+Sunny;Hi...;0;R
 Rosa;Hello there.;1;L
 ##;Sunny;exit
-Maria;Well, how about you guys talk fro a bit while I get a drink from Barnabus?;9;R
+Maria;Well, how about you guys talk for a bit while I get a drink from Barnabus?;9;R
 ##;Maria;exit
 Sunny;Oh, uh, sure, I -;4;R
 ##;Sunny;exit
 Maria;Great!;1;R
-Maria;(Hehehe,all according to plan.);2;R
+Maria;(Hehehe, all according to plan.);2;R
 ##;Maria;exit
 Sunny;Um...;2;R
 Rosa;María says you're a big fan?;0;L
 Sunny;Uhhh, I don't know where she got that!;9;R
 Sunny;I mean I like what you do!;12;R
 Sunny;But not like where I'd follow your every move...;9;R
-Sunny;That's sounded super creepy...;12;R
+Sunny;That sounded super creepy...;12;R
 Sunny;I'm sorry, I'm not usually like this.;9;R
 Rosa;Right...;0;L
 Rosa;So, how did you get to know my granddaughter?;0;L
-Sunny;Oh! Interestingly enough, we met right here!;3;L
+Sunny;Oh! Interestingly enough, we met right here!;3;R
 ##;Scene;moodJump:Bar:0.5:D2BarS11:D2BarS12
 ##;Scene;header:D2BarS11
 Sunny;I remember her walking in, brimming with confidence.;0;R
@@ -88,20 +87,21 @@ Sunny;I don't know what was going on in her head, but when I said hi to her, she
 ##;Scene;header:D1BadBarD2
 Sunny;I don't know what was going on in her head, but when I said hi to her, she called me a bourbon angel.;1;R
 ##;Scene;jumpToHeader:D2BarS1C
-##;Scene;header:D2BarS1-C
+##;Scene;header:D2BarS1C
 Rosa;Quite a conversation starter.;1;L
 Sunny;I know right? I was trying so hard not to laugh.;1;R
-Sunny;Anyways, after that whole thing, we just started talking to each other about stuff. She told me why she decided to come here.;
+Sunny;Anyways, after that whole thing, we just started talking to each other about stuff.;0;R
+Sunny;She told me why she decided to come here.;0;R
 ##;Scene;moodJump;AfterBar:0.5:D2BarS11;D2BarS12
 ##;Scene;header:D2BarS11
 Sunny;Then I accidentally went into a full on rant about my students.;1;R
 Sunny;But she listened to the entire thing, which is why I really like her...;0;R
-##;Scene;jumpToHeader:D2BarS1C
+##;Scene;jumpToHeader:D2BarS2C
 ##;Scene;header:D2BarS12
 Sunny;I asked her more about herself, and she went into this whole rant about how her college life didn't work out for her, and how she made the leap to come here.;0;R
 Sunny;And I felt like i really connected with her in that moment, which is why I ended up really liking her...;0;R
-##;Scene;jumpToHeader:D2BarS1C
-##;Scene;header:D2BarS1C
+##;Scene;jumpToHeader:D2BarS2C
+##;Scene;header:D2BarS2C
 Rosa;Oh, are the two of you...?;1;L
 Sunny;What? Oh, uhhh..., no...;3;R
 Sunny;I didn't meant that I like her like that...;3;R
@@ -121,11 +121,11 @@ Maria;(Great, now Rosa knows...);5;L
 ##;Maria;exit
 Rosa;I'll leave you two kids to your talk. Remember María, we're leaving at ten.;0;L
 ##;Rosa;exit
-Maria;Yes abuela.;0;L
+Maria;Yes, abuela.;0;L
 Sunny;Wow, your grandma gave you a curfew?;0;R
 Maria;Yeah... she wanted to make sure I stopped coming home at four in the morning;2;L
-Sunny;Oh... yeah, I guess our late night are starting to get later and later.;5;R
-Maria;I don't mind, just menas I get to spend more time with you.;2;L
+Sunny;Oh... yeah, I guess our late nights are starting to get later and later.;5;R
+Maria;I don't mind, just means I get to spend more time with you.;2;L
 Sunny;...;3;R
 Sunny;I feel the same way...;2;R
 Maria;(She feels the same way?);5;L

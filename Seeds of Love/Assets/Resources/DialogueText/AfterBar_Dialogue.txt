@@ -1,4 +1,5 @@
-Sunny;I guess I just got a little frustrated because she’s usually such a sweetheart, and all but... Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
+Sunny;I guess I just got a little frustrated because she’s usually such a sweetheart, and all but...;11;R
+Sunny;Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
 Maria;No-no, it’s okay!;0;L
 Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;11;R
 Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed someone to talk to.;0;L

@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114458771681001578, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}
       propertyPath: Scenename
-      value: NewTitle
+      value: Day2Bar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8526797b0583b0241a1fbe33597b5442, type: 2}
@@ -760,6 +760,7 @@ MonoBehaviour:
   rightkeybind: 0
   spacekeybind: 0
   dashkeybind: 0
+  lastscene: 
 --- !u!4 &2044258344
 Transform:
   m_ObjectHideFlags: 0

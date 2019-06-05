@@ -45,7 +45,7 @@ Sunny;Pfft.;1;R
 Sunny;Bye, María.;1;R
 ##;Maria;exit
 Sunny;Huh...;0;R
-Sunny;Hey Barnabus, how do you feel about Maria?;
+Sunny;Hey Barnabus, how do you feel about Maria?;0;R
 Barnabus;She's a good kid.;0;L
 Sunny;Good to know.;0;R
 end;

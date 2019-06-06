@@ -25,6 +25,10 @@ public class SelectOnInput : MonoBehaviour {
         {
             buttonselected = false;
         }
+        if ((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0))
+        {
+
+        }
 	}
 
 

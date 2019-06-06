@@ -13,7 +13,7 @@ public class FiveSecondWait : MonoBehaviour {
 
     IEnumerator WaitCoroutine()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(6.0f);
         fadeScreen = GameObject.FindObjectOfType<SceneFade>();
         Debug.Log("Begin EndScene");
         fadeScreen.BeginTransition(fadeScreen.Scenename);

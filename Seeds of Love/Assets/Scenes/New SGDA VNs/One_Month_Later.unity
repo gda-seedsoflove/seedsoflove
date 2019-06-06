@@ -186,7 +186,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -197,9 +197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'One Month Later
-
-'
+  m_Text: To be continued...
 --- !u!222 &401251154
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -530,7 +528,7 @@ Prefab:
     - target: {fileID: 114458771681001578, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}
       propertyPath: Scenename
-      value: Day2Kitchen
+      value: NewTitle
       objectReference: {fileID: 0}
     - target: {fileID: 224049961780123344, guid: 8526797b0583b0241a1fbe33597b5442,
         type: 2}

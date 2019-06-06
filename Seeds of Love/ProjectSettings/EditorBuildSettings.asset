@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New SGDA VNs/Day2Bar.unity
     guid: 01c710cd4321664498fccffe50a291be
+  - enabled: 1
+    path: Assets/Scenes/New SGDA VNs/Day1End.unity
+    guid: af17e947e07f5694b8778ef29d64d2cd
   m_configObjects: {}

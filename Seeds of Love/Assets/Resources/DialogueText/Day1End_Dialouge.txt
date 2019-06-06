@@ -6,33 +6,35 @@ Rosa;I was worried! I thought you said you knew your limits!;2;R
 Maria;What???? I knew my limits...;4;L
 Rosa;Where have you been!;2;R
 Maria;Uhhh, the bar?;4;L
-Rosa;The bar? For 6 hours!?!?!?;2;R
+Rosa;The bar? For six hours!?!?!?;2;R
 Maria;...;4;L
 Maria;Yes...?;4;L
 Rosa;How?;2;R
-Maria;Well, I got to the bar, and there was Barnabus, and I was like "Wow, it's Barnabus!"...;1;L
-Maria;And then I drank a bourbon and it didn't go so hot, and then I saw this cute girl sitting in the corner...;1;L
-Maria;And I was like "Wah she's so cute!";2;L
+Maria;Well, I got to the bar, Barnabus was there, and I was like, "Wow, it's Barnabus!"...;1;L
+Maria;And then I drank a bourbon and it didn't go so hot, and then I saw this girl sitting in the corner...;1;L
+Maria;And I was like, "Wah, she's so cute!";2;L
 ##;Scene;moodJump:Bar:0.5:D1EndS11:D1EndS12
 ##;Scene;header:D1EndS11
 Maria;So I went up to her...;2;L
 ##;Scene;jumpToHeader:D1EndS1C
-##;Scene;header;D1EndS12
+##;Scene;header:D1EndS12
 Maria;Then she went up to me...;2;L
 ##;Scene;jumpToHeader:D1EndS1C
 ##;Scene;header:D1EndS1C
-Maria; And it was a little touch-and-go, and I think it went pretty alright if you ask me...;9;L
+Maria; And we ended up having a pretty deep conversation.;9;L
 ##;Scene;moodJump:AfterBar:0.5:D1EndS21:D1EndS22
 ##;Scene;header:D1EndS21
-Maria;Like we got into a pretty rhythm as we were tlaking, y'know?;9;L
+Maria;Like, she has a lot on her plate, being a teacher and all.;9;L
+Maria;Talking to her really helped me put some things into perspective.;9;L
 ##;Scene;jumpToHeader:D1EndS2C
 ##;Scene;header:D1EndS22
-Maria;But I accidentally went into a full rant about college, y'know?;9;L
+Maria;Maybe even TOO deep...;9;L
+Maria;I don't think I'm comfortable talking about it yet.;9;L
 ##;Scene;jumpToHeader:D1EndS2C
 ##;Scene;header:D1EndS2C
-Maria;Anyways, we were starting to talk about the real stuff, and then before we knew it, it was midnight!;1;L
-Maria;Wait, I MEAN, I knew that it was midnight and wrapped the conversation up.;4;L
+Maria;But anyways, before we knew it, it was midnight!;1;L
+Maria;I mean... I knew that it was midnight and wrapped the conversation up.;4;L
 Maria;Yeah, exactly as I planned. Because I knew my limits. Yup.;1;L
 Rosa;Uh huh. I suppose you know your way to bed too.;1;R
-Maria;Yes Abuela...;12;L
+Maria;Yes, Abuela...;12;L
 end;

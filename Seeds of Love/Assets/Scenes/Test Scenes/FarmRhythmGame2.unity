@@ -4066,6 +4066,36 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 3aea77f1d7865754680f46a098f61c11,
         type: 3}
+    - target: {fileID: 114653057624185340, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 184166048}
+    - target: {fileID: 114653057624185340, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ArrowPreset
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446916906605914, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 184166048}
+    - target: {fileID: 114446916906605914, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WASDPreset
+      objectReference: {fileID: 0}
+    - target: {fileID: 114147855230516960, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 184166048}
+    - target: {fileID: 114147855230516960, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JKLPreset
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c, type: 2}
   m_IsPrefabAsset: 0

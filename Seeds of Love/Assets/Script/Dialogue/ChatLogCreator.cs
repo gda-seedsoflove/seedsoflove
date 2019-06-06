@@ -13,12 +13,6 @@ public class ChatLogCreator : MonoBehaviour
         chatLogImage.alpha = 0f;
     }
 
-    void Update() {
-        if (Input.GetKeyDown("c")) {
-            createOrDestroy();
-        }
-    }
-
     public void createOrDestroy() {
         if (isActive) {
             destroyChatLog();

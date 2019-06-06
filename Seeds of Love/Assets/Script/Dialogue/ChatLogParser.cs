@@ -17,7 +17,7 @@ public class ChatLogParser : MonoBehaviour
      * lineNumber = counter for lines (up until 5)
      * nameText = NPC Name
      * dialogueText = NPC's dialogue
-     * parser = Object for getting the script of DialogueParser */
+     * parser = Object for getting the script of DialogueParser*/
     int lineNum;
     int chatLogCounter;
     public Image chatLogImage;
@@ -26,7 +26,6 @@ public class ChatLogParser : MonoBehaviour
     string currentDialogueText;
     int fontSize;
     float textWidth, parentWidth;
-    bool hasFinishedTalking = false;
     DialogueParser parser;
     DialogueManager manager;
     GameObject dialogueManager;
@@ -47,17 +46,22 @@ public class ChatLogParser : MonoBehaviour
 
     public void Update(){
         if (((Input.GetMouseButtonDown(0) && !manager.playerTalking && manager.inCoroutine) || (Input.GetKeyDown("space") && !manager.playerTalking && manager.inCoroutine))) {
-            updateChatLogUI(manager.characterName, manager.dialogue);
-        } else if (!manager.playerTalking && hasFinishedTalking) {
-            updateChatLogUI(manager.characterName, manager.dialogue);
-            hasFinishedTalking = false;
-        } else if (manager.playerTalking) {
-            hasFinishedTalking = true;
+            updateChatLogUI();
         }
     }
 
-    void updateChatLogUI(string characterName, string dialogue) {
-        currentDialogueText = "<i>" + characterName + "</i>" + ": " + dialogue;
+    void updateChatLogUI() {
+        if (!manager.playerTalking) {
+            if (!parser.GetContent(lineNum).Equals("")) {
+                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+            } else {
+                lineNum++;
+                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+            }
+        }
+        else {
+            currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+        }
 
         chatLogQueue.Enqueue(currentDialogueText);
         if(chatLogCounter == 5) {
@@ -68,11 +72,11 @@ public class ChatLogParser : MonoBehaviour
 
         string[] chatLogArray = chatLogQueue.ToArray();
 
-        int i = 0;
+        int i = dialogueTextArray.Length - 1;
         for(int j = chatLogArray.Length - 1; j >= 0; j--) {
             Text currentText = dialogueTextArray[i].GetComponent<Text>();
             currentText.text = chatLogArray[j];
-            i++;
+            i--;
         }
         lineNum++;
     }

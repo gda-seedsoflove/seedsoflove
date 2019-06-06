@@ -38,6 +38,11 @@ public class VolumeValueChange : MonoBehaviour {
         }
         // Setting volume option of Audio Source to be equal to musicVolume
         audioSrc.volume = musicVolume;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            AudioListener.pause = !AudioListener.pause;
+        }
 	}
 
     // Method that is called by slider game object

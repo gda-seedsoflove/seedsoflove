@@ -11,6 +11,7 @@ public class ResetData : MonoBehaviour {
         if (PlayerData.instance != null)
         {
             PlayerData.instance.Choicesmade.Clear();
+            PlayerData.instance.SetJukebox(false);
         }
     }
 

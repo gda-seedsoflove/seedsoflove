@@ -20,11 +20,16 @@ public class ChatLogParser : MonoBehaviour
      * parser = Object for getting the script of DialogueParser*/
     int lineNum;
     int chatLogCounter;
+    int maxCount;
     public Image chatLogImage;
     public Canvas thisCanvas;
+
     GameObject[] dialogueTextArray;
+    Text[] organizedDTA; 
+
     string currentDialogueText;
     int fontSize;
+    bool hasFinishedTalking;
     float textWidth, parentWidth;
     DialogueParser parser;
     DialogueManager manager;
@@ -40,13 +45,26 @@ public class ChatLogParser : MonoBehaviour
         currentDialogueText = "";
         lineNum = manager.lineNum;
         chatLogCounter = 0;
+        maxCount = 5;
+        hasFinishedTalking = false;
 
         dialogueTextArray = GameObject.FindGameObjectsWithTag("DialogueLine");
+
+        for (int i = 0; i < maxCount; i++) {
+            string name = ("DialogueLine " + "(" + i + ")");
+            dialogueTextArray[i] = GameObject.Find(name);
+            Debug.Log(dialogueTextArray[i].name);
+        }
     }
 
     public void Update(){
         if (((Input.GetMouseButtonDown(0) && !manager.playerTalking && manager.inCoroutine) || (Input.GetKeyDown("space") && !manager.playerTalking && manager.inCoroutine))) {
             updateChatLogUI();
+        } else if (manager.playerTalking && !hasFinishedTalking) {
+            hasFinishedTalking = true;
+        } else if (!manager.playerTalking && hasFinishedTalking) {
+            updateChatLogUI();
+            hasFinishedTalking = false;
         }
     }
 
@@ -64,7 +82,7 @@ public class ChatLogParser : MonoBehaviour
         }
 
         chatLogQueue.Enqueue(currentDialogueText);
-        if(chatLogCounter == 5) {
+        if(chatLogCounter == maxCount) {
             chatLogQueue.Dequeue();
         } else {
             chatLogCounter++;

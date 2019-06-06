@@ -28,11 +28,11 @@ public class SelectOnInput : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.W)) || (Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.D)) ||
             (Input.GetKeyDown(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.LeftArrow)) || (Input.GetKeyDown(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.RightArrow)))
         {
-            GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, 1, "Note Hit Effect", "SFX");
+            GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, .3f, "Note Hit Effect", "SFX");
         }
         if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.KeypadEnter))))
         {
-            GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, 1, "menuchime", "SFX");
+            GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, .7f, "menuchime", "SFX");
         }
 	}
 

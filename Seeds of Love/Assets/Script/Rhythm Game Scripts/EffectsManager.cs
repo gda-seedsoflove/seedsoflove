@@ -69,7 +69,7 @@ public class EffectsManager : MonoBehaviour
 
     public void PlaySoundEffect()
     {
-        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, 1, "Note Hit Effect", "SFX");
+        GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, .2f, "Note Hit Effect", "SFX");
         /*if (SoundEffect)
         {
             GameObject instanceSound = (GameObject)Instantiate(SoundEffect, transform.position, Quaternion.identity);

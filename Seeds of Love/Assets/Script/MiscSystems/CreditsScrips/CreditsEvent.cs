@@ -16,9 +16,9 @@ using UnityEngine;
 
 public class CreditsEvent : MonoBehaviour {
 
-    public int CreditsFadeInTime; // Wait for fade in
-    public int ScrollStartTime; // Wait to start scrolling up
-    public int CreditsFadeOutTime; // Wait for fade out
+    public float CreditsFadeInTime; // Wait for fade in
+    public float ScrollStartTime; // Wait to start scrolling up
+    public float CreditsFadeOutTime; // Wait for fade out
 
     public GameObject Credits;
     public GameObject GameTitle;

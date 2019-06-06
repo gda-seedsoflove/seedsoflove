@@ -7,6 +7,7 @@ public class FadeInScript : MonoBehaviour {
 
     Image Image;
     public float FadeInSpeed;
+    private Vector2 scale;
 
     void Awake()
     {
@@ -24,11 +25,11 @@ public class FadeInScript : MonoBehaviour {
 
     IEnumerator FadeIn()
     {
-        for (float f = 0.05f; f <= 1; f += FadeInSpeed) {
+        for (float f = 0.01f; f <= 1; f += FadeInSpeed) {
             Color c = Image.material.color;
             c.a = f;
             Image.material.color = c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
 
         }
     }

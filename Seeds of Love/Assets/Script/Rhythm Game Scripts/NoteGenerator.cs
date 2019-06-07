@@ -68,6 +68,7 @@ namespace Tests.Interactive.NoteTimingTest
             transitiondelay *= -1;
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 120;
+            GameObject.FindGameObjectWithTag("Detector").GetComponent<NoteDetector>().enabled = false;
             //BMReader.GetNextNote(); //Initialize first note
 
             _nextNoteSpawnTime = Time.time;
@@ -90,8 +91,8 @@ namespace Tests.Interactive.NoteTimingTest
 
             if (paused)
             {
-                bgp.delay = 99;
-                moodmeter.GetComponent<MoodMeterScript>().delay = 99;
+                bgp.delay = 999;
+                moodmeter.GetComponent<MoodMeterScript>().delay = 999;
             }
             else
             {
@@ -335,6 +336,7 @@ namespace Tests.Interactive.NoteTimingTest
 
         public void UnPause()
         {
+            GameObject.FindGameObjectWithTag("Detector").GetComponent<NoteDetector>().enabled = true;
             paused = false;
         }
 

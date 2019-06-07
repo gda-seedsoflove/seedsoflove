@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New SGDA VNs/Day1End.unity
     guid: af17e947e07f5694b8778ef29d64d2cd
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Credits.unity
+    guid: be7eb6534b7342848bfbc19b5b49558b
   m_configObjects: {}

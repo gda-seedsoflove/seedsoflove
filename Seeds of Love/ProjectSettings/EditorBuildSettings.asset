@@ -74,4 +74,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/Credits.unity
     guid: be7eb6534b7342848bfbc19b5b49558b
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/BarRhythmGame2.unity
+    guid: 43ded2668b0500c49b8969e1f7f72d0d
+  - enabled: 1
+    path: Assets/Scenes/New SGDA VNs/Day2AfterBar.unity
+    guid: 6167ff3e883e22548a7d35539820eb04
+  - enabled: 1
+    path: Assets/Scenes/New SGDA VNs/Day2KISS.unity
+    guid: cc7bf31728dabc14eb32aab515a73261
   m_configObjects: {}

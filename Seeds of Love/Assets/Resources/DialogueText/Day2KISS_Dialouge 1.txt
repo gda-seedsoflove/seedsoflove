@@ -1,0 +1,23 @@
+Maria;...!;16;L
+Sunny;...;13;R
+Maria;I... I... ;5;L
+Sunny;...Yeah?;1;R
+##;Sunny;exit
+Rosa;Sorry to interrupt, mija, but it's getting late.;0;R
+Rosa;You did bring me here to make sure you get home at a decent hour.;0;R
+Maria;Right... Gotta get up early for the farm...;2;L
+Maria;The farm, and the sheep... ahahaha...;2;L
+##;Rosa;exit
+Sunny;Oh, you're right. Thank you for reminding us, Rosa.;12;R
+Sunny;Bye, María.;1;R
+Maria;Yeah, bye...;2;L
+Sunny;Call me tomorrow after work?;1;R
+Maria;YES. ABSOLUTELY. Ahaha.;2;L
+Sunny;I'll look forward to it, then.;1;R
+##;Sunny;exit
+Rosa;Let's get going then. Why are you all red?;0;R
+Maria;Oh, well, uh...;5;L
+Maria;On my first day here, I planted some seeds...;0;L
+Maria;And, uh...;0;L
+Maria;I think they just bloomed.;2;L
+end;

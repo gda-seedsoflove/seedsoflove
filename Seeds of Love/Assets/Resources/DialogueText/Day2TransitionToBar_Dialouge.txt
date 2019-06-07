@@ -8,7 +8,7 @@ Maria;I didn't want to bother you on your day off! Besides, look! I got the job 
 Rosa;Dios mío! María, did you plow all this by hand?;3;R
 Maria;Yes I did!;1;L
 Rosa;Goodness, María. I'm impressed and all, but I still think you should have called me to fix the tractor!;1;R
-Rosa;Hard work is imporant, but it's also important to save your energy wherever you can.;1;R
+Rosa;Hard work is important, but it's also important to save your energy wherever you can.;1;R
 Maria;Oh... Oops.;2;L
 Rosa;...However, you did some really good work today. Well done, mija.;1;R
 Rosa;What a farmer you've become.;1;R
@@ -19,7 +19,7 @@ Rosa;Maybe I should rely on you more often. I would be nice to kick back and rel
 Maria;Yes! Go out and have fun!;9;L
 Maria;If I've learned anything here, it's that farming is hard work, and because of that, you more than anyone deserve breaks.;9;L
 Rosa;...;0;R
-Rosa;Thanks you, mija.;0;R
+Rosa;Thank you, mija.;0;R
 Rosa;I'm glad I have such a responsible granddaughter to help me around the farm. I'll make sure I schedule some more days off.;1;R
 Maria;Yay!;1;L
 Rosa;I guess I need to go fix the tractor now.;0;R
@@ -39,7 +39,7 @@ Maria;And I'm going to stop going out so late and hanging out at the bar.;0;L
 Rosa;Good. Let's get inside then.;0;R
 Maria;Well, except for tonight.;5;L
 Rosa;What?;3;R
-Maria;WE HAVE TO GO TO THE BAR RIGHT NOW, ROSA.;15;L
+Maria;WE HAVE TO GO TO THE BAR RIGHT NOW, ROSA.;10;L
 Rosa;Why?;3;R
 Maria;No time to explain! LET'S GET TO THE GOLDEN SHEEP. BARNABUS WILL BE THERE AND WE WILL HAVE AN AMAZING TIME!;0;L
 Rosa;...;0;R

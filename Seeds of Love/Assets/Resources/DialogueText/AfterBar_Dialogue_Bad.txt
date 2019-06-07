@@ -16,7 +16,7 @@ Sunny;But don't worry, you'll still have plenty of time to figure things out!;0;
 Sunny;That's why you're here, aren't you?;1;R
 Maria;...;0;L
 Sunny;I can tell you're a good person, María. I'm not usually the kind of person to go up to strangers, but I felt comfortable talking to you.;0;R
-Sunny;Sometimes I that I'm being a real nuisance...;5;R
+Sunny;Sometimes I feel like a real nuisance...;5;R
 Maria;O-of course you're not!;6;L
 Sunny;Oh, I'm sorry, I didn't mean to -;3;R
 Maria;You're really not! You listened to me blabber on and on about my problems tonight...;0;L
@@ -35,7 +35,7 @@ Maria;(!!!);5;L
 Maria;Nice - nice talking with you though! See you around?;2;L
 Sunny;Absolutely. If you ever want to chat, I would love to meet up again.;1;R
 Maria;That would be amazing...;5;L
-Maria;Okay, I really have to go now. Good night Sunny! I’ll be sure to -;2;L
+Maria;Okay, I really have to go now. Good night, Sunny! I’ll be sure to -;2;L
 Maria;ACK!;13;L
 ##;Sunny;exit
 Barnabus;The door.;0;R

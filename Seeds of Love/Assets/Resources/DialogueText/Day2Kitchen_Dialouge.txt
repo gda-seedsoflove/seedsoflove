@@ -14,10 +14,10 @@ Maria;Yes!;0;L
 Rosa;Honestly, I think these late nights are getting to you.;3;R
 Maria;What? No... I think I'm doing great!;1;L
 Rosa;I'm talking to you, and you're barely paying attention.;3;R
-Player;Sorry, this is just me. I never woke up before 7am in college.:line,17,D2KitchenC1,D2KitchenC11;Sorry I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC12
+Player;Sorry, this is just me. I never woke up early in college.:line,17,D2KitchenC1,D2KitchenC11;Sorry, I was daydreaming about somebody.:line,17,D2KitchenC1,D2KitchenC12
 ##;Scene;choice:D2KitchenC1
 ##;Scene;header:D2KitchenC11
-Maria;Sorry, this is just me. I never woke up before 7am in college.;2;L
+Maria;Sorry, this is just me. I never woke up early in college.;2;L
 ##;Scene;jumpToHeader:D2KitchenC1C
 ##;Scene;header:D2KitchenC12
 Maria;Sorry, I was daydreaming about somebody.;2;L
@@ -25,7 +25,7 @@ Maria;Sorry, I was daydreaming about somebody.;2;L
 ##;Scene;header:D2KitchenC1C
 Rosa;I don't care.;2;R
 Maria;(Oh...);12;L
-Rosa;María... as farmers, we need to trust each other that we can all get our work done.;0;R
+Rosa;María... As farmers, we need to trust each other that we can all get our work done.;0;R
 Rosa;So far, you've been handling it, but I'm worried that one day you'll lose interest and just quit.;0;R
 Maria;(Wait, did she just call me a farmer?);0;L
 Maria;(Am I a real farmer now?);9;L
@@ -44,7 +44,7 @@ Rosa;What, María? No... She can't handle the farm by herself.;3;R
 Maria;Wait what?;14;L
 Rosa;She's only been here for a month. I could never ask her to do that.;3;R
 Maria;Wait, I could do it.;0;L
-Rosa;What? No, hold on Donna... What'd you just say, María?;3;R
+Rosa;What? No, hold on, Donna... What'd you just say, María?;3;R
 Maria;I can take care of the farm. You go do that thing you were going to do.;0;L
 Rosa;Are you... No, hold on Donna, I'm asking her!;3;R
 Rosa;Are you sure?;3;R

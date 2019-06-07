@@ -338,7 +338,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982724758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.043, y: -0.043, z: 0}
+  m_LocalPosition: {x: 0.043, y: -0.043, z: 2}
   m_LocalScale: {x: 0.3857917, y: 0.4023459, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -783,6 +783,7 @@ MonoBehaviour:
   rightkeybind: 0
   spacekeybind: 0
   dashkeybind: 0
+  lastscene: 
 --- !u!4 &2082074027
 Transform:
   m_ObjectHideFlags: 0

@@ -1,58 +1,76 @@
 Maria;(That was so fun!);1;L
-Maria;(I'm so glad I was able to dance with her.);1;L
-Maria;(Her smile is adorable, and gosh, her eyes... they're beautiful.);9;L
-Sunny;That was amazing.;12;R
-Maria;Really?;1;L
-Sunny;Yeah...;12;R
+Maria;(I'm not the best dancer, but hopefully she picked something up from my moves.);1;L
+Sunny;Thank you for that dance, María. It's been a while since I did something like that.;12;R
+Maria;Really?;0;L
+Sunny;Well, the only dances I go to are for kids...;12;R
+Sunny;And no one wants to see their boring teacher bust a move.;12;R
+Maria;Well, they're missing out! You were great.;1;L
+Sunny;Thanks. Maybe we should show them together next time.;12;R
+Maria;Haha...;1;L
+Sunny;...;0;R
+Sunny;María, can I be serious for a second?;0;R
+Maria;Y-yeah, sure.;0;L
 ##;Scene;moodJump:Bar:0.5:D2BarS11:D2BarS12
 ##;Scene;header:D2BarS11
-Sunny;Honestly, I'm so glad that you came over and talked to me that day.;1;R
-Sunny;I loved that pick up line you used. It was the best thing I heard in a long time.;0;R
+Sunny;I'm so glad you had the courage to talk to me the first time we met.;1;R
+Sunny;The pick-up line you used was the funniest thing I'd heard in a long time.;0;R
 Maria;Really? It wasn't too cheesy?;9;L
-Sunny;That's what made it amazing!;0;R
+Sunny;That's why I loved it!;0;R
 Maria;(AHHHH!!!);1;L
-Maria;(She loved my cheesy pick up line???);9;L
+Maria;(She <i>loved</i> it...);9;L
 ##;Scene;jumpToHeader:D2BarS1C
 ##;Scene;header;D2BarS12
-Maria;Honestly, I'm so glad that you came over and talked to me that day.;1;L
-Sunny;Me too. What was it that you called me when I came to talk to you?;0;R
+Maria;I... also want to be serious. For a second.;0;L
+Maria;Thank you for talking to me on my first day here.;0;L
+Maria;I had just gotten into a fight with my abuela, and I felt so lost...;0;L
+Maria;But I'm glad you found me.;0;L
+Sunny;I am, too. Say, what was it that you called me when I first said hello?;0;R
 ##;Scene;choice:D1BarC1
 ##;Scene;header:D1BadBarD1
-Sunny;A Cutecumber?;1;R
+Sunny;A cutecumber?;1;R
 ##;Scene;jumpToHeader:D2BarS12C
 ##;Scene;header:D1BadBarD2
-Sunny;A Burbon Angel?;1;R
+Sunny;A Bourbon angel?;1;R
 ##;Scene;jumpToHeader:D2BarS12C
 ##;Scene;header:D2BarS12C
 Maria;Oh yeah... That was supposed to be part of a pick-up line.;2;L
-Sunny;Yeah, I figured. It was cute.;1;R
-Maria;Really? It wasn't too weird?;5;L
-Sunny;That's what made it amazing!;0;R
-Maria;(She thought me little outburst was cute...);5;L
+Maria;I wasn't in the best mood, so it ended up falling pretty flat...;2;L
+Sunny;Yeah, I figured. It was cute, though.;1;R
+Maria;Really? Wasn't it weird?;5;L
+Sunny;Well, a little bit. But still, mostly cute.;0;R
+Maria;(My weird outburst was cute... Huh...);5;L
 ##;Scene;jumpToHeader:D2BarS1C
 ##;Scene;header:D2BarS1C
-Maria;I'm really glad. Talking to you was one of the best decisions I've made here.;1;L
+Maria;Meeting you was probably one of the best things that's happened to me since I left college.;1;L
 Sunny;Oh it was?;0;R
-Maria;Yeah. I love coming and spending time with you. And also...;1;L
+Maria;Yeah. Knowing me, I wouldn't have stuck around as long if we hadn't started hanging out here. And also...;1;L
 Sunny;Also?;0;R
 Maria;You're really cute.;9;L
 Sunny;...;3;R
-Sunny;Thanks. You're pretty cute as well.;1;R
-Maria;(AHHHHHHHHH!!!);5;L
-Maria;(SHE CALLED ME CUTE!!!);5;L
-Maria;(WHAT DO I EVEN SAY TO THAT?!?);5;L
-Sunny;This might be a bit selfish, but I hope you never leave.;11;R
-Sunny;You've livened up the town quite a lot. It's not as boring and repetitive with you around.;0;R
-Sunny;I'll miss you if you leave.;11;R
+Sunny;Thanks. You know, you're pretty cute too.;1;R
+Maria;(!!!!!!!!!);5;L
+Sunny;This is a bit selfish of me, but I really hope you'll stick around longer.;11;R
+Sunny;Even when my life, my job, my family... Even when when I'm stressed out, I can look forward to seeing you.;0;R
+Sunny;To talking to you, to ranting and venting and laughing at your jokes...;0;R
+Sunny;I'll miss that. I'll miss you if you go, María.;11;R
+Maria;<i>(!!!!!!!!!)</i>;5;L
 Maria;Don't worry, I kinda need to stay here.;1;L
-Sunny;Oh really? Why?;0;R
-Maria;Because you're here.;0;L
+Sunny;Oh, really? Why?;0;R
+Maria;Because my abuela needs more days off!;0;L
+Maria;And there isn't anyone like you back home.;2;L
 Sunny;...;5;R
+Sunny;María...;5;R
 Maria;...;5;L
-Maria;(Kiss Sunny?)
-Player;Yes.:line,53,D2GoodBar1,D2GoodBar11;YESSSSSSSSSSSSSSSSSSSSSSS.:line,53,D2GoodBar1,D2GoodBar12
-Maria;...;5;L
+Maria;(I really, REALLY want to kiss her right now.);5;L
+Maria;(My brain says not to, but... what is my heart thinking?);5;L
+Player;The mood is right. I should kiss her.:line,66,D2GoodBar1,D2GoodBar11;I LOVE HER. I GOTTA KISS HER.:line,66,D2GoodBar1,D2GoodBar12
+Maria;Hey, Sunny?;5;L
+Maria;I'm gonna kiss you right now. Is that okay?;5;L
 Sunny;...;5;R
+Sunny;Is anyone looking?;5;R
+Maria;... Nope.;5;L
+Sunny;Then let's go for it.;5;R
+end;
 Maria;Sorry I just -;5;L
 Sunny;No, you're okay. That was nice...;5;R
 Maria;I... I... -;5;L

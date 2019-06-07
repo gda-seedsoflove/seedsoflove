@@ -197,7 +197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To be continued...
+  m_Text: One month later...
 --- !u!222 &401251154
 CanvasRenderer:
   m_ObjectHideFlags: 0

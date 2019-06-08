@@ -40,7 +40,7 @@ Maria;(Aww... she's talking about me!);1;L
 Rosa;What? Was that really today? I could have sworn it was next week...;8;R
 Rosa;I can't. I'm alone on the farm today.;8;R
 Rosa;No, Barnabus is on call at the post office until his shift at the Golden Sheep.;8;R
-Rosa;What, María? No... She's just visiting.;8;R
+Rosa;What, María? The farm? No... She's just visiting.;8;R
 Maria;Wait what?;14;L
 Rosa;She's only been here for a month. I could never ask her to do that.;8;R
 Maria;Wait, I could do it.;0;L

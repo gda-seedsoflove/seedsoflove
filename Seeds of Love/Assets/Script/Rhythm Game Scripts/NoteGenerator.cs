@@ -114,7 +114,7 @@ namespace Tests.Interactive.NoteTimingTest
                 fadeScreen = GameObject.FindObjectOfType<SceneFade>();
                 Debug.Log(sceneNumber);
 
-                if (PlayerData.instance.GetJukebox() == true) //return to last scene
+                if (PlayerData.instance.GetJukebox() == true || PlayerData.instance.lastscene == "NewTitle") //return to last scene
                 {
                     fadeScreen.BeginTransition(PlayerData.instance.lastscene);
                 }

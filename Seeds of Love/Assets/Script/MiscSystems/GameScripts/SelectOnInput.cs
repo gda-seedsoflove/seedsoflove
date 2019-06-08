@@ -30,7 +30,7 @@ public class SelectOnInput : MonoBehaviour {
         {
             GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, .3f, "Note Hit Effect", "SFX");
         }
-        if(Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.KeypadEnter))))
+        if((Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             GameObject.FindWithTag("SoundController").GetComponent<SoundControlScript>().PlaySound(0, .7f, "menuchime", "SFX");
         }

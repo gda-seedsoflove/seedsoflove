@@ -640,6 +640,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4356336066998726, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
       propertyPath: m_LocalPosition.x
       value: 489.5296
@@ -701,6 +706,36 @@ Prefab:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a775d8920acef744a4a5f083cf554fb,
+        type: 3}
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: f21cc32d6970d9b479611791c5feedec,
+        type: 3}
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: eddd240dc00e2264ea71fa2e86a32911,
+        type: 3}
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: d10ec95bccb0e7b4ca436827116a99c8,
+        type: 3}
+    - target: {fileID: 114282397704221336, guid: 14bf94758b65e9747b086c35791dcb70,
+        type: 2}
+      propertyPath: characterPoses.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 894481675010388408728e516bf779e3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14bf94758b65e9747b086c35791dcb70, type: 2}
   m_IsPrefabAsset: 0

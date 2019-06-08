@@ -30,27 +30,27 @@ Rosa;So far, you've been handling it, but I'm worried that one day you'll lose i
 Maria;(Wait, did she just call me a farmer?);0;L
 Maria;(Am I a real farmer now?);9;L
 Rosa;I... hold on. Let me get the phone.;0;R
-Rosa;Hello?;0;R
-Rosa;Oh Donna! Hi!;1;R
+Rosa;Hello?;5;R
+Rosa;Oh, Donna! Hi!;6;R
 Maria;(Donna?);6;L
-Rosa;Oh it's been great!;1;R
-Rosa;Yeah everything's very good.;1;R
-Rosa;Yeah, the farm is great! In fact my granddaughter is helping out over here as well!;1;R
+Rosa;How are the kids?;6;R
+Rosa;Of course! Say hi for me.;6;R
+Rosa;You know, my own granddaughter has been visiting for a while.;6;R
 Maria;(Aww... she's talking about me!);1;L
-Rosa;What? Was that today?;3;R
-Rosa;I can't I'm alone on the farm today.;3;R
-Rosa;No, Barnabus is working in the post office today.;3;R
-Rosa;What, María? No... She can't handle the farm by herself.;3;R
+Rosa;What? Was that really today? I could have sworn it was next week...;8;R
+Rosa;I can't. I'm alone on the farm today.;8;R
+Rosa;No, Barnabus is on call at the post office until his shift at the Golden Sheep.;8;R
+Rosa;What, María? No... She's just visiting.;8;R
 Maria;Wait what?;14;L
-Rosa;She's only been here for a month. I could never ask her to do that.;3;R
+Rosa;She's only been here for a month. I could never ask her to do that.;8;R
 Maria;Wait, I could do it.;0;L
-Rosa;What? No, hold on, Donna... What'd you just say, María?;3;R
+Rosa;What? No, hold on, Donna... What'd you just say, María?;8;R
 Maria;I can take care of the farm. You go do that thing you were going to do.;0;L
-Rosa;Are you... No, hold on Donna, I'm asking her!;3;R
-Rosa;Are you sure?;3;R
+Rosa;Are you... No, hold on Donna, I'm asking her!;8;R
+Rosa;Are you sure?;8;R
 Maria;Yes!;1;L
 Maria;See, you go do whatever you have to do, and I can show you that you can trust me to handle the farm.;1;L
-Rosa;Okay, let me... Yes Donna, she said yes... Yes... Yes, we'll meet there. Okay... Bye!;1;R
+Rosa;Okay, let me... Yes Donna, she said yes... Yes... Yes, we'll meet there. Okay... Bye!;6;R
 Rosa;María.;0;R
 Maria;Yes?;0;L
 Rosa;Do you know what to do today?;3;R

@@ -934,12 +934,12 @@ Prefab:
         type: 2}
       propertyPath: script
       value: 
-      objectReference: {fileID: 4900000, guid: 0c691e8bf69e36e4baf5d70523091f7d, type: 3}
+      objectReference: {fileID: 4900000, guid: d9759d73c93bf0547957bfc155c9e981, type: 3}
     - target: {fileID: 114850672438786838, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: 0c691e8bf69e36e4baf5d70523091f7d, type: 3}
+      objectReference: {fileID: 4900000, guid: d9759d73c93bf0547957bfc155c9e981, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f, type: 2}
   m_IsPrefabAsset: 0

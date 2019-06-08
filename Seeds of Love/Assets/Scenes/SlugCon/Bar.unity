@@ -1369,7 +1369,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: 7a895a0bb3e40e140b0eb84915f1f9d0, type: 3}
+      objectReference: {fileID: 4900000, guid: dc8ac44c74d1011448468ec51c1ecba3, type: 3}
     - target: {fileID: 224090678099549884, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder

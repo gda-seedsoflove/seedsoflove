@@ -19,7 +19,7 @@ Sunny;That's why I loved it!;0;R
 Maria;(AHHHH!!!);1;L
 Maria;(She <i>loved</i> it...);9;L
 ##;Scene;jumpToHeader:D2BarS1C
-##;Scene;header;D2BarS12
+##;Scene;header:D2BarS12
 Maria;I... also want to be serious. For a second.;0;L
 Maria;Thank you for talking to me on my first day here.;0;L
 Maria;I had just gotten into a fight with my abuela, and I felt so lost...;0;L

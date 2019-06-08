@@ -663,7 +663,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: 0c26b0d40d1471b42b5caa05803464dd, type: 3}
+      objectReference: {fileID: 4900000, guid: 8860a378962fac34fba383e4be20a65e, type: 3}
     - target: {fileID: 4262153489099750, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f, type: 2}
       propertyPath: m_RootOrder
       value: 3
@@ -671,7 +671,7 @@ Prefab:
     - target: {fileID: 224382369126629700, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4593201427464762, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f, type: 2}
       propertyPath: m_RootOrder

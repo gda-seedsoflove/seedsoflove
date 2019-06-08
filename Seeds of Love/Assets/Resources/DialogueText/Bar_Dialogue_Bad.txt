@@ -13,7 +13,7 @@ Barnabus;But if you're really cut out for it, one day you’re going to wake up 
 Maria;Really?;6;L
 Barnabus;Mhmm.;0;R
 Maria;O-okay. Thanks.;6;L
-Maria;(Wow, that was really nice of him to say that.);0;L
+Maria;(Wow, it was really nice of him to say that.);0;L
 ##;Bartender;exit
 Barnabus;Here. Why don’t you have a drink, on the house.;0;R
 Maria;Oh! Thank you.;1;L
@@ -86,15 +86,14 @@ Maria;But there was just so much of it. And you know what made it worse?;6;L
 Maria;All of them had these little things growing out of them, and they were all stuck to the soil and -;6;L
 Maria;I fell over trying to get the goddamn thing out of the ground and my hair got all messed up and the dirt got inside my overalls and...;6;L
 Sunny;...;6;R
-Maria;... Sorry;3;L
-Sunny;No, it’s okay. I was just worried that you might break a glass and hurt yourself.;6;R
-Maria;What? Me? Hurt myself? I’d never...;3;L
-Sunny;You just said that you fell over trying to pull a carrot out of the ground.;6;R
-Maria;What? That was just a... I didn’t mean...;3;L
+Maria;... Sorry.;3;L
+Sunny;No, it’s okay. You've obviously had a rough day.;6;R
+Sunny;Bad enough to rant at a complete stranger about it.;6;R
+Maria;...;3;L
 Maria;(She hates me.);4;L
-Sunny;Don't Worry, I’m just messing with you.;5;R
-Maria;Oh, ahha ha ha… you got me…;5;L
-Sunny;But hey, I’m sorry you’re not liking it here so far. I do hope that our little town has something to offer other than the pain of harvesting carrots.;0;R
+Sunny;Sorry, that was rude of me. It's good to vent sometimes.;5;R
+Maria;Oh... yeah... thanks.;5;L
+Sunny;And I’m sorry you’re not liking it here so far. I do hope you'll get to see more than the pain of harvesting carrots.;0;R
 Maria;Well, the sheep are really cute.;1;L
 Maria;...Probably. I still haven't seen one.;6;L
 Maria;And the fact that I get to talk to a cute girl makes this entire day worth it.;2;L

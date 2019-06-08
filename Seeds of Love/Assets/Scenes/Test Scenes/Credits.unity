@@ -900,7 +900,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Sunny\u2019s VN & Rhythm Sprites\n\nCharacter Concept & UI\n\nBarnabus
     and Sunny Concept & BG\n\nRosa Concept & VN Sprite\n\nSunny Clothes Concept\n\nRhythm
-    Sprites\n\nRhythm BG\n\nCharacter Outfit Concep & UI Emoji\n"
+    Sprites\n\nRhythm BG\n\nCharacter Outfit Concepts & UI Emoji\n"
 --- !u!222 &400602143
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -105,7 +105,7 @@ Sunny;I felt like I really connected with her then, and I ended up really liking
 ##;Scene;header:D2BarS2C
 Rosa;Oh, are the two of you...?;1;L
 Sunny;What? Oh, uhhh..., no...;3;R
-Sunny;I didn't meant that I like her like that...;3;R
+Sunny;I didn't mean that I like her like that...;3;R
 Sunny;She's just been a really great... friend...;3;R
 Rosa;Uh huh...;0;L
 ##;Rosa;exit

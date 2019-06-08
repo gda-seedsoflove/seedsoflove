@@ -38,10 +38,11 @@ Sunny;Hi stranger! Are you new around here?;1;R
 ##;Scene;choice:D1BarC1
 ##;Scene;header:D1BadBarD1
 Maria;YOU'RE A CUTECUMBER!!!;7;L
-##;Scene;jumpTo:44
+##;Scene;jumpToHeader:D1BadBarDC
 ##;Scene;header:D1BadBarD2
 Maria;YOU'RE A BOURBON ANGEL!!!;7;l
-##;Scene;jumpTo:44
+##;Scene;jumpToHeader:D1BadBarDC
+##;Scene;header:D1BadBarDC
 Sunny;Uhhh... What?;4;R
 Maria;...;0;L
 Maria;(AAAAAAAAAAHHAHAHAHAHAHAHAHHAAAHAHHAHDSJADASMFVMAKDFNIFNOIA);3;L

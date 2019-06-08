@@ -20,6 +20,7 @@ public class LoadScene : MonoBehaviour
     }
 
     public void Trigger() {
+        Debug.Log(SceneManager.GetActiveScene().name);
         PlayerData.instance.SetLastScene(SceneManager.GetActiveScene().name);
         fadeScreen.BeginTransition(GetComponent<SceneFade>().Scenename);
     }

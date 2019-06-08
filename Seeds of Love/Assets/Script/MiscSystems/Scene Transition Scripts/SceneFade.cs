@@ -88,6 +88,7 @@ public class SceneFade : MonoBehaviour {
     // Begins transition w/ desired scene number
     public void BeginTransition(string scenename) { 
         Debug.Log("Begin Transition");
+        PlayerData.instance.SetLastScene(SceneManager.GetActiveScene().name);
         StartCoroutine("FadeTransition", scenename);
     }
 

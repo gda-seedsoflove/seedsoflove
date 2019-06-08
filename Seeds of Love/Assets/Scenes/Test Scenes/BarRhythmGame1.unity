@@ -366,7 +366,7 @@ Transform:
   m_Children:
   - {fileID: 1669669347}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &105270443 stripped
 GameObject:
@@ -423,7 +423,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216257096 stripped
 GameObject:
@@ -544,7 +544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.623001}
 --- !u!1 &438252983
 GameObject:
@@ -619,7 +619,7 @@ Transform:
   m_LocalScale: {x: 0.76967686, y: 0.7827145, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441055037
 GameObject:
@@ -1044,7 +1044,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522845080
 GameObject:
@@ -1420,6 +1420,52 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &628501374
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201450089178642, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933737734642302, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+      propertyPath: m_Name
+      value: Martini_Burst_Effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b2d207687f4b6f4ea198fc2aa26b15b, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &668026272
 Prefab:
   m_ObjectHideFlags: 0
@@ -2432,7 +2478,7 @@ Transform:
   m_Children:
   - {fileID: 682820820}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119434757
 GameObject:
@@ -2615,7 +2661,7 @@ Transform:
   - {fileID: 860942779}
   - {fileID: 1050976656}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277645374
 GameObject:
@@ -2877,7 +2923,7 @@ Transform:
   m_LocalScale: {x: 0.5350874, y: 0.5350874, z: 0.5350874}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374690585
 GameObject:
@@ -3246,7 +3292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471740614
 GameObject:
@@ -3348,7 +3394,7 @@ Transform:
   m_Children:
   - {fileID: 990306476}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1600225028 stripped
 Transform:
@@ -3392,7 +3438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4588607474801818, guid: 763903625cf46f744961c53cbf567409, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
         type: 2}
@@ -3496,6 +3542,12 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 114804133736829500, guid: 763903625cf46f744961c53cbf567409,
+        type: 2}
+      propertyPath: NotePrefab
+      value: 
+      objectReference: {fileID: 1961062488577778, guid: 52456d491f892eb499b9456c523febcc,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763903625cf46f744961c53cbf567409, type: 2}
   m_IsPrefabAsset: 0
@@ -4014,7 +4066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4540492593265124, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ff33405d05d814ebb60b6bd955450e, type: 2}
@@ -4103,5 +4155,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.961}

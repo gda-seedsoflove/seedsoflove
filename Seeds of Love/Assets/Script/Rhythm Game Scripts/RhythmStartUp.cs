@@ -7,7 +7,7 @@ public class RhythmStartUp : MonoBehaviour {
 
     public GameObject StartUpMenu;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         if (StartUpMenu)
         {
             StartUpMenu.SetActive(true);
@@ -16,7 +16,7 @@ public class RhythmStartUp : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && StartUpMenu.active == true)
         {
             StartUpMenu.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
         }

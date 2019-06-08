@@ -227,7 +227,8 @@ public class DialogueManager : MonoBehaviour {
     //creates buttons for player inputs
     void CreateButtons()
     {
-        spaceText.color = new Color(0, 0, 0, 0);
+        spaceText.text = "(Enter)";
+        spaceText.rectTransform.localPosition = new Vector3(spaceText.rectTransform.localPosition.x, -76, spaceText.rectTransform.localPosition.z);
 
         int xPos = -125;
         int yPos = -127;
@@ -292,7 +293,8 @@ public class DialogueManager : MonoBehaviour {
             buttons.Remove(b);
             Destroy(b.gameObject);
         }
-        spaceText.color = new Color(1, 1, 1, 1);
+        spaceText.text = "(Space) ->";
+        spaceText.rectTransform.localPosition = new Vector3(spaceText.rectTransform.localPosition.x, -52, spaceText.rectTransform.localPosition.z);
     }
 
 

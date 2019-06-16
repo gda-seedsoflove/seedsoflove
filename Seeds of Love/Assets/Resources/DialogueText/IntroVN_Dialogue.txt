@@ -23,7 +23,7 @@ Maria;(Haven't seen my abuela in years, and the first thing I do is embarrass my
 ##;Scene;header:introD2
 Maria;Yeah, but my pride...;0;L
 Maria;It hurts, abuelita...;0;L
-Rosa;Okay, funny girl.;0;R
+Rosa;Okay, funny girl.;1;R
 ##;Scene;jumpTo:28
 ##;Scene;header:introEND
 Rosa;Come on, let's pick up the pace.;0;R

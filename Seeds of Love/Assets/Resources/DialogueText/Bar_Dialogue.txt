@@ -56,7 +56,7 @@ Sunny;Cause I like drinking here...;0;R
 Sunny;I just do the occasional social drinking...;2;R
 Sunny;Alone...;5;R
 Sunny;...;5;R
-Sunny;But anyways, what brings you here? Why talk to someone like me?;9;R
+Sunny;But anyways, what brings you here? Why talk to someone like me?;12;R
 Maria;Oh, you know... I just got off working on a farm.;0;L
 Sunny;A farm?;3;R
 Maria;Yeah! With all the tools, and the dirt..., and carrots...;0;L

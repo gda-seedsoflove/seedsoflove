@@ -3,7 +3,7 @@ Sunny;Oh, um, I’m rambling, aren't I? I’m sorry, I didn’t mean to.;11;R
 Maria;No-no, it’s okay!;0;L
 Sunny;Look at me, dumping all my problems on someone I just met. Sorry again.;11;R
 Maria;Seriously, it’s okay! I don’t mind at all. It was obvious you needed someone to talk to.;0;L
-Sunny;...;5;R
+Sunny;...;6;R
 Maria;And you shouldn’t have to deal with all that on your own.;6;L
 Sunny;... Thank you.;0;R
 Maria;Besides, it was fun getting to know you. I don't think I've ever really talked to anyone like this before.;2;L

@@ -102,6 +102,22 @@ public class EffectsManager : MonoBehaviour
         GetComponent<Animator>().Play("Note_Hit_Animation");
     }
 
+    public void PlaySpecialPulse()
+    {
+        GameObject instance = null;
+        if (ParticleEffect)
+        {
+            instance = (GameObject)Instantiate(ParticleEffect, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+        }
+        PlaySoundEffect();
+        if (HitEffect)
+        {
+            GameObject instance2 = (GameObject)Instantiate(SpecialEffect, transform.position, Quaternion.identity);
+            Destroy(instance2, 1f);
+        }
+    }
+
 
 }
 

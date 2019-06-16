@@ -13,7 +13,7 @@ Sunny;Um, this is a bit random, but...;0;R
 Maria;Yeah?;0;L
 Sunny;What time is it?;3;R
 Maria;Oh. Uh, around midnight.;0;L
-Sunny;That’s... actually pretty late. Sorry, I should head home now.;3;R
+Sunny;That’s... actually pretty late. I should head home now.;3;R
 Maria;Oh, sorry for keeping you so long!;0;L
 Sunny;I would stay longer! If I could. I’ve stayed longer tonight than I ever have before.;0;R
 Sunny;And, about what you said...;0;R
@@ -25,8 +25,16 @@ Sunny;Pfft..! It’s Friday, María. Well, Saturday now.;1;R
 Maria;Oh, right!;5;L
 Sunny;But seriously, thank you for talking to me tonight. I'm too shy to go up to people, so I usually sit alone.;0;R
 Sunny;This was really nice.;1;R
+##;moodJump:Bar:0.5:D1AfterBarS11:D1AfterBarS12
+##;header:D1AfterBarS11
 Maria;Hey, thanks for talking to me too. I'm glad my lame pick-up line didn't scare you off.;1;L
 Sunny;Don’t say that! I thought it was cute.;0;R
+##;jumpToHeader:D1AfterBarS1C
+##;header:D1AfterBarS12
+Maria;Hey, thanks for talking to me too. I'm glad my lame random outburst didn't scare you off.;1;L
+Sunny;Don’t say that! I thought it was funny.;0;R
+##;jumpToHeader:D1AfterBarS1C
+##;header:D1
 Maria;(!!!);4;L
 Maria;Nice - nice talking with you though! See you around?;2;L
 Sunny;Oh, definitely. 'Cause, you know, I live here.;1;R

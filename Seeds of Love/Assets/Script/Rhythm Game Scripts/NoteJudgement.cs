@@ -154,6 +154,13 @@ namespace Script.Behaviour
                         GetComponent<NoteMovement>().moving = false;
                         GetComponent<HoldNoteScript>().bottom.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 0);
                     }
+
+                    if (Note.SpecialNum > 0)
+                    {
+                        Debug.Log(Note.SpecialNum);
+                        GetComponent<EffectsManager>().PlaySpecialPulse();
+                    }
+
                     NoteManager.addScore(1f,1f);
                     Note.Hit = true;
                 }

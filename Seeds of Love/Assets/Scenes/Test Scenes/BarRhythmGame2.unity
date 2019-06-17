@@ -3166,7 +3166,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 9a30c5d453a29864f93035db6abc6c48, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3481,7 +3481,7 @@ Prefab:
         type: 2}
       propertyPath: beatmapFile
       value: 
-      objectReference: {fileID: 4900000, guid: d2ed6597e26344b4cad4837c041a7473, type: 3}
+      objectReference: {fileID: 4900000, guid: af387170f28144e438460a77281a9d89, type: 3}
     - target: {fileID: 1916432291987338, guid: 763903625cf46f744961c53cbf567409, type: 2}
       propertyPath: m_IsActive
       value: 0

@@ -41,6 +41,9 @@ public class BeatmapReader : MonoBehaviour
     private int timeSigTop;
     //private int timeSigBot;
     private int subdivisions;
+    private int prevTimeSig;
+    private int prevSubdiv;
+    private int lastUpdate; // number of notes since map data was updated
 
     // info on the next note, read from this in other classes
     [HideInInspector]
@@ -68,7 +71,13 @@ public class BeatmapReader : MonoBehaviour
             songEnd = false;
 
             CalculateDelay();
-            //StartCoroutine(GetMapData());
+
+            // initialize next note struct
+            nextNote.timing = 0;
+            nextNote.timing -= delay;
+            nextNote.measure = 1;
+            nextNote.beat = 1;
+
             GetMapData();
         }
         else Debug.Log("file does not exist");
@@ -91,6 +100,9 @@ public class BeatmapReader : MonoBehaviour
             // else a '(' was read, get the next note from file
             else if(!reader.EndOfStream)
             {
+                // increment note counter
+                lastUpdate++;
+
                 // next byte is the lane
                 reader.Read(nextByte, 0, 1);
                 nextNote.lane = ConvertCharBuffer(nextByte, 1);
@@ -100,6 +112,10 @@ public class BeatmapReader : MonoBehaviour
                 reader.Read(nextByte, 0, 1);
                 nextNote.type = nextByte[0];
                 reader.Read(); // skip the next comma
+
+                // save timing of prev note
+                int prevMes = nextNote.measure;
+                int prevBeat = nextNote.beat;
 
                 // read the next 3 bytes, this is measure #
                 reader.Read(buffer, 0, 3);
@@ -113,7 +129,8 @@ public class BeatmapReader : MonoBehaviour
                 nextNote.snum = 0;
                 SearchSpecialChar(')'); //Searches if the note has an extra part in it. If it does, it will be a special note
  
-                ConvertTiming(ref nextNote);
+                ConvertTiming(ref nextNote, prevMes, prevBeat);
+
             }
             else
             {
@@ -209,7 +226,7 @@ public class BeatmapReader : MonoBehaviour
             // Read(buffer, index, count)
             reader.Read(buffer, 0, 3);
             bpm = ConvertCharBuffer(buffer, 3);
-            //Debug.Log(bpm);
+
             // skip label
             SkipUntilChar(':');
             reader.Read(); // skip additional space
@@ -217,6 +234,7 @@ public class BeatmapReader : MonoBehaviour
             // read next 3 characters, this is time signature
             reader.Read(nextByte, 0, 1);
             timeSigTop = ConvertCharBuffer(nextByte, 1);
+            prevTimeSig = timeSigTop;
             reader.Read(); // skip / in time signature
             reader.Read(nextByte, 0, 1);
             //timeSigBot = ConvertCharBuffer(nextByte, 1);
@@ -228,6 +246,10 @@ public class BeatmapReader : MonoBehaviour
             // read next char, this is subdivisions
             reader.Read(nextByte, 0, 1);
             subdivisions = ConvertCharBuffer(nextByte, 1);
+            prevSubdiv = subdivisions;
+
+            // initialize notes since last map data update
+            lastUpdate = 0;
         }
         else Debug.Log("end of file reached");
     }
@@ -259,7 +281,11 @@ public class BeatmapReader : MonoBehaviour
 
             // read time signature from the next char, update field
             reader.Read(nextByte, 0, 1);
+            prevTimeSig = timeSigTop;
             timeSigTop = ConvertCharBuffer(nextByte, 1);
+
+            // reset notes since last map update
+            lastUpdate = 0;
         }
         // 'S' == updating Subdivisions
         else if(nextByte[0] == 'S')
@@ -270,7 +296,11 @@ public class BeatmapReader : MonoBehaviour
 
             // read subdivisions from the next char, update field
             reader.Read(nextByte, 0, 1);
+            prevSubdiv = subdivisions;
             subdivisions = ConvertCharBuffer(nextByte, 1);
+
+            // reset notes since last map update
+            lastUpdate = 0;
         }
     }
 
@@ -301,19 +331,40 @@ public class BeatmapReader : MonoBehaviour
     }
 
     // converts a note's measure:beat timing into seconds
-    private void ConvertTiming(ref NoteData n)
+    private void ConvertTiming(ref NoteData n, int prevMes, int prevBeat)
     {
-        double bps = bpm / 60.0f; // convert to beats per second
-        //Debug.Log(bps);
-        // raw beat number = (measures * beats/measure) + (beat / subdivisions)
-        // mathematically, the 1st measure should be the "0th" measure, likewise with beat
-        double totalBeat = (n.measure - 1) * timeSigTop;
-        totalBeat += ((double)(n.beat - 1) / (double)subdivisions);
+        // convert bpm to beats per second, then seconds per beat
+        double bps = bpm / 60.0f; 
+        double spb = 1 / bps;
+        
+        double totalBeat, prevTotalBeat;
 
-        // timing = (raw beat num / beats/sec) - delay
-        n.timing = totalBeat / bps;
+        // if the map data was just updated
+        if(lastUpdate <= 1)
+        {
+            // raw beat number = (measures * beats/measure) + (beat / subdivisions)
+            // mathematically, the 1st measure should be the "0th" measure, likewise with beat
+            totalBeat = (n.measure - 1) * timeSigTop;
+            totalBeat += ((double)(n.beat - 1) / (double)subdivisions);
+
+            prevTotalBeat = (prevMes - 1) * prevTimeSig;
+            prevTotalBeat += ((double)(prevBeat - 1) / (double)prevSubdiv);
+        }
+        else
+        {
+            // raw beat number = (measures * beats/measure) + (beat / subdivisions)
+            // mathematically, the 1st measure should be the "0th" measure, likewise with beat
+            totalBeat = (n.measure - 1) * timeSigTop;
+            totalBeat += ((double)(n.beat - 1) / (double)subdivisions);
+
+            prevTotalBeat = (prevMes - 1) * timeSigTop;
+            prevTotalBeat += ((double)(prevBeat - 1) / (double)subdivisions);
+        }
+
+        // timing = (raw beat num * sec/beat)
+        n.timing += (totalBeat - prevTotalBeat) * spb;
+
         // Debug.Log(n.timing);
-        n.timing -= delay;
     }
 
     public float GetBps()

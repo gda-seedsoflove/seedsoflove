@@ -1,0 +1,20 @@
+Maria;(AHHHH!!!);4;L
+Maria;(That was so bad!);4;L
+Maria;(We fell so many times. How did that happen!?);4;L
+Maria;(She'll never want to do this again with me after this.);4;L
+Sunny;Well, that was an interesting experience.;0;R
+Sunny;It wasn't bad though.;1;R
+Maria;It-It wasn't?;3;L
+Suny;No, I've had worse. Plus it was really fun to fail at dancing.;1;R
+Maria;We literally ended up on the ground so many times though. How is that not a problem for you?;4;L
+Maria;(I planned out this whole situation to dance with her and it couldn't have gone any worse.);4;L
+Sunny;It's okay. Maybe if you're in town any longer, I can give you some dancing lessons.;5;R
+Maria;R-Really?;5;L
+Sunny;Yeah. It's not the first time I've taught someone to dance.;1;R
+Maria;So you're a teacher of many things.;2;R
+Sunny;Yeah. I guess so.;0;R
+Sunny;So, are you interested?;12;R
+Maria;Sure, I guess.;5;L
+Sunny;Great. You'll have to let me know your farm schedule so we can plan around that.;1;R
+Maria;Yeah, of course.;2;L
+end;

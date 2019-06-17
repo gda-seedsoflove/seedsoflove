@@ -1,20 +1,55 @@
 Maria;(AHHHH!!!);4;L
 Maria;(That was so bad!);4;L
-Maria;(We fell so many times. How did that happen!?);4;L
-Maria;(She'll never want to do this again with me after this.);4;L
-Sunny;Well, that was an interesting experience.;0;R
-Sunny;It wasn't bad though.;1;R
-Maria;It-It wasn't?;3;L
-Suny;No, I've had worse. Plus it was really fun to fail at dancing.;1;R
-Maria;We literally ended up on the ground so many times though. How is that not a problem for you?;4;L
-Maria;(I planned out this whole situation to dance with her and it couldn't have gone any worse.);4;L
-Sunny;It's okay. Maybe if you're in town any longer, I can give you some dancing lessons.;5;R
-Maria;R-Really?;5;L
-Sunny;Yeah. It's not the first time I've taught someone to dance.;1;R
-Maria;So you're a teacher of many things.;2;R
-Sunny;Yeah. I guess so.;0;R
-Sunny;So, are you interested?;12;R
-Maria;Sure, I guess.;5;L
-Sunny;Great. You'll have to let me know your farm schedule so we can plan around that.;1;R
-Maria;Yeah, of course.;2;L
+Maria;(I kept stepping on her feet... And falling...);4;L
+Maria;(I don't know how I thought I'd be good at this.);12;L
+Sunny;María, are you okay?;0;R
+Sunny;Maybe it wasn't the best idea to try dancing right after you'd been working all day...;6;R
+Maria;You're right... To be honest, I had a pretty tough time at the farm today.;15;L
+Maria;My abuela's friend wanted to go out with her today, and I told her I could plow the field by myself;15;L
+##;Scene;moodJump:Day2Bar:0.5:D2BarS11:D2BarS12
+##;Scene;header:D2BarS11
+Maria;I somehow managed to get it all done by hand, but it was exhausting.;15;L
+Sunny;Wait, you plowed a whole field by hand in one day?!;4;R
+Maria;Uh, yeah.;0;L
+Maria;I didn't know how to turn the tractor on, so...;2;L
+Sunny;That's amazing!;4;R
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS12
+Maria;I tried to get it all done by hand, but I ended up making a mess.;15;L
+Sunny;Wait, you tried to plow a whole field by hand?!;4;R
+Maria;I didn't know how to turn the tractor on, so...;2;L
+Sunny;Even if you didn't get it all done, that's amazing!;4;R
+Sunny;You should probably just call your grandma next time, though.;0;R
+Maria;(Tell me about it.).;15;L
+##;Scene;jumpToHeader:D2BarS12
+##;Scene;header:D2BarS12
+Sunny;Still, I'm surprised you still wanted to come to the bar tonight after all that.;6;R
+Sunny;If I were you, I'd just want to sleep...;6;R
+Maria;Well, I promised I'd meet you tonight.;0;L
+Maria;I'm not sure how much longer I can stay here, so I don't want to miss out on seeing you.;0;L
+Maria;(That was too honest!);5;L
+Sunny;María, it's important to take care of yourself.;6;R
+Sunny;But, I, um...;0;R
+Sunny;It makes me really happy to know you like hanging out with me that much.;9;R
+Maria;(!!!);4;L
+Sunny;And I... I don't really want you to leave, either.;11;R
+Maria;(!!!!!!!);4;L
+Maria;I - I wouldn't worry about that too much!;2;L
+Sunny;Oh, really?;3;R
+Maria;Well, my abuela still needs to teach me how to turn on a tractor.;1;L
+Maria;And if you don't mind, I think need help with my dancing too...;2;L
+Sunny;Of course I don't mind! I'm a teacher, after all.;1;R
+Sunny;Well, student teacher.;9;R
+Maria;Good enough for me!;2;L
+Maria;(I'm glad she's so understanding. It almost makes me want to...);2;L
+Player;Hug her!:line,49,D2GoodBar1,D2GoodBar11;KISS HER.:line,45,D2GoodBar1,D2GoodBar12
+Maria;(Wait, kiss her?! Kiss her?????);3;L
+Maria;(I... want to kiss her.);5;L
+Maria;(I'm not sure if this is the right time for that, though.);4;L
+Maria;(Keep it together, María. Go in for a hug. Deal with kissy thoughts later.);11;L
+Maria;Thank you so much for today, Sunny.;1;L
+Maria;Is it okay if I hug you?;2;L
+Sunny;Oh! Y-yeah! Of course!;3;R
+Maria;Then I'll just -;2;L
+Maria;OOP;13;L
 end;

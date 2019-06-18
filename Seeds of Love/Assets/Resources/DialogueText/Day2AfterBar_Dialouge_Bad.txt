@@ -21,8 +21,8 @@ Maria;I didn't know how to turn the tractor on, so...;2;L
 Sunny;Even if you didn't get it all done, that's amazing!;4;R
 Sunny;You should probably just call your grandma next time, though.;0;R
 Maria;(Tell me about it.);15;L
-##;Scene;jumpToHeader:D2BarS12
-##;Scene;header:D2BarS12
+##;Scene;jumpToHeader:D2BarS1C
+##;Scene;header:D2BarS1C
 Sunny;Still, I'm surprised you still wanted to come to the bar tonight after all that.;6;R
 Sunny;If I were you, I'd just want to sleep...;6;R
 Maria;Well, I promised I'd meet you tonight.;0;L

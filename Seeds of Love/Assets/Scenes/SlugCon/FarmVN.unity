@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 1782484238}
   - component: {fileID: 1782484237}
   m_Layer: 5
-  m_Name: ChatLogImage (1)
+  m_Name: ChatLogImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1271,6 +1271,11 @@ Prefab:
         type: 2}
       propertyPath: Scenename
       value: FarmRhythmGame1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224049961780123344, guid: 8526797b0583b0241a1fbe33597b5442,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8526797b0583b0241a1fbe33597b5442, type: 2}

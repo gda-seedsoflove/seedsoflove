@@ -45,7 +45,6 @@ public class ChatLogParser : MonoBehaviour
         lineNum = manager.lineNum;
         chatLogCounter = 0;
         maxCount = 5;
-        hasFinishedTalking = false;
 
         dialogueTextArray = GameObject.FindGameObjectsWithTag("DialogueLine");
 

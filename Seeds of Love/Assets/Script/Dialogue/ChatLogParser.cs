@@ -70,7 +70,9 @@ public class ChatLogParser : MonoBehaviour
 
     void updateChatLogUI() {
 
-        currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+        string charName = manager.characterName;
+        if (charName == "Maria") charName = "María";
+        currentDialogueText = "<i>" + charName + "</i>" + ": " + manager.dialogue;
         if (currentDialogueText != lastDialogueText)
         {
             for (int k = chatLogArray.Length - 1; k > 0; k--)
@@ -81,8 +83,6 @@ public class ChatLogParser : MonoBehaviour
 
             lastDialogueText = currentDialogueText;
         }
-        
-        
 
         int i = 0;
         for(int j = chatLogArray.Length - 1; j >= 0; j--) {

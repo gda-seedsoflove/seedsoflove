@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnAndDespawnPauseMenu : MonoBehaviour {
 
@@ -23,6 +24,7 @@ public class SpawnAndDespawnPauseMenu : MonoBehaviour {
         else if (PausePanel.activeSelf == false)
         {
             PausePanel.SetActive(true);
+            GameObject.FindGameObjectWithTag("BackToGame").GetComponent<Button>().Select();
         }
         else
         {

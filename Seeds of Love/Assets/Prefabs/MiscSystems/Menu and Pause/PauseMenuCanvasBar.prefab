@@ -163,6 +163,8 @@ GameObject:
   - component: {fileID: 222177251045189444}
   - component: {fileID: 114465674181389350}
   - component: {fileID: 114653057624185340}
+  - component: {fileID: 114672140862342460}
+  - component: {fileID: 114153855063982888}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -408,6 +410,7 @@ GameObject:
   - component: {fileID: 114861114593220422}
   - component: {fileID: 114473782830950390}
   - component: {fileID: 114842529011576376}
+  - component: {fileID: 114129971027940504}
   m_Layer: 0
   m_Name: ReturnToTitle
   m_TagString: PauseScreen
@@ -426,6 +429,8 @@ GameObject:
   - component: {fileID: 222304469930111262}
   - component: {fileID: 114424932779777138}
   - component: {fileID: 114446916906605914}
+  - component: {fileID: 114576509296905976}
+  - component: {fileID: 114424523358031178}
   m_Layer: 0
   m_Name: WASD
   m_TagString: Untagged
@@ -444,6 +449,8 @@ GameObject:
   - component: {fileID: 222914117432586614}
   - component: {fileID: 114887129739876138}
   - component: {fileID: 114147855230516960}
+  - component: {fileID: 114100135629295162}
+  - component: {fileID: 114916269151507046}
   m_Layer: 0
   m_Name: JKL
   m_TagString: Untagged
@@ -585,6 +592,17 @@ MonoBehaviour:
   newSelect: {fileID: 1145129424981962}
   optionsPanel: {fileID: 1161054233142466}
   pausePanel: {fileID: 1396730502353316}
+--- !u!114 &114100135629295162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955984319377858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114128643974387646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -626,6 +644,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114129971027940504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833605948207280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2d14491b466c34c80db6a6fdd57831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114141806275847932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -692,8 +721,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: JKLPreset
+      - m_Target: {fileID: 114153855063982888}
+        m_MethodName: JKL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -732,6 +761,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114153855063982888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230700431519736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114160872984672144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,7 +791,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cf9dbecfa2bba0e4d9b14bc3220bc14b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3aea77f1d7865754680f46a098f61c11, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1027,6 +1067,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114424523358031178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900045200027658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114424932779777138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1093,8 +1144,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: WASDPreset
+      - m_Target: {fileID: 114153855063982888}
+        m_MethodName: WASD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1272,6 +1323,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114576509296905976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900045200027658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114653057624185340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1311,8 +1373,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ArrowPreset
+      - m_Target: {fileID: 114153855063982888}
+        m_MethodName: ArrowKeys
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1343,7 +1405,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cf9dbecfa2bba0e4d9b14bc3220bc14b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3aea77f1d7865754680f46a098f61c11, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1351,6 +1413,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114672140862342460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230700431519736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114681298311134914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1513,8 +1586,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1577,7 +1650,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224079334509354408}
   m_Direction: 0
   m_MinValue: -20
-  m_MaxValue: 10
+  m_MaxValue: 4
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1658,6 +1731,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_MethodName: TogglePauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_MethodName: TogglePause
         m_Mode: 4
         m_Arguments:
@@ -1668,8 +1752,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: TogglePauseMenu
+      - m_Target: {fileID: 114129971027940504}
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1753,13 +1837,24 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &114916269151507046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955984319377858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114931392091858864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451070980624842}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b55ac223aba719c47804961f872098a6, type: 3}
   m_Name: 
@@ -1919,7 +2014,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555481257981144}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!222 &222691791564182340
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2004,7 +2099,7 @@ RectTransform:
   m_GameObject: {fileID: 1047492641675448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224738436927480760}
   m_RootOrder: 0
@@ -2046,7 +2141,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMax: {x: 0.8333333, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2063,8 +2158,8 @@ RectTransform:
   m_Father: {fileID: 224606440981516498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6666667, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMin: {x: 0.8333333, y: 0}
+  m_AnchorMax: {x: 0.8333333, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2151,7 +2246,7 @@ RectTransform:
   m_GameObject: {fileID: 1555481257981144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 224946280449414524}
   m_RootOrder: 0
@@ -2248,14 +2343,14 @@ RectTransform:
   m_GameObject: {fileID: 1477170908464258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224321138777037030}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 168}
+  m_AnchoredPosition: {x: 0, y: 157.92}
   m_SizeDelta: {x: 460, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224542466297002124
@@ -2378,7 +2473,7 @@ RectTransform:
   m_GameObject: {fileID: 1991039688562204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0006958, y: 0.69988704, z: 1.0000957}
+  m_LocalScale: {x: 1.1, y: 0.69988704, z: 1.0000957}
   m_Children: []
   m_Father: {fileID: 224946280449414524}
   m_RootOrder: 4

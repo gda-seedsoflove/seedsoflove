@@ -35,6 +35,7 @@ public class ChatLogParser : MonoBehaviour
     DialogueManager manager;
     GameObject dialogueManager;
     Queue<string> chatLogQueue = new Queue<string>();
+    string[] chatLogArray;
 
     public void Start(){
         dialogueManager = GameObject.FindWithTag("DialogueManager");
@@ -47,6 +48,7 @@ public class ChatLogParser : MonoBehaviour
         lineNum = manager.lineNum;
         chatLogCounter = 0;
         maxCount = 5;
+        chatLogArray = new string[maxCount];
 
         dialogueTextArray = GameObject.FindGameObjectsWithTag("DialogueLine");
 
@@ -54,6 +56,7 @@ public class ChatLogParser : MonoBehaviour
             string name = ("DialogueLine " + "(" + i + ")");
             dialogueTextArray[i] = GameObject.Find(name);
             Debug.Log(dialogueTextArray[i].name);
+            chatLogArray[i] = "";
         }
     }
 
@@ -70,17 +73,16 @@ public class ChatLogParser : MonoBehaviour
         currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
         if (currentDialogueText != lastDialogueText)
         {
-            chatLogQueue.Enqueue(currentDialogueText);
+            for (int k = chatLogArray.Length - 1; k > 0; k--)
+            {
+                chatLogArray[k] = chatLogArray[k - 1];
+            }
+            chatLogArray[0] = currentDialogueText;
+
             lastDialogueText = currentDialogueText;
         }
         
-        if(chatLogCounter == maxCount) {
-            chatLogQueue.Dequeue();
-        } else {
-            chatLogCounter++;
-        }
-
-        string[] chatLogArray = chatLogQueue.ToArray();
+        
 
         int i = 0;
         for(int j = chatLogArray.Length - 1; j >= 0; j--) {

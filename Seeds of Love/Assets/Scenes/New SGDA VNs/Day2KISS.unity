@@ -1037,6 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 1621496127}
+  hug: {fileID: 21300000, guid: 20154951b40c0094f821dcf32fe5b598, type: 3}
 --- !u!212 &1397203763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1415,7 +1416,7 @@ Prefab:
         type: 2}
       propertyPath: scriptBad
       value: 
-      objectReference: {fileID: 4900000, guid: 60a79718534b4a14b9c1b8ab1908ad08, type: 3}
+      objectReference: {fileID: 4900000, guid: 29864e1dd18c1b74a909c79752680eb8, type: 3}
     - target: {fileID: 224090678099549884, guid: 3fe9ad826b3c1ac42b39ad2e000a5c2f,
         type: 2}
       propertyPath: m_RootOrder

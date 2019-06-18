@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 222177251045189444}
   - component: {fileID: 114465674181389350}
   - component: {fileID: 114653057624185340}
-  - component: {fileID: 114096439553389266}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -187,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1427823665813534
 GameObject:
   m_ObjectHideFlags: 1
@@ -409,7 +408,6 @@ GameObject:
   - component: {fileID: 114861114593220422}
   - component: {fileID: 114473782830950390}
   - component: {fileID: 114842529011576376}
-  - component: {fileID: 114293135962999116}
   m_Layer: 0
   m_Name: ReturnToTitle
   m_TagString: PauseScreen
@@ -428,7 +426,6 @@ GameObject:
   - component: {fileID: 222304469930111262}
   - component: {fileID: 114424932779777138}
   - component: {fileID: 114446916906605914}
-  - component: {fileID: 114728352858755300}
   m_Layer: 0
   m_Name: WASD
   m_TagString: Untagged
@@ -447,7 +444,6 @@ GameObject:
   - component: {fileID: 222914117432586614}
   - component: {fileID: 114887129739876138}
   - component: {fileID: 114147855230516960}
-  - component: {fileID: 114819378599944718}
   m_Layer: 0
   m_Name: JKL
   m_TagString: Untagged
@@ -589,17 +585,6 @@ MonoBehaviour:
   newSelect: {fileID: 1145129424981962}
   optionsPanel: {fileID: 1161054233142466}
   pausePanel: {fileID: 1396730502353316}
---- !u!114 &114096439553389266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230700431519736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114128643974387646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -707,8 +692,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114096439553389266}
-        m_MethodName: JKL
+      - m_Target: {fileID: 0}
+        m_MethodName: JKLPreset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -963,17 +948,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Exit Game
---- !u!114 &114293135962999116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1833605948207280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2d14491b466c34c80db6a6fdd57831, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114297221900165340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1119,8 +1093,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114096439553389266}
-        m_MethodName: WASD
+      - m_Target: {fileID: 0}
+        m_MethodName: WASDPreset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1337,8 +1311,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114096439553389266}
-        m_MethodName: ArrowKeys
+      - m_Target: {fileID: 0}
+        m_MethodName: ArrowPreset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1410,17 +1384,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Options
---- !u!114 &114728352858755300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1900045200027658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114729827595468508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1530,17 +1493,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Paused
---- !u!114 &114819378599944718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1955984319377858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e02432b449a534d82aa165ad705c0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114838711959415926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1561,7 +1513,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5c245eb3638352f4c86d90c15ef96b03, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -1727,17 +1679,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114293135962999116}
-        m_MethodName: Unpause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114887129739876138
@@ -1818,7 +1759,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451070980624842}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b55ac223aba719c47804961f872098a6, type: 3}
   m_Name: 
@@ -2210,7 +2151,7 @@ RectTransform:
   m_GameObject: {fileID: 1555481257981144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 224946280449414524}
   m_RootOrder: 0
@@ -2307,7 +2248,7 @@ RectTransform:
   m_GameObject: {fileID: 1477170908464258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224321138777037030}
   m_RootOrder: 0

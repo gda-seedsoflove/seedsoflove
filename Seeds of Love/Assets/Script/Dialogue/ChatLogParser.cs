@@ -29,7 +29,6 @@ public class ChatLogParser : MonoBehaviour
 
     string currentDialogueText;
     int fontSize;
-    bool hasFinishedTalking;
     float textWidth, parentWidth;
     DialogueParser parser;
     DialogueManager manager;
@@ -58,13 +57,10 @@ public class ChatLogParser : MonoBehaviour
     }
 
     public void Update(){
-        if (((Input.GetMouseButtonDown(0) && !manager.playerTalking && manager.inCoroutine) || (Input.GetKeyDown("space") && !manager.playerTalking && manager.inCoroutine))) {
+
+        if(!manager.inCoroutine && ((Input.GetMouseButtonDown(0) && !manager.playerTalking) || (Input.GetKeyDown("space") && !manager.playerTalking)))
+        {
             updateChatLogUI();
-        } else if (manager.playerTalking && !hasFinishedTalking) {
-            hasFinishedTalking = true;
-        } else if (!manager.playerTalking && hasFinishedTalking) {
-            updateChatLogUI();
-            hasFinishedTalking = false;
         }
     }
 

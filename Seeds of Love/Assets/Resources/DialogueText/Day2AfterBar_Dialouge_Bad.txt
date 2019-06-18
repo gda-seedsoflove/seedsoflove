@@ -5,7 +5,7 @@ Maria;(I don't know how I thought I'd be good at this.);12;L
 Sunny;María, are you okay?;0;R
 Sunny;Maybe it wasn't the best idea to try dancing right after you'd been working all day...;6;R
 Maria;You're right... To be honest, I had a pretty tough time at the farm today.;15;L
-Maria;My abuela's friend wanted to go out with her today, and I told her I could plow the field by myself;15;L
+Maria;My abuela's friend wanted to go out with her today, and I told her I could plow the field by myself.;15;L
 ##;Scene;moodJump:Day2Bar:0.5:D2BarS11:D2BarS12
 ##;Scene;header:D2BarS11
 Maria;I somehow managed to get it all done by hand, but it was exhausting.;15;L
@@ -20,7 +20,7 @@ Sunny;Wait, you tried to plow a whole field by hand?!;4;R
 Maria;I didn't know how to turn the tractor on, so...;2;L
 Sunny;Even if you didn't get it all done, that's amazing!;4;R
 Sunny;You should probably just call your grandma next time, though.;0;R
-Maria;(Tell me about it.).;15;L
+Maria;(Tell me about it.);15;L
 ##;Scene;jumpToHeader:D2BarS12
 ##;Scene;header:D2BarS12
 Sunny;Still, I'm surprised you still wanted to come to the bar tonight after all that.;6;R
@@ -51,5 +51,5 @@ Maria;Thank you so much for today, Sunny.;1;L
 Maria;Is it okay if I hug you?;2;L
 Sunny;Oh! Y-yeah! Of course!;3;R
 Maria;Then I'll just -;2;L
-Maria;OOP;13;L
+Maria;WOOPS;14;L
 end;

@@ -28,6 +28,7 @@ public class ChatLogParser : MonoBehaviour
     Text[] organizedDTA; 
 
     string currentDialogueText;
+    string lastDialogueText;
     int fontSize;
     float textWidth, parentWidth;
     DialogueParser parser;
@@ -42,6 +43,7 @@ public class ChatLogParser : MonoBehaviour
         }
         parser = dialogueManager.GetComponent<DialogueParser>();
         currentDialogueText = "";
+        lastDialogueText = "";
         lineNum = manager.lineNum;
         chatLogCounter = 0;
         maxCount = 5;
@@ -57,26 +59,21 @@ public class ChatLogParser : MonoBehaviour
 
     public void Update(){
 
-        if(!manager.inCoroutine && ((Input.GetMouseButtonDown(0) && !manager.playerTalking) || (Input.GetKeyDown("space") && !manager.playerTalking)))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("space"))
         {
             updateChatLogUI();
         }
     }
 
     void updateChatLogUI() {
-        if (!manager.playerTalking) {
-            if (!parser.GetContent(lineNum).Equals("")) {
-                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
-            } else {
-                lineNum++;
-                currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
-            }
-        }
-        else {
-            currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
-        }
 
-        chatLogQueue.Enqueue(currentDialogueText);
+        currentDialogueText = "<i>" + manager.characterName + "</i>" + ": " + manager.dialogue;
+        if (currentDialogueText != lastDialogueText)
+        {
+            chatLogQueue.Enqueue(currentDialogueText);
+            lastDialogueText = currentDialogueText;
+        }
+        
         if(chatLogCounter == maxCount) {
             chatLogQueue.Dequeue();
         } else {

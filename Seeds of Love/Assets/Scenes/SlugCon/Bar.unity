@@ -480,7 +480,7 @@ Prefab:
         type: 2}
       propertyPath: chatLogImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 648676416}
     - target: {fileID: 114298593743011176, guid: d9e3e564259bd344ab8a29e2769830ab,
         type: 2}
       propertyPath: thisCanvas

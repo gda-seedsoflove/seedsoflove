@@ -48,11 +48,15 @@ namespace Script.Behaviour
 
         private void Update()
         {
-            if ((Input.GetKeyDown(PlayerData.instance.spacekeybind)) && Note.Holding == false)
+            bool spacekeydown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.K);
+            bool spacekeyup = Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.K);
+            
+
+            if (spacekeydown && Note.Holding == false)
             {
                 bufferedtime = .1f;
             }
-            if ((Input.GetKeyUp(PlayerData.instance.spacekeybind)) && Note.Holding == true)
+            if (spacekeyup && Note.Holding == true)
             {
                 holdingspace = false;
                 releasebuffertime = .15f;
@@ -66,6 +70,9 @@ namespace Script.Behaviour
 
         void FixedUpdate()
         {
+            bool spacekeydown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.K);
+            bool spacekeyup = Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.K);
+            
 
             CheckLanes();
 
@@ -99,7 +106,7 @@ namespace Script.Behaviour
             }
             else if(Note.isHoldNote)
             {
-                if (CanHit() && Note.Holding == true && (releasebuffertime > 0 || Input.GetKeyUp(PlayerData.instance.spacekeybind))) // Correctly releases at right time.
+                if (CanHit() && Note.Holding == true && (releasebuffertime > 0 || spacekeyup)) // Correctly releases at right time.
                 {
                     Note.Holding = false;
                     GetComponent<HoldNoteScript>().top.GetComponent<SpriteRenderer>().material.color = new Color(c.r, c.g, c.b, 0);

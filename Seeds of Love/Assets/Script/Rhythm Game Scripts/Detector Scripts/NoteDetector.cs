@@ -75,8 +75,16 @@ public class NoteDetector : MonoBehaviour
 
         transform.position = Object.transform.position; // Stay on the object
 
+        bool leftkey = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.J);
+        bool leftkeyup = Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.J);
 
-        if(Input.GetKeyDown(PlayerData.instance.leftkeybind))
+        bool rightkey = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.L);
+        bool rightkeyup = Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.L);
+
+        bool dashkey = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.UpArrow);
+        bool dashkeyup = Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.I) || Input.GetKeyUp(KeyCode.UpArrow);
+
+        if (leftkey)
         {
             leftdown = true;
         }
@@ -84,13 +92,13 @@ public class NoteDetector : MonoBehaviour
         {
             leftup = false; // since this is above the true setter, this value is only true for one frame
         }
-        if (Input.GetKeyUp(PlayerData.instance.leftkeybind))
+        if (leftkeyup)
         {
             leftup = true;
 
         }
 
-        if (Input.GetKeyDown(PlayerData.instance.rightkeybind))
+        if (rightkey)
         {
             rightdown = true;
         }
@@ -98,7 +106,7 @@ public class NoteDetector : MonoBehaviour
         {
             rightup = false; // since this is above the true setter, this value is only true for one frame
         }
-        if (Input.GetKeyUp(PlayerData.instance.rightkeybind))
+        if (rightkeyup)
         {
             rightup = true;
         }
@@ -142,7 +150,7 @@ public class NoteDetector : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(PlayerData.instance.dashkeybind))
+        if (Input.GetKey(KeyCode.LeftShift)|| dashkey)
         {
             if(rightbuffer > 0)
             {
@@ -160,7 +168,7 @@ public class NoteDetector : MonoBehaviour
             shiftbuffer = .15f;
             changespeed = 40;
         }
-        else if(Input.GetKeyUp("left shift") || Input.GetKeyUp(PlayerData.instance.dashkeybind))
+        else if(Input.GetKeyUp("left shift") || dashkeyup)
         {
             holdingshift = false;
             changespeed = originalspeed;
@@ -211,21 +219,23 @@ public class NoteDetector : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(PlayerData.instance.rightkeybind) || Input.GetKeyDown(PlayerData.instance.leftkeybind))
+        if (rightkey || leftkey)
         {
             Vector2 currentpos = new Vector2(origin.x + pos.x * spread, origin.y + pos.y * spread);
             middle = ((currentpos.x - transform.position.x) / 2f) + transform.position.x;
         }
 
+        bool spacekeydown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.K);
+        bool spacekey = Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.K);
 
-        if (Input.GetKeyDown(PlayerData.instance.spacekeybind))
+        if (spacekeydown)
         {
             transform.Find("PressEffect").GetComponent<Animator>().Play("Press_Effect",0,0f);
             transform.Find("Outline").GetComponent<SpriteRenderer>().color = new Color(1,1,1,.7f);
             whitetime = .1f;
             transform.localScale = new Vector3(.85f, .85f, 1);
         }
-        else if (Input.GetKey(PlayerData.instance.spacekeybind) == false)
+        else if (!spacekey)
         {
             transform.Find("Outline").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
             //transform.localScale = new Vector3(1,1,1);
@@ -256,8 +266,9 @@ public class NoteDetector : MonoBehaviour
             moving = false;
         }
 
+        bool spacekeydown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.K);
 
-        if (moving && Input.GetKey(PlayerData.instance.spacekeybind) == false)
+        if (moving && !spacekeydown)
         {
             float distance = Mathf.Abs(middle - Object.transform.position.x);
             float scale = Mathf.Clamp(((distance * 2) / spread), .3f, 1);
@@ -267,7 +278,7 @@ public class NoteDetector : MonoBehaviour
             currscale = Mathf.SmoothDamp(currscale, scale, ref speed, .012f);
             transform.localScale = new Vector3(1, currscale, 1);
         }
-        else if(Input.GetKey(PlayerData.instance.spacekeybind) == false && moving == false)
+        else if(!moving && !spacekeydown)
         {
             currscale = 1;
             transform.localScale = new Vector3(1, 1, 1);

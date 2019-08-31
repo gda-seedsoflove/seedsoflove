@@ -809,13 +809,15 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1182254677}
+      objectReference: {fileID: 0}
     - target: {fileID: 114861114593220422, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1182254676}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114243507776157000, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c, type: 2}
+    - {fileID: 114191344456686186, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: daf8bf3a8c515ec4b8c5f5e12e4d796c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &488635438
@@ -1175,7 +1177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1182254677}
+      - m_Target: {fileID: 0}
         m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
@@ -1903,7 +1905,6 @@ GameObject:
   - component: {fileID: 932877467}
   - component: {fileID: 932877466}
   - component: {fileID: 932877465}
-  - component: {fileID: 932877464}
   - component: {fileID: 932877463}
   m_Layer: 5
   m_Name: Return_Button
@@ -1946,18 +1947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 850204046}
   pButton: {fileID: 528635429}
---- !u!114 &932877464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114959850485124162, guid: b3b484d77e2e1944494eb04b6d7ba8b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 932877461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc4249ae98124943b12ce4d52c46b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  TogglePause: {fileID: 0}
 --- !u!114 &932877465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,7 +2573,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1182254678}
-  - component: {fileID: 1182254677}
   - component: {fileID: 1182254676}
   - component: {fileID: 1182254675}
   m_Layer: 0
@@ -2617,21 +2606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5f35afce7c0464396221e83cc2fd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
   PausePanel: {fileID: 1317627609}
   optionsPanel: {fileID: 1010991437}
   pButton: {fileID: 528635429}
---- !u!114 &1182254677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114255344208775662, guid: f5b6d7849a9648a4caf20384c3c5a80e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1182254674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc837ff2f574ec34999b94ccae0b5bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1182254678
 Transform:
   m_ObjectHideFlags: 0

@@ -26,14 +26,6 @@ public class PauseAndUnpauseTime : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float currentUnpausedTime = 1;
-        if(Time.timeScale != 0)
-        {
-            currentUnpausedTime = Time.timeScale;
-        }
-        if (Input.GetKeyDown("escape"))
-        {
-            TogglePause(currentUnpausedTime);
-        }
+       
     }
 }

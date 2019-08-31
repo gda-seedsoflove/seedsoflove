@@ -10,34 +10,46 @@ public class SpawnAndDespawnPauseMenu : MonoBehaviour {
 		
 	}
 
+    public bool paused = false;
+
     public GameObject PausePanel;
     public GameObject optionsPanel;
     public GameObject pButton;
 
     public void TogglePauseMenu()
     {
-        if (optionsPanel.activeSelf == true)
+
+        if (PausePanel.activeSelf || optionsPanel.activeSelf)
         {
+            Time.timeScale = 1.0f;
+            AudioListener.pause = true;
+            paused = false;
+
             optionsPanel.SetActive(false);
             PausePanel.SetActive(false);
         }
-        else if (PausePanel.activeSelf == false)
-        {
-            PausePanel.SetActive(true);
-            GameObject.FindGameObjectWithTag("BackToGame").GetComponent<Button>().Select();
-        }
         else
         {
-            PausePanel.SetActive(false);
+            Time.timeScale = 0.0f;
+            AudioListener.pause = false;
+            paused = true;
+
+            optionsPanel.SetActive(false);
+            PausePanel.SetActive(true);
+            GameObject.Find("Pause_Menu_Panel/Return_Button").GetComponent<Button>().Select();
         }
-        
+        Debug.Log(AudioListener.pause);
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown("escape"))
         {
             TogglePauseMenu();
         }
+        Debug.Log(AudioListener.pause);
     }
+
+
 }

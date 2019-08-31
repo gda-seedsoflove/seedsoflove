@@ -51,6 +51,8 @@ public class NoteDetector : MonoBehaviour
     [HideInInspector]
     public float shiftbuffer, leftbuffer, rightbuffer;
 
+    public SpawnAndDespawnPauseMenu pm;
+
     //Setting the origin point and position of the mover to the object
     private void Awake()
     {
@@ -65,11 +67,15 @@ public class NoteDetector : MonoBehaviour
         origin = Object.transform.position;
         originalspeed = changespeed;
 
+        pm = GameObject.Find("UI").GetComponent<SpawnAndDespawnPauseMenu>();
+
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (pm.paused) return;
+
         Lane = (int)((Object.transform.position.x - origin.x) + 0.5f);  // Determines the lane the detector is on. 0.5f to make it round to the nearest int
         //Debug.Log((int)((Object.transform.position.x - origin.x) + 0.5f));
 
@@ -255,6 +261,8 @@ public class NoteDetector : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (pm.paused) return;
+
         MoveToPosition();
         Vector2 targetpos = new Vector2(origin.x + pos.x * spread, origin.y + pos.y * spread);
         if ((Vector2)Object.transform.position != targetpos)

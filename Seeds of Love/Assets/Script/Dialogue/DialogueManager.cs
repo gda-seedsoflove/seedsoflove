@@ -338,7 +338,7 @@ public class DialogueManager : MonoBehaviour {
             if (letter == '>') // Closes and executes RT command.
             {
                 richText = false;
-                if(richTextSignal == true) // exectution of RT opening command
+                if(richTextSignal == true) // adding the RT opening command
                 {
                     if(string.Equals(tempRichTextCommand, "b")) // for bolding
                     {

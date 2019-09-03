@@ -299,14 +299,69 @@ public class DialogueManager : MonoBehaviour {
 
 
     //animates text so that it appears one letter at a time
+    /* Now supporting Rich text (RT, for the sake of typing comments)!!!
+     * The way this works is by detecting '<' characters in the text files. That opens a new tag for the letter.
+     * So when we dump in letters for Unity's text parser, we add those tags for each individual letter.
+     * Also, this will no longer yield back to Unity until the function has computed all RT commands.
+     */
     IEnumerator TypeSentence (string sentence, string characterName)
     {
         inCoroutine = true;
         int blipWait = 3; //makes blips play only every blipWait-th character.
-        dialogueText.text = "";
+        dialogueText.text = ""; // base dialouge text.
+
+        // All of these variables have to do with the rich text stuff.
+        bool richText = false; // tells whether we're in a richtext command or not.
+        bool richTextSignal = true; // tells the rich text thing command thingy whether we're at the start or the end of the a rich text markup.
+        string richTextCommandStart = ""; // contains instructions for the rich text's begining
+        string richTextCommandEnd = ""; // contains instructions for the rich text's end.
+        string tempRichTextCommand = ""; // temporary holds what the text command is.
+        string tempRTCommand2 = ""; // temp var used in replacing things.
+
         foreach (char letter in sentence.ToCharArray())
         {
-
+            // The following three if statements at this level will deal with rich text.
+            if (letter == '<') // Checks for opening RT statement
+            {
+                richText = true;
+                continue;
+            }
+            if (richText == true) // Stores RT command
+            {
+                if (letter == '/')
+                {
+                    richTextSignal = false;
+                }
+                else { tempRichTextCommand += letter; }
+                continue;
+            }
+            if (letter == '>') // Closes and executes RT command.
+            {
+                richText = false;
+                if(richTextSignal == true) // exectution of RT opening command
+                {
+                    if(string.Equals(tempRichTextCommand, "b")) // for bolding
+                    {
+                        richTextCommandStart += "<b>";
+                        richTextCommandEnd = "</b>" + richTextCommandEnd;
+                    }
+                    if(string.Equals(tempRichTextCommand, "i"))
+                    {
+                        richTextCommandStart += "<i>";
+                        richTextCommandEnd = "</i>" + richTextCommandEnd;
+                    }
+                    if (string.Equals(tempRichTextCommand.Substring(0, 5), "color"))
+                    {
+                        richTextCommandStart = "<" + tempRichTextCommand + ">";
+                        richTextCommandEnd = "</color>" + richTextCommandEnd;
+                    }
+                }
+                else if(richTextSignal == false) // execution of RT closing command
+                {
+                }
+                richTextSignal = true;
+                continue;
+            }
             if(blipWait == 3) //make sure this matches the declaration
             {
                 if (characterName.Equals(""))
@@ -324,8 +379,12 @@ public class DialogueManager : MonoBehaviour {
                 ++blipWait;
             }
             
-            dialogueText.text += letter;
-            yield return null;
+            
+            if(richText == false)
+            {
+                dialogueText.text += richTextCommandStart + letter + richTextCommandEnd;
+                yield return null;
+            }
         }
         inCoroutine = false;
     }

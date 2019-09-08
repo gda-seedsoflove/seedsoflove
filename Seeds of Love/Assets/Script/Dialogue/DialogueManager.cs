@@ -323,7 +323,6 @@ public class DialogueManager : MonoBehaviour {
             if (letter == '<') // Checks for opening RT statement
             {
                 richText = true;
-                Debug.Log("Opened richtext");
                 continue;
             }
             if (letter == '>') // Closes and executes RT command.
@@ -331,12 +330,12 @@ public class DialogueManager : MonoBehaviour {
                 richText = false;
                 if(richTextSignal == true) // adding the RT opening command
                 {
-                    if(string.Equals(tempRichTextCommand, "b")) // for bolding
+                    if (string.Equals(tempRichTextCommand, "b")) // for bolding
                     {
                         richTextCommandStart += "<b>";
                         richTextCommandEnd = "</b>" + richTextCommandEnd;
                     }
-                    else if(string.Equals(tempRichTextCommand, "i"))
+                    else if (string.Equals(tempRichTextCommand, "i"))
                     {
                         richTextCommandStart += "<i>";
                         richTextCommandEnd = "</i>" + richTextCommandEnd;
@@ -346,6 +345,7 @@ public class DialogueManager : MonoBehaviour {
                         richTextCommandStart = "<" + tempRichTextCommand + ">";
                         richTextCommandEnd = "</color>" + richTextCommandEnd;
                     }
+                    else { Debug.Log("Whatever you dumped in was not a valid command. We only do bold, italics, and color right now."); }
                 }
                 else if(richTextSignal == false) // execution of RT closing command
                 {
@@ -375,6 +375,7 @@ public class DialogueManager : MonoBehaviour {
                         }
                         richTextCommandEnd = richTextCommandEnd.Replace("</color>", "");
                     }
+                    else { Debug.Log("That was not a valid command. We only do bold, italics, and color right now."); }
                 }
                 tempRichTextCommand = "";
                 richTextSignal = true;
@@ -385,12 +386,10 @@ public class DialogueManager : MonoBehaviour {
                 if (letter == '/')
                 {
                     richTextSignal = false;
-                    Debug.Log("Command is closing");
                 }
                 else
                 {
                     tempRichTextCommand += letter;
-                    Debug.Log("Added " + letter + " character to command");
                 }
                 continue;
             }

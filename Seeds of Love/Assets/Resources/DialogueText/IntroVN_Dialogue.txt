@@ -1,4 +1,3 @@
-Maria;<b>So...</b> <color=red>I</color> <i>heard</i> <color=blue>you</color> like some <color=green>rich <i>text<b>!!!</b></i></color>;1;L
 Maria;Wow... look at that sky! It's never this blue in the city.;1;L
 Maria;Is it always like this around here?;1;L
 Rosa;Mmhm.;0;R

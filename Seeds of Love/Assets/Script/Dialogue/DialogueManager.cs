@@ -316,7 +316,6 @@ public class DialogueManager : MonoBehaviour {
         string richTextCommandStart = ""; // contains instructions for the rich text's begining
         string richTextCommandEnd = ""; // contains instructions for the rich text's end.
         string tempRichTextCommand = ""; // temporary holds what the text command is.
-        string tempRTCommand2 = ""; // temp var used in replacing things.
 
         foreach (char letter in sentence.ToCharArray())
         {
@@ -324,15 +323,7 @@ public class DialogueManager : MonoBehaviour {
             if (letter == '<') // Checks for opening RT statement
             {
                 richText = true;
-                continue;
-            }
-            if (richText == true) // Stores RT command
-            {
-                if (letter == '/')
-                {
-                    richTextSignal = false;
-                }
-                else { tempRichTextCommand += letter; }
+                Debug.Log("Opened richtext");
                 continue;
             }
             if (letter == '>') // Closes and executes RT command.
@@ -345,12 +336,12 @@ public class DialogueManager : MonoBehaviour {
                         richTextCommandStart += "<b>";
                         richTextCommandEnd = "</b>" + richTextCommandEnd;
                     }
-                    if(string.Equals(tempRichTextCommand, "i"))
+                    else if(string.Equals(tempRichTextCommand, "i"))
                     {
                         richTextCommandStart += "<i>";
                         richTextCommandEnd = "</i>" + richTextCommandEnd;
                     }
-                    if (string.Equals(tempRichTextCommand.Substring(0, 5), "color"))
+                    else if (string.Equals(tempRichTextCommand.Substring(0, 5), "color"))
                     {
                         richTextCommandStart = "<" + tempRichTextCommand + ">";
                         richTextCommandEnd = "</color>" + richTextCommandEnd;
@@ -358,10 +349,52 @@ public class DialogueManager : MonoBehaviour {
                 }
                 else if(richTextSignal == false) // execution of RT closing command
                 {
+                    if (string.Equals(tempRichTextCommand, "b")) // for bolding
+                    {
+                        richTextCommandStart = richTextCommandStart.Replace("<b>","");
+                        richTextCommandEnd = richTextCommandEnd.Replace("</b>", "");
+                    }
+                    else if (string.Equals(tempRichTextCommand, "i"))
+                    {
+                        richTextCommandStart = richTextCommandStart.Replace("<i>", "");
+                        richTextCommandEnd = richTextCommandEnd.Replace("</i>", "");
+                    }
+                    else if (string.Equals(tempRichTextCommand, "color"))
+                    {
+                        // yeah, bad programming practice. Shoot me. -Eric
+                        string theBigCommand = "";
+                        for(int i = richTextCommandStart.Length - 1; i > 0; i--)
+                        {
+                            theBigCommand = richTextCommandStart.Substring(i);
+                            if (theBigCommand.Length >= 5 && richTextCommandStart.Substring(i, 5) == "color")
+                            {
+                                theBigCommand = richTextCommandStart.Substring(i-1);
+                                richTextCommandStart = richTextCommandStart.Replace(theBigCommand, "");
+                                break;
+                            }
+                        }
+                        richTextCommandEnd = richTextCommandEnd.Replace("</color>", "");
+                    }
                 }
+                tempRichTextCommand = "";
                 richTextSignal = true;
                 continue;
             }
+            if (richText == true) // Stores RT command
+            {
+                if (letter == '/')
+                {
+                    richTextSignal = false;
+                    Debug.Log("Command is closing");
+                }
+                else
+                {
+                    tempRichTextCommand += letter;
+                    Debug.Log("Added " + letter + " character to command");
+                }
+                continue;
+            }
+            
             if(blipWait == 3) //make sure this matches the declaration
             {
                 if (characterName.Equals(""))
